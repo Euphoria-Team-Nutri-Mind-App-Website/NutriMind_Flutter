@@ -17,10 +17,10 @@ class InterfaceScreen extends StatelessWidget {
             SizedBox(height: 25.h),
             Image.asset("assets/images/logo.png", width: 210.w),
             SizedBox(height: 20.h),
-            const Text("Health care app",
+            Text("Health care app",
                 style: TextStyle(
                     fontFamily: 'Inter',
-                    fontSize: 20,
+                    fontSize: 20.sp,
                     fontWeight: FontWeight.w600,
                     color: MyColors.grey,
                     decoration: TextDecoration.none)),
@@ -43,18 +43,18 @@ class InterfaceScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text("Get Started",
+                    Text("Get Started",
                         style: TextStyle(
                           fontFamily: 'Inter',
-                          fontSize: 20,
+                          fontSize: 20.sp,
                           fontWeight: FontWeight.w700,
                           color: MyColors.white,
                         )),
                     SizedBox(width: 15.w),
-                    const Icon(
+                    Icon(
                       Icons.arrow_forward,
                       color: MyColors.white,
-                      size: 24,
+                      size: 24.sp,
                     )
                   ],
                 ),

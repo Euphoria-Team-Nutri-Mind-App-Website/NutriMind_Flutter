@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../shared/Constants/colors.dart';
@@ -18,7 +17,7 @@ class ContinueScreen extends StatelessWidget {
             width: 300.w,
             height: 460.h,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(10.r),
               color: MyColors.lightGrey,
               boxShadow: [
                 BoxShadow(
@@ -30,23 +29,20 @@ class ContinueScreen extends StatelessWidget {
               ],
             ),
             child: Padding(
-              padding: const EdgeInsets.all(18.0),
+              padding: EdgeInsets.all(18.sp),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 //crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const Text(
+                  Text(
                     "Continue As ...",
                     style: TextStyle(
                         fontWeight: FontWeight.w600,
-                        fontSize: 28,
+                        fontSize: 28.sp,
                         fontFamily: 'Inter',
                         color: MyColors.black,
                         decoration: TextDecoration.none),
                   ),
-                  // SizedBox(
-                  //   height: 30.h,
-                  // ),
                   InkWell(
                     onTap: () {
                       Navigator.pushNamed(context, 'LoginScreen');
@@ -62,7 +58,7 @@ class ContinueScreen extends StatelessWidget {
                         children: [
                           const Image(
                               image:
-                                  AssetImage("assets/images/patienticon.png")),
+                              AssetImage("assets/images/patienticon.png")),
                           SizedBox(
                             height: 15.h,
                           ),
@@ -76,9 +72,6 @@ class ContinueScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  // SizedBox(
-                  //   height: 30.h,
-                  // ),
                   InkWell(
                     onTap: () {},
                     child: Container(
@@ -92,14 +85,14 @@ class ContinueScreen extends StatelessWidget {
                         children: [
                           const Image(
                               image:
-                                  AssetImage("assets/images/doctoricon.png")),
+                              AssetImage("assets/images/doctoricon.png")),
                           SizedBox(
                             height: 15.h,
                           ),
-                          const Text("Doctor",
+                          Text("Doctor",
                               style: TextStyle(
                                   fontWeight: FontWeight.w600,
-                                  fontSize: 22,
+                                  fontSize: 22.sp,
                                   fontFamily: 'Inter',
                                   color: MyColors.white)),
                         ],

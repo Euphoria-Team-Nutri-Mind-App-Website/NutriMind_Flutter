@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'modules/ui/auth_screens/login_screen.dart';
+import 'modules/ui/auth_screens/sign_up_screen.dart';
 import 'modules/ui/continue_screen.dart';
+import 'modules/ui/home_screen/home_screen.dart';
 import 'modules/ui/interface_screen.dart';
 import 'modules/ui/splash_screen.dart';
 
@@ -21,6 +24,10 @@ class MyApp extends StatelessWidget {
             routes: {
               'InterfaceScreen': (context) => const InterfaceScreen(),
               'ContinueScreen': (context) => const ContinueScreen(),
+              'LoginScreen': (context) => const LoginScreen(),
+              'SignUpScreen': (context) => SignUpScreen(),
+              'HomeScreen': (context) => const HomeScreen(),
+
             },
           );
         });

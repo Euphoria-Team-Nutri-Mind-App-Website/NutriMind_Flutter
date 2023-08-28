@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../shared/Constants/colors.dart';
@@ -11,10 +10,10 @@ class CreatePasswordScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0.0,
+        backgroundColor:MyColors.white,
+        elevation: 0.sp,
         leading: Padding(
-          padding: const EdgeInsets.all(18.0),
+          padding: EdgeInsets.all(18.sp),
           child: IconButton(
               onPressed: () {
                 Navigator.pushNamed(context, 'VerificationScreen');
@@ -41,10 +40,10 @@ class CreatePasswordScreen extends StatelessWidget {
                         onPressed: () {
                           Navigator.pushNamed(context, 'VerificationScreen');
                         },
-                        icon: const Icon(
+                        icon: Icon(
                           Icons.arrow_back_ios,
                           color: MyColors.black,
-                          size: 30,
+                          size: 30.sp,
                         )),
                   ],
                 ),
@@ -78,7 +77,7 @@ class CreatePasswordScreen extends StatelessWidget {
                   hintText: 'Password',
                   obscureText: false,
                   suffixIcon:
-                      Icon(Icons.remove_red_eye_outlined, color: MyColors.grey),
+                  Icon(Icons.remove_red_eye_outlined, color: MyColors.grey),
                 ),
                 SizedBox(
                   height: 28.h,
@@ -88,96 +87,94 @@ class CreatePasswordScreen extends StatelessWidget {
                   hintText: 'Confirm Password',
                   obscureText: false,
                   suffixIcon:
-                      Icon(Icons.remove_red_eye_outlined, color: MyColors.grey),
+                  Icon(Icons.remove_red_eye_outlined, color: MyColors.grey),
                 ),
                 SizedBox(
                   height: 28.h,
                 ),
-                //const MyBlueButton(text: 'set password'),
                 Center(
                   child: InkWell(
                     onTap: () {
                       showDialog(
                           context: context,
                           builder: (context) => AlertDialog(
-                                actions: [
-                                  TextButton(
-                                    onPressed: () {
-                                      //Navigator.of(context).pop();
-                                      Navigator.pushNamed(
-                                          context, 'LoginScreen');
-                                    },
-                                    child: Center(
-                                      child: Column(
-                                        children: [
-                                          Container(
-                                            height: 40.h,
-                                            width: 140.w,
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(10),
-                                              border: Border.all(
-                                                  color: MyColors.darkBlue),
-                                              boxShadow: const [
-                                                BoxShadow(
-                                                  color: MyColors.darkBlue,
-                                                  offset: Offset(
-                                                    5.0,
-                                                    5.0,
-                                                  ),
-                                                  blurRadius: 10.0,
-                                                  spreadRadius: 2.0,
-                                                ), //BoxShadow
-                                                BoxShadow(
-                                                  color: Colors.white,
-                                                  offset: Offset(0.0, 0.0),
-                                                  blurRadius: 0.0,
-                                                  spreadRadius: 0.0,
-                                                ), //BoxShadow
-                                              ],
-                                            ),
-                                            child: const Center(
-                                              child: Text(
-                                                "Back to Log in",
-                                                style: TextStyle(
-                                                    color: MyColors.darkBlue,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontFamily: 'Poppins'),
+                            actions: [
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pushNamed(
+                                      context, 'LoginScreen');
+                                },
+                                child: Center(
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        height: 40.h,
+                                        width: 140.w,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                          BorderRadius.circular(10.r),
+                                          border: Border.all(
+                                              color: MyColors.darkBlue),
+                                          boxShadow: const [
+                                            BoxShadow(
+                                              color: MyColors.darkBlue,
+                                              offset: Offset(
+                                                5.0,
+                                                5.0,
                                               ),
-                                            ),
+                                              blurRadius: 10.0,
+                                              spreadRadius: 2.0,
+                                            ), //BoxShadow
+                                            BoxShadow(
+                                              color: Colors.white,
+                                              offset: Offset(0.0, 0.0),
+                                              blurRadius: 0.0,
+                                              spreadRadius: 0.0,
+                                            ), //BoxShadow
+                                          ],
+                                        ),
+                                        child: const Center(
+                                          child: Text(
+                                            "Back to Log in",
+                                            style: TextStyle(
+                                                color: MyColors.darkBlue,
+                                                fontWeight: FontWeight.bold,
+                                                fontFamily: 'Poppins'),
                                           ),
-                                          const SizedBox(
-                                            height: 14,
-                                          )
-                                        ],
+                                        ),
                                       ),
-                                    ),
-                                  )
-                                ],
-                                title: Column(
-                                  children: [
-                                    Center(
-                                        child: Image.asset(
-                                            "assets/images/true.png")),
-                                    const SizedBox(height: 17),
-                                    const Text(
-                                      "your reset",
-                                      style: TextStyle(
-                                          color: MyColors.grey,
-                                          fontFamily: 'Poppins'),
-                                    ),
-                                    const Text(
-                                      "DONE",
-                                      style: TextStyle(
-                                          color: MyColors.lightBlue,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 15,
-                                          fontFamily: 'Poppins'),
-                                    ),
-                                  ],
+                                      SizedBox(
+                                        height: 14.h,
+                                      )
+                                    ],
+                                  ),
                                 ),
-                                contentPadding: EdgeInsets.all(20.0),
-                              ));
+                              )
+                            ],
+                            title: Column(
+                              children: [
+                                Center(
+                                    child: Image.asset(
+                                        "assets/images/true.png")),
+                                SizedBox(height: 17.h),
+                                const Text(
+                                  "your reset",
+                                  style: TextStyle(
+                                      color: MyColors.grey,
+                                      fontFamily: 'Poppins'),
+                                ),
+                                Text(
+                                  "DONE",
+                                  style: TextStyle(
+                                      color: MyColors.lightBlue,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15.sp,
+                                      fontFamily: 'Poppins'),
+                                ),
+                              ],
+                            ),
+                            contentPadding: EdgeInsets.all(20.sp),
+                          ));
                     },
                     child: Container(
                       width: double.infinity,

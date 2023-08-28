@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_verification_code/flutter_verification_code.dart';
@@ -18,10 +17,10 @@ class _VerificationScreenState extends State<VerificationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0.0,
+        backgroundColor:MyColors.white,
+        elevation: 0.sp,
         leading: Padding(
-          padding: const EdgeInsets.all(18.0),
+          padding: EdgeInsets.all(18.sp),
           child: IconButton(
               onPressed: () {
                 Navigator.pushNamed(context, 'ForgetPassword');
@@ -82,7 +81,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
                       length: 4,
                       cursorColor: MyColors.darkBlue,
                       clearAll: Padding(
-                        padding: const EdgeInsets.all(3.0),
+                        padding: EdgeInsets.all(3.sp),
                         child: Text(
                           'clear all',
                           style: TextStyle(
@@ -106,24 +105,24 @@ class _VerificationScreenState extends State<VerificationScreen> {
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(5.0),
+                  padding: EdgeInsets.all(5.sp),
                   child: Center(
                     child: _onEditing
                         ? Text(
-                            'Please enter full code',
-                            style: TextStyle(
-                                fontFamily: 'Inter',
-                                fontWeight: FontWeight.w400,
-                                fontSize: 13.sp,
-                                color: MyColors.grey),
-                          )
+                      'Please enter full code',
+                      style: TextStyle(
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w400,
+                          fontSize: 13.sp,
+                          color: MyColors.grey),
+                    )
                         : const Text(''),
                   ),
                 ),
                 SizedBox(
                   height: 28.h,
                 ),
-                MyBlueButton(text: 'Verify', page: 'CreatePasswordScreen'),
+                const MyBlueButton(text: 'Verify', page: 'CreatePasswordScreen'),
                 SizedBox(
                   height: 250.h,
                 ),

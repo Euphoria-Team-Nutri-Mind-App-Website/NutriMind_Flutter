@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../shared/Constants/colors.dart';
@@ -11,18 +10,18 @@ class ForgetPassword extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0.0,
+        backgroundColor: MyColors.white,
+        elevation: 0.sp,
         leading: Padding(
-          padding: const EdgeInsets.all(18.0),
+          padding: EdgeInsets.all(18.sp),
           child: IconButton(
               onPressed: () {
                 Navigator.pushNamed(context, 'SignUpScreen');
               },
-              icon: const Icon(
+              icon: Icon(
                 Icons.arrow_back_ios,
                 color: MyColors.black,
-                size: 30,
+                size: 30.sp,
               )),
         ),
       ),
@@ -67,7 +66,7 @@ class ForgetPassword extends StatelessWidget {
                 SizedBox(
                   height: 28.h,
                 ),
-                MyBlueButton(text: 'Send Code', page: 'VerificationScreen'),
+                const MyBlueButton(text: 'Send Code', page: 'VerificationScreen'),
                 SizedBox(
                   height: 320.h,
                 ),

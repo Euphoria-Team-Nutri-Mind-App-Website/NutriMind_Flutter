@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'modules/ui/auth_screens/login_screen.dart';
-import 'modules/ui/auth_screens/sign_up_screen.dart';
+import 'modules/ui/Patient_screens/patient_auth_screens/patient_login_screen.dart';
+import 'modules/ui/Patient_screens/patient_auth_screens/patient_sign_up_screen.dart';
+import 'modules/ui/Patient_screens/patient_first_set_tall_weight_screens/patient_set_tall.dart';
+import 'modules/ui/Patient_screens/patient_first_set_tall_weight_screens/patient_set_weight.dart';
+import 'modules/ui/Patient_screens/patient_password_screens/patient_create_password_screen.dart';
+import 'modules/ui/Patient_screens/patient_password_screens/patient_forget_password_screen.dart';
+import 'modules/ui/Patient_screens/patient_password_screens/patient_verification_screen.dart';
 import 'modules/ui/continue_screen.dart';
 import 'modules/ui/interface_screen.dart';
-import 'modules/ui/password_screens/create_password_screen.dart';
-import 'modules/ui/password_screens/forget_password_screen.dart';
-import 'modules/ui/password_screens/verification_screen.dart';
 import 'modules/ui/patient_home_screen/patient_home_screen.dart';
 import 'modules/ui/splash_screen.dart';
 
@@ -27,12 +29,15 @@ class MyApp extends StatelessWidget {
             routes: {
               'InterfaceScreen': (context) => const InterfaceScreen(),
               'ContinueScreen': (context) => const ContinueScreen(),
-              'LoginScreen': (context) => const LoginScreen(),
-              'SignUpScreen': (context) => SignUpScreen(),
+              'PatientLoginScreen': (context) => const PatientLoginScreen(),
+              'PatientSignUpScreen': (context) => PatientSignUpScreen(),
+              'PatientForgetPassword': (context) => const PatientForgetPassword(),
+              'PatientVerificationScreen': (context) => const PatientVerificationScreen(),
+              'PatientCreatePasswordScreen': (context) => const PatientCreatePasswordScreen(),
+              'PatientSetTallScreen': (context) => const PatientSetTallScreen(),
+              'PatientSetWeightScreen': (context) => const PatientSetWeightScreen(),
               'PatientHomeScreen': (context) => const PatientHomeScreen(),
-              'ForgetPassword': (context) => const ForgetPassword(),
-              'VerificationScreen': (context) => const VerificationScreen(),
-              'CreatePasswordScreen': (context) => const CreatePasswordScreen(),
+
             },
           );
         });

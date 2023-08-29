@@ -1,33 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../shared/Constants/colors.dart';
-import '../../../shared/widgets/screens_widgets.dart';
+import '../../../../shared/Constants/colors.dart';
+import '../../../../shared/widgets/screens_widgets.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class PatientLoginScreen extends StatefulWidget {
+  const PatientLoginScreen({Key? key}) : super(key: key);
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<PatientLoginScreen> createState() => _PatientLoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _PatientLoginScreenState extends State<PatientLoginScreen> {
   final emailController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0.sp,
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pushNamed(context, 'ContinueScreen');
-            },
-            icon: const Icon(
-              Icons.arrow_back_ios,
-              color: MyColors.black,
-              size: 30,
-            )),
-      ),
+      appBar: MyAppBar(backPage: 'ContinueScreen'),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Container(
@@ -79,7 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.pushNamed(context, 'ForgetPassword');
+                        Navigator.pushNamed(context, 'PatientForgetPassword');
                       },
                       child: Text(
                         "Forget Password?",
@@ -95,10 +83,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(
                   height: 38.h,
                 ),
-                InkWell(
+                const InkWell(
                   child: MyBlueButton(
                     text: "Log IN",
-                    page: 'HomeScreen',
+                    page: 'PatientSetTallScreen',
                   ),
                 ),
                 SizedBox(
@@ -159,7 +147,7 @@ class _LoginScreenState extends State<LoginScreen> {
         child: const MyTextGroup(
             staticText: "Don’t have an account?",
             dynamicText: " Sign up",
-            page: 'SignUpScreen'),
+            page: 'PatientSignUpScreen'),
       ),
     );
   }

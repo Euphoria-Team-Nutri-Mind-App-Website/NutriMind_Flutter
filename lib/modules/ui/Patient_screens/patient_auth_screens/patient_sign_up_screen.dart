@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
 import '../../../blocs/auth_cubit/auth_cubit.dart';
-import '../../patient_home_screen/patient_home_screen.dart';
+import '../patient_home_screen/patient_home_screen.dart';
 
 class PatientSignUpScreen extends StatelessWidget {
   final nameController = TextEditingController();

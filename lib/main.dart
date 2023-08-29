@@ -4,12 +4,13 @@ import 'modules/ui/Patient_screens/patient_auth_screens/patient_login_screen.dar
 import 'modules/ui/Patient_screens/patient_auth_screens/patient_sign_up_screen.dart';
 import 'modules/ui/Patient_screens/patient_first_set_tall_weight_screens/patient_set_tall.dart';
 import 'modules/ui/Patient_screens/patient_first_set_tall_weight_screens/patient_set_weight.dart';
+import 'modules/ui/Patient_screens/patient_home_screen/patient_home_screen.dart';
+import 'modules/ui/Patient_screens/patient_notifications/patient_notifications.dart';
 import 'modules/ui/Patient_screens/patient_password_screens/patient_create_password_screen.dart';
 import 'modules/ui/Patient_screens/patient_password_screens/patient_forget_password_screen.dart';
 import 'modules/ui/Patient_screens/patient_password_screens/patient_verification_screen.dart';
 import 'modules/ui/continue_screen.dart';
 import 'modules/ui/interface_screen.dart';
-import 'modules/ui/patient_home_screen/patient_home_screen.dart';
 import 'modules/ui/splash_screen.dart';
 
 void main() => runApp(const MyApp());
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
               'PatientSetTallScreen': (context) => const PatientSetTallScreen(),
               'PatientSetWeightScreen': (context) => const PatientSetWeightScreen(),
               'PatientHomeScreen': (context) => const PatientHomeScreen(),
-
+              'PatientNotificationsScreen' : (context) => const PatientNotificationsScreen(),
             },
           );
         });

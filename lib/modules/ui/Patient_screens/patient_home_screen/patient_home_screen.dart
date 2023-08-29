@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nutri_mind_application/modules/ui/patient_home_screen/patient_home_bar.dart';
-import '../../../shared/Constants/colors.dart';
+import 'package:nutri_mind_application/modules/ui/Patient_screens/patient_home_screen/patient_home_services-bar.dart';
+
+import '../../../../shared/Constants/colors.dart';
+import '../../../../shared/widgets/screens_widgets.dart';
 
 class PatientHomeScreen extends StatefulWidget {
   const PatientHomeScreen({Key? key}) : super(key: key);
@@ -25,42 +27,35 @@ class PatientHomeScreenState extends State<PatientHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: MyColors.white,
-        elevation: 0.sp,
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pushNamed(context, 'LoginScreen');
-            },
-            icon: const Row(
-              children: [
-                Icon(
-                  Icons.arrow_back_ios,
-                  color: MyColors.black,
-                  size: 25,
-                ),
-              ],
-            )),
-        title: Image(
-          image: const AssetImage(
-            "assets/images/logo.png",
-          ),
-          width: 80.w,
+      appBar: MyAppBar(
+        backPage: 'PatientSetWeightScreen',
+        pageTitle: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Image(
+              image: const AssetImage('assets/images/logo.png'),
+              width: 110.w,
+            )
+          ],
         ),
-        actions: [
+        actionIcon: [
           Padding(
-            padding: EdgeInsets.all(11.sp),
-            child: const Icon(Icons.menu, color: MyColors.black),
+            padding: EdgeInsets.only(right: 25.sp),
+            child: InkWell(
+              onTap: () { Navigator.pushNamed(context, 'PatientNotificationsScreen');},
+              child: Image(image: const AssetImage("assets/images/bell.png"),height: 20.h,),
+            ),
           )
         ],
       ),
       body: widgetList[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        elevation: 5.sp,
         currentIndex: _currentIndex,
         type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(
-            backgroundColor: MyColors.darkBlue,
+            backgroundColor: MyColors.grey,
             icon: Icon(Icons.home),
             label: 'Home',
           ),

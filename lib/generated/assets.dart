@@ -6,6 +6,7 @@ class Assets {
   static const String fontsInterRegular = 'assets/fonts/Inter-Regular.ttf';
   static const String fontsInterSemiBold = 'assets/fonts/Inter-SemiBold.ttf';
   static const String imagesApple = 'assets/images/apple.png';
+  static const String imagesBell = 'assets/images/bell.png';
   static const String imagesDoctor = 'assets/images/doctor.png';
   static const String imagesDoctoricon = 'assets/images/doctoricon.png';
   static const String imagesFace = 'assets/images/face.png';

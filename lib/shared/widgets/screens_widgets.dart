@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:numberpicker/numberpicker.dart';
 import '../Constants/colors.dart';
 
 class MyTextField extends StatelessWidget {
@@ -53,7 +54,8 @@ class MyTextField extends StatelessWidget {
 class MyBlueButton extends StatelessWidget {
   final text;
   final page;
-  const MyBlueButton({Key? key, required this.text, this.page}) : super(key: key);
+  const MyBlueButton({Key? key, required this.text, this.page})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -142,5 +144,37 @@ class MyTextGroup extends StatelessWidget {
         ),
       ),
     ]);
+  }
+}
+
+class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
+  final backPage;
+  Row? pageTitle;
+  List<Widget>? actionIcon;
+  MyAppBar({Key? key, required this.backPage, this.pageTitle, this.actionIcon})
+      : super(key: key);
+
+  @override
+  Size get preferredSize => Size.fromHeight(AppBar().preferredSize.height);
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+        backgroundColor: MyColors.white,
+        elevation: 0.sp,
+        leading: Padding(
+          padding: EdgeInsets.only(left: 25.sp, top: 8.sp),
+          child: IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '$backPage');
+              },
+              icon: Icon(
+                Icons.arrow_back_ios,
+                color: MyColors.black,
+                size: 25.sp,
+              )),
+        ),
+        title: pageTitle,
+        actions: actionIcon);
   }
 }

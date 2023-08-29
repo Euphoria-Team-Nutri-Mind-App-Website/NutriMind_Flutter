@@ -19,7 +19,7 @@ class _DoctorsScreenState extends State<DoctorsScreen> {
         elevation: 0.sp,
         leading: IconButton(
             onPressed: () {
-              Navigator.pushNamed(context, 'HomeScreen');
+              Navigator.pushNamed(context, 'PatientHomeScreen');
             },
             icon: Row(
               children: [

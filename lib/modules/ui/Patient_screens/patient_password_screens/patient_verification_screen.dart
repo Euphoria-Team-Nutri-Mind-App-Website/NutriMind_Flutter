@@ -1,37 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_verification_code/flutter_verification_code.dart';
-import '../../../shared/Constants/colors.dart';
-import '../../../shared/widgets/screens_widgets.dart';
+import '../../../../shared/Constants/colors.dart';
+import '../../../../shared/widgets/screens_widgets.dart';
 
-class VerificationScreen extends StatefulWidget {
-  const VerificationScreen({Key? key}) : super(key: key);
+
+class PatientVerificationScreen extends StatefulWidget {
+  const PatientVerificationScreen({Key? key}) : super(key: key);
 
   @override
-  State<VerificationScreen> createState() => _VerificationScreenState();
+  State<PatientVerificationScreen> createState() => _VerificationScreenState();
 }
 
-class _VerificationScreenState extends State<VerificationScreen> {
+class _VerificationScreenState extends State<PatientVerificationScreen> {
   bool _onEditing = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor:MyColors.white,
-        elevation: 0.sp,
-        leading: Padding(
-          padding: EdgeInsets.all(18.sp),
-          child: IconButton(
-              onPressed: () {
-                Navigator.pushNamed(context, 'ForgetPassword');
-              },
-              icon: const Icon(
-                Icons.arrow_back_ios,
-                color: MyColors.black,
-                size: 30,
-              )),
-        ),
-      ),
+      appBar: MyAppBar(backPage: 'PatientForgetPassword'),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Container(
@@ -122,19 +108,21 @@ class _VerificationScreenState extends State<VerificationScreen> {
                 SizedBox(
                   height: 28.h,
                 ),
-                const MyBlueButton(text: 'Verify', page: 'CreatePasswordScreen'),
-                SizedBox(
-                  height: 250.h,
-                ),
-                const MyTextGroup(
-                    staticText: 'Didn’t received code?',
-                    dynamicText: '  Resend it',
-                    page: '')
+                const MyBlueButton(text: 'Verify', page: 'PatientCreatePasswordScreen'),
               ],
             ),
           ),
         ),
       ),
+        bottomNavigationBar: BottomAppBar(
+          color: Colors.transparent,
+          elevation: 0.sp,
+          child: const MyTextGroup(
+              staticText: "Didn’t received code?",
+              dynamicText: "  Resend it",
+              page: ''),
+        )
+
     );
   }
 }

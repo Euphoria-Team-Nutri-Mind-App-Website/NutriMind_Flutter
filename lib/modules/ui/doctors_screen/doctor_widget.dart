@@ -8,114 +8,71 @@ class DoctorWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          height: MediaQuery.of(context).size.height,
-          child: ListView.builder(
-            itemCount: 10,
-            scrollDirection: Axis.vertical,
-            itemBuilder: (context, index) => Padding(
-              padding: EdgeInsets.all(18.sp),
-              child: Container(
-                height: 170.h,
-                width: 350.w,
-                decoration: BoxDecoration(
-                  color: MyColors.light2Grey,
-                  borderRadius: BorderRadius.circular(20.r),
-                  boxShadow: const [
-                    BoxShadow(
-                      color: MyColors.grey,
-                      blurRadius: 4,
-                      offset: Offset(4, 8), // Shadow position
+    return ListView.builder(
+      itemCount: 10,
+      scrollDirection: Axis.vertical,
+      itemBuilder: (context, index) => Container(
+        decoration: BoxDecoration(
+          color: MyColors.lightGrey,
+          borderRadius: BorderRadius.circular(20.r),
+          boxShadow: const [
+            BoxShadow(
+              color: MyColors.grey,
+              blurRadius: 5,
+              offset: Offset(4, 4), // Shadow position
+            ),
+          ],
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                Image.asset("assets/images/doctor.png"),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          "Dr.john smith",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20.sp),
+                        ),
+                        // SizedBox(width: 40.w),
+                        const Row(
+                          children: [
+                            Text("4.5"),
+                            Icon(
+                              Icons.star,
+                              color: Colors.yellow,
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                    const Text("psychiatrist and"),
+                    const Text("nutritional"),
+                    InkWell(
+                      onTap: () {},
+                      child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(14),
+                            border: Border.all(color: MyColors.darkBlue)),
+                        child: const Text(
+                          "Book now",
+                          style: TextStyle(color: MyColors.darkBlue),
+                        ),
+                      ),
                     ),
                   ],
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(18.sp),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.all(8.sp),
-                            child: Image.asset("assets/images/doctor.png"),
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  Text(
-                                    "Dr.john smith",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 20.sp),
-                                  ),
-                                  SizedBox(width: 40.w),
-                                  const Row(
-                                    children: [
-                                      Text("4.5"),
-                                      Icon(
-                                        Icons.star,
-                                        color: Colors.yellow,
-                                      )
-                                    ],
-                                  )
-                                ],
-                              ),
-                              const Text("psychiatrist and"),
-                              const Text("nutritional"),
-                            ],
-                          )
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          InkWell(
-                            onTap: () {
-                              Navigator.pushNamed(
-                                  context, 'RegistrationScreen');
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(14),
-                                  border: Border.all(color: MyColors.darkBlue)),
-                              child: const Padding(
-                                padding: EdgeInsets.all(13.0),
-                                child: Text(
-                                  "Book now",
-                                  style: TextStyle(color: MyColors.darkBlue),
-                                ),
-                              ),
-                            ),
-                          ),
-                          SizedBox(width: 5.w),
-                          Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(14.r),
-                                border: Border.all(color: MyColors.darkBlue)),
-                            child: Padding(
-                              padding: EdgeInsets.all(8.sp),
-                              child: const Icon(
-                                Icons.heart_broken,
-                                color: Colors.red,
-                              ),
-                            ),
-                          )
-                        ],
-                      )
-                    ],
-                  ),
-                ),
-              ),
+                )
+              ],
             ),
-          ),
-        )
-      ],
+          ],
+        ),
+      ),
     );
   }
 }

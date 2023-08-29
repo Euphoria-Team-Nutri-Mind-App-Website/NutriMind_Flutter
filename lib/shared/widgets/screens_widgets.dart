@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:numberpicker/numberpicker.dart';
 import '../Constants/colors.dart';
 
 class MyTextField extends StatelessWidget {
@@ -178,3 +177,43 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         actions: actionIcon);
   }
 }
+
+class SmallTextField extends StatelessWidget {
+  final controller;
+  final suffixIcon;
+  final textType;
+  final String hintText;
+  final bool obscureText;
+
+  const SmallTextField({
+    super.key,
+    required this.hintText,
+    required this.obscureText,
+    this.controller,
+    this.suffixIcon,
+    required this.textType,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      keyboardType: textType,
+      controller: controller,
+      obscureText: obscureText,
+      decoration: InputDecoration(
+        enabledBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: MyColors.darkBlue),
+            borderRadius: BorderRadius.circular(17.r)),
+        focusedBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: MyColors.grey),
+            borderRadius: BorderRadius.circular(17.r)),
+        fillColor: MyColors.lightGrey,
+        filled: true,
+        hintText: hintText,
+        hintStyle: const TextStyle(color: MyColors.grey),
+        suffixIcon: suffixIcon,
+      ),
+    );
+  }
+}
+

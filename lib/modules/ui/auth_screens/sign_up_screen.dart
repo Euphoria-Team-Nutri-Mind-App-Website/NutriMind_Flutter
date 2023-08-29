@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../shared/Constants/colors.dart';
 import '../../../shared/widgets/screens_widgets.dart';
 import '../../blocs/auth_cubit/auth_cubit.dart';
-import '../home_screen/home_screen.dart';
+import '../patient_home_screen/patient_home_screen.dart';
 
 class SignUpScreen extends StatelessWidget {
   final nameController = TextEditingController();
@@ -23,7 +23,7 @@ class SignUpScreen extends StatelessWidget {
         listener: (context, state) {
           if (state is RegisterSuccessState) {
             Navigator.pushReplacement(context,
-                MaterialPageRoute(builder: (context) => const HomeScreen()));
+                MaterialPageRoute(builder: (context) => const PatientHomeScreen()));
           } else if (state is RegisterFailedState) {
             showDialog(
                 context: context,

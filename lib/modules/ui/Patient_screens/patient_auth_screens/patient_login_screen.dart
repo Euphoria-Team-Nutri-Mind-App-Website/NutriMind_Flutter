@@ -133,7 +133,6 @@ class _PatientLoginScreenState extends State<PatientLoginScreen> {
                     SizedBox(
                       width: 10.w,
                     ),
-                    const MySmallButton(imageAsset: "assets/images/apple.png"),
                   ],
                 ),
               ],

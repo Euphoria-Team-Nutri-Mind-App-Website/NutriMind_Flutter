@@ -3,14 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
 
-class PatientLoginScreen extends StatefulWidget {
-  const PatientLoginScreen({Key? key}) : super(key: key);
+class DoctorLoginScreen extends StatefulWidget {
+  const DoctorLoginScreen({Key? key}) : super(key: key);
 
   @override
-  State<PatientLoginScreen> createState() => _PatientLoginScreenState();
+  State<DoctorLoginScreen> createState() => _DoctorLoginScreenState();
 }
 
-class _PatientLoginScreenState extends State<PatientLoginScreen> {
+class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
   final emailController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -86,7 +86,7 @@ class _PatientLoginScreenState extends State<PatientLoginScreen> {
                 const InkWell(
                   child: MyBlueButton(
                     text: "Log IN",
-                    page: 'DoctorScheduleScreen',
+                    page: 'PatientSetTallScreen',
                   ),
                 ),
                 SizedBox(
@@ -146,7 +146,7 @@ class _PatientLoginScreenState extends State<PatientLoginScreen> {
         child: const MyTextGroup(
             staticText: "Don’t have an account?",
             dynamicText: " Sign up",
-            page: 'DoctorSignUpScreen'),
+            page: 'PatientSignUpScreen'),
       ),
     );
   }

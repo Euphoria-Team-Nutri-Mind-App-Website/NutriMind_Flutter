@@ -21,6 +21,7 @@ class DoctorScheduleScreen extends StatelessWidget {
                 "My Schedule",
                 style: TextStyle(
                     fontFamily: 'Inter',
+                    color: MyColors.black,
                     fontWeight: FontWeight.w800,
                     fontSize: 18.sp),
               )
@@ -47,7 +48,7 @@ class DoctorScheduleScreen extends StatelessWidget {
                   Text(
                     "All Patients",
                     style: TextStyle(
-                      color: MyColors.grey,
+                        color: MyColors.grey,
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w600,
                         fontSize: 16.sp),

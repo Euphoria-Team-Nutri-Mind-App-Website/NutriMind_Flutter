@@ -57,7 +57,7 @@ class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
                   hintText: 'Password',
                   obscureText: false,
                   suffixIcon:
-                  Icon(Icons.remove_red_eye_outlined, color: MyColors.grey),
+                      Icon(Icons.remove_red_eye_outlined, color: MyColors.grey),
                 ),
                 SizedBox(
                   height: 20.h,
@@ -86,7 +86,7 @@ class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
                 const InkWell(
                   child: MyBlueButton(
                     text: "Log IN",
-                    page: 'PatientSetTallScreen',
+                    page: 'DoctorScheduleScreen',
                   ),
                 ),
                 SizedBox(
@@ -96,9 +96,9 @@ class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
                   children: [
                     const Expanded(
                         child: Divider(
-                          thickness: 1,
-                          color: MyColors.grey,
-                        )),
+                      thickness: 1,
+                      color: MyColors.grey,
+                    )),
                     SizedBox(
                       width: 15.w,
                     ),
@@ -115,9 +115,9 @@ class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
                     ),
                     const Expanded(
                         child: Divider(
-                          thickness: 1,
-                          color: MyColors.grey,
-                        )),
+                      thickness: 1,
+                      color: MyColors.grey,
+                    )),
                   ],
                 ),
                 SizedBox(

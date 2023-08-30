@@ -19,7 +19,7 @@ class _DoctorListForPatientScreenState
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: MyAppBar(
-          backPage: 'PatientHomeServicesScreen',
+          backPage: 'PatientNavBarScreen',
           pageTitle: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

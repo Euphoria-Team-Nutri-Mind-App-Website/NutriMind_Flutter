@@ -34,22 +34,15 @@ class MyApp extends StatelessWidget {
               'ContinueScreen': (context) => const ContinueScreen(),
               'PatientLoginScreen': (context) => const PatientLoginScreen(),
               'PatientSignUpScreen': (context) => PatientSignUpScreen(),
-              'PatientForgetPassword': (context) =>
-                  const PatientForgetPassword(),
-              'PatientVerificationScreen': (context) =>
-                  const PatientVerificationScreen(),
-              'PatientCreatePasswordScreen': (context) =>
-                  const PatientCreatePasswordScreen(),
+              'PatientForgetPassword': (context) => const PatientForgetPassword(),
+              'PatientVerificationScreen': (context) => const PatientVerificationScreen(),
+              'PatientCreatePasswordScreen': (context) => const PatientCreatePasswordScreen(),
               'PatientSetTallScreen': (context) => const PatientSetTallScreen(),
-              'PatientSetWeightScreen': (context) =>
-                  const PatientSetWeightScreen(),
+              'PatientSetWeightScreen': (context) => const PatientSetWeightScreen(),
               'PatientNavBarScreen': (context) => const PatientNavBarScreen(),
-              'PatientNotificationsScreen': (context) =>
-                  const PatientNotificationsScreen(),
-              'DoctorListForPatientScreen': (context) =>
-                  const DoctorListForPatientScreen(),
-              /*'RegistrationDoctorScreen': (context) =>
-                  const RegistrationDoctorScreen(),*/
+              'PatientNotificationsScreen': (context) => const PatientNotificationsScreen(),
+              'DoctorListForPatientScreen': (context) => const DoctorListForPatientScreen(),
+              'RegistrationDoctorScreen': (context) => const RegistrationDoctorScreen(),
             },
           );
         });

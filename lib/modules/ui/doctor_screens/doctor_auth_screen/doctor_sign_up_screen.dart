@@ -4,40 +4,20 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
 
-class RegistrationDoctorScreen extends StatelessWidget {
-  const RegistrationDoctorScreen({Key? key}) : super(key: key);
+class DoctorSignUpScreen extends StatelessWidget {
+  const DoctorSignUpScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0.0,
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pushNamed(context, 'ContinueScreen');
-            },
-            icon: const Row(
-              children: [
-                Icon(
-                  Icons.arrow_back_ios,
-                  color: MyColors.black,
-                  size: 25,
-                ),
-              ],
-            )),
-        title: Image(
-          image: const AssetImage(
-            "assets/images/logo.png",
-          ),
-          width: 80.w,
+      appBar: MyAppBar(
+        backPage: 'ContinueScreen',
+        pageTitle: Row(
+          children: [
+            SizedBox(width: 70.w,),
+            const Image(image: AssetImage("assets/images/Registration.png"))
+          ],
         ),
-        actions: const [
-          Padding(
-            padding: EdgeInsets.all(11.0),
-            child: Icon(Icons.menu, color: MyColors.black),
-          )
-        ],
       ),
       body: SingleChildScrollView(
         child: SafeArea(
@@ -47,74 +27,86 @@ class RegistrationDoctorScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "Welcome to Nutri Mind",
-                  style: TextStyle(
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w400,
-                      fontSize: 13.sp,
-                      color: MyColors.grey),
+                Row(
+                  children: [
+                    Text(
+                      "Welcome to ",
+                      style: TextStyle(
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w400,
+                          fontSize: 15.sp,
+                          color: MyColors.grey),
+                    ),
+                    Text(
+                      "Nutri Mind",
+                      style: TextStyle(
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w700,
+                          fontSize: 15.sp,
+                          color: MyColors.black),
+                    ),
+                  ],
                 ),
                 SizedBox(
-                  height: 40.h,
+                  height: 25.h,
                 ),
-                const MyTextField(
+                const SmallTextField(
                   hintText: 'Enter your name',
                   obscureText: false,
                   textType: TextInputType.name,
                 ),
                 SizedBox(
-                  height: 40.h,
+                  height: 15.h,
                 ),
-                const MyTextField(
+                const SmallTextField(
                   hintText: 'Email',
                   obscureText: false,
                   textType: TextInputType.emailAddress,
                 ),
                 SizedBox(
-                  height: 40.h,
+                  height: 15.h,
                 ),
-                const MyTextField(
+                const SmallTextField(
                   hintText: 'Phone Number',
                   obscureText: false,
                   textType: TextInputType.phone,
                 ),
                 SizedBox(
-                  height: 40.h,
+                  height: 15.h,
                 ),
-                const MyTextField(
+                const SmallTextField(
                   hintText: 'Address',
                   obscureText: false,
                   textType: TextInputType.name,
                 ),
                 SizedBox(
-                  height: 40.h,
+                  height: 15.h,
                 ),
-                const MyTextField(
+                const SmallTextField(
                   hintText: 'National Id',
                   obscureText: false,
                   textType: TextInputType.phone,
                 ),
                 SizedBox(
-                  height: 40.h,
+                  height: 15.h,
                 ),
-                const MyTextField(
+                const SmallTextField(
                   hintText: 'Gender',
                   obscureText: false,
                   textType: TextInputType.text,
                 ),
                 SizedBox(
-                  height: 40.h,
+                  height: 15.h,
                 ),
-                const MyTextField(
-                  hintText: 'Qualivication',
+                const SmallTextField(
+                  hintText: 'Qualification',
                   obscureText: false,
                   textType: TextInputType.text,
                 ),
                 SizedBox(
                   height: 28.h,
                 ),
-                const MyBlueButton(text: "Register", page: ''),
+                const MyBlueButton(text: "Register", page: 'DoctorScheduleScreen'),
               ],
             ),
           ),

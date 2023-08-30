@@ -74,7 +74,7 @@ class ContinueScreen extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.pushNamed(context, 'RegistrationDoctorScreen');
+                      Navigator.pushNamed(context, 'DoctorLoginScreen');
                     },
                     child: Container(
                       padding: EdgeInsets.only(

@@ -11,7 +11,13 @@ import 'modules/ui/Patient_screens/patient_password_screens/patient_create_passw
 import 'modules/ui/Patient_screens/patient_password_screens/patient_forget_password_screen.dart';
 import 'modules/ui/Patient_screens/patient_password_screens/patient_verification_screen.dart';
 import 'modules/ui/continue_screen.dart';
-import 'modules/ui/doctors_screen/doctor_auth_screen/registeration_doctors.dart';
+import 'modules/ui/doctor_screens/doctor_auth_screen/doctor_login_screen.dart';
+import 'modules/ui/doctor_screens/doctor_auth_screen/doctor_sign_up_screen.dart';
+import 'modules/ui/doctor_screens/doctor_passwords_screens/doctor_create_password_screen.dart';
+import 'modules/ui/doctor_screens/doctor_passwords_screens/doctor_forget_password_screen.dart';
+import 'modules/ui/doctor_screens/doctor_passwords_screens/doctor_verification_screen.dart';
+import 'modules/ui/doctor_screens/doctor_schedule_&_patientinfo_screens/docter_patientinfo_screen.dart';
+import 'modules/ui/doctor_screens/doctor_schedule_&_patientinfo_screens/doctor_schedule_screen.dart';
 import 'modules/ui/interface_screen.dart';
 import 'modules/ui/splash_screen.dart';
 
@@ -42,7 +48,13 @@ class MyApp extends StatelessWidget {
               'PatientNavBarScreen': (context) => const PatientNavBarScreen(),
               'PatientNotificationsScreen': (context) => const PatientNotificationsScreen(),
               'DoctorListForPatientScreen': (context) => const DoctorListForPatientScreen(),
-              'RegistrationDoctorScreen': (context) => const RegistrationDoctorScreen(),
+              'DoctorLoginScreen' : (context) => const DoctorLoginScreen(),
+              'DoctorSignUpScreen': (context) => const DoctorSignUpScreen(),
+              'DoctorForgetPassword': (context) => const DoctorForgetPassword(),
+              'DoctorVerificationScreen': (context) => const DoctorVerificationScreen(),
+              'DoctorCreatePasswordScreen': (context) => const DoctorCreatePasswordScreen(),
+              'DoctorScheduleScreen': (context) => const DoctorScheduleScreen(),
+              'Doctor_PatientInfo': (context) => const Doctor_PatientInfo()
             },
           );
         });

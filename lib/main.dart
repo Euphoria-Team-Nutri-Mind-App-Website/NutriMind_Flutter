@@ -48,8 +48,8 @@ class MyApp extends StatelessWidget {
                   const PatientNotificationsScreen(),
               'DoctorListForPatientScreen': (context) =>
                   const DoctorListForPatientScreen(),
-              'RegistrationDoctorScreen': (context) =>
-                  const RegistrationDoctorScreen(),
+              /*'RegistrationDoctorScreen': (context) =>
+                  const RegistrationDoctorScreen(),*/
             },
           );
         });

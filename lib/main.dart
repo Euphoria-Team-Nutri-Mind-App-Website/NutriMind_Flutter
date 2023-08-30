@@ -5,6 +5,7 @@ import 'modules/ui/Patient_screens/patient_auth_screens/patient_sign_up_screen.d
 import 'modules/ui/Patient_screens/patient_first_set_tall_weight_screens/patient_set_tall.dart';
 import 'modules/ui/Patient_screens/patient_first_set_tall_weight_screens/patient_set_weight.dart';
 import 'modules/ui/Patient_screens/patient_home_screen/doctor_list_for_patient.dart';
+import 'modules/ui/Patient_screens/patient_home_screen/patient_home_services.dart';
 import 'modules/ui/Patient_screens/patient_home_screen/patient_nav_bar.dart';
 import 'modules/ui/Patient_screens/patient_notifications/patient_notifications.dart';
 import 'modules/ui/Patient_screens/patient_password_screens/patient_create_password_screen.dart';
@@ -34,22 +35,16 @@ class MyApp extends StatelessWidget {
               'ContinueScreen': (context) => const ContinueScreen(),
               'PatientLoginScreen': (context) => const PatientLoginScreen(),
               'PatientSignUpScreen': (context) => PatientSignUpScreen(),
-              'PatientForgetPassword': (context) =>
-                  const PatientForgetPassword(),
-              'PatientVerificationScreen': (context) =>
-                  const PatientVerificationScreen(),
-              'PatientCreatePasswordScreen': (context) =>
-                  const PatientCreatePasswordScreen(),
+              'PatientForgetPassword': (context) => const PatientForgetPassword(),
+              'PatientVerificationScreen': (context) => const PatientVerificationScreen(),
+              'PatientCreatePasswordScreen': (context) => const PatientCreatePasswordScreen(),
               'PatientSetTallScreen': (context) => const PatientSetTallScreen(),
-              'PatientSetWeightScreen': (context) =>
-                  const PatientSetWeightScreen(),
+              'PatientSetWeightScreen': (context) => const PatientSetWeightScreen(),
+              'PatientHomeServicesScreen': (context) => const PatientHomeServicesScreen(),
               'PatientNavBarScreen': (context) => const PatientNavBarScreen(),
-              'PatientNotificationsScreen': (context) =>
-                  const PatientNotificationsScreen(),
-              'DoctorListForPatientScreen': (context) =>
-                  const DoctorListForPatientScreen(),
-              /*'RegistrationDoctorScreen': (context) =>
-                  const RegistrationDoctorScreen(),*/
+              'PatientNotificationsScreen': (context) => const PatientNotificationsScreen(),
+              'DoctorListForPatientScreen': (context) => const DoctorListForPatientScreen(),
+              //'RegistrationDoctorScreen': (context) => const RegistrationDoctorScreen(),
             },
           );
         });

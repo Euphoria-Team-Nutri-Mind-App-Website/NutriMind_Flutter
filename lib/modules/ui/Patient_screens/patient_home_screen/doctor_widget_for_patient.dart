@@ -9,7 +9,8 @@ class DoctorWidgetForPatientScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 10.sp,right: 10.sp,top: 20.sp,bottom: 20.sp),
+      padding:
+          EdgeInsets.only(left: 10.sp, right: 10.sp, top: 20.sp, bottom: 20.sp),
       decoration: BoxDecoration(
         color: MyColors.lightGrey,
         borderRadius: BorderRadius.circular(20.r),
@@ -17,7 +18,7 @@ class DoctorWidgetForPatientScreen extends StatelessWidget {
           BoxShadow(
             color: MyColors.grey,
             blurRadius: 5,
-            offset: Offset(1,1), // Shadow position
+            offset: Offset(1, 1), // Shadow position
           ),
         ],
       ),
@@ -28,7 +29,9 @@ class DoctorWidgetForPatientScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Image.asset("assets/images/doctor.png"),
-              SizedBox(width: 10.sp,),
+              SizedBox(
+                width: 10.sp,
+              ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,9 +41,11 @@ class DoctorWidgetForPatientScreen extends StatelessWidget {
                       Text(
                         "Dr.john smith",
                         style: TextStyle(
-                            fontWeight: FontWeight.w600, fontSize: 16.sp,fontFamily: 'Inter'),
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16.sp,
+                            fontFamily: 'Inter'),
                       ),
-                       SizedBox(
+                      SizedBox(
                         width: 70.w,
                       ),
                       const Row(
@@ -54,13 +59,25 @@ class DoctorWidgetForPatientScreen extends StatelessWidget {
                       )
                     ],
                   ),
-                  const Text("psychiatrist and",style: TextStyle(fontFamily: "Poppins"),),
-                  const Text("nutritional",style: TextStyle(fontFamily: "Poppins"),),
-                  SizedBox(height: 10.h,),
+                  const Text(
+                    "psychiatrist and",
+                    style: TextStyle(fontFamily: "Poppins"),
+                  ),
+                  const Text(
+                    "nutritional",
+                    style: TextStyle(fontFamily: "Poppins"),
+                  ),
+                  SizedBox(
+                    height: 10.h,
+                  ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(
+                          context, 'PatientAppointmentInDoctor');
+                    },
                     child: Container(
-                      padding: EdgeInsets.only(left: 20.sp,right: 25.sp,top: 7.sp,bottom: 7.sp),
+                      padding: EdgeInsets.only(
+                          left: 20.sp, right: 25.sp, top: 7.sp, bottom: 7.sp),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(14),
                           border: Border.all(color: MyColors.darkBlue)),

@@ -99,8 +99,8 @@ class DoctorSignUpScreen extends StatelessWidget {
                   height: 15.h,
                 ),
                 const SmallTextField(
-                  hintText: 'Qualification',
                   obscureText: false,
+                  hintText: 'Qualification',
                   textType: TextInputType.text,
                 ),
                 SizedBox(

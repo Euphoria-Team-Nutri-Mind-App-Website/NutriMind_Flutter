@@ -1,5 +1,4 @@
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nutri_mind_application/shared/Constants/colors.dart';
@@ -58,7 +57,7 @@ class Doctor_PatientInfo extends StatelessWidget {
             separatorBuilder: (BuildContext context, int index) =>
                 SizedBox(height: 1.h),
           ),
-          fallback: (context) => Center(child: CircularProgressIndicator()),
+          fallback: (context) => const Center(child: CircularProgressIndicator()),
         ),
         bottomNavigationBar: BottomAppBar(
           color: Colors.transparent,

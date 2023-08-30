@@ -31,9 +31,22 @@ class _PatientBookAppointmentState extends State<PatientBookAppointment> {
             )
           ],
         ),
+        actionIcon: [
+          Padding(
+              padding: EdgeInsets.only(right: 25.sp),
+              child: Icon(
+                Icons.menu,
+                color: MyColors.black,
+                size: 25.sp,
+              ))
+        ],
       ),
-      body: Column(
-        children: [],
+      body: const Column(
+        children: [
+          Row(
+            children: [Text("Aug, 2023"), Icon(Icons.arrow_downward_rounded)],
+          )
+        ],
       ),
     );
   }

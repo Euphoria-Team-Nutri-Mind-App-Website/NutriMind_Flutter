@@ -53,26 +53,30 @@ class _DoctorListForPatientScreenState
                 obscureText: true,
                 textType: TextInputType.text,
               ),
-               SizedBox(height: 20.sp,),
-               Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      "All Doctors",
-                      style: TextStyle(
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w600,
-                          fontSize: 15.sp),
-                    ),
-                  ],
-                ),
-              SizedBox(height: 5.sp,),
+              SizedBox(
+                height: 20.sp,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    "All Doctors",
+                    style: TextStyle(
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w600,
+                        fontSize: 15.sp),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 5.sp,
+              ),
               Expanded(
                 child: ListView.builder(
                   itemCount: 10,
                   scrollDirection: Axis.vertical,
-                  itemBuilder: (context, index) =>  Padding(
-                    padding: EdgeInsets.only(top : 18.sp),
+                  itemBuilder: (context, index) => Padding(
+                    padding: EdgeInsets.only(top: 18.sp),
                     child: const DoctorWidgetForPatientScreen(),
                   ),
                 ),

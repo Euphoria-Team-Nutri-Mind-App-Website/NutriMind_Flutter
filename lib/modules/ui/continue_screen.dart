@@ -58,7 +58,7 @@ class ContinueScreen extends StatelessWidget {
                         children: [
                           const Image(
                               image:
-                              AssetImage("assets/images/patienticon.png")),
+                                  AssetImage("assets/images/patienticon.png")),
                           SizedBox(
                             height: 15.h,
                           ),
@@ -73,7 +73,9 @@ class ContinueScreen extends StatelessWidget {
                     ),
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(context, 'RegistrationDoctorScreen');
+                    },
                     child: Container(
                       padding: EdgeInsets.only(
                           left: 30.sp, right: 30.sp, top: 15.sp, bottom: 15.sp),
@@ -85,7 +87,7 @@ class ContinueScreen extends StatelessWidget {
                         children: [
                           const Image(
                               image:
-                              AssetImage("assets/images/doctoricon.png")),
+                                  AssetImage("assets/images/doctoricon.png")),
                           SizedBox(
                             height: 15.h,
                           ),

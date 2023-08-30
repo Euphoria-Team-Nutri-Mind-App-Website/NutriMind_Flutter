@@ -5,7 +5,6 @@ import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
 import '../../../../shared/widgets/tall_weight_screens_widgets.dart';
 
-
 class PatientSetWeightScreen extends StatelessWidget {
   const PatientSetWeightScreen({Key? key}) : super(key: key);
 
@@ -34,7 +33,7 @@ class PatientSetWeightScreen extends StatelessWidget {
             padding: EdgeInsets.only(left: 25.sp, right: 25.sp, top: 50.sp),
             color: MyColors.white,
             child: Column(
-              crossAxisAlignment:CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   'Please Enter you weight !',
@@ -44,16 +43,22 @@ class PatientSetWeightScreen extends StatelessWidget {
                       fontFamily: 'Inter',
                       fontSize: 15.sp),
                 ),
-                SizedBox(height: 60.sp,),
+                SizedBox(
+                  height: 60.sp,
+                ),
                 const IntegerExample(),
-                SizedBox(height: 130.sp,),
-                const MyBlueButton(text: 'Continue',page: 'PatientHomeScreen',)
+                SizedBox(
+                  height: 130.sp,
+                ),
+                const MyBlueButton(
+                  text: 'Continue',
+                  page: 'PatientNavBarScreen',
+                )
               ],
             ),
           ),
         ),
       ),
-
     );
   }
 }

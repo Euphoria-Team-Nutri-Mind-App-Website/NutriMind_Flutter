@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nutri_mind_application/modules/ui/Patient_screens/patient_home_screen/patient_home_services-bar.dart';
+import 'package:nutri_mind_application/modules/ui/Patient_screens/patient_home_screen/patient_home_services.dart';
 
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
 
-class PatientHomeScreen extends StatefulWidget {
-  const PatientHomeScreen({Key? key}) : super(key: key);
+class PatientNavBarScreen extends StatefulWidget {
+  const PatientNavBarScreen({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
-    return PatientHomeScreenState();
+    return PatientNavBarScreenState();
   }
 }
 
-class PatientHomeScreenState extends State<PatientHomeScreen> {
+class PatientNavBarScreenState extends State<PatientNavBarScreen> {
   int _currentIndex = 0;
   bool click = true;
 
   List<Widget> widgetList = [
-    const HomeBarScreen(),
+    const PatientHomeServicesScreen(),
     const Text('Chat'),
     const Text('Heart'),
     const Text('Person'),
@@ -42,8 +42,13 @@ class PatientHomeScreenState extends State<PatientHomeScreen> {
           Padding(
             padding: EdgeInsets.only(right: 25.sp),
             child: InkWell(
-              onTap: () { Navigator.pushNamed(context, 'PatientNotificationsScreen');},
-              child: Image(image: const AssetImage("assets/images/bell.png"),height: 20.h,),
+              onTap: () {
+                Navigator.pushNamed(context, 'PatientNotificationsScreen');
+              },
+              child: Image(
+                image: const AssetImage("assets/images/bell.png"),
+                height: 20.h,
+              ),
             ),
           )
         ],
@@ -64,8 +69,8 @@ class PatientHomeScreenState extends State<PatientHomeScreen> {
             label: 'Chats',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.heart_broken),
-            label: 'Favourite',
+            icon: Icon(Icons.add),
+            label: 'Puzzle',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),

@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
 import '../../../blocs/auth_cubit/auth_cubit.dart';
-import '../patient_home_screen/patient_home_screen.dart';
+import '../patient_home_screen/patient_nav_bar.dart';
 
 class PatientSignUpScreen extends StatelessWidget {
   final nameController = TextEditingController();
@@ -22,18 +22,20 @@ class PatientSignUpScreen extends StatelessWidget {
       child: BlocConsumer<AuthCubit, AuthState>(
         listener: (context, state) {
           if (state is RegisterSuccessState) {
-            Navigator.pushReplacement(context,
-                MaterialPageRoute(builder: (context) => const PatientHomeScreen()));
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const PatientNavBarScreen()));
           } else if (state is RegisterFailedState) {
             showDialog(
                 context: context,
                 builder: (context) => AlertDialog(
-                  content: Text(
-                    state.message,
-                    style: const TextStyle(color:MyColors.white),
-                  ),
-                  backgroundColor: MyColors.darkBlue,
-                ));
+                      content: Text(
+                        state.message,
+                        style: const TextStyle(color: MyColors.white),
+                      ),
+                      backgroundColor: MyColors.darkBlue,
+                    ));
           }
         },
         builder: (context, state) {
@@ -42,7 +44,8 @@ class PatientSignUpScreen extends StatelessWidget {
             body: SingleChildScrollView(
               child: SafeArea(
                 child: Container(
-                  padding: EdgeInsets.only(left:25.sp,right: 25.sp,bottom: 25.sp),
+                  padding:
+                      EdgeInsets.only(left: 25.sp, right: 25.sp, bottom: 25.sp),
                   color: MyColors.white,
                   child: Form(
                     key: formKey,
@@ -117,7 +120,7 @@ class PatientSignUpScreen extends StatelessWidget {
                                   email: emailController.text,
                                   password: passwordController.text,
                                   confirmPassword:
-                                  confirmPasswordController.text);
+                                      confirmPasswordController.text);
                             }
                             Navigator.pushNamed(context, 'HomeScreen');
                           },
@@ -149,9 +152,9 @@ class PatientSignUpScreen extends StatelessWidget {
                           children: [
                             const Expanded(
                                 child: Divider(
-                                  thickness: 1,
-                                  color: MyColors.grey,
-                                )),
+                              thickness: 1,
+                              color: MyColors.grey,
+                            )),
                             SizedBox(
                               width: 15.w,
                             ),
@@ -168,9 +171,9 @@ class PatientSignUpScreen extends StatelessWidget {
                             ),
                             const Expanded(
                                 child: Divider(
-                                  thickness: 1,
-                                  color: MyColors.grey,
-                                )),
+                              thickness: 1,
+                              color: MyColors.grey,
+                            )),
                           ],
                         ),
                         SizedBox(

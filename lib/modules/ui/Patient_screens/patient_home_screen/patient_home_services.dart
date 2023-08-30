@@ -2,16 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
-import '../../doctors_screen/doctor_widget.dart';
+import 'doctor_widget_for_patient.dart';
 
-class HomeBarScreen extends StatefulWidget {
-  const HomeBarScreen({Key? key}) : super(key: key);
+class PatientHomeServicesScreen extends StatefulWidget {
+  const PatientHomeServicesScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomeBarScreen> createState() => _HomeBarScreenState();
+  State<PatientHomeServicesScreen> createState() =>
+      _PatientHomeServicesScreenState();
 }
 
-class _HomeBarScreenState extends State<HomeBarScreen> {
+class _PatientHomeServicesScreenState extends State<PatientHomeServicesScreen> {
   List allServices = [
     {
       "icon": Icons.chat,
@@ -133,16 +134,22 @@ class _HomeBarScreenState extends State<HomeBarScreen> {
               children: [
                 Text(
                   "Top doctors",
-                  style:
-                  TextStyle(fontFamily: 'Inter', fontWeight: FontWeight.w600,fontSize:15.sp),
+                  style: TextStyle(
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w600,
+                      fontSize: 15.sp),
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, 'DoctorsScreen');
+                    Navigator.pushNamed(context, 'DoctorListForPatientScreen');
                   },
                   child: Text(
                     "See all",
-                    style: TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.w500,fontSize:12.sp,color: MyColors.grey),
+                    style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.w500,
+                        fontSize: 12.sp,
+                        color: MyColors.grey),
                   ),
                 )
               ],
@@ -150,7 +157,13 @@ class _HomeBarScreenState extends State<HomeBarScreen> {
             SizedBox(
               height: 17.sp,
             ),
-            const SingleChildScrollView(child: DoctorWidget()),
+            const Column(
+              children: [
+                DoctorWidgetForPatientScreen(),
+                SizedBox(height: 18),
+                DoctorWidgetForPatientScreen(),
+              ],
+            )
           ],
         ),
       ),

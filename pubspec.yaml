@@ -27,7 +27,7 @@ dependencies:
   dio: ^5.3.2
   shared_preferences: ^2.2.1
   conditional_builder_null_safety: ^0.0.6
-
+  flutter_rating_bar: ^4.0.1
 
 dev_dependencies:
   flutter_test:
@@ -48,3 +48,6 @@ flutter:
         - asset: assets/fonts/Inter-Bold.ttf
         - asset: assets/fonts/Inter-Regular.ttf
         - asset: assets/fonts/Inter-SemiBold.ttf
+    - family: RacingSansOne
+      fonts:
+        - asset: assets/fonts/RacingSansOne-Regular.ttf

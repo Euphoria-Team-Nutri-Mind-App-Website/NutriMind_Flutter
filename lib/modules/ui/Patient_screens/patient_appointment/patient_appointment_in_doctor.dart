@@ -23,21 +23,14 @@ class _PatientAppointmentInDoctorState
         pageTitle: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              "Patient Info",
-              style: TextStyle(
-                  color: MyColors.black,
-                  fontFamily: 'Inter',
-                  fontWeight: FontWeight.w600,
-                  fontSize: 18.sp),
-            )
+            Image(image: const AssetImage('assets/images/Appointment.png',),width: 120.w,)
           ],
         ),
         actionIcon: [
           Padding(
               padding: EdgeInsets.only(right: 25.sp),
               child: Icon(
-                Icons.menu,
+                Icons.list,
                 color: MyColors.black,
                 size: 25.sp,
               ))
@@ -45,13 +38,13 @@ class _PatientAppointmentInDoctorState
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(18.sp),
+          padding: EdgeInsets.all(25.sp),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                  height: 247.h,
-                  width: 380.w,
+                  height: 200.h,
+                  width: double.infinity,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12.sp),
                     boxShadow: const [
@@ -68,36 +61,38 @@ class _PatientAppointmentInDoctorState
                     ],
                   ),
                   child: Image.asset("assets/images/doctor2.png")),
-              SizedBox(height: 8.sp),
+              SizedBox(height: 15.sp),
               Row(
                 children: [
                   Text(
                     "Dr.john smith",
                     style: TextStyle(
                         fontWeight: FontWeight.w600,
-                        fontSize: 16.sp,
-                        fontFamily: 'Inter'),
+                        fontSize: 17.sp,
+                        fontFamily: 'Poppins'),
                   ),
-                  SizedBox(width: 44.w),
-                  //Spacer(),
-                  const Row(
+                  const Spacer(),
+                   Row(
                     children: [
-                      Icon(
+                       Icon(
                         Icons.chat,
+                        size: 25.sp,
                         color: MyColors.darkBlue,
                       ),
-                      SizedBox(width: 5),
-                      Text("4.6"),
-                      Icon(
+                      SizedBox(width:30.w),
+                       Text("4.6",style:TextStyle(fontWeight:FontWeight.w600,fontFamily: 'Poppins',fontSize: 15.sp),),
+                      SizedBox(width: 5.w,),
+                       Icon(
                         Icons.star,
-                        color: Colors.yellow,
+                        size: 25.sp,
+                        color:MyColors.yellow,
                       )
                     ],
                   ),
                 ],
               ),
               Padding(
-                padding: EdgeInsets.all(18.sp),
+                padding: EdgeInsets.all(15.sp),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -108,11 +103,11 @@ class _PatientAppointmentInDoctorState
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16.sp,
-                              fontFamily: 'Inter'),
+                              fontFamily: 'Poppins'),
                         ),
-                        const Text(
+                         Text(
                           "5.00\$",
-                          style: TextStyle(fontFamily: "Poppins"),
+                          style: TextStyle(fontFamily: "Poppins",color: MyColors.grey,fontWeight: FontWeight.w700,fontSize: 15.sp),
                         ),
                       ],
                     ),
@@ -122,11 +117,11 @@ class _PatientAppointmentInDoctorState
                       style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 16.sp,
-                          fontFamily: 'Inter'),
+                          fontFamily: 'Poppins'),
                     ),
-                    const Text(
+                     Text(
                       "5 years",
-                      style: TextStyle(fontFamily: "Poppins"),
+                      style: TextStyle(fontFamily: "Poppins",color: MyColors.grey,fontWeight: FontWeight.w500,fontSize: 15.sp),
                     ),
                     SizedBox(height: 10.h),
                     Text(
@@ -134,14 +129,14 @@ class _PatientAppointmentInDoctorState
                       style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 16.sp,
-                          fontFamily: 'Inter'),
+                          fontFamily: 'Poppins'),
                     ),
-                    const Text(
+                     Text(
                       "Education at the University of Northern Iowa. "
                       "He received his PhD in Educational Policy"
                       "Studies from the University of"
                       "Wisconsin-Madison in 1971.",
-                      style: TextStyle(fontFamily: "Poppins"),
+                      style: TextStyle(fontFamily: "Poppins",color: MyColors.grey,fontWeight: FontWeight.w500,fontSize: 13.sp),
                     ),
                     SizedBox(height: 10.h),
                     Text(
@@ -149,45 +144,45 @@ class _PatientAppointmentInDoctorState
                       style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 16.sp,
-                          fontFamily: 'Inter'),
+                          fontFamily: 'Poppins'),
                     ),
-                    const Text(
+                     Text(
                       "From  9:00 am  to  2:00 pm everyday",
-                      style: TextStyle(fontFamily: "Poppins"),
+                      style: TextStyle(fontFamily: "Poppins",color: MyColors.grey,fontWeight: FontWeight.w500,fontSize: 13.sp),
                     ),
-                    SizedBox(height: 10.h),
-                    InkWell(
-                      onTap: () {
-                        Navigator.pushNamed(context, 'PatientReviewScreen');
-                      },
-                      child: Container(
-                        width: double.infinity,
-                        height: 60.h,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: MyColors.darkBlue),
-                          color: MyColors.white,
-                          borderRadius: BorderRadius.circular(10.r),
-                        ),
-                        child: Center(
-                          child: Text(
-                            "Patient review",
-                            style: TextStyle(
-                              fontFamily: 'Poppins',
-                              fontSize: 20.sp,
-                              fontWeight: FontWeight.w600,
-                              color: MyColors.darkBlue,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 12),
-                    const MyBlueButton(
-                        text: "Book an appointment",
-                        page: 'PatientBookAppointment'),
+
                   ],
                 ),
               ),
+              InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, 'PatientReviewScreen');
+                },
+                child: Container(
+                  width: double.infinity,
+                  height: 50.h,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: MyColors.darkBlue),
+                    color: MyColors.white,
+                    borderRadius: BorderRadius.circular(10.r),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "Patient review",
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 17.sp,
+                        fontWeight: FontWeight.w600,
+                        color: MyColors.darkBlue,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 12),
+              const MyBlueButton(
+                  text: "Book an appointment",
+                  page: 'PatientBookAppointment'),
             ],
           ),
         ),

@@ -5,18 +5,27 @@ class Assets {
   static const String fontsInterBold = 'assets/fonts/Inter-Bold.ttf';
   static const String fontsInterRegular = 'assets/fonts/Inter-Regular.ttf';
   static const String fontsInterSemiBold = 'assets/fonts/Inter-SemiBold.ttf';
+  static const String fontsRacingSansOneRegular = 'assets/fonts/RacingSansOne-Regular.ttf';
   static const String imagesApple = 'assets/images/apple.png';
+  static const String imagesAppointment = 'assets/images/Appointment.png';
+  static const String imagesBad = 'assets/images/bad.png';
   static const String imagesBell = 'assets/images/bell.png';
   static const String imagesDoctor = 'assets/images/doctor.png';
+  static const String imagesDoctor2 = 'assets/images/doctor2.png';
   static const String imagesDoctoricon = 'assets/images/doctoricon.png';
+  static const String imagesExcellent = 'assets/images/excellent.png';
   static const String imagesFace = 'assets/images/face.png';
+  static const String imagesGood = 'assets/images/good.png';
   static const String imagesGoogle = 'assets/images/google.png';
+  static const String imagesHi = 'assets/images/hi.png';
   static const String imagesInterface = 'assets/images/interface.png';
   static const String imagesLogo = 'assets/images/logo.png';
+  static const String imagesNice = 'assets/images/nice.png';
   static const String imagesPatienticon = 'assets/images/patienticon.png';
   static const String imagesRegistration = 'assets/images/Registration.png';
   static const String imagesSplashIcon = 'assets/images/SplashIcon.png';
   static const String imagesTrue = 'assets/images/true.png';
   static const String imagesUser1 = 'assets/images/user1.png';
+  static const String imagesVerygood = 'assets/images/verygood.png';
 
 }

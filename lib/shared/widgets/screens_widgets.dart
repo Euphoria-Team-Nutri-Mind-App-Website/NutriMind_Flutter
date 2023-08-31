@@ -64,7 +64,7 @@ class MyBlueButton extends StatelessWidget {
       },
       child: Container(
         width: double.infinity,
-        height: 60.h,
+        height: 55.h,
         decoration: BoxDecoration(
           color: MyColors.darkBlue,
           borderRadius: BorderRadius.circular(10.r),
@@ -216,4 +216,5 @@ class SmallTextField extends StatelessWidget {
     );
   }
 }
+
 

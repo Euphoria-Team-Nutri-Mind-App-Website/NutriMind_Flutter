@@ -43,34 +43,25 @@ class MyApp extends StatelessWidget {
               'ContinueScreen': (context) => const ContinueScreen(),
               'PatientLoginScreen': (context) => const PatientLoginScreen(),
               'PatientSignUpScreen': (context) => PatientSignUpScreen(),
-              'PatientForgetPassword': (context) =>
-                  const PatientForgetPassword(),
-              'PatientVerificationScreen': (context) =>
-                  const PatientVerificationScreen(),
-              'PatientCreatePasswordScreen': (context) =>
-                  const PatientCreatePasswordScreen(),
+              'PatientForgetPassword': (context) => const PatientForgetPassword(),
+              'PatientVerificationScreen': (context) => const PatientVerificationScreen(),
+              'PatientCreatePasswordScreen': (context) => const PatientCreatePasswordScreen(),
               'PatientSetTallScreen': (context) => const PatientSetTallScreen(),
-              'PatientSetWeightScreen': (context) =>
-                  const PatientSetWeightScreen(),
+              'PatientSetWeightScreen': (context) => const PatientSetWeightScreen(),
               'PatientNavBarScreen': (context) => const PatientNavBarScreen(),
-              'PatientNotificationsScreen': (context) =>
-                  const PatientNotificationsScreen(),
-              'DoctorListForPatientScreen': (context) =>
-                  const DoctorListForPatientScreen(),
+              'PatientNotificationsScreen': (context) => const PatientNotificationsScreen(),
+              'PatientAppointmentInDoctor': (context) => const PatientAppointmentInDoctor(),
+              'PatientBookAppointment': (context) => const PatientBookAppointment(),
+              'PatientReviewScreen': (context) =>  const PatientReviewScreen(),
+              'DoctorListForPatientScreen': (context) => const DoctorListForPatientScreen(),
               'DoctorLoginScreen': (context) => const DoctorLoginScreen(),
               'DoctorSignUpScreen': (context) => const DoctorSignUpScreen(),
               'DoctorForgetPassword': (context) => const DoctorForgetPassword(),
-              'DoctorVerificationScreen': (context) =>
-                  const DoctorVerificationScreen(),
-              'DoctorCreatePasswordScreen': (context) =>
-                  const DoctorCreatePasswordScreen(),
+              'DoctorVerificationScreen': (context) => const DoctorVerificationScreen(),
+              'DoctorCreatePasswordScreen': (context) => const DoctorCreatePasswordScreen(),
               'DoctorScheduleScreen': (context) => const DoctorScheduleScreen(),
               'Doctor_PatientInfo': (context) => const Doctor_PatientInfo(),
-              'PatientAppointmentInDoctor': (context) =>
-                  const PatientAppointmentInDoctor(),
-              'PatientBookAppointment': (context) =>
-                  const PatientBookAppointment(),
-              'PatientReviewScreen': (context) => const PatientReviewScreen()
+
             },
           );
         });

@@ -193,7 +193,7 @@ class SmallTextField extends StatelessWidget {
     this.controller,
     this.suffixIcon,
     this.prefixIcon,
-    required this.textType,
+    this.textType,
   });
 
   @override
@@ -203,21 +203,18 @@ class SmallTextField extends StatelessWidget {
       controller: controller,
       obscureText: obscureText,
       decoration: InputDecoration(
-        enabledBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: MyColors.darkBlue),
-            borderRadius: BorderRadius.circular(17.r)),
-        focusedBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: MyColors.grey),
-            borderRadius: BorderRadius.circular(17.r)),
-        fillColor: MyColors.lightGrey,
-        filled: true,
-        hintText: hintText,
-        hintStyle: const TextStyle(color: MyColors.grey),
-        suffixIcon: suffixIcon,
-        prefixIcon: prefixIcon
-      ),
+          enabledBorder: OutlineInputBorder(
+              borderSide: const BorderSide(color: MyColors.darkBlue),
+              borderRadius: BorderRadius.circular(17.r)),
+          focusedBorder: OutlineInputBorder(
+              borderSide: const BorderSide(color: MyColors.grey),
+              borderRadius: BorderRadius.circular(17.r)),
+          fillColor: MyColors.lightGrey,
+          filled: true,
+          hintText: hintText,
+          hintStyle: const TextStyle(color: MyColors.grey),
+          suffixIcon: suffixIcon,
+          prefixIcon: prefixIcon),
     );
   }
 }
-
-

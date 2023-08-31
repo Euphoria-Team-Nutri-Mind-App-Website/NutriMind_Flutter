@@ -146,7 +146,7 @@ class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
         child: const MyTextGroup(
             staticText: "Don’t have an account?",
             dynamicText: " Sign up",
-            page: 'PatientSignUpScreen'),
+            page: 'DoctorSignUpScreen'),
       ),
     );
   }

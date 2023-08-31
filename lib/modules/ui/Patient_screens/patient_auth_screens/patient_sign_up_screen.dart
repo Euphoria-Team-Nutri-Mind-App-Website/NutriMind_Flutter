@@ -205,7 +205,7 @@ class PatientSignUpScreen extends StatelessWidget {
               color: Colors.transparent,
               elevation: 0.sp,
               child: const MyTextGroup(
-                  staticText: "Don’t have an account?",
+                  staticText: "Already have an account?",
                   dynamicText: " Log in",
                   page: 'PatientLoginScreen'),
             ),

@@ -181,6 +181,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
 class SmallTextField extends StatelessWidget {
   final controller;
   final suffixIcon;
+  final prefixIcon;
   final textType;
   final String hintText;
   final bool obscureText;
@@ -191,6 +192,7 @@ class SmallTextField extends StatelessWidget {
     required this.obscureText,
     this.controller,
     this.suffixIcon,
+    this.prefixIcon,
     required this.textType,
   });
 
@@ -212,6 +214,7 @@ class SmallTextField extends StatelessWidget {
         hintText: hintText,
         hintStyle: const TextStyle(color: MyColors.grey),
         suffixIcon: suffixIcon,
+        prefixIcon: prefixIcon
       ),
     );
   }

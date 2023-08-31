@@ -90,6 +90,15 @@ class DoctorSignUpScreen extends StatelessWidget {
                 SizedBox(
                   height: 15.h,
                 ),
+                SmallTextField(
+                  prefixIcon:Image(image: const AssetImage('assets/images/vecteezy.png',),height: 2.h,),
+                  hintText: 'Credit number',
+                  obscureText: false,
+                  textType: TextInputType.phone,
+                ),
+                SizedBox(
+                  height: 15.h,
+                ),
                 const SmallTextField(
                   hintText: 'Gender',
                   obscureText: false,
@@ -107,6 +116,13 @@ class DoctorSignUpScreen extends StatelessWidget {
                   height: 28.h,
                 ),
                 const MyBlueButton(text: "Register", page: 'DoctorScheduleScreen'),
+                SizedBox(
+                  height: 28.h,
+                ),
+                const MyTextGroup(
+                    staticText: "Already have an account?",
+                    dynamicText: " Log in",
+                    page: 'DoctorLoginScreen'),
               ],
             ),
           ),

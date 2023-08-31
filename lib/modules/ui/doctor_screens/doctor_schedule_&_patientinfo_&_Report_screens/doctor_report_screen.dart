@@ -120,12 +120,11 @@ class DoctorReport extends StatelessWidget {
                     fontSize: 13.sp),
               ),
               SizedBox(height: 60.h),
-              const MyBlueButton(text: "Done", page: 'Doctor_PatientInfo'),
+              const MyBlueButton(text: "Done", page: 'DoctorScheduleScreen'),
             ],
           ),
         ),
       ),
-
     );
   }
 }

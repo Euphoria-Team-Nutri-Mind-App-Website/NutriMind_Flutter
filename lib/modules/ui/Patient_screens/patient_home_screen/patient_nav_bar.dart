@@ -4,6 +4,9 @@ import 'package:nutri_mind_application/modules/ui/Patient_screens/patient_home_s
 
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
+import '../../chats_screen/chat_screen/chat_screen.dart';
+import '../patient_profile/patient_profile.dart';
+import '../puzzle_screens/puzzle_screen.dart';
 
 class PatientNavBarScreen extends StatefulWidget {
   const PatientNavBarScreen({Key? key}) : super(key: key);
@@ -20,39 +23,13 @@ class PatientNavBarScreenState extends State<PatientNavBarScreen> {
 
   List<Widget> widgetList = [
     const PatientHomeServicesScreen(),
-    const Text('Chat'),
-    const Text('Heart'),
-    const Text('Person'),
+    const ChatScreen(),
+    const PuzzleScreen(),
+    const PatientProfile(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(
-        backPage: 'PatientSetWeightScreen',
-        pageTitle: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Image(
-              image: const AssetImage('assets/images/logo.png'),
-              width: 110.w,
-            )
-          ],
-        ),
-        actionIcon: [
-          Padding(
-            padding: EdgeInsets.only(right: 25.sp),
-            child: InkWell(
-              onTap: () {
-                Navigator.pushNamed(context, 'PatientNotificationsScreen');
-              },
-              child: Image(
-                image: const AssetImage("assets/images/bell.png"),
-                height: 20.h,
-              ),
-            ),
-          )
-        ],
-      ),
       body: widgetList[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         elevation: 5.sp,
@@ -69,7 +46,7 @@ class PatientNavBarScreenState extends State<PatientNavBarScreen> {
             label: 'Chats',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.add),
+            icon: Icon(Icons.align_vertical_center),
             label: 'Puzzle',
           ),
           BottomNavigationBarItem(

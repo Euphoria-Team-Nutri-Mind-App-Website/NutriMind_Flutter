@@ -86,7 +86,7 @@ class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
                 const InkWell(
                   child: MyBlueButton(
                     text: "Log IN",
-                    page: 'DoctorScheduleScreen',
+                    page: 'DoctorProfile',
                   ),
                 ),
                 SizedBox(

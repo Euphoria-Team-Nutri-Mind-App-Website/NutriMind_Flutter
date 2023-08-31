@@ -5,14 +5,14 @@ import 'package:nutri_mind_application/shared/widgets/screens_widgets.dart';
 
 import '../../../../shared/Constants/colors.dart';
 
-class DoctorProfile extends StatelessWidget {
-  const DoctorProfile({Key? key}) : super(key: key);
+class PatientProfile extends StatelessWidget {
+  const PatientProfile({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppBar(
-        backPage: 'DoctorLoginScreen',
+        backPage: 'PatientNavBarScreen',
         pageTitle: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -63,7 +63,7 @@ class DoctorProfile extends StatelessWidget {
                       child: CircleAvatar(
                         backgroundColor: MyColors.white,
                         radius: 40.r,
-                        child: Image.asset('assets/images/doctor2.png'),
+                        child: Image.asset("assets/images/user1.png"),
                       ),
                     ),
                     SizedBox(
@@ -111,7 +111,7 @@ class DoctorProfile extends StatelessWidget {
                                 width: 5.w,
                               ),
                               Text(
-                                'Drjohn_23@gmail.com',
+                                'ahmed_23@gmail.com',
                                 style: TextStyle(
                                     fontFamily: 'Inter',
                                     color: MyColors.grey,
@@ -145,7 +145,7 @@ class DoctorProfile extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 18.0, bottom: 18.0),
                 child: Text(
-                  "Date of birth",
+                  "Gender",
                   style: TextStyle(
                       color: MyColors.black,
                       fontFamily: 'Poppins',
@@ -155,21 +155,44 @@ class DoctorProfile extends StatelessWidget {
               ),
               SizedBox(height: 6.h),
               const SmallTextField(
-                hintText: '22\6\1879',
+                hintText: 'Male',
                 obscureText: false,
               ),
               SizedBox(height: 6.h),
               Padding(
                 padding: const EdgeInsets.only(top: 18.0, bottom: 18.0),
                 child: SmallTextField(
-                    hintText: 'My schedule',
+                    hintText: 'Payment',
                     obscureText: false,
                     suffixIcon: InkWell(
                         onTap: () {
-                          Navigator.pushNamed(context, 'DoctorScheduleScreen');
+                          Navigator.pushNamed(context, 'ChoosePaymentScreen');
                         },
                         child: const Icon(Icons.arrow_forward_ios)),
                     prefixIcon: const Icon(Icons.calendar_month)),
+              ),
+              SizedBox(height: 6.h),
+              SmallTextField(
+                  hintText: 'Document',
+                  obscureText: false,
+                  suffixIcon: InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(context, 'DoctorReport');
+                      },
+                      child: Icon(Icons.arrow_forward_ios)),
+                  prefixIcon: Icon(Icons.document_scanner_outlined)),
+              SizedBox(height: 6.h),
+              Padding(
+                padding: const EdgeInsets.only(top: 18.0, bottom: 18.0),
+                child: SmallTextField(
+                    hintText: 'Setting',
+                    obscureText: false,
+                    suffixIcon: InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, 'PatientSettingScreen');
+                        },
+                        child: const Icon(Icons.arrow_forward_ios)),
+                    prefixIcon: const Icon(Icons.settings)),
               ),
               SizedBox(height: 6.h),
               SmallTextField(

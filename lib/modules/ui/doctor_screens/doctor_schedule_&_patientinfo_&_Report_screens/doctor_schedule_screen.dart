@@ -13,7 +13,7 @@ class DoctorScheduleScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: MyAppBar(
-          backPage: 'DoctorLoginScreen',
+          backPage: 'DoctorProfile',
           pageTitle: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -31,13 +31,16 @@ class DoctorScheduleScreen extends StatelessWidget {
             Padding(
                 padding: EdgeInsets.only(right: 25.sp),
                 child: InkWell(
-                  onTap:(){
+                  onTap: () {
                     Navigator.pushNamed(context, 'DoctorProfile');
                   },
                   child: CircleAvatar(
-                    radius:13.r,
-                    backgroundColor:MyColors.darkBlue,
-                    child: Image.asset('assets/images/doctor.png',width:23.w,),
+                    radius: 13.r,
+                    backgroundColor: MyColors.darkBlue,
+                    child: Image.asset(
+                      'assets/images/doctor.png',
+                      width: 23.w,
+                    ),
                   ),
                 ))
           ],

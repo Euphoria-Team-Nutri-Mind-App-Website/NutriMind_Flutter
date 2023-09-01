@@ -28,7 +28,7 @@ class _PatientHomeServicesScreenState extends State<PatientHomeServicesScreen> {
     {
       "icon": Icons.email,
       "name": "Motivzone",
-      "rout": "MotivzoneScreen",
+      "rout": "PatientMotivzoneScreen",
     },
     {
       "icon": Icons.library_books_outlined,

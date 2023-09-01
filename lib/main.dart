@@ -80,7 +80,7 @@ class MyApp extends StatelessWidget {
               'PuzzleScreen': (context) => const PuzzleScreen(),
               'PatientProfile': (context) => const PatientProfile(),
               'PatientSettingScreen': (context) => const PatientSettingScreen(),
-              'MotivzoneScreen': (context) => const MotivzoneScreen(),
+              'PatientMotivzoneScreen': (context) => const PatientMotivzoneScreen(),
               'PatientNotesScreen': (context) => const PatientNotesScreen(),
               'PatientQuestionScreen': (context) =>
                   const PatientQuestionScreen(),

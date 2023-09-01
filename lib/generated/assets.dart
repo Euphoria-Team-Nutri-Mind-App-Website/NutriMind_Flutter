@@ -22,13 +22,17 @@ class Assets {
   static const String imagesFace = 'assets/images/face.png';
   static const String imagesGood = 'assets/images/good.png';
   static const String imagesGoogle = 'assets/images/google.png';
+  static const String imagesHeart = 'assets/images/heart.png';
   static const String imagesHi = 'assets/images/hi.png';
   static const String imagesInterface = 'assets/images/interface.png';
   static const String imagesLogo = 'assets/images/logo.png';
+  static const String imagesMasterCard = 'assets/images/masterCard.png';
+  static const String imagesMoTivZone = 'assets/images/MoTivZone.png';
   static const String imagesNationalId = 'assets/images/nationalId.png';
   static const String imagesNice = 'assets/images/nice.png';
   static const String imagesPatienticon = 'assets/images/patienticon.png';
   static const String imagesPaypal = 'assets/images/paypal.png';
+  static const String imagesPaypal2 = 'assets/images/paypal2.png';
   static const String imagesRegistration = 'assets/images/Registration.png';
   static const String imagesSettings = 'assets/images/settings.png';
   static const String imagesSplashIcon = 'assets/images/SplashIcon.png';

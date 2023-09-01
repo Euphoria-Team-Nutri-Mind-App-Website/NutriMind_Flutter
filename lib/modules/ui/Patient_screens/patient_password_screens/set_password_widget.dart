@@ -1,4 +1,3 @@
-import 'dart:js';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -33,7 +32,7 @@ class SetPassword extends StatelessWidget {
             actions: [
               TextButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '${nextScreen}');
+                  Navigator.pushNamed(context, '$nextScreen');
                 },
                 child: Center(
                   child: Column(
@@ -83,9 +82,9 @@ class SetPassword extends StatelessWidget {
                   Center(child: Image.asset("assets/images/true.png")),
                   SizedBox(height: 17.h),
                   Text(
-                    "${yourText}",
+                    "$yourText",
                     style:
-                        TextStyle(color: MyColors.grey, fontFamily: 'Poppins'),
+                        const TextStyle(color: MyColors.grey, fontFamily: 'Poppins'),
                   ),
                   SizedBox(height: 10.h),
                   Text(

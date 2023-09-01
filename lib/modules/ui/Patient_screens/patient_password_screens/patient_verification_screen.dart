@@ -115,6 +115,7 @@ class _VerificationScreenState extends State<PatientVerificationScreen> {
         ),
       ),
         bottomNavigationBar: BottomAppBar(
+          height: 40.h,
           color: Colors.transparent,
           elevation: 0.sp,
           child: const MyTextGroup(

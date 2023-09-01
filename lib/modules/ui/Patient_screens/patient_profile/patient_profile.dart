@@ -1,9 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nutri_mind_application/shared/widgets/screens_widgets.dart';
-
 import '../../../../shared/Constants/colors.dart';
+import '../../../../shared/widgets/profile_widgets.dart';
 
 class PatientProfile extends StatelessWidget {
   const PatientProfile({Key? key}) : super(key: key);
@@ -28,7 +27,7 @@ class PatientProfile extends StatelessWidget {
         ),
         actionIcon: [
           Padding(
-              padding: EdgeInsets.only(right: 25.sp),
+              padding: EdgeInsets.only(right: 15.sp),
               child: Image.asset('assets/images/careLogo.png'))
         ],
       ),
@@ -57,27 +56,25 @@ class PatientProfile extends StatelessWidget {
                   ],
                 ),
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(18.0),
-                      child: CircleAvatar(
+                     CircleAvatar(
                         backgroundColor: MyColors.white,
-                        radius: 40.r,
+                        radius: 35.r,
                         child: Image.asset("assets/images/user1.png"),
                       ),
-                    ),
                     SizedBox(
-                      width: 10.w,
+                      width: 20.w,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
+                    Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "Dr. john smith",
+                            "Ahmed Mohamed",
                             style: TextStyle(
-                              fontWeight: FontWeight.w500,
+                              fontWeight: FontWeight.w600,
                               fontFamily: 'Poppins',
                               fontSize: 16.sp,
                             ),
@@ -122,12 +119,11 @@ class PatientProfile extends StatelessWidget {
                           ),
                         ],
                       ),
-                    )
                   ],
                 ),
               ),
               SizedBox(
-                height: 10.h,
+                height: 20.h,
               ),
               Text(
                 "National Id",
@@ -138,13 +134,9 @@ class PatientProfile extends StatelessWidget {
                     fontSize: 16.sp),
               ),
               SizedBox(height: 6.h),
-              const SmallTextField(
-                hintText: '374654021937',
-                obscureText: false,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 18.0, bottom: 18.0),
-                child: Text(
+              const ProfileContainer(text: "7654 7790 54533"),
+              SizedBox(height:13.h,),
+              Text(
                   "Gender",
                   style: TextStyle(
                       color: MyColors.black,
@@ -152,58 +144,28 @@ class PatientProfile extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                       fontSize: 16.sp),
                 ),
+              SizedBox(height: 6.h),
+              const ProfileContainer(text: "Male"),
+              SizedBox(height: 13.h),
+              InkWell(
+                onTap: (){Navigator.pushNamed(context,'PatientChoosePaymentScreen');},
+                child:ProfileButtons(icon:Icons.calendar_month,text:'Payment',)
               ),
-              SizedBox(height: 6.h),
-              const SmallTextField(
-                hintText: 'Male',
-                obscureText: false,
+              SizedBox(height: 13.h),
+              InkWell(
+                  onTap: (){ Navigator.pushNamed(context, 'DoctorReport');},
+                  child:ProfileButtons(icon:Icons.document_scanner_outlined,text:'Document',)
               ),
-              SizedBox(height: 6.h),
-              Padding(
-                padding: const EdgeInsets.only(top: 18.0, bottom: 18.0),
-                child: SmallTextField(
-                    hintText: 'Payment',
-                    obscureText: false,
-                    suffixIcon: InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(context, 'ChoosePaymentScreen');
-                        },
-                        child: const Icon(Icons.arrow_forward_ios)),
-                    prefixIcon: const Icon(Icons.calendar_month)),
+              SizedBox(height: 13.h),
+              InkWell(
+                  onTap: (){Navigator.pushNamed(context, 'PatientSettingScreen');},
+                  child:ProfileButtons(icon:Icons.settings,text:'Setting',)
               ),
-              SizedBox(height: 6.h),
-              SmallTextField(
-                  hintText: 'Document',
-                  obscureText: false,
-                  suffixIcon: InkWell(
-                      onTap: () {
-                        Navigator.pushNamed(context, 'DoctorReport');
-                      },
-                      child: Icon(Icons.arrow_forward_ios)),
-                  prefixIcon: Icon(Icons.document_scanner_outlined)),
-              SizedBox(height: 6.h),
-              Padding(
-                padding: const EdgeInsets.only(top: 18.0, bottom: 18.0),
-                child: SmallTextField(
-                    hintText: 'Setting',
-                    obscureText: false,
-                    suffixIcon: InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(context, 'PatientSettingScreen');
-                        },
-                        child: const Icon(Icons.arrow_forward_ios)),
-                    prefixIcon: const Icon(Icons.settings)),
+              SizedBox(height: 13.h),
+              InkWell(
+                  onTap: (){ Navigator.pushNamed(context, 'ContinueScreen');},
+                  child:ProfileButtons(icon:Icons.logout,text:'Log out',)
               ),
-              SizedBox(height: 6.h),
-              SmallTextField(
-                  hintText: 'Log out',
-                  obscureText: false,
-                  suffixIcon: InkWell(
-                      onTap: () {
-                        Navigator.pushNamed(context, 'InterfaceScreen');
-                      },
-                      child: Icon(Icons.arrow_forward_ios)),
-                  prefixIcon: Icon(Icons.logout)),
             ],
           ),
         ),

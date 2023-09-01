@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'modules/ui/Patient_screens/patient_appointment/choose_payment_screen.dart';
 import 'modules/ui/Patient_screens/patient_appointment/patient_book_appointment.dart';
+import 'modules/ui/Patient_screens/patient_appointment/patient_choose_payment_screen.dart';
 import 'modules/ui/Patient_screens/patient_appointment/patient_review_screen.dart';
 import 'modules/ui/Patient_screens/patient_auth_screens/patient_login_screen.dart';
 import 'modules/ui/Patient_screens/patient_auth_screens/patient_sign_up_screen.dart';
@@ -50,37 +50,27 @@ class MyApp extends StatelessWidget {
               'ContinueScreen': (context) => const ContinueScreen(),
               'PatientLoginScreen': (context) => const PatientLoginScreen(),
               'PatientSignUpScreen': (context) => PatientSignUpScreen(),
-              'PatientForgetPassword': (context) =>
-                  const PatientForgetPassword(),
-              'PatientVerificationScreen': (context) =>
-                  const PatientVerificationScreen(),
-              'PatientCreatePasswordScreen': (context) =>
-                  const PatientCreatePasswordScreen(),
+              'PatientForgetPassword': (context) => const PatientForgetPassword(),
+              'PatientVerificationScreen': (context) => const PatientVerificationScreen(),
+              'PatientCreatePasswordScreen': (context) => const PatientCreatePasswordScreen(),
               'PatientSetTallScreen': (context) => const PatientSetTallScreen(),
-              'PatientSetWeightScreen': (context) =>
-                  const PatientSetWeightScreen(),
+              'PatientSetWeightScreen': (context) => const PatientSetWeightScreen(),
               'PatientNavBarScreen': (context) => const PatientNavBarScreen(),
-              'PatientNotificationsScreen': (context) =>
-                  const PatientNotificationsScreen(),
-              'PatientAppointmentInDoctor': (context) =>
-                  const PatientAppointmentInDoctor(),
-              'PatientBookAppointment': (context) =>
-                  const PatientBookAppointment(),
+              'PatientNotificationsScreen': (context) => const PatientNotificationsScreen(),
+              'PatientAppointmentInDoctor': (context) => const PatientAppointmentInDoctor(),
+              'PatientBookAppointment': (context) => const PatientBookAppointment(),
               'PatientReviewScreen': (context) => const PatientReviewScreen(),
-              'DoctorListForPatientScreen': (context) =>
-                  const DoctorListForPatientScreen(),
+              'DoctorListForPatientScreen': (context) => const DoctorListForPatientScreen(),
               'DoctorLoginScreen': (context) => const DoctorLoginScreen(),
               'DoctorSignUpScreen': (context) => const DoctorSignUpScreen(),
               'DoctorForgetPassword': (context) => const DoctorForgetPassword(),
-              'DoctorVerificationScreen': (context) =>
-                  const DoctorVerificationScreen(),
-              'DoctorCreatePasswordScreen': (context) =>
-                  const DoctorCreatePasswordScreen(),
+              'DoctorVerificationScreen': (context) => const DoctorVerificationScreen(),
+              'DoctorCreatePasswordScreen': (context) => const DoctorCreatePasswordScreen(),
               'DoctorScheduleScreen': (context) => const DoctorScheduleScreen(),
               'Doctor_PatientInfo': (context) => const Doctor_PatientInfo(),
               'DoctorReport': (context) => const DoctorReport(),
               'DoctorProfile': (context) => const DoctorProfile(),
-              'ChoosePaymentScreen': (context) => const ChoosePaymentScreen(),
+              'PatientChoosePaymentScreen': (context) => const PatientChoosePaymentScreen(),
               'ChatScreen': (context) => const ChatScreen(),
               'PuzzleScreen': (context) => const PuzzleScreen(),
               'PatientProfile': (context) => const PatientProfile(),

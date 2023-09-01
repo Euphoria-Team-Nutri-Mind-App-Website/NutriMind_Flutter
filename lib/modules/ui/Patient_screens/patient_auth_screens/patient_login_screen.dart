@@ -67,7 +67,7 @@ class _PatientLoginScreenState extends State<PatientLoginScreen> {
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.pushNamed(context, 'DoctorForgetPassword');
+                        Navigator.pushNamed(context,'PatientForgetPassword');
                       },
                       child: Text(
                         "Forget Password?",
@@ -141,6 +141,7 @@ class _PatientLoginScreenState extends State<PatientLoginScreen> {
         ),
       ),
       bottomNavigationBar: BottomAppBar(
+        height: 40.h,
         color: Colors.transparent,
         elevation: 0.sp,
         child: const MyTextGroup(

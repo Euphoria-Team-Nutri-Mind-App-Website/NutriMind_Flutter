@@ -24,7 +24,7 @@ class PatientCreatePasswordScreen extends StatelessWidget {
                     height: 40.h,
                   ),
                   Text(
-                    "Create your new password to log in!",
+                    "Create password",
                     style: TextStyle(
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w600,
@@ -35,7 +35,7 @@ class PatientCreatePasswordScreen extends StatelessWidget {
                     height: 15.h,
                   ),
                   Text(
-                    "Please enter your email address!",
+                    "Create your new password to log in !",
                     style: TextStyle(
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w400,
@@ -80,6 +80,7 @@ class PatientCreatePasswordScreen extends StatelessWidget {
           ),
         ),
         bottomNavigationBar: BottomAppBar(
+          height: 40.h,
           color: Colors.transparent,
           elevation: 0.sp,
           child: const MyTextGroup(

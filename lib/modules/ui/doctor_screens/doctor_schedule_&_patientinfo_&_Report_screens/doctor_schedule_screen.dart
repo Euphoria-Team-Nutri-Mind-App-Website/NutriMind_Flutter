@@ -75,7 +75,7 @@ class DoctorScheduleScreen extends StatelessWidget {
                     child: const PatientWidgetForDoctorScreen(),
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ));

@@ -60,6 +60,7 @@ class PatientForgetPassword extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomAppBar(
+        height: 40.h,
           color: Colors.transparent,
           elevation: 0.sp,
           child: const MyTextGroup(

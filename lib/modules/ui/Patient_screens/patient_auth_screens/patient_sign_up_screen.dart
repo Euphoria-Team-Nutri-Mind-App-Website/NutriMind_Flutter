@@ -91,6 +91,30 @@ class PatientSignUpScreen extends StatelessWidget {
                           height: 18.h,
                         ),
                         MyTextField(
+                            controller: emailController,
+                            hintText: 'Age',
+                            obscureText: false,
+                            textType: TextInputType.emailAddress),
+                        SizedBox(
+                          height: 18.h,
+                        ),
+                        MyTextField(
+                            controller: emailController,
+                            hintText: 'Gender',
+                            obscureText: false,
+                            textType: TextInputType.emailAddress),
+                        SizedBox(
+                          height: 18.h,
+                        ),
+                        MyTextField(
+                            controller: emailController,
+                            hintText: 'National ID',
+                            obscureText: false,
+                            textType: TextInputType.emailAddress),
+                        SizedBox(
+                          height: 18.h,
+                        ),
+                        MyTextField(
                           controller: passwordController,
                           textType: TextInputType.number,
                           hintText: 'Password',
@@ -110,7 +134,7 @@ class PatientSignUpScreen extends StatelessWidget {
                               color: MyColors.grey),
                         ),
                         SizedBox(
-                          height: 35.h,
+                          height: 18.h,
                         ),
                         InkWell(
                           onTap: () {
@@ -188,28 +212,23 @@ class PatientSignUpScreen extends StatelessWidget {
                             ),
                             const MySmallButton(
                                 imageAsset: "assets/images/google.png"),
-                            SizedBox(
-                              width: 10.w,
+                           ],
                             ),
-                            const MySmallButton(
-                                imageAsset: "assets/images/apple.png"),
+                        SizedBox(
+                          height: 30.h,
+                        ),
+                        const MyTextGroup(
+                            staticText: "Already have an account?",
+                            dynamicText: " Log in",
+                            page: 'PatientLoginScreen'),
+
                           ],
                         ),
-                      ],
                     ),
                   ),
                 ),
               ),
-            ),
-            bottomNavigationBar: BottomAppBar(
-              color: Colors.transparent,
-              elevation: 0.sp,
-              child: const MyTextGroup(
-                  staticText: "Already have an account?",
-                  dynamicText: " Log in",
-                  page: 'PatientLoginScreen'),
-            ),
-          );
+            );
         },
       ),
     );

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nutri_mind_application/modules/ui/Patient_screens/patient_home_screen/patient_home_services.dart';
-
 import '../../../../shared/Constants/colors.dart';
-import '../../../../shared/widgets/screens_widgets.dart';
 import '../../chats_screen/chat_screen/chat_screen.dart';
 import '../patient_profile/patient_profile.dart';
 import '../puzzle_screens/puzzle_screen.dart';
@@ -32,6 +30,7 @@ class PatientNavBarScreenState extends State<PatientNavBarScreen> {
     return Scaffold(
       body: widgetList[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor:MyColors.darkBlue,
         elevation: 5.sp,
         currentIndex: _currentIndex,
         type: BottomNavigationBarType.fixed,

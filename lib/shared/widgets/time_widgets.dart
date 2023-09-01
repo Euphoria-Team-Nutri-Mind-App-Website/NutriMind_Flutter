@@ -24,7 +24,7 @@ class DateWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 120.h,
+      height: 90.h,
       child: ListView.builder(
         itemCount: list.length,
         scrollDirection: Axis.horizontal,
@@ -33,7 +33,7 @@ class DateWidget extends StatelessWidget {
           child: Container(
             height: height,
             width: width,
-            margin: const EdgeInsets.all(10),
+            margin: EdgeInsets.all(5.sp),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(13),
               border: Border.all(color: MyColors.lightGrey),
@@ -89,7 +89,7 @@ class TimeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 70.h,
+      height: 50.h,
       child: ListView.builder(
         itemCount: list.length,
         scrollDirection: Axis.horizontal,
@@ -98,10 +98,9 @@ class TimeWidget extends StatelessWidget {
           child: Container(
             height: height,
             width: width,
-            margin: const EdgeInsets.all(10),
+            margin: EdgeInsets.all(7.sp),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(7),
-              border: Border.all(color: MyColors.lightGrey),
+              borderRadius: BorderRadius.circular(7.r),
               boxShadow: const [
                 BoxShadow(
                   color: MyColors.lightGrey,
@@ -118,7 +117,7 @@ class TimeWidget extends StatelessWidget {
               children: [
                 Icon(list[index]['icon'],
                     color: MyColors.babyBlue, size: 16.sp),
-                const SizedBox(height: 8),
+                SizedBox(width:5.w),
                 Text(
                   "${list[index]['text']}",
                   style: TextStyle(

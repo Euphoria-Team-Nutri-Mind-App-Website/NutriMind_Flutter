@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nutri_mind_application/shared/widgets/screens_widgets.dart';
 
 import '../../../../shared/Constants/colors.dart';
+import '../../../../shared/widgets/profile_widgets.dart';
 
 class DoctorProfile extends StatelessWidget {
   const DoctorProfile({Key? key}) : super(key: key);
@@ -127,7 +128,7 @@ class DoctorProfile extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 10.h,
+                height: 20.h,
               ),
               Text(
                 "National Id",
@@ -138,49 +139,67 @@ class DoctorProfile extends StatelessWidget {
                     fontSize: 16.sp),
               ),
               SizedBox(height: 6.h),
-              const SmallTextField(
-                hintText: '374654021937',
-                obscureText: false,
+              const ProfileContainer(text: "7654 7790 54533"),
+              SizedBox(
+                height: 13.h,
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 18.0, bottom: 18.0),
-                child: Text(
-                  "Date of birth",
-                  style: TextStyle(
-                      color: MyColors.black,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w500,
-                      fontSize: 16.sp),
-                ),
-              ),
-              SizedBox(height: 6.h),
-              const SmallTextField(
-                hintText: '22\6\1879',
-                obscureText: false,
-              ),
-              SizedBox(height: 6.h),
-              Padding(
-                padding: const EdgeInsets.only(top: 18.0, bottom: 18.0),
-                child: SmallTextField(
-                    hintText: 'My schedule',
-                    obscureText: false,
-                    suffixIcon: InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(context, 'DoctorScheduleScreen');
-                        },
-                        child: const Icon(Icons.arrow_forward_ios)),
-                    prefixIcon: const Icon(Icons.calendar_month)),
-              ),
-              SizedBox(height: 6.h),
-              SmallTextField(
-                  hintText: 'Log out',
-                  obscureText: false,
-                  suffixIcon: InkWell(
-                      onTap: () {
-                        Navigator.pushNamed(context, 'InterfaceScreen');
-                      },
-                      child: Icon(Icons.arrow_forward_ios)),
-                  prefixIcon: Icon(Icons.logout)),
+              SizedBox(height: 13.h),
+              InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, 'DoctorScheduleScreen');
+                  },
+                  child: ProfileButtons(
+                    icon: Icons.calendar_month,
+                    text: 'My schedule',
+                  )),
+              SizedBox(height: 13.h),
+              InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, 'InterfaceScreen');
+                  },
+                  child: ProfileButtons(
+                    icon: Icons.logout,
+                    text: 'Log out',
+                  )),
+              // Padding(
+              //   padding: const EdgeInsets.only(top: 18.0, bottom: 18.0),
+              //   child: Text(
+              //     "Date of birth",
+              //     style: TextStyle(
+              //         color: MyColors.black,
+              //         fontFamily: 'Poppins',
+              //         fontWeight: FontWeight.w500,
+              //         fontSize: 16.sp),
+              //   ),
+              // ),
+              // SizedBox(height: 6.h),
+              // const SmallTextField(
+              //   hintText: '22\6\1879',
+              //   obscureText: false,
+              // ),
+              // SizedBox(height: 6.h),
+              // Padding(
+              //   padding: const EdgeInsets.only(top: 18.0, bottom: 18.0),
+              //   child: SmallTextField(
+              //       hintText: 'My schedule',
+              //       obscureText: false,
+              //       suffixIcon: InkWell(
+              //           onTap: () {
+              //             Navigator.pushNamed(context, 'DoctorScheduleScreen');
+              //           },
+              //           child: const Icon(Icons.arrow_forward_ios)),
+              //       prefixIcon: const Icon(Icons.calendar_month)),
+              // ),
+              // SizedBox(height: 6.h),
+              // SmallTextField(
+              //     hintText: 'Log out',
+              //     obscureText: false,
+              //     suffixIcon: InkWell(
+              //         onTap: () {
+              //           Navigator.pushNamed(context, 'InterfaceScreen');
+              //         },
+              //         child: Icon(Icons.arrow_forward_ios)),
+              //     prefixIcon: Icon(Icons.logout)),
             ],
           ),
         ),

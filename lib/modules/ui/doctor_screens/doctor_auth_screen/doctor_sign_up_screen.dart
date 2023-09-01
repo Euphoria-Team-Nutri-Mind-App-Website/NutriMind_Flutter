@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../shared/Constants/colors.dart';
@@ -14,7 +13,9 @@ class DoctorSignUpScreen extends StatelessWidget {
         backPage: 'ContinueScreen',
         pageTitle: Row(
           children: [
-            SizedBox(width: 70.w,),
+            SizedBox(
+              width: 70.w,
+            ),
             const Image(image: AssetImage("assets/images/Registration.png"))
           ],
         ),
@@ -91,7 +92,12 @@ class DoctorSignUpScreen extends StatelessWidget {
                   height: 15.h,
                 ),
                 SmallTextField(
-                  prefixIcon:Image(image: const AssetImage('assets/images/vecteezy.png',),height: 2.h,),
+                  prefixIcon: Image(
+                    image: const AssetImage(
+                      'assets/images/vecteezy.png',
+                    ),
+                    height: 2.h,
+                  ),
                   hintText: 'Credit number',
                   obscureText: false,
                   textType: TextInputType.phone,
@@ -115,7 +121,7 @@ class DoctorSignUpScreen extends StatelessWidget {
                 SizedBox(
                   height: 28.h,
                 ),
-                const MyBlueButton(text: "Register", page: 'DoctorScheduleScreen'),
+                const MyBlueButton(text: "Register", page: 'DoctorProfile'),
                 SizedBox(
                   height: 28.h,
                 ),

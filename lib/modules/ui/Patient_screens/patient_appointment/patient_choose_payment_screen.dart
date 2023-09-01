@@ -270,7 +270,7 @@ class _PatientChoosePaymentScreenState
                     yourText: "Your Booking",
                     nextScreen: "PatientBookAppointment",
                     DONE: "successfully",
-                    backText: "Home",
+                    backText: "set it",
                   ),
                 ],
               ),

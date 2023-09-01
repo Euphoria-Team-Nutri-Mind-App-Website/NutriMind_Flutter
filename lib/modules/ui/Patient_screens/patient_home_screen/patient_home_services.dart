@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
+import '../../chats_screen/chat_screen/chat_screen.dart';
 import 'doctor_widget_for_patient.dart';
 
 class PatientHomeServicesScreen extends StatefulWidget {
@@ -17,29 +18,35 @@ class _PatientHomeServicesScreenState extends State<PatientHomeServicesScreen> {
     {
       "icon": Icons.chat,
       "name": "Chat",
+      "rout": "ChatScreen",
     },
     {
       "icon": Icons.notes,
       "name": "Notes",
+      "rout": "PatientNotesScreen",
     },
     {
       "icon": Icons.email,
       "name": "Motivzone",
+      "rout": "MotivzoneScreen",
     },
     {
       "icon": Icons.library_books_outlined,
       "name": "Library",
+      "rout": "PatientLibraryScreen",
     },
     {
       "icon": Icons.question_mark,
       "name": "Question",
+      "rout": "PatientQuestionScreen",
     },
     {
       "icon": Icons.local_fire_department,
       "name": "Track Eating",
+      "rout": "PatientTrackEatingScreen",
     }
   ];
-  bool click = true;
+  //bool click = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,15 +117,17 @@ class _PatientHomeServicesScreenState extends State<PatientHomeServicesScreen> {
                         itemBuilder: (context, index) => Container(
                           margin: EdgeInsets.all(9.sp),
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20.r),
-                            color:
-                                click ? MyColors.lightGrey : MyColors.darkBlue,
-                          ),
+                              borderRadius: BorderRadius.circular(20.r),
+                              color: MyColors.lightGrey
+                              //click ? MyColors.lightGrey : MyColors.darkBlue,
+                              ),
                           child: InkWell(
                             onTap: () {
-                              setState(() {
-                                click = !click;
-                              });
+                              Navigator.pushNamed(
+                                  context, allServices[index]['rout']);
+                              // setState(() {
+                              //   //click = !click;
+                              // });
                             },
                             child: Container(
                               height: 150.h,
@@ -131,18 +140,17 @@ class _PatientHomeServicesScreenState extends State<PatientHomeServicesScreen> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Icon(allServices[index]['icon'],
-                                      size: 27.sp,
-                                      color: click
-                                          ? MyColors.darkBlue
-                                          : MyColors.lightGrey),
+                                      size: 27.sp, color: MyColors.darkBlue
+                                      //click ? MyColors.darkBlue: MyColors.lightGrey
+                                      ),
                                   const SizedBox(height: 8),
                                   Text(
                                     "${allServices[index]['name']}",
                                     style: TextStyle(
                                         fontSize: 16.sp,
-                                        color: click
-                                            ? MyColors.darkBlue
-                                            : MyColors.lightGrey),
+                                        color: MyColors.darkBlue
+                                        //click ? MyColors.darkBlue : MyColors.lightGrey
+                                        ),
                                   )
                                 ],
                               ),

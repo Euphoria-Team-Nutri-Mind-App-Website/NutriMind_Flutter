@@ -28,6 +28,7 @@ dependencies:
   shared_preferences: ^2.2.1
   conditional_builder_null_safety: ^0.0.6
   flutter_rating_bar: ^4.0.1
+  card_swiper: ^3.0.1
 
 dev_dependencies:
   flutter_test:

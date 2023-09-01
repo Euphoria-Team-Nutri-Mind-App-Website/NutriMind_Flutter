@@ -10,12 +10,17 @@ import 'modules/ui/Patient_screens/patient_first_set_tall_weight_screens/patient
 import 'modules/ui/Patient_screens/patient_home_screen/doctor_list_for_patient.dart';
 import 'modules/ui/Patient_screens/patient_appointment/patient_appointment_in_doctor.dart';
 import 'modules/ui/Patient_screens/patient_home_screen/patient_nav_bar.dart';
+import 'modules/ui/Patient_screens/patient_library_screen/patient_library_screen.dart';
+import 'modules/ui/Patient_screens/patient_motivzone_screen/patient_motivzone_screen.dart';
+import 'modules/ui/Patient_screens/patient_notes_screen/patient_notes_screen.dart';
 import 'modules/ui/Patient_screens/patient_notifications/patient_notifications.dart';
 import 'modules/ui/Patient_screens/patient_password_screens/patient_create_password_screen.dart';
 import 'modules/ui/Patient_screens/patient_password_screens/patient_forget_password_screen.dart';
 import 'modules/ui/Patient_screens/patient_password_screens/patient_verification_screen.dart';
 import 'modules/ui/Patient_screens/patient_profile/patient_profile.dart';
 import 'modules/ui/Patient_screens/patient_profile/patient_setting_screen.dart';
+import 'modules/ui/Patient_screens/patient_question_screen/patient_question_screen.dart';
+import 'modules/ui/Patient_screens/patient_track_eat_screen/patient_track_eat_screen.dart';
 import 'modules/ui/Patient_screens/puzzle_screens/puzzle_screen.dart';
 import 'modules/ui/chats_screen/chat_screen/chat_screen.dart';
 import 'modules/ui/continue_screen.dart';
@@ -85,6 +90,13 @@ class MyApp extends StatelessWidget {
               'PuzzleScreen': (context) => const PuzzleScreen(),
               'PatientProfile': (context) => const PatientProfile(),
               'PatientSettingScreen': (context) => const PatientSettingScreen(),
+              'MotivzoneScreen': (context) => const MotivzoneScreen(),
+              'PatientNotesScreen': (context) => const PatientNotesScreen(),
+              'PatientQuestionScreen': (context) =>
+                  const PatientQuestionScreen(),
+              'PatientLibraryScreen': (context) => const PatientLibraryScreen(),
+              'PatientTrackEatingScreen': (context) =>
+                  const PatientTrackEatingScreen(),
             },
           );
         });

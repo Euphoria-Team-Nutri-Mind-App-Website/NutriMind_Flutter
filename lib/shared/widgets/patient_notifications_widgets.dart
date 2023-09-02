@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../Constants/colors.dart';
 
 class PatientNotificationsWidget extends StatelessWidget {

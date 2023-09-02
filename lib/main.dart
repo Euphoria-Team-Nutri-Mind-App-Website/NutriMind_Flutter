@@ -17,8 +17,10 @@ import 'modules/ui/Patient_screens/patient_notifications/patient_notifications.d
 import 'modules/ui/Patient_screens/patient_password_screens/patient_create_password_screen.dart';
 import 'modules/ui/Patient_screens/patient_password_screens/patient_forget_password_screen.dart';
 import 'modules/ui/Patient_screens/patient_password_screens/patient_verification_screen.dart';
-import 'modules/ui/Patient_screens/patient_profile/patient_profile.dart';
-import 'modules/ui/Patient_screens/patient_profile/patient_setting_screen.dart';
+import 'modules/ui/Patient_screens/patient_profile&settings&report/patient_help&support_screen.dart';
+import 'modules/ui/Patient_screens/patient_profile&settings&report/patient_profile.dart';
+import 'modules/ui/Patient_screens/patient_profile&settings&report/patient_report.dart';
+import 'modules/ui/Patient_screens/patient_profile&settings&report/patient_setting_screen.dart';
 import 'modules/ui/Patient_screens/patient_question_screen/patient_question_screen.dart';
 import 'modules/ui/Patient_screens/patient_track_eat_screen/patient_track_eat_screen.dart';
 import 'modules/ui/Patient_screens/puzzle_screens/puzzle_screen.dart';
@@ -82,11 +84,11 @@ class MyApp extends StatelessWidget {
               'PatientSettingScreen': (context) => const PatientSettingScreen(),
               'PatientMotivzoneScreen': (context) => const PatientMotivzoneScreen(),
               'PatientNotesScreen': (context) => const PatientNotesScreen(),
-              'PatientQuestionScreen': (context) =>
-                  const PatientQuestionScreen(),
+              'PatientQuestionScreen': (context) => const PatientQuestionScreen(),
               'PatientLibraryScreen': (context) => const PatientLibraryScreen(),
-              'PatientTrackEatingScreen': (context) =>
-                  const PatientTrackEatingScreen(),
+              'PatientTrackEatingScreen': (context) => const PatientTrackEatingScreen(),
+              'PatientReport': (context) => const PatientReport(),
+              'PatientHelpAndSupport': (context) => const PatientHelpAndSupport(),
             },
           );
         });

@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nutri_mind_application/shared/widgets/screens_widgets.dart';
 
 import '../../../../shared/Constants/colors.dart';
-import '../../../../shared/widgets/profile_widgets.dart';
+import '../../../../shared/widgets/doctor_profile_widgets.dart';
 
 class DoctorProfile extends StatelessWidget {
   const DoctorProfile({Key? key}) : super(key: key);

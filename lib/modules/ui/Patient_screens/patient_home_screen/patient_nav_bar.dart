@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nutri_mind_application/modules/ui/Patient_screens/patient_home_screen/patient_home_services.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../chats_screen/chat_screen/chat_screen.dart';
-import '../patient_profile/patient_profile.dart';
+import '../patient_profile&settings&report/patient_profile.dart';
 import '../puzzle_screens/puzzle_screen.dart';
 
 class PatientNavBarScreen extends StatefulWidget {

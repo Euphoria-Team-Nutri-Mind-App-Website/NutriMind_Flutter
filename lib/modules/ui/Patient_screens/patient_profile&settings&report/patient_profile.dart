@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nutri_mind_application/shared/widgets/screens_widgets.dart';
 import '../../../../shared/Constants/colors.dart';
-import '../../../../shared/widgets/profile_widgets.dart';
+import '../../../../shared/widgets/doctor_profile_widgets.dart';
 
 class PatientProfile extends StatelessWidget {
   const PatientProfile({Key? key}) : super(key: key);
@@ -153,7 +153,7 @@ class PatientProfile extends StatelessWidget {
               ),
               SizedBox(height: 13.h),
               InkWell(
-                  onTap: (){ Navigator.pushNamed(context, 'DoctorReport');},
+                  onTap: (){ Navigator.pushNamed(context, 'PatientReport');},
                   child:ProfileButtons(icon:Icons.document_scanner_outlined,text:'Document',)
               ),
               SizedBox(height: 13.h),

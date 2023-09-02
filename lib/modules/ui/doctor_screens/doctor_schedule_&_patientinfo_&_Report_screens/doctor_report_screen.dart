@@ -28,13 +28,13 @@ class DoctorReport extends StatelessWidget {
         ),
         actionIcon: [
           Padding(
-              padding: EdgeInsets.only(right: 25.sp),
+              padding: EdgeInsets.only(right: 8.sp),
               child: Image.asset('assets/images/careLogo.png'))
         ],
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.only(left: 25.sp, right: 25.sp, top: 30.sp),
+          padding: EdgeInsets.only(left: 25.sp, right: 25.sp, top: 40.sp),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -97,7 +97,7 @@ class DoctorReport extends StatelessWidget {
                 style: TextStyle(
                     fontFamily: "Poppins",
                     color: MyColors.grey,
-                    fontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.w500,
                     fontSize: 15.sp),
               ),
               SizedBox(
@@ -114,6 +114,8 @@ class DoctorReport extends StatelessWidget {
               Text(
                 "Being preoccupied with your body shape and weight \n Living in fear of gaining weight \n Repeated episodes of eating abnormally large amounts \n of food in one sitting\n Feeling a loss of control during bingeing — like you can't\n stop eating or can't control what you eat\n Forcing yourself to vomit or exercising too much to kee\n from gaining weight after bingeing",
                 style: TextStyle(
+                  wordSpacing: 1.5.sp,
+                    height: 1.5.sp,
                     fontFamily: "Poppins",
                     color: MyColors.grey,
                     fontWeight: FontWeight.w500,

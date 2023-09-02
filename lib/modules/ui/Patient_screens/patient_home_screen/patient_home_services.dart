@@ -68,7 +68,7 @@ class _PatientHomeServicesScreenState extends State<PatientHomeServicesScreen> {
                 Navigator.pushNamed(context, 'PatientNotificationsScreen');
               },
               child: Image(
-                image: const AssetImage("assets/images/bell.png"),
+                image: const AssetImage("assets/images/blackbell.png"),
                 height: 20.h,
               ),
             ),

@@ -31,7 +31,9 @@ import 'modules/ui/doctor_screens/doctor_auth_screen/doctor_sign_up_screen.dart'
 import 'modules/ui/doctor_screens/doctor_passwords_screens/doctor_create_password_screen.dart';
 import 'modules/ui/doctor_screens/doctor_passwords_screens/doctor_forget_password_screen.dart';
 import 'modules/ui/doctor_screens/doctor_passwords_screens/doctor_verification_screen.dart';
+import 'modules/ui/doctor_screens/doctor_profile/doctor_help&support_screen.dart';
 import 'modules/ui/doctor_screens/doctor_profile/doctor_profile.dart';
+import 'modules/ui/doctor_screens/doctor_profile/doctor_settings_screen.dart';
 import 'modules/ui/doctor_screens/doctor_schedule_&_patientinfo_&_Report_screens/docter_patientinfo_screen.dart';
 import 'modules/ui/doctor_screens/doctor_schedule_&_patientinfo_&_Report_screens/doctor_report_screen.dart';
 import 'modules/ui/doctor_screens/doctor_schedule_&_patientinfo_&_Report_screens/doctor_schedule_screen.dart';
@@ -52,7 +54,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             home: const SplashScreen(),
-            routes: {
+            routes: <String, WidgetBuilder>{
               'InterfaceScreen': (context) => const InterfaceScreen(),
               'ContinueScreen': (context) => const ContinueScreen(),
               'PatientLoginScreen': (context) => const PatientLoginScreen(),
@@ -77,6 +79,8 @@ class MyApp extends StatelessWidget {
               'Doctor_PatientInfo': (context) => const Doctor_PatientInfo(),
               'DoctorReport': (context) => const DoctorReport(),
               'DoctorProfile': (context) => const DoctorProfile(),
+              'DoctorSettingScreen': (context) => const DoctorSettingScreen(),
+              'DoctorHelpAndSupport': (context) => const DoctorHelpAndSupport(),
               'PatientChoosePaymentScreen': (context) => const PatientChoosePaymentScreen(),
               'ChatScreen': (context) => const ChatScreen(),
               'PuzzleScreen': (context) => const PuzzleScreen(),

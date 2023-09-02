@@ -58,72 +58,69 @@ class DoctorProfile extends StatelessWidget {
                   ],
                 ),
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(18.0),
-                      child: CircleAvatar(
-                        backgroundColor: MyColors.white,
-                        radius: 40.r,
-                        child: Image.asset('assets/images/doctor2.png'),
-                      ),
+                    CircleAvatar(
+                      backgroundColor: MyColors.white,
+                      radius: 40.r,
+                      child: Image.asset("assets/images/doctor2.png"),
                     ),
                     SizedBox(
                       width: 10.w,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Dr. john smith",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontFamily: 'Poppins',
-                              fontSize: 16.sp,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Dr.John Smith",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontFamily: 'Poppins',
+                            fontSize: 16.sp,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        Row(
+                          children: [
+                            Image.asset('assets/images/call.png'),
+                            SizedBox(
+                              width: 5.w,
                             ),
-                          ),
-                          SizedBox(
-                            height: 10.h,
-                          ),
-                          Row(
-                            children: [
-                              Image.asset('assets/images/call.png'),
-                              SizedBox(
-                                width: 5.w,
-                              ),
-                              Text(
-                                '+234 657 987',
-                                style: TextStyle(
-                                    fontFamily: 'Inter',
-                                    color: MyColors.grey,
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 12.sp),
-                              )
-                            ],
-                          ),
-                          SizedBox(
-                            height: 10.h,
-                          ),
-                          Row(
-                            children: [
-                              Image.asset('assets/images/email.png'),
-                              SizedBox(
-                                width: 5.w,
-                              ),
-                              Text(
-                                'Drjohn_23@gmail.com',
-                                style: TextStyle(
-                                    fontFamily: 'Inter',
-                                    color: MyColors.grey,
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 12.sp),
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
-                    )
+                            Text(
+                              '+234 657 987',
+                              style: TextStyle(
+                                  fontFamily: 'Inter',
+                                  color: MyColors.grey,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 12.sp),
+                            )
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        Row(
+                          children: [
+                            Image.asset('assets/images/email.png'),
+                            SizedBox(
+                              width: 5.w,
+                            ),
+                            Text(
+                              'john20@gmail.com',
+                              style: TextStyle(
+                                  fontFamily: 'Inter',
+                                  color: MyColors.grey,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 12.sp),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),
@@ -138,10 +135,15 @@ class DoctorProfile extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                     fontSize: 16.sp),
               ),
+
               SizedBox(height: 6.h),
               const ProfileContainer(text: "7654 7790 54533"),
               SizedBox(
                 height: 13.h,
+              ),
+              InkWell(
+                  onTap: (){Navigator.pushNamed(context, 'DoctorSettingScreen');},
+                  child:ProfileButtons(icon:Icons.settings,text:'Settings',)
               ),
               SizedBox(height: 13.h),
               InkWell(
@@ -155,51 +157,13 @@ class DoctorProfile extends StatelessWidget {
               SizedBox(height: 13.h),
               InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, 'InterfaceScreen');
+                    Navigator.pushNamed(context, 'ContinueScreen');
                   },
                   child: ProfileButtons(
                     icon: Icons.logout,
                     text: 'Log out',
-                  )),
-              // Padding(
-              //   padding: const EdgeInsets.only(top: 18.0, bottom: 18.0),
-              //   child: Text(
-              //     "Date of birth",
-              //     style: TextStyle(
-              //         color: MyColors.black,
-              //         fontFamily: 'Poppins',
-              //         fontWeight: FontWeight.w500,
-              //         fontSize: 16.sp),
-              //   ),
-              // ),
-              // SizedBox(height: 6.h),
-              // const SmallTextField(
-              //   hintText: '22\6\1879',
-              //   obscureText: false,
-              // ),
-              // SizedBox(height: 6.h),
-              // Padding(
-              //   padding: const EdgeInsets.only(top: 18.0, bottom: 18.0),
-              //   child: SmallTextField(
-              //       hintText: 'My schedule',
-              //       obscureText: false,
-              //       suffixIcon: InkWell(
-              //           onTap: () {
-              //             Navigator.pushNamed(context, 'DoctorScheduleScreen');
-              //           },
-              //           child: const Icon(Icons.arrow_forward_ios)),
-              //       prefixIcon: const Icon(Icons.calendar_month)),
-              // ),
-              // SizedBox(height: 6.h),
-              // SmallTextField(
-              //     hintText: 'Log out',
-              //     obscureText: false,
-              //     suffixIcon: InkWell(
-              //         onTap: () {
-              //           Navigator.pushNamed(context, 'InterfaceScreen');
-              //         },
-              //         child: Icon(Icons.arrow_forward_ios)),
-              //     prefixIcon: Icon(Icons.logout)),
+                  ),
+              ),
             ],
           ),
         ),

@@ -4,8 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../Constants/colors.dart';
 
 class PatientChangeInfo extends StatelessWidget {
-  final text ;
-  final hintText ;
+  final text;
+  final hintText;
   const PatientChangeInfo({Key? key, this.text, this.hintText}) : super(key: key);
 
   @override
@@ -29,20 +29,26 @@ class PatientChangeInfo extends StatelessWidget {
                 spreadRadius: 0,
                 offset: Offset(0, 0),
               ), //BoxShadow
-            ]),
-        child:Column(
+            ],
+        ),
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(text,style:TextStyle(fontSize: 13.sp,fontWeight: FontWeight.w500,fontFamily: "Poppins",color: MyColors.black),),
+            Text(
+              text,
+              style: TextStyle(
+                  fontSize: 13.sp,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: "Poppins",
+                  color: MyColors.black),
+            ),
             TextFormField(
               cursorColor: MyColors.darkBlue,
-              decoration:InputDecoration(
-                border: InputBorder.none,
-                hintText:hintText
-              ),
+              decoration:
+                  InputDecoration(border: InputBorder.none, hintText: hintText),
             )
           ],
-        )
+        ),
     );
   }
 }

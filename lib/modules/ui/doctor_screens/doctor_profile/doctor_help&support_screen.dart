@@ -1,17 +1,16 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
 
-class PatientHelpAndSupport extends StatelessWidget {
-  const PatientHelpAndSupport({Key? key}) : super(key: key);
+class DoctorHelpAndSupport extends StatelessWidget {
+  const DoctorHelpAndSupport ({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppBar(
-        backPage: 'PatientSettingScreen',
+        backPage: 'DoctorSettingScreen',
         pageTitle: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -132,7 +131,7 @@ class PatientHelpAndSupport extends StatelessWidget {
                       ),
                       cursorColor: MyColors.darkBlue,
                       controller:TextEditingController(
-                        text:'ahmed20@gmail.com'
+                          text:'john20@gmail.com'
                       ),
                       decoration: const InputDecoration(
                         border: InputBorder.none,
@@ -199,7 +198,7 @@ class PatientHelpAndSupport extends StatelessWidget {
                 ),
               ),
               SizedBox(height:80.h),
-              const MyBlueButton(text: 'Submit',page: 'PatientSettingScreen',)
+              const MyBlueButton(text: 'Submit',page: 'DoctorSettingScreen',)
             ],
           ),
         ),

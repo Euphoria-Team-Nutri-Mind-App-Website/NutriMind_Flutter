@@ -159,7 +159,7 @@ class PatientProfile extends StatelessWidget {
               SizedBox(height: 13.h),
               InkWell(
                   onTap: (){Navigator.pushNamed(context, 'PatientSettingScreen');},
-                  child:ProfileButtons(icon:Icons.settings,text:'Setting',)
+                  child:ProfileButtons(icon:Icons.settings,text:'Settings',)
               ),
               SizedBox(height: 13.h),
               InkWell(

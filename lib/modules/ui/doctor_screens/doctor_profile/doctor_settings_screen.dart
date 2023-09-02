@@ -5,21 +5,21 @@ import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/widgets/patient_settings_widgets.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
 
-class PatientSettingScreen extends StatefulWidget {
-  const PatientSettingScreen({Key? key}) : super(key: key);
+class DoctorSettingScreen extends StatefulWidget {
+  const DoctorSettingScreen({Key? key}) : super(key: key);
 
   @override
-  State<PatientSettingScreen> createState() => _PatientSettingScreenState();
+  State<DoctorSettingScreen> createState() => _DoctorSettingScreenState();
 }
 
-class _PatientSettingScreenState extends State<PatientSettingScreen> {
+class _DoctorSettingScreenState extends State<DoctorSettingScreen> {
   bool switchValue = true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppBar(
-        backPage: 'PatientProfile',
+        backPage: 'DoctorProfile',
         pageTitle: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -66,7 +66,7 @@ class _PatientSettingScreenState extends State<PatientSettingScreen> {
               SizedBox(
                 height: 10.h,
               ),
-              const PatientChangeInfo(text:'Name',hintText:'Ahmed Mohamed',),
+              const PatientChangeInfo(text:'Name',hintText:'Dr.johm smith',),
               SizedBox(
                 height: 20.h,
               ),
@@ -91,7 +91,7 @@ class _PatientSettingScreenState extends State<PatientSettingScreen> {
               SizedBox(
                 height: 10.h,
               ),
-              const PatientChangeInfo(text:'Email',hintText:'ahmed20@gmail.com',),
+              const PatientChangeInfo(text:'Email',hintText:'john20@gmail.com',),
               SizedBox(
                 height: 20.h,
               ),
@@ -156,18 +156,18 @@ class _PatientSettingScreenState extends State<PatientSettingScreen> {
                           fontSize: 15.sp),
                     ),
                     const Spacer(),
-                Transform.scale(
-                  scale: 0.6.sp,
-                  child: CupertinoSwitch(
-                    value: switchValue,
-                    activeColor: MyColors.darkBlue,
+                    Transform.scale(
+                      scale: 0.6.sp,
+                      child: CupertinoSwitch(
+                          value: switchValue,
+                          activeColor: MyColors.darkBlue,
 
-                    onChanged: (bool? value) {
-                      setState(() {
-                        switchValue = value ?? false;
-                      },);}
-                  ),
-                )
+                          onChanged: (bool? value) {
+                            setState(() {
+                              switchValue = value ?? false;
+                            },);}
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -252,12 +252,12 @@ class _PatientSettingScreenState extends State<PatientSettingScreen> {
                     ),
                     const Spacer(),
                     InkWell(
-                      onTap: (){ Navigator.pushNamed(context,'PatientHelpAndSupport');},
-                        child: Icon(
-                      Icons.arrow_forward_ios,
-                      color: MyColors.grey,
-                          size: 20.sp,
-                    ),
+                      onTap: (){ Navigator.pushNamed(context,'DoctorHelpAndSupport');},
+                      child: Icon(
+                        Icons.arrow_forward_ios,
+                        color: MyColors.grey,
+                        size: 20.sp,
+                      ),
                     ),
                   ],
                 ),

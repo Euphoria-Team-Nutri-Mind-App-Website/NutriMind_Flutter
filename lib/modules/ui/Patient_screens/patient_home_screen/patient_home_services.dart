@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
-import '../../chats_screen/chat_screen/chat_screen.dart';
 import 'doctor_widget_for_patient.dart';
 
 class PatientHomeServicesScreen extends StatefulWidget {
@@ -63,7 +62,7 @@ class _PatientHomeServicesScreenState extends State<PatientHomeServicesScreen> {
         ),
         actionIcon: [
           Padding(
-            padding: EdgeInsets.only(right: 25.sp),
+            padding: EdgeInsets.only(right: 12.sp),
             child: InkWell(
               onTap: () {
                 Navigator.pushNamed(context, 'PatientNotificationsScreen');

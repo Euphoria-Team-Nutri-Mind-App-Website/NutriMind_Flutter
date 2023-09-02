@@ -138,13 +138,6 @@ class DoctorProfile extends StatelessWidget {
 
               SizedBox(height: 6.h),
               const ProfileContainer(text: "7654 7790 54533"),
-              SizedBox(
-                height: 13.h,
-              ),
-              InkWell(
-                  onTap: (){Navigator.pushNamed(context, 'DoctorSettingScreen');},
-                  child:ProfileButtons(icon:Icons.settings,text:'Settings',)
-              ),
               SizedBox(height: 13.h),
               InkWell(
                   onTap: () {
@@ -154,6 +147,13 @@ class DoctorProfile extends StatelessWidget {
                     icon: Icons.calendar_month,
                     text: 'My schedule',
                   )),
+              SizedBox(
+                height: 13.h,
+              ),
+              InkWell(
+                  onTap: (){Navigator.pushNamed(context, 'DoctorSettingScreen');},
+                  child:ProfileButtons(icon:Icons.settings,text:'Settings',)
+              ),
               SizedBox(height: 13.h),
               InkWell(
                   onTap: () {

@@ -26,6 +26,7 @@ import 'modules/ui/Patient_screens/patient_track_eat_screen/patient_track_eat_sc
 import 'modules/ui/Patient_screens/puzzle_screens/puzzle_screen.dart';
 import 'modules/ui/chats_screen/chat_screen/chat_screen.dart';
 import 'modules/ui/continue_screen.dart';
+import 'modules/ui/doctor_screens/doctor_auth_screen/doctor_choose_time_screen.dart';
 import 'modules/ui/doctor_screens/doctor_auth_screen/doctor_login_screen.dart';
 import 'modules/ui/doctor_screens/doctor_auth_screen/doctor_sign_up_screen.dart';
 import 'modules/ui/doctor_screens/doctor_passwords_screens/doctor_create_password_screen.dart';
@@ -93,6 +94,7 @@ class MyApp extends StatelessWidget {
               'PatientTrackEatingScreen': (context) => const PatientTrackEatingScreen(),
               'PatientReport': (context) => const PatientReport(),
               'PatientHelpAndSupport': (context) => const PatientHelpAndSupport(),
+              'DoctorChooseTimeScreen': (context) => const DoctorChooseTimeScreen(),
             },
           );
         });

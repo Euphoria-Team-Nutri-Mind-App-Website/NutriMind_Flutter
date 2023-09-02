@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../shared/Constants/colors.dart';
+import '../../../../shared/widgets/doctor_profile_widgets.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
 
 class DoctorSignUpScreen extends StatelessWidget {
@@ -117,6 +118,32 @@ class DoctorSignUpScreen extends StatelessWidget {
                   obscureText: false,
                   hintText: 'Qualification',
                   textType: TextInputType.text,
+                ),
+                SizedBox(
+                  height: 15.h,
+                ),
+                InkWell(
+                  onTap:(){Navigator.pushNamed(context,'DoctorChooseTimeScreen');},
+                  child:Container(
+                    padding:EdgeInsets.all(14.sp),
+                    decoration: BoxDecoration(
+                      color: MyColors.lightGrey,
+                      borderRadius: BorderRadius.circular(15.r),
+                      border: Border.all(color: MyColors.darkBlue)
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text("Select time of work",style: TextStyle(
+                          fontFamily: "Poppins",
+                          color: MyColors.grey,
+                          fontSize: 15.sp
+                        ),),
+                        const Spacer(),
+                        const Icon(Icons.arrow_forward_ios,color: MyColors.grey,)
+                      ],
+                    ),
+                  ),
                 ),
                 SizedBox(
                   height: 28.h,

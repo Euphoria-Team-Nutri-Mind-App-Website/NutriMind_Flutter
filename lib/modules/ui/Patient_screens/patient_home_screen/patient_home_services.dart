@@ -17,7 +17,7 @@ class _PatientHomeServicesScreenState extends State<PatientHomeServicesScreen> {
     {
       "icon": Icons.chat,
       "name": "Chat",
-      "rout": "ChatScreen",
+      "rout": "PatientListChatsScreen",
     },
     {
       "icon": Icons.notes,

@@ -9,7 +9,7 @@ class Assets {
   static const String imagesApple = 'assets/images/apple.png';
   static const String imagesAppointment = 'assets/images/Appointment.png';
   static const String imagesBad = 'assets/images/bad.png';
-  static const String imagesBell = 'assets/images/bell.png';
+  static const String imagesBlackbell = 'assets/images/blackbell.png';
   static const String imagesCalendar = 'assets/images/calendar.png';
   static const String imagesCall = 'assets/images/call.png';
   static const String imagesCareLogo = 'assets/images/careLogo.png';
@@ -25,9 +25,10 @@ class Assets {
   static const String imagesHeart = 'assets/images/heart.png';
   static const String imagesHi = 'assets/images/hi.png';
   static const String imagesInterface = 'assets/images/interface.png';
+  static const String imagesLibrary = 'assets/images/library.png';
   static const String imagesLogo = 'assets/images/logo.png';
   static const String imagesMasterCard = 'assets/images/masterCard.png';
-  static const String imagesMoTivZone = 'assets/images/MoTivZone.png';
+  static const String imagesMoTivZone = 'assets/images/moTivZone.png';
   static const String imagesNationalId = 'assets/images/nationalId.png';
   static const String imagesNice = 'assets/images/nice.png';
   static const String imagesPatienticon = 'assets/images/patienticon.png';
@@ -41,5 +42,6 @@ class Assets {
   static const String imagesUser1 = 'assets/images/user1.png';
   static const String imagesVecteezy = 'assets/images/vecteezy.png';
   static const String imagesVerygood = 'assets/images/verygood.png';
+  static const String imagesWhitebell = 'assets/images/whitebell.png';
 
 }

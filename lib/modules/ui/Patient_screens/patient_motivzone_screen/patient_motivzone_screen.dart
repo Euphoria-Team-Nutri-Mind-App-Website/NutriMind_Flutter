@@ -23,7 +23,7 @@ class _PatientMotivzoneScreenState extends State<PatientMotivzoneScreen> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Image(
-                image: const AssetImage('assets/images/MoTivZone.png'),
+                image: const AssetImage('assets/images/moTivZone.png'),
                 width: 110.w,
               )
             ],

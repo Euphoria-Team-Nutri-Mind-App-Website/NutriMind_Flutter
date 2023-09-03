@@ -26,7 +26,7 @@ class Doctor_PatientInfo extends StatelessWidget {
         ),
         actionIcon: [
           Padding(
-              padding: EdgeInsets.only(right: 25.sp),
+              padding: EdgeInsets.only(right: 8.sp),
               child: Image.asset('assets/images/careLogo.png'))
         ],
       ),
@@ -44,7 +44,7 @@ class Doctor_PatientInfo extends StatelessWidget {
                     fontFamily: 'Poppins'),
               ),
               SizedBox(
-                height: 5.h,
+                height: 20.h,
               ),
               Row(
                 children: [
@@ -66,7 +66,7 @@ class Doctor_PatientInfo extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 10.h,
+                height: 20.h,
               ),
               Row(
                 children: [
@@ -88,7 +88,7 @@ class Doctor_PatientInfo extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 10.h,
+                height: 20.h,
               ),
               Row(
                 children: [
@@ -110,7 +110,7 @@ class Doctor_PatientInfo extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 10.h,
+                height: 20.h,
               ),
               Row(
                 children: [
@@ -132,7 +132,7 @@ class Doctor_PatientInfo extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 25.h,
+                height: 30.h,
               ),
               Text(
                 "History",
@@ -142,7 +142,7 @@ class Doctor_PatientInfo extends StatelessWidget {
                     fontFamily: 'Poppins'),
               ),
               SizedBox(
-                height: 10.h,
+                height: 20.h,
               ),
               Text(
                 "Last consultation",
@@ -162,7 +162,7 @@ class Doctor_PatientInfo extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                     fontSize: 13.sp),
               ),
-              SizedBox(height: 25.h),
+              SizedBox(height: 30.h),
               Row(
                 children: [
                   Text(
@@ -182,7 +182,7 @@ class Doctor_PatientInfo extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 25.h),
+              SizedBox(height: 40.h),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 20.sp),
                 width: double.infinity,
@@ -214,8 +214,6 @@ class Doctor_PatientInfo extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 30.h),
-              const MyBlueButton(text: "Back", page: 'DoctorScheduleScreen'),
             ],
           ),
         ),

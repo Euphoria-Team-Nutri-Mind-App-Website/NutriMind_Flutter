@@ -26,6 +26,7 @@ class _DoctorListForPatientScreenState
               Text(
                 "Doctors",
                 style: TextStyle(
+                  color: MyColors.black,
                     fontFamily: 'Inter',
                     fontWeight: FontWeight.w600,
                     fontSize: 15.sp),
@@ -35,10 +36,13 @@ class _DoctorListForPatientScreenState
           actionIcon: [
             Padding(
                 padding: EdgeInsets.only(right: 25.sp),
-                child: Icon(
-                  Icons.list,
-                  color: MyColors.black,
-                  size: 25.sp,
+                child: InkWell(
+                  onTap: (){Navigator.pushNamed(context,"PatientSettingScreen");},
+                  child: Icon(
+                    Icons.list,
+                    color: MyColors.black,
+                    size: 25.sp,
+                  ),
                 ))
           ],
         ),

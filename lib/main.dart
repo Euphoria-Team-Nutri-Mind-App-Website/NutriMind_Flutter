@@ -17,19 +17,24 @@ import 'modules/ui/Patient_screens/patient_notifications/patient_notifications.d
 import 'modules/ui/Patient_screens/patient_password_screens/patient_create_password_screen.dart';
 import 'modules/ui/Patient_screens/patient_password_screens/patient_forget_password_screen.dart';
 import 'modules/ui/Patient_screens/patient_password_screens/patient_verification_screen.dart';
-import 'modules/ui/Patient_screens/patient_profile/patient_profile.dart';
-import 'modules/ui/Patient_screens/patient_profile/patient_setting_screen.dart';
+import 'modules/ui/Patient_screens/patient_profile&settings&report/patient_help&support_screen.dart';
+import 'modules/ui/Patient_screens/patient_profile&settings&report/patient_profile.dart';
+import 'modules/ui/Patient_screens/patient_profile&settings&report/patient_report.dart';
+import 'modules/ui/Patient_screens/patient_profile&settings&report/patient_setting_screen.dart';
 import 'modules/ui/Patient_screens/patient_question_screen/patient_question_screen.dart';
 import 'modules/ui/Patient_screens/patient_track_eat_screen/patient_track_eat_screen.dart';
 import 'modules/ui/Patient_screens/puzzle_screens/puzzle_screen.dart';
 import 'modules/ui/chats_screen/chat_screen/chat_screen.dart';
 import 'modules/ui/continue_screen.dart';
+import 'modules/ui/doctor_screens/doctor_auth_screen/doctor_choose_time_screen.dart';
 import 'modules/ui/doctor_screens/doctor_auth_screen/doctor_login_screen.dart';
 import 'modules/ui/doctor_screens/doctor_auth_screen/doctor_sign_up_screen.dart';
 import 'modules/ui/doctor_screens/doctor_passwords_screens/doctor_create_password_screen.dart';
 import 'modules/ui/doctor_screens/doctor_passwords_screens/doctor_forget_password_screen.dart';
 import 'modules/ui/doctor_screens/doctor_passwords_screens/doctor_verification_screen.dart';
+import 'modules/ui/doctor_screens/doctor_profile/doctor_help&support_screen.dart';
 import 'modules/ui/doctor_screens/doctor_profile/doctor_profile.dart';
+import 'modules/ui/doctor_screens/doctor_profile/doctor_settings_screen.dart';
 import 'modules/ui/doctor_screens/doctor_schedule_&_patientinfo_&_Report_screens/docter_patientinfo_screen.dart';
 import 'modules/ui/doctor_screens/doctor_schedule_&_patientinfo_&_Report_screens/doctor_report_screen.dart';
 import 'modules/ui/doctor_screens/doctor_schedule_&_patientinfo_&_Report_screens/doctor_schedule_screen.dart';
@@ -50,7 +55,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             home: const SplashScreen(),
-            routes: {
+            routes: <String, WidgetBuilder>{
               'InterfaceScreen': (context) => const InterfaceScreen(),
               'ContinueScreen': (context) => const ContinueScreen(),
               'PatientLoginScreen': (context) => const PatientLoginScreen(),
@@ -85,8 +90,14 @@ class MyApp extends StatelessWidget {
               'Doctor_PatientInfo': (context) => const Doctor_PatientInfo(),
               'DoctorReport': (context) => const DoctorReport(),
               'DoctorProfile': (context) => const DoctorProfile(),
+<<<<<<< HEAD
               'PatientChoosePaymentScreen': (context) =>
                   const PatientChoosePaymentScreen(),
+=======
+              'DoctorSettingScreen': (context) => const DoctorSettingScreen(),
+              'DoctorHelpAndSupport': (context) => const DoctorHelpAndSupport(),
+              'PatientChoosePaymentScreen': (context) => const PatientChoosePaymentScreen(),
+>>>>>>> 44392775427ca455aa20df3edad8c552cf657d8d
               'ChatScreen': (context) => const ChatScreen(),
               'PuzzleScreen': (context) => const PuzzleScreen(),
               'PatientProfile': (context) => const PatientProfile(),
@@ -94,11 +105,12 @@ class MyApp extends StatelessWidget {
               'PatientMotivzoneScreen': (context) =>
                   const PatientMotivzoneScreen(),
               'PatientNotesScreen': (context) => const PatientNotesScreen(),
-              'PatientQuestionScreen': (context) =>
-                  const PatientQuestionScreen(),
+              'PatientQuestionScreen': (context) => const PatientQuestionScreen(),
               'PatientLibraryScreen': (context) => const PatientLibraryScreen(),
-              'PatientTrackEatingScreen': (context) =>
-                  const PatientTrackEatingScreen(),
+              'PatientTrackEatingScreen': (context) => const PatientTrackEatingScreen(),
+              'PatientReport': (context) => const PatientReport(),
+              'PatientHelpAndSupport': (context) => const PatientHelpAndSupport(),
+              'DoctorChooseTimeScreen': (context) => const DoctorChooseTimeScreen(),
             },
           );
         });

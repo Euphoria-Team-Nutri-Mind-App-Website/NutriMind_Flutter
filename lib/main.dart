@@ -90,14 +90,11 @@ class MyApp extends StatelessWidget {
               'Doctor_PatientInfo': (context) => const Doctor_PatientInfo(),
               'DoctorReport': (context) => const DoctorReport(),
               'DoctorProfile': (context) => const DoctorProfile(),
-<<<<<<< HEAD
               'PatientChoosePaymentScreen': (context) =>
                   const PatientChoosePaymentScreen(),
-=======
               'DoctorSettingScreen': (context) => const DoctorSettingScreen(),
               'DoctorHelpAndSupport': (context) => const DoctorHelpAndSupport(),
               'PatientChoosePaymentScreen': (context) => const PatientChoosePaymentScreen(),
->>>>>>> 44392775427ca455aa20df3edad8c552cf657d8d
               'ChatScreen': (context) => const ChatScreen(),
               'PuzzleScreen': (context) => const PuzzleScreen(),
               'PatientProfile': (context) => const PatientProfile(),

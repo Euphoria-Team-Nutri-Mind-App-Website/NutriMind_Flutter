@@ -60,26 +60,38 @@ class MyApp extends StatelessWidget {
               'ContinueScreen': (context) => const ContinueScreen(),
               'PatientLoginScreen': (context) => const PatientLoginScreen(),
               'PatientSignUpScreen': (context) => PatientSignUpScreen(),
-              'PatientForgetPassword': (context) => const PatientForgetPassword(),
-              'PatientVerificationScreen': (context) => const PatientVerificationScreen(),
-              'PatientCreatePasswordScreen': (context) => const PatientCreatePasswordScreen(),
+              'PatientForgetPassword': (context) =>
+                  const PatientForgetPassword(),
+              'PatientVerificationScreen': (context) =>
+                  const PatientVerificationScreen(),
+              'PatientCreatePasswordScreen': (context) =>
+                  const PatientCreatePasswordScreen(),
               'PatientSetTallScreen': (context) => const PatientSetTallScreen(),
-              'PatientSetWeightScreen': (context) => const PatientSetWeightScreen(),
+              'PatientSetWeightScreen': (context) =>
+                  const PatientSetWeightScreen(),
               'PatientNavBarScreen': (context) => const PatientNavBarScreen(),
-              'PatientNotificationsScreen': (context) => const PatientNotificationsScreen(),
-              'PatientAppointmentInDoctor': (context) => const PatientAppointmentInDoctor(),
-              'PatientBookAppointment': (context) => const PatientBookAppointment(),
+              'PatientNotificationsScreen': (context) =>
+                  const PatientNotificationsScreen(),
+              'PatientAppointmentInDoctor': (context) =>
+                  const PatientAppointmentInDoctor(),
+              'PatientBookAppointment': (context) =>
+                  const PatientBookAppointment(),
               'PatientReviewScreen': (context) => const PatientReviewScreen(),
-              'DoctorListForPatientScreen': (context) => const DoctorListForPatientScreen(),
+              'DoctorListForPatientScreen': (context) =>
+                  const DoctorListForPatientScreen(),
               'DoctorLoginScreen': (context) => const DoctorLoginScreen(),
               'DoctorSignUpScreen': (context) => const DoctorSignUpScreen(),
               'DoctorForgetPassword': (context) => const DoctorForgetPassword(),
-              'DoctorVerificationScreen': (context) => const DoctorVerificationScreen(),
-              'DoctorCreatePasswordScreen': (context) => const DoctorCreatePasswordScreen(),
+              'DoctorVerificationScreen': (context) =>
+                  const DoctorVerificationScreen(),
+              'DoctorCreatePasswordScreen': (context) =>
+                  const DoctorCreatePasswordScreen(),
               'DoctorScheduleScreen': (context) => const DoctorScheduleScreen(),
               'Doctor_PatientInfo': (context) => const Doctor_PatientInfo(),
               'DoctorReport': (context) => const DoctorReport(),
               'DoctorProfile': (context) => const DoctorProfile(),
+              'PatientChoosePaymentScreen': (context) =>
+                  const PatientChoosePaymentScreen(),
               'DoctorSettingScreen': (context) => const DoctorSettingScreen(),
               'DoctorHelpAndSupport': (context) => const DoctorHelpAndSupport(),
               'PatientChoosePaymentScreen': (context) => const PatientChoosePaymentScreen(),
@@ -87,7 +99,8 @@ class MyApp extends StatelessWidget {
               'PuzzleScreen': (context) => const PuzzleScreen(),
               'PatientProfile': (context) => const PatientProfile(),
               'PatientSettingScreen': (context) => const PatientSettingScreen(),
-              'PatientMotivzoneScreen': (context) => const PatientMotivzoneScreen(),
+              'PatientMotivzoneScreen': (context) =>
+                  const PatientMotivzoneScreen(),
               'PatientNotesScreen': (context) => const PatientNotesScreen(),
               'PatientQuestionScreen': (context) => const PatientQuestionScreen(),
               'PatientLibraryScreen': (context) => const PatientLibraryScreen(),

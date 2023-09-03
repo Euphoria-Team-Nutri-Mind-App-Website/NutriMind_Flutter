@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nutri_mind_application/modules/ui/Patient_screens/patient_home_screen/patient_home_services.dart';
 import '../../../../shared/Constants/colors.dart';
-import '../../chats_screen/chat_screen/chat_screen.dart';
+import '../patient_chat_screens/patient_all_chats_screen.dart';
 import '../patient_profile&settings&report/patient_profile.dart';
 import '../puzzle_screens/puzzle_screen.dart';
 
@@ -21,7 +21,7 @@ class PatientNavBarScreenState extends State<PatientNavBarScreen> {
 
   List<Widget> widgetList = [
     const PatientHomeServicesScreen(),
-    const ChatScreen(),
+    const PatientAllChatsScreen(),
     const PuzzleScreen(),
     const PatientProfile(),
   ];

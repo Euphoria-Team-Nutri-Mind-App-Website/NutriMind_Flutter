@@ -5,6 +5,7 @@ import 'modules/ui/Patient_screens/patient_appointment/patient_choose_payment_sc
 import 'modules/ui/Patient_screens/patient_appointment/patient_review_screen.dart';
 import 'modules/ui/Patient_screens/patient_auth_screens/patient_login_screen.dart';
 import 'modules/ui/Patient_screens/patient_auth_screens/patient_sign_up_screen.dart';
+import 'modules/ui/Patient_screens/patient_chat_screens/patient_all_chats_screen.dart';
 import 'modules/ui/Patient_screens/patient_first_set_tall_weight_screens/patient_set_tall.dart';
 import 'modules/ui/Patient_screens/patient_first_set_tall_weight_screens/patient_set_weight.dart';
 import 'modules/ui/Patient_screens/patient_home_screen/doctor_list_for_patient.dart';
@@ -24,7 +25,6 @@ import 'modules/ui/Patient_screens/patient_profile&settings&report/patient_setti
 import 'modules/ui/Patient_screens/patient_question_screen/patient_question_screen.dart';
 import 'modules/ui/Patient_screens/patient_track_eat_screen/patient_track_eat_screen.dart';
 import 'modules/ui/Patient_screens/puzzle_screens/puzzle_screen.dart';
-import 'modules/ui/chats_screen/chat_screen/chat_screen.dart';
 import 'modules/ui/continue_screen.dart';
 import 'modules/ui/doctor_screens/doctor_auth_screen/doctor_choose_time_screen.dart';
 import 'modules/ui/doctor_screens/doctor_auth_screen/doctor_login_screen.dart';
@@ -83,7 +83,7 @@ class MyApp extends StatelessWidget {
               'DoctorSettingScreen': (context) => const DoctorSettingScreen(),
               'DoctorHelpAndSupport': (context) => const DoctorHelpAndSupport(),
               'PatientChoosePaymentScreen': (context) => const PatientChoosePaymentScreen(),
-              'ChatScreen': (context) => const ChatScreen(),
+              'PatientAllChatsScreen': (context) => const PatientAllChatsScreen(),
               'PuzzleScreen': (context) => const PuzzleScreen(),
               'PatientProfile': (context) => const PatientProfile(),
               'PatientSettingScreen': (context) => const PatientSettingScreen(),

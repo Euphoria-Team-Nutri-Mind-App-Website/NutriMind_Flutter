@@ -4,7 +4,7 @@ import 'package:nutri_mind_application/modules/ui/Patient_screens/patient_home_s
 import '../../../../shared/Constants/colors.dart';
 import '../patient_chat_screens/patient_list_chats_screen.dart';
 import '../patient_profile&settings&report/patient_profile.dart';
-import '../puzzle_screens/puzzle_screen.dart';
+import '../patient_puzzle_screens/puzzle_start_screen.dart';
 
 class PatientNavBarScreen extends StatefulWidget {
   const PatientNavBarScreen({Key? key}) : super(key: key);
@@ -22,7 +22,7 @@ class PatientNavBarScreenState extends State<PatientNavBarScreen> {
   List<Widget> widgetList = [
     const PatientHomeServicesScreen(),
     const PatientListChatsScreen(),
-    const PuzzleScreen(),
+    const PuzzleStartScreen(),
     const PatientProfile(),
   ];
   @override

@@ -30,8 +30,6 @@ import 'modules/ui/Patient_screens/patient_question_screen/patient_question_scre
 import 'modules/ui/Patient_screens/patient_question_screen/patient_question_screen_four.dart';
 import 'modules/ui/Patient_screens/patient_question_screen/patient_question_screen_three.dart';
 import 'modules/ui/Patient_screens/patient_question_screen/patient_question_screen_two.dart';
-import 'modules/ui/Patient_screens/patient_track_eat_screen/breakfast_screen.dart';
-import 'modules/ui/Patient_screens/patient_track_eat_screen/dairy_My_food_screen.dart';
 import 'modules/ui/Patient_screens/patient_track_eat_screen/patient_track_eat_screen.dart';
 import 'modules/ui/Patient_screens/puzzle_screens/puzzle_screen.dart';
 import 'modules/ui/continue_screen.dart';
@@ -111,8 +109,6 @@ class MyApp extends StatelessWidget {
               'PatientQuestionScreenThree': (context) => const PatientQuestionScreenThree(),
               'PatientQuestionScreenFour': (context) => const PatientQuestionScreenFour(),
               'PatientQuestionScreenFive': (context) => const PatientQuestionScreenFive(),
-              'DairyMyFoodScreen': (context) => const DairyMyFoodScreen(),
-              'BreakfastScreen': (context) => const BreakfastScreen(),
             },
           );
         });

@@ -8,8 +8,6 @@ import 'modules/ui/Patient_screens/patient_auth_screens/patient_sign_up_screen.d
 import 'modules/ui/Patient_screens/patient_chat_screens/Patient_call_screen.dart';
 import 'modules/ui/Patient_screens/patient_chat_screens/patient_chat_screen.dart';
 import 'modules/ui/Patient_screens/patient_chat_screens/patient_list_chats_screen.dart';
-import 'modules/ui/Patient_screens/patient_first_set_tall_weight_screens/patient_set_tall.dart';
-import 'modules/ui/Patient_screens/patient_first_set_tall_weight_screens/patient_set_weight.dart';
 import 'modules/ui/Patient_screens/patient_home_screen/doctor_list_for_patient.dart';
 import 'modules/ui/Patient_screens/patient_appointment/patient_appointment_in_doctor.dart';
 import 'modules/ui/Patient_screens/patient_home_screen/patient_nav_bar.dart';
@@ -30,6 +28,10 @@ import 'modules/ui/Patient_screens/patient_question_screen/patient_question_scre
 import 'modules/ui/Patient_screens/patient_question_screen/patient_question_screen_four.dart';
 import 'modules/ui/Patient_screens/patient_question_screen/patient_question_screen_three.dart';
 import 'modules/ui/Patient_screens/patient_question_screen/patient_question_screen_two.dart';
+import 'modules/ui/Patient_screens/patient_set_tall_weight_state_screens/patient_choose_your_state_screen_1.dart';
+import 'modules/ui/Patient_screens/patient_set_tall_weight_state_screens/patient_choose_your_state_screen_2.dart';
+import 'modules/ui/Patient_screens/patient_set_tall_weight_state_screens/patient_set_tall.dart';
+import 'modules/ui/Patient_screens/patient_set_tall_weight_state_screens/patient_set_weight.dart';
 import 'modules/ui/Patient_screens/patient_track_eat_screen/patient_track_eat_screen.dart';
 import 'modules/ui/Patient_screens/puzzle_screens/puzzle_screen.dart';
 import 'modules/ui/continue_screen.dart';
@@ -72,6 +74,8 @@ class MyApp extends StatelessWidget {
               'PatientCreatePasswordScreen': (context) => const PatientCreatePasswordScreen(),
               'PatientSetTallScreen': (context) => const PatientSetTallScreen(),
               'PatientSetWeightScreen': (context) => const PatientSetWeightScreen(),
+              'PatientChooseYourStateScreen1': (context) => const PatientChooseYourStateScreen1(),
+              'PatientChooseYourStateScreen2': (context) => const PatientChooseYourStateScreen2(),
               'PatientNavBarScreen': (context) => const PatientNavBarScreen(),
               'PatientNotificationsScreen': (context) => const PatientNotificationsScreen(),
               'PatientAppointmentInDoctor': (context) => const PatientAppointmentInDoctor(),

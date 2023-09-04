@@ -22,34 +22,45 @@ class PatientListChatsScreen extends StatelessWidget {
                   fontFamily: 'Poppins',
                   fontWeight: FontWeight.w600,
                   fontSize: 18.sp),
-            )
+            ),
+            SizedBox(width: 30.w),
           ],
         ),
       ),
-       body: ListView(
-         children: [
-           Padding(
-             padding: EdgeInsets.only(left: 18.sp,right: 18.sp,top: 18.sp),
-             child: const SmallTextField(
-               hintText: 'Search for doctor',
-               suffixIcon: Icon(Icons.search_outlined),
-               obscureText: true,
-               textType: TextInputType.text,
-             ),
-           ),
-           Padding(
-             padding: EdgeInsets.only(left: 20.sp,top: 25.sp),
-             child: Text("Messages",
-               style: TextStyle(
-                 color: MyColors.black,
-                 fontFamily: 'Inter',
-                 fontWeight: FontWeight.w600,
-                 fontSize: 18.sp
+       body: Container(
+         color: MyColors.white,
+         child: ListView(
+           children: [
+             Padding(
+               padding: EdgeInsets.only(left: 25.sp,right: 25.sp,top: 25.sp),
+               child: const SmallTextField(
+                 hintText: 'Search for doctor',
+                 suffixIcon: Icon(Icons.search_outlined),
+                 obscureText: true,
+                 textType: TextInputType.text,
                ),
              ),
-           ),
-           const RecentChats(),
-         ]
+             Padding(
+               padding: EdgeInsets.only(left: 25.sp,top: 25.sp),
+               child: Column(
+                 crossAxisAlignment: CrossAxisAlignment.start,
+                 children: [
+                   Text("Messages",
+                     style: TextStyle(
+                       color: MyColors.black,
+                       fontFamily: 'Inter',
+                       fontWeight: FontWeight.w600,
+                       fontSize: 18.sp
+                     ),
+                   ),
+                   SizedBox(height: 5.h,),
+                   const RecentChats(),
+                 ],
+               ),
+             ),
+
+           ]
+         ),
        ),
     );
   }

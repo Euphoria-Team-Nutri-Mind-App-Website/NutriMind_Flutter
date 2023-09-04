@@ -23,6 +23,8 @@ import 'modules/ui/Patient_screens/patient_profile&settings&report/patient_help&
 import 'modules/ui/Patient_screens/patient_profile&settings&report/patient_profile.dart';
 import 'modules/ui/Patient_screens/patient_profile&settings&report/patient_report.dart';
 import 'modules/ui/Patient_screens/patient_profile&settings&report/patient_setting_screen.dart';
+import 'modules/ui/Patient_screens/patient_puzzle_screens/puzzle_end_screen.dart';
+import 'modules/ui/Patient_screens/patient_puzzle_screens/puzzle_start_screen.dart';
 import 'modules/ui/Patient_screens/patient_question_screen/patient_question_screen.dart';
 import 'modules/ui/Patient_screens/patient_question_screen/patient_question_screen_five.dart';
 import 'modules/ui/Patient_screens/patient_question_screen/patient_question_screen_four.dart';
@@ -33,7 +35,6 @@ import 'modules/ui/Patient_screens/patient_set_tall_weight_state_screens/patient
 import 'modules/ui/Patient_screens/patient_set_tall_weight_state_screens/patient_set_tall.dart';
 import 'modules/ui/Patient_screens/patient_set_tall_weight_state_screens/patient_set_weight.dart';
 import 'modules/ui/Patient_screens/patient_track_eat_screen/patient_track_eat_screen.dart';
-import 'modules/ui/Patient_screens/puzzle_screens/puzzle_screen.dart';
 import 'modules/ui/continue_screen.dart';
 import 'modules/ui/doctor_screens/doctor_auth_screen/doctor_choose_time_screen.dart';
 import 'modules/ui/doctor_screens/doctor_auth_screen/doctor_login_screen.dart';
@@ -93,7 +94,8 @@ class MyApp extends StatelessWidget {
               'DoctorSettingScreen': (context) => const DoctorSettingScreen(),
               'DoctorHelpAndSupport': (context) => const DoctorHelpAndSupport(),
               'PatientListChatsScreen': (context) => const PatientListChatsScreen(),
-              'PuzzleScreen': (context) => const PuzzleScreen(),
+              'PuzzleStartScreen': (context) => const PuzzleStartScreen(),
+              'PuzzleEndScreen': (context) => const PuzzleEndScreen(),
               'PatientProfile': (context) => const PatientProfile(),
               'PatientSettingScreen': (context) => const PatientSettingScreen(),
               'PatientMotivzoneScreen': (context) => const PatientMotivzoneScreen(),

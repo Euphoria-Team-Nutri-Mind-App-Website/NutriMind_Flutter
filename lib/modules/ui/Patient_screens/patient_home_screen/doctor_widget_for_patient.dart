@@ -46,7 +46,7 @@ class DoctorWidgetForPatientScreen extends StatelessWidget {
                             fontFamily: 'Inter'),
                       ),
                       SizedBox(
-                        width: 70.w,
+                        width: 50.w,
                       ),
                       const Row(
                         children: [

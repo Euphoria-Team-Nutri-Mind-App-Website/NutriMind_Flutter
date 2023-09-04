@@ -75,8 +75,6 @@ class MyApp extends StatelessWidget {
               'PatientCreatePasswordScreen': (context) => const PatientCreatePasswordScreen(),
               'PatientSetTallScreen': (context) => const PatientSetTallScreen(),
               'PatientSetWeightScreen': (context) => const PatientSetWeightScreen(),
-              'PatientChooseYourStateScreen1': (context) => const PatientChooseYourStateScreen1(),
-              'PatientChooseYourStateScreen2': (context) => const PatientChooseYourStateScreen2(),
               'PatientNavBarScreen': (context) => const PatientNavBarScreen(),
               'PatientNotificationsScreen': (context) => const PatientNotificationsScreen(),
               'PatientAppointmentInDoctor': (context) => const PatientAppointmentInDoctor(),
@@ -115,6 +113,8 @@ class MyApp extends StatelessWidget {
               'PatientQuestionScreenThree': (context) => const PatientQuestionScreenThree(),
               'PatientQuestionScreenFour': (context) => const PatientQuestionScreenFour(),
               'PatientQuestionScreenFive': (context) => const PatientQuestionScreenFive(),
+              'PatientChooseYourStateScreen1': (context) => const PatientChooseYourStateScreen1(),
+              'PatientChooseYourStateScreen2': (context) => const PatientChooseYourStateScreen2(),
             },
           );
         });

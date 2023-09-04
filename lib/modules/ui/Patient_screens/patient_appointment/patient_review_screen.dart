@@ -4,7 +4,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../shared/Constants/colors.dart';
-import '../../../../shared/widgets/review_screen_widgets.dart';
+import '../../../../shared/widgets/doctor_review_screen_widgets.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
 
 class PatientReviewScreen extends StatefulWidget {

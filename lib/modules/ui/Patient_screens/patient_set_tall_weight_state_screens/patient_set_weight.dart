@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../shared/Constants/colors.dart';
+import '../../../../shared/widgets/patient_tall_weight_screens_widgets.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
-import '../../../../shared/widgets/tall_weight_screens_widgets.dart';
 
 class PatientSetWeightScreen extends StatelessWidget {
   const PatientSetWeightScreen({Key? key}) : super(key: key);
@@ -52,7 +52,7 @@ class PatientSetWeightScreen extends StatelessWidget {
                 ),
                 const MyBlueButton(
                   text: 'Continue',
-                  page: 'PatientNavBarScreen',
+                  page: 'PatientChooseYourStateScreen1',
                 )
               ],
             ),

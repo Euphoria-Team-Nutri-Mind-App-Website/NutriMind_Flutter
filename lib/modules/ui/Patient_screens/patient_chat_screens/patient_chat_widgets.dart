@@ -11,11 +11,10 @@ class RecentChats extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 25),
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
           color: MyColors.white,
           borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(25), topRight: Radius.circular(25)),
+              topLeft: Radius.circular(25.r), topRight: Radius.circular(25.r)),
           ),
       child: Column(
         children: [

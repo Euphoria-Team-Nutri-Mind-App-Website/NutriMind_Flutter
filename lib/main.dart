@@ -34,6 +34,8 @@ import 'modules/ui/Patient_screens/patient_set_tall_weight_state_screens/patient
 import 'modules/ui/Patient_screens/patient_set_tall_weight_state_screens/patient_choose_your_state_screen_2.dart';
 import 'modules/ui/Patient_screens/patient_set_tall_weight_state_screens/patient_set_tall.dart';
 import 'modules/ui/Patient_screens/patient_set_tall_weight_state_screens/patient_set_weight.dart';
+import 'modules/ui/Patient_screens/patient_track_eat_screen/breakfast_screen.dart';
+import 'modules/ui/Patient_screens/patient_track_eat_screen/dairy_My_food_screen.dart';
 import 'modules/ui/Patient_screens/patient_track_eat_screen/patient_track_eat_screen.dart';
 import 'modules/ui/continue_screen.dart';
 import 'modules/ui/doctor_screens/doctor_auth_screen/doctor_choose_time_screen.dart';
@@ -115,6 +117,8 @@ class MyApp extends StatelessWidget {
               'PatientQuestionScreenFive': (context) => const PatientQuestionScreenFive(),
               'PatientChooseYourStateScreen1': (context) => const PatientChooseYourStateScreen1(),
               'PatientChooseYourStateScreen2': (context) => const PatientChooseYourStateScreen2(),
+              'BreakfastScreen': (context) => const BreakfastScreen(),
+              'DairyMyFoodScreen': (context) => const DairyMyFoodScreen(),
             },
           );
         });

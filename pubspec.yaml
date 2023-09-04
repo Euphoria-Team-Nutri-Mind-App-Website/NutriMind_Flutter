@@ -23,13 +23,15 @@ dependencies:
   syncfusion_flutter_gauges: ^22.2.11
   agora_rtc_engine: ^6.2.2
   permission_handler: ^10.4.3
-  get: ^4.6.5
   dio: ^5.3.2
   shared_preferences: ^2.2.1
   conditional_builder_null_safety: ^0.0.6
   flutter_rating_bar: ^4.0.1
   card_swiper: ^3.0.1
   url_launcher: ^6.1.14
+  custom_clippers: ^2.0.0
+  font_awesome_flutter: ^10.5.0
+
 
 
 dev_dependencies:

@@ -15,6 +15,7 @@ import 'modules/ui/Patient_screens/patient_appointment/patient_appointment_in_do
 import 'modules/ui/Patient_screens/patient_home_screen/patient_nav_bar.dart';
 import 'modules/ui/Patient_screens/patient_library_screen/patient_library_screen.dart';
 import 'modules/ui/Patient_screens/patient_motivzone_screen/patient_motivzone_screen.dart';
+import 'modules/ui/Patient_screens/patient_notes_screen/patient_add_notes.dart';
 import 'modules/ui/Patient_screens/patient_notes_screen/patient_notes_screen.dart';
 import 'modules/ui/Patient_screens/patient_notifications/patient_notifications.dart';
 import 'modules/ui/Patient_screens/patient_password_screens/patient_create_password_screen.dart';
@@ -99,6 +100,7 @@ class MyApp extends StatelessWidget {
               'DoctorChooseTimeScreen': (context) => const DoctorChooseTimeScreen(),
               'PatientChatScreen': (context) => const PatientChatScreen(),
               'PatientCallScreen': (context) => const PatientCallScreen(),
+              'PatientAddNotes': (context) => const PatientAddNotes(),
             },
           );
         });

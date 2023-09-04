@@ -20,13 +20,16 @@ class _PatientCallScreenState extends State<PatientCallScreen> {
         backPage: 'PatientChatScreen',
 
       ),
-      body: const Column(
+      body: Column(
         children: [
-          SmallTextField(
-            hintText: 'Search for service',
-            suffixIcon: Icon(Icons.search_outlined),
-            obscureText: true,
-            textType: TextInputType.text,
+          Padding(
+            padding: EdgeInsets.only(left: 18.sp,right: 18.sp,top: 18.sp),
+            child: const SmallTextField(
+              hintText: 'Search for service',
+              suffixIcon: Icon(Icons.search_outlined),
+              obscureText: true,
+              textType: TextInputType.text,
+            ),
           ),
         ],
       ),

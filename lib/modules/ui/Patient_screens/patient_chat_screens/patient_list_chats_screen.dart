@@ -29,33 +29,12 @@ class PatientListChatsScreen extends StatelessWidget {
        body: ListView(
          children: [
            Padding(
-             padding: EdgeInsets.only(top: 25.sp),
-             child: Container(
-               padding: const EdgeInsets.symmetric(horizontal: 15),
-               decoration: BoxDecoration(
-                 color: MyColors.lightGrey,
-                 borderRadius: BorderRadius.circular(20),
-                 border: Border.all(color: MyColors.darkBlue),
-               ),
-               child: Row(
-                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                 children: [
-                   Container(
-                     width: 300,
-                     child: Padding(padding: EdgeInsets.symmetric(horizontal: 15),
-                     child: TextFormField(
-                       decoration: const InputDecoration(
-                           hintText: "Search for doctor",
-                         border: InputBorder.none
-                       ),
-                     ),
-                     ),
-                   ),
-                   Icon(Icons.search,
-                   color: MyColors.grey,
-                   )
-                 ],
-               ),
+             padding: EdgeInsets.only(left: 18.sp,right: 18.sp,top: 18.sp),
+             child: const SmallTextField(
+               hintText: 'Search for doctor',
+               suffixIcon: Icon(Icons.search_outlined),
+               obscureText: true,
+               textType: TextInputType.text,
              ),
            ),
            Padding(

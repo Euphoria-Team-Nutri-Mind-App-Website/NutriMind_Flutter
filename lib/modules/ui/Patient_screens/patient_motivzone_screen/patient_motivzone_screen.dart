@@ -83,14 +83,14 @@ class _PatientMotivzoneScreenState extends State<PatientMotivzoneScreen> {
                               "“When your healthy self is strong enough to deal with all that comes your way in life,"
                               " your eating disorder self will no longer be useful or necessary.",
                               style: TextStyle(
-                                  height: 1.5.sp,
+                                  height: 1.sp,
                                   wordSpacing: 7.sp,
                                   color: MyColors.darkBlue,
                                   fontWeight: FontWeight.w600,
                                   fontSize: 14.sp,
                                   fontFamily: 'Poppins'),
                             ),
-                            SizedBox(height: 20.h),
+                            SizedBox(height: 10.h),
                             Text(
                               "- Carolyn Costin ",
                               style: TextStyle(
@@ -100,7 +100,7 @@ class _PatientMotivzoneScreenState extends State<PatientMotivzoneScreen> {
                                 fontSize: 14.sp,
                               ),
                             ),
-                            SizedBox(height: 40.h),
+                            SizedBox(height: 20.h),
                             Row(
                               children: [
                                 Image.asset(

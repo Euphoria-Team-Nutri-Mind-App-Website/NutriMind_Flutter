@@ -19,11 +19,7 @@ class DoctorScheduleScreen extends StatelessWidget {
             children: [
               Text(
                 "My Schedule",
-                style: TextStyle(
-                    fontFamily: 'Inter',
-                    color: MyColors.black,
-                    fontWeight: FontWeight.w800,
-                    fontSize: 18.sp),
+                style: Theme.of(context).textTheme.headline1,
               )
             ],
           ),

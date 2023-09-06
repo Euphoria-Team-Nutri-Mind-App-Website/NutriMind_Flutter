@@ -16,11 +16,8 @@ class Doctor_PatientInfo extends StatelessWidget {
           children: [
             Text(
               "Patient Info",
-              style: TextStyle(
-                  color: MyColors.black,
-                  fontFamily: 'Inter',
-                  fontWeight: FontWeight.w600,
-                  fontSize: 18.sp),
+              style: Theme.of(context).textTheme.headline1,
+
             )
           ],
         ),

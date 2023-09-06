@@ -18,11 +18,7 @@ class PatientChooseYourStateScreen1 extends StatelessWidget {
           children: [
             Text(
               'Choose your state',
-              style: TextStyle(
-                  fontSize: 18.sp,
-                  color: MyColors.black,
-                  fontWeight: FontWeight.w600,
-                  fontFamily: 'Inter'),
+              style: Theme.of(context).textTheme.headline1,
             ),
           ],
         ),

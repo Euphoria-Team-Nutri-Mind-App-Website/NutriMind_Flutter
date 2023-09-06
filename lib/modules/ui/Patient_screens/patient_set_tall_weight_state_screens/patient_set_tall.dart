@@ -22,11 +22,7 @@ class _PatientSetTallScreenState extends State<PatientSetTallScreen> {
           children: [
             Text(
               'How tall are you',
-              style: TextStyle(
-                  fontSize: 18.sp,
-                  color: MyColors.black,
-                  fontWeight: FontWeight.w600,
-                  fontFamily: 'Inter'),
+          style: Theme.of(context).textTheme.headline1,
             ),
           ],
         ),

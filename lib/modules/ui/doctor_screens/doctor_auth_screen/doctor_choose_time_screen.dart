@@ -64,11 +64,7 @@ class _DoctorChooseTimeScreenState extends State<DoctorChooseTimeScreen> {
           children: [
             Text(
               'Times of work',
-              style: TextStyle(
-                  color: MyColors.black,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w600,
-                  fontSize: 18.sp),
+              style: Theme.of(context).textTheme.headline1,
             )
           ],
         ),

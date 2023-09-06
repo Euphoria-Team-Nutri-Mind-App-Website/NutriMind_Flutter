@@ -17,11 +17,7 @@ class PatientListChatsScreen extends StatelessWidget {
           children: [
             Text(
               "Chats",
-              style: TextStyle(
-                  color: MyColors.black,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w600,
-                  fontSize: 18.sp),
+              style: Theme.of(context).textTheme.headline1,
             ),
             SizedBox(width: 30.w),
           ],

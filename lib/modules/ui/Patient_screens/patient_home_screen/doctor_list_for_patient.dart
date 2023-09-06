@@ -25,11 +25,7 @@ class _DoctorListForPatientScreenState
             children: [
               Text(
                 "Doctors",
-                style: TextStyle(
-                  color: MyColors.black,
-                    fontFamily: 'Inter',
-                    fontWeight: FontWeight.w600,
-                    fontSize: 15.sp),
+                style: Theme.of(context).textTheme.headline1,
               )
             ],
           ),

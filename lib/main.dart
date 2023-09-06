@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nutri_mind_application/shared/Constants/text_theme.dart';
 import 'modules/ui/Patient_screens/patient_appointment/patient_book_appointment.dart';
 import 'modules/ui/Patient_screens/patient_appointment/patient_choose_payment_screen.dart';
 import 'modules/ui/Patient_screens/patient_appointment/patient_review_screen.dart';
@@ -66,7 +67,10 @@ class MyApp extends StatelessWidget {
         builder: (context, child) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            home: const SplashScreen(),
+              theme: ThemeData(
+              textTheme: AppTextTheme.lightTheme,
+              ),
+              home: const SplashScreen(),
             routes: <String, WidgetBuilder>{
               'InterfaceScreen': (context) => const InterfaceScreen(),
               'ContinueScreen': (context) => const ContinueScreen(),

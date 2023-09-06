@@ -27,11 +27,7 @@ class _PatientReviewScreenState extends State<PatientReviewScreen> {
           children: [
             Text(
               "Patient Review",
-              style: TextStyle(
-                  color: MyColors.black,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w600,
-                  fontSize: 18.sp),
+              style: Theme.of(context).textTheme.headline1,
             )
           ],
         ),

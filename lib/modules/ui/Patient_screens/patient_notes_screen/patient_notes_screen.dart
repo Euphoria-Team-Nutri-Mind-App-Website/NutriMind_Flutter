@@ -24,12 +24,8 @@ class _PatientNotesScreenState extends State<PatientNotesScreen> {
           children: [
             Text(
               "Notes",
-              style: TextStyle(
-                  color: MyColors.black,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w600,
-                  fontSize: 18.sp),
-            )
+              style: Theme.of(context).textTheme.headline1,
+            ),
           ],
         ),
       ),

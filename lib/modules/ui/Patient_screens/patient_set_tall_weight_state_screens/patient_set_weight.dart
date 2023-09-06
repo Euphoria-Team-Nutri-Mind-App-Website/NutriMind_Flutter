@@ -18,11 +18,7 @@ class PatientSetWeightScreen extends StatelessWidget {
           children: [
             Text(
               'How weight are you',
-              style: TextStyle(
-                  fontSize: 18.sp,
-                  color: MyColors.black,
-                  fontWeight: FontWeight.w600,
-                  fontFamily: 'Inter'),
+              style: Theme.of(context).textTheme.headline1,
             ),
           ],
         ),

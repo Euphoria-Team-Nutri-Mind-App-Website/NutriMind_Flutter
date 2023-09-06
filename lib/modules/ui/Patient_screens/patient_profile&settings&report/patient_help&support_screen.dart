@@ -17,12 +17,7 @@ class PatientHelpAndSupport extends StatelessWidget {
           children: [
             Text(
               "Help&Support",
-              style: TextStyle(
-                  color: MyColors.black,
-                  fontFamily: 'Inter',
-                  fontWeight: FontWeight.w600,
-                  fontSize: 18.sp),
-            )
+          style: Theme.of(context).textTheme.headline1,),
           ],
         ),
         actionIcon: [

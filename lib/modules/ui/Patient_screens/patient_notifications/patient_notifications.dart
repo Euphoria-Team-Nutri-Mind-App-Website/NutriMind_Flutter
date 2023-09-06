@@ -18,12 +18,8 @@ class PatientNotificationsScreen extends StatelessWidget {
           children: [
             Text(
               "Notifications",
-              style: TextStyle(
-                  color: MyColors.black,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w600,
-                  fontSize: 18.sp),
-            )
+              style: Theme.of(context).textTheme.headline1,
+            ),
           ],
         ),
       ),

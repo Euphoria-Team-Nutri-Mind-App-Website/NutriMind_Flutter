@@ -55,9 +55,9 @@ class BreakfastScreen extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Padding(
-                      padding: EdgeInsets.only(top: 8.0),
-                      child: NumberContainerDairy(text: "393 kcal", color: MyColors.black, bacgroundColor: MyColors.darkBlue,),
+                     Padding(
+                      padding: EdgeInsets.all(18.sp),
+                      child: const NumberContainerDairy(text: "393 kcal", color: MyColors.black, bacgroundColor: MyColors.darkBlue,),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,

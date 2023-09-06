@@ -126,7 +126,7 @@ class _PatientTrackEatingScreenState extends State<PatientTrackEatingScreen> {
                   ),
                   child:
                   Padding(
-                    padding: EdgeInsets.all(18.sp),
+                    padding: EdgeInsets.all(8.sp),
                     child: Column(
                       children: [
                         Row(

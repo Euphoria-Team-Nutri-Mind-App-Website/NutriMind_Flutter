@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nutri_mind_application/shared/Constants/text_theme.dart';
 import '../../../../shared/Constants/colors.dart';
+import '../../../../shared/widgets/default_items.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
+
 
 class PatientLoginScreen extends StatefulWidget {
   const PatientLoginScreen({Key? key}) : super(key: key);
@@ -15,10 +18,9 @@ class _PatientLoginScreenState extends State<PatientLoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(backPage: 'ContinueScreen'),
+      appBar: MyAppBar(backPage: 'ContinueScreen',),
       body: SingleChildScrollView(
-        child: SafeArea(
-          child: Container(
+        child: Container(
             padding: EdgeInsets.all(25.sp),
             color: MyColors.white,
             child: Column(
@@ -27,19 +29,16 @@ class _PatientLoginScreenState extends State<PatientLoginScreen> {
               children: [
                 Text(
                   "Welcome To",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 24.sp,
-                      fontFamily: 'Poppins'),
+                  style:AppTextStyle().textInAppBar.copyWith(fontWeight:FontWeight.w500),
                 ),
                 SizedBox(
-                  height: 5.h,
+                  height: 7.h,
                 ),
                 Image(
                   image: const AssetImage(
                     "assets/images/logo.png",
                   ),
-                  width: 180.w,
+                  width: 160.w,
                 ),
                 SizedBox(
                   height: 45.h,
@@ -71,11 +70,7 @@ class _PatientLoginScreenState extends State<PatientLoginScreen> {
                       },
                       child: Text(
                         "Forget Password?",
-                        style: TextStyle(
-                          fontFamily: 'Inter',
-                          fontSize: 15.sp,
-                          fontWeight: FontWeight.w600,
-                        ),
+                        style: AppTextStyle().greyText.copyWith(color: MyColors.black)
                       ),
                     ),
                   ],
@@ -83,12 +78,12 @@ class _PatientLoginScreenState extends State<PatientLoginScreen> {
                 SizedBox(
                   height: 38.h,
                 ),
-                const InkWell(
-                  child: MyBlueButton(
+                MyBlueButton(
+                    width: double.infinity,
+                    height:55.h,
                     text: "Log IN",
                     page: 'PatientSetTallScreen',
                   ),
-                ),
                 SizedBox(
                   height: 30.h,
                 ),
@@ -104,11 +99,7 @@ class _PatientLoginScreenState extends State<PatientLoginScreen> {
                     ),
                     Text(
                       "Or Log in with",
-                      style: TextStyle(
-                          color: MyColors.black,
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: 'Poppins'),
+                      style: AppTextStyle().greyText.copyWith(color: MyColors.black,fontSize: 14.sp)
                     ),
                     SizedBox(
                       width: 15.w,
@@ -139,7 +130,6 @@ class _PatientLoginScreenState extends State<PatientLoginScreen> {
             ),
           ),
         ),
-      ),
       bottomNavigationBar: BottomAppBar(
         height: 40.h,
         color: Colors.transparent,

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/widgets/patient_settings_widgets.dart';
-import '../../../../shared/widgets/screens_widgets.dart';
+import '../../../../shared/widgets/default_items.dart';
 
 class PatientSettingScreen extends StatefulWidget {
   const PatientSettingScreen({Key? key}) : super(key: key);

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../shared/Constants/colors.dart';
+import '../../../../shared/Constants/text_theme.dart';
+import '../../../../shared/widgets/default_items.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
 
 
@@ -13,8 +15,7 @@ class PatientForgetPassword extends StatelessWidget {
     return Scaffold(
       appBar: MyAppBar(backPage: 'PatientLoginScreen'),
       body: SingleChildScrollView(
-        child: SafeArea(
-          child: Container(
+        child:Container(
             padding: EdgeInsets.all(25.sp),
             color: MyColors.white,
             child: Column(
@@ -25,23 +26,13 @@ class PatientForgetPassword extends StatelessWidget {
                 ),
                 Text(
                   "Forgot Password?",
-                  style: TextStyle(
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w600,
-                      fontSize: 22.sp,
-                      color: MyColors.black),
-                ),
+                  style:AppTextStyle().textInAppBar.copyWith(fontSize:22.sp),),
                 SizedBox(
                   height: 15.h,
                 ),
                 Text(
                   "Please enter your email address!",
-                  style: TextStyle(
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w400,
-                      fontSize: 13.sp,
-                      color: MyColors.grey),
-                ),
+                  style: AppTextStyle().greyText.copyWith(fontSize: 13.sp,fontWeight:FontWeight.w400) ,),
                 SizedBox(
                   height: 40.h,
                 ),
@@ -53,12 +44,15 @@ class PatientForgetPassword extends StatelessWidget {
                 SizedBox(
                   height: 28.h,
                 ),
-                const MyBlueButton(text: 'Send Code', page: 'PatientVerificationScreen'),
+                 MyBlueButton(
+                  width: double.infinity,
+                    height: 55.h,
+                    text: 'Send Code',
+                    page: 'PatientVerificationScreen'),
               ],
             ),
           ),
         ),
-      ),
       bottomNavigationBar: BottomAppBar(
         height: 40.h,
           color: Colors.transparent,

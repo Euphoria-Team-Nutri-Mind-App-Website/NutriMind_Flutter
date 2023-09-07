@@ -2,10 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../shared/Constants/colors.dart';
+import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
 import '../../../blocs/auth_cubit/auth_cubit.dart';
 import '../patient_home_screen/patient_nav_bar.dart';
+<<<<<<< HEAD
 import '../patient_set_tall_weight_state_screens/patient_set_tall.dart';
+=======
+import '../../../../shared/widgets/default_items.dart';
+
+>>>>>>> 3e6c48e116c3293b92a8d0cf08a318de887dd247
 
 class PatientSignUpScreen extends StatelessWidget {
   final nameController = TextEditingController();
@@ -55,22 +61,14 @@ class PatientSignUpScreen extends StatelessWidget {
                       children: [
                         Text(
                           "Registration",
-                          style: TextStyle(
-                              fontFamily: 'Inter',
-                              fontWeight: FontWeight.w600,
-                              fontSize: 28.sp,
-                              color: MyColors.black),
+                          style:AppTextStyle().textInAppBar.copyWith(fontSize: 28.sp),
                         ),
                         SizedBox(
                           height: 7.h,
                         ),
                         Text(
                           "create your account",
-                          style: TextStyle(
-                              fontFamily: 'Inter',
-                              fontWeight: FontWeight.w400,
-                              fontSize: 12.sp,
-                              color: MyColors.grey),
+                          style: AppTextStyle().greyText
                         ),
                         SizedBox(
                           height: 26.h,
@@ -161,11 +159,7 @@ class PatientSignUpScreen extends StatelessWidget {
                                 state is RegisterLoadingState
                                     ? "loading....."
                                     : "Sign Up",
-                                style: TextStyle(
-                                    fontFamily: 'Poppins',
-                                    fontSize: 20.sp,
-                                    fontWeight: FontWeight.w600,
-                                    color: MyColors.white),
+                                style:AppTextStyle().textBlueButton
                               ),
                             ),
                           ),
@@ -185,12 +179,7 @@ class PatientSignUpScreen extends StatelessWidget {
                             ),
                             Text(
                               "Or Sign Up with",
-                              style: TextStyle(
-                                  color: MyColors.black,
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w500,
-                                  fontFamily: 'Poppins'),
-                            ),
+                              style:  AppTextStyle().greyText.copyWith(color: MyColors.black,fontSize: 14.sp),),
                             SizedBox(
                               width: 15.w,
                             ),

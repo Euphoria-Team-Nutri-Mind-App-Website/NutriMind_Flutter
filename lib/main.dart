@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nutri_mind_application/routs.dart';
-import 'package:nutri_mind_application/shared/Constants/text_theme.dart';
+import 'package:nutri_mind_application/routes.dart';
 import 'modules/ui/splash_screen.dart';
 
 void main() => runApp(const MyApp());
@@ -11,18 +10,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        designSize: const Size(360, 690),
-        minTextAdapt: true,
-        splitScreenMode: true,
-        builder: (context, child) {
-          return MaterialApp(
-            debugShowCheckedModeBanner: false,
-              theme: ThemeData(
-              textTheme: AppTextTheme.lightTheme,
-              ),
-              home: const SplashScreen(),
-            routes: routes,
-          );
-        });
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: const SplashScreen(),
+          routes: routes,
+        );
+      },
+    );
   }
 }

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../shared/Constants/colors.dart';
-import '../../../../shared/widgets/screens_widgets.dart';
+import '../../../../shared/widgets/default_items.dart';
 
 class PatientMotivzoneScreen extends StatefulWidget {
   final text;

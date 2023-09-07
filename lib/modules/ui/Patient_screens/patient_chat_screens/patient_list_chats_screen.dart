@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nutri_mind_application/modules/ui/Patient_screens/patient_chat_screens/patient_chat_widgets.dart';
 import 'package:nutri_mind_application/shared/widgets/screens_widgets.dart';
 import '../../../../shared/Constants/colors.dart';
+import '../../../../shared/widgets/default_items.dart';
 
 class PatientListChatsScreen extends StatelessWidget {
   const PatientListChatsScreen({Key? key}) : super(key: key);

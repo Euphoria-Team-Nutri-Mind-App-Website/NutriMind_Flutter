@@ -54,7 +54,6 @@ import 'modules/ui/interface_screen.dart';
 Map<String, WidgetBuilder> routes = {
   'InterfaceScreen': (context) => const InterfaceScreen(),
   'ContinueScreen': (context) => const ContinueScreen(),
-  //**************************************************************************************
   'PatientLoginScreen': (context) => const PatientLoginScreen(),
   'PatientSignUpScreen': (context) => PatientSignUpScreen(),
   'PatientForgetPassword': (context) => const PatientForgetPassword(),
@@ -91,7 +90,6 @@ Map<String, WidgetBuilder> routes = {
   'PatientChooseYourStateScreen2': (context) => const PatientChooseYourStateScreen2(),
   'BreakfastScreen': (context) => const BreakfastScreen(),
   'DairyMyFoodScreen': (context) => const DairyMyFoodScreen(),
-  //**************************************************************************************
   'DoctorListForPatientScreen': (context) => const DoctorListForPatientScreen(),
   'DoctorLoginScreen': (context) => const DoctorLoginScreen(),
   'DoctorSignUpScreen': (context) => const DoctorSignUpScreen(),

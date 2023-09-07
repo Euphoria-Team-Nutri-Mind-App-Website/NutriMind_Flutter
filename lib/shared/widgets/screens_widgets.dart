@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../Constants/colors.dart';
+import '../Constants/text_theme.dart';
 
 class MyTextField extends StatelessWidget {
   final controller;
@@ -43,7 +44,7 @@ class MyTextField extends StatelessWidget {
         fillColor: MyColors.lightGrey,
         filled: true,
         hintText: hintText,
-        hintStyle: const TextStyle(color: MyColors.grey),
+        hintStyle: AppTextStyle().greyText,
         suffixIcon: suffixIcon,
       ),
     );

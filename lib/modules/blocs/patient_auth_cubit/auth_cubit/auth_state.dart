@@ -18,4 +18,7 @@ class LoginLoadingState extends AuthState {}
 
 class LoginSuccessState extends AuthState {}
 
-class LoginFailedState extends AuthState {}
+class LoginFailedState extends AuthState {
+  String message;
+  LoginFailedState({required this.message});
+}

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../Constants/colors.dart';
+import '../Constants/text_theme.dart';
 
 class ProfileContainer extends StatelessWidget {
   final text;

@@ -10,7 +10,6 @@ class AppTextTheme {
         color: MyColors.black,
         fontWeight: FontWeight.w800,
         fontSize: 18.sp),
-    //This is for headline in AppBar
   );
 
   // static TextTheme darkTheme = const TextTheme(
@@ -18,3 +17,4 @@ class AppTextTheme {
   //   headline2: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.white),
   // );
 }
+

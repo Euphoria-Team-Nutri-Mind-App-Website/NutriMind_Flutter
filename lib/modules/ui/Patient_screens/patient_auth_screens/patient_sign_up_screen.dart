@@ -5,6 +5,7 @@ import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
 import '../../../blocs/auth_cubit/auth_cubit.dart';
 import '../patient_home_screen/patient_nav_bar.dart';
+import '../patient_set_tall_weight_state_screens/patient_set_tall.dart';
 
 class PatientSignUpScreen extends StatelessWidget {
   final nameController = TextEditingController();
@@ -25,7 +26,7 @@ class PatientSignUpScreen extends StatelessWidget {
             Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => const PatientNavBarScreen()));
+                    builder: (context) => const PatientSetTallScreen()));
           } else if (state is RegisterFailedState) {
             showDialog(
                 context: context,

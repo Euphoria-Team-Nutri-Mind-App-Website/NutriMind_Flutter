@@ -4,6 +4,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../shared/Constants/colors.dart';
+import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/doctor_review_screen_widgets.dart';
 import '../../../../shared/widgets/default_items.dart';
 
@@ -27,7 +28,7 @@ class _PatientReviewScreenState extends State<PatientReviewScreen> {
           children: [
             Text(
               "Patient Review",
-              style: Theme.of(context).textTheme.headline1,
+                style:AppTextStyle().textInAppBar
             )
           ],
         ),

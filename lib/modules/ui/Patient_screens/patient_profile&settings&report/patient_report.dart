@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nutri_mind_application/shared/widgets/screens_widgets.dart';
-
 import '../../../../shared/Constants/colors.dart';
+import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/default_items.dart';
 
 class PatientReport extends StatelessWidget {
@@ -19,7 +18,8 @@ class PatientReport extends StatelessWidget {
           children: [
             Text(
               "Report",
-          style: Theme.of(context).textTheme.headline1,),
+                style:AppTextStyle().textInAppBar
+            ),
           ],
         ),
         actionIcon: [

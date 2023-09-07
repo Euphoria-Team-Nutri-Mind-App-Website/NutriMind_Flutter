@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nutri_mind_application/shared/Constants/colors.dart';
 import 'package:nutri_mind_application/shared/widgets/screens_widgets.dart';
 
+import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/default_items.dart';
 
 class Doctor_PatientInfo extends StatelessWidget {
@@ -18,7 +19,7 @@ class Doctor_PatientInfo extends StatelessWidget {
           children: [
             Text(
               "Patient Info",
-              style: Theme.of(context).textTheme.headline1,
+                style:AppTextStyle().textInAppBar
 
             )
           ],

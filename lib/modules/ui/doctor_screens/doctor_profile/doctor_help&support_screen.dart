@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../shared/Constants/colors.dart';
+import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/default_items.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
 
@@ -17,7 +18,7 @@ class DoctorHelpAndSupport extends StatelessWidget {
           children: [
             Text(
               "Help&Support",
-              style: Theme.of(context).textTheme.headline1,
+                style:AppTextStyle().textInAppBar
             )
           ],
         ),

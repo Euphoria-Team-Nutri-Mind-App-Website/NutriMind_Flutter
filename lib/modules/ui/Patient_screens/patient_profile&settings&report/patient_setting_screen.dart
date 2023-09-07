@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../shared/Constants/colors.dart';
+import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/patient_settings_widgets.dart';
 import '../../../../shared/widgets/default_items.dart';
 
@@ -25,7 +26,7 @@ class _PatientSettingScreenState extends State<PatientSettingScreen> {
           children: [
             Text(
               "Settings",
-              style: Theme.of(context).textTheme.headline1,
+                style:AppTextStyle().textInAppBar
 
             )
           ],

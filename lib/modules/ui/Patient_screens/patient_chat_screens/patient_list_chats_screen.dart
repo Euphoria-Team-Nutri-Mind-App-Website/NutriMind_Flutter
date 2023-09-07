@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nutri_mind_application/modules/ui/Patient_screens/patient_chat_screens/patient_chat_widgets.dart';
 import 'package:nutri_mind_application/shared/widgets/screens_widgets.dart';
 import '../../../../shared/Constants/colors.dart';
+import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/default_items.dart';
 
 class PatientListChatsScreen extends StatelessWidget {
@@ -18,7 +19,7 @@ class PatientListChatsScreen extends StatelessWidget {
           children: [
             Text(
               "Chats",
-              style: Theme.of(context).textTheme.headline1,
+                style:AppTextStyle().textInAppBar
             ),
             SizedBox(width: 30.w),
           ],

@@ -23,7 +23,8 @@ class _PatientAppointmentInDoctorState
         pageTitle: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image(image: const AssetImage('assets/images/Appointment.png',),width: 120.w,)
+            Image(image: const AssetImage('assets/images/Appointment.png',),
+              width: 120.w,)
           ],
         ),
         actionIcon: [

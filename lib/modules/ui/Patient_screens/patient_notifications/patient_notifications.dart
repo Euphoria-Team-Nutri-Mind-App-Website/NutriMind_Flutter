@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../shared/Constants/colors.dart';
+import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/patient_notifications_widgets.dart';
 import '../../../../shared/widgets/default_items.dart';
 
@@ -18,7 +19,7 @@ class PatientNotificationsScreen extends StatelessWidget {
           children: [
             Text(
               "Notifications",
-              style: Theme.of(context).textTheme.headline1,
+                style:AppTextStyle().textInAppBar
             ),
           ],
         ),

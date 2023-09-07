@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../shared/Constants/colors.dart';
+import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/default_items.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
 import '../patient_password_screens/set_password_widget.dart';
@@ -25,7 +26,7 @@ class _PatientChoosePaymentScreenState
           children: [
             Text(
               "Payment",
-              style: Theme.of(context).textTheme.headline1,
+                style:AppTextStyle().textInAppBar
             ),
           ],
         ),

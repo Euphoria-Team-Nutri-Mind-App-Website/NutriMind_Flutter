@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../shared/Constants/colors.dart';
+import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/default_items.dart';
 import '../../../../shared/widgets/patient_choose_state_widget.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
@@ -20,7 +21,7 @@ class PatientChooseYourStateScreen2 extends StatelessWidget {
           children: [
             Text(
               'Choose your state',
-          style: Theme.of(context).textTheme.headline1,
+                style:AppTextStyle().textInAppBar
             ),
           ],
         ),

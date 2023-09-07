@@ -5,13 +5,9 @@ import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
 import '../../../blocs/auth_cubit/auth_cubit.dart';
-import '../patient_home_screen/patient_nav_bar.dart';
-<<<<<<< HEAD
 import '../patient_set_tall_weight_state_screens/patient_set_tall.dart';
-=======
 import '../../../../shared/widgets/default_items.dart';
 
->>>>>>> 3e6c48e116c3293b92a8d0cf08a318de887dd247
 
 class PatientSignUpScreen extends StatelessWidget {
   final nameController = TextEditingController();

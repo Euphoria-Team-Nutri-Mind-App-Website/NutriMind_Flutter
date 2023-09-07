@@ -50,40 +50,6 @@ class MyTextField extends StatelessWidget {
   }
 }
 
-class MyBlueButton extends StatelessWidget {
-  final text;
-  final page;
-  const MyBlueButton({Key? key, required this.text, this.page})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        Navigator.pushNamed(context, '$page');
-      },
-      child: Container(
-        width: double.infinity,
-        height: 55.h,
-        decoration: BoxDecoration(
-          color: MyColors.darkBlue,
-          borderRadius: BorderRadius.circular(10.r),
-        ),
-        child: Center(
-          child: Text(
-            "$text",
-            style: TextStyle(
-                fontFamily: 'Poppins',
-                fontSize: 20.sp,
-                fontWeight: FontWeight.w600,
-                color: MyColors.white),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
 class MySmallButton extends StatelessWidget {
   final String imageAsset;
   const MySmallButton({Key? key, required this.imageAsset}) : super(key: key);
@@ -143,38 +109,6 @@ class MyTextGroup extends StatelessWidget {
         ),
       ),
     ]);
-  }
-}
-
-class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final backPage;
-  Row? pageTitle;
-  List<Widget>? actionIcon;
-  MyAppBar({Key? key, required this.backPage, this.pageTitle, this.actionIcon})
-      : super(key: key);
-
-  @override
-  Size get preferredSize => Size.fromHeight(AppBar().preferredSize.height);
-
-  @override
-  Widget build(BuildContext context) {
-    return AppBar(
-        backgroundColor: MyColors.white,
-        elevation: 0.sp,
-        leading: Padding(
-          padding: EdgeInsets.only(left: 25.sp, top: 8.sp),
-          child: IconButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '$backPage');
-              },
-              icon: Icon(
-                Icons.arrow_back_ios,
-                color: MyColors.black,
-                size: 25.sp,
-              )),
-        ),
-        title: pageTitle,
-        actions: actionIcon);
   }
 }
 

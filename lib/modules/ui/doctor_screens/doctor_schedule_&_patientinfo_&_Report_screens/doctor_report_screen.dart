@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nutri_mind_application/shared/widgets/screens_widgets.dart';
 
 import '../../../../shared/Constants/colors.dart';
+import '../../../../shared/widgets/default_items.dart';
 
 class DoctorReport extends StatelessWidget {
   const DoctorReport({Key? key}) : super(key: key);

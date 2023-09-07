@@ -2,7 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nutri_mind_application/shared/Constants/colors.dart';
+import 'package:nutri_mind_application/shared/Constants/text_theme.dart';
 import 'package:nutri_mind_application/shared/widgets/screens_widgets.dart';
+
+import '../../../../shared/widgets/default_items.dart';
 
 class PatientSetTallScreen extends StatefulWidget {
   const PatientSetTallScreen({Key? key}) : super(key: key);
@@ -22,7 +25,7 @@ class _PatientSetTallScreenState extends State<PatientSetTallScreen> {
           children: [
             Text(
               'How tall are you',
-          style: Theme.of(context).textTheme.headline1,
+            style:AppTextStyle().textInAppBar
             ),
           ],
         ),

@@ -2,8 +2,10 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nutri_mind_application/modules/ui/Patient_screens/patient_password_screens/set_password_widget.dart';
+import 'package:nutri_mind_application/shared/Constants/text_theme.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
+import '../../../../shared/widgets/default_items.dart';
 
 class PatientCreatePasswordScreen extends StatelessWidget {
   const PatientCreatePasswordScreen({Key? key}) : super(key: key);
@@ -25,22 +27,14 @@ class PatientCreatePasswordScreen extends StatelessWidget {
                   ),
                   Text(
                     "Create password",
-                    style: TextStyle(
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.w600,
-                        fontSize: 22.sp,
-                        color: MyColors.black),
+                    style: AppTextStyle().textInAppBar.copyWith(fontSize:24.sp)
                   ),
                   SizedBox(
                     height: 15.h,
                   ),
                   Text(
                     "Create your new password to log in !",
-                    style: TextStyle(
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.w400,
-                        fontSize: 13.sp,
-                        color: MyColors.grey),
+                    style: AppTextStyle().greyText.copyWith(fontSize: 13.sp,fontWeight:FontWeight.w400) ,
                   ),
                   SizedBox(
                     height: 40.h,

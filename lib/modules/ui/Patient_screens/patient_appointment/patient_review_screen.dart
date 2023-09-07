@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/widgets/doctor_review_screen_widgets.dart';
-import '../../../../shared/widgets/screens_widgets.dart';
+import '../../../../shared/widgets/default_items.dart';
 
 class PatientReviewScreen extends StatefulWidget {
   const PatientReviewScreen({Key? key}) : super(key: key);

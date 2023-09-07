@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/widgets/patient_question_widgets.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
+import '../../../../shared/widgets/default_items.dart';
 
 class PatientQuestionScreenThree extends StatefulWidget {
   const PatientQuestionScreenThree({Key? key}) : super(key: key);

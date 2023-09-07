@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_verification_code/flutter_verification_code.dart';
 import '../../../../shared/Constants/colors.dart';
+import '../../../../shared/Constants/text_theme.dart';
+import '../../../../shared/widgets/default_items.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
 
 
@@ -31,11 +33,7 @@ class _VerificationScreenState extends State<PatientVerificationScreen> {
                 ),
                 Text(
                   "Verification",
-                  style: TextStyle(
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w600,
-                      fontSize: 22.sp,
-                      color: MyColors.black),
+                  style: AppTextStyle().textInAppBar.copyWith(fontSize:24.sp),
                 ),
                 SizedBox(
                   height: 20.h,
@@ -43,12 +41,8 @@ class _VerificationScreenState extends State<PatientVerificationScreen> {
                 Text(
                   "Please enter the code sent on your email address!",
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w400,
-                      fontSize: 13.sp,
-                      color: MyColors.grey),
-                ),
+                  style: AppTextStyle().greyText.copyWith(fontSize: 13.sp,fontWeight:FontWeight.w400) ,
+          ),
                 SizedBox(
                   height: 30.h,
                 ),
@@ -70,12 +64,8 @@ class _VerificationScreenState extends State<PatientVerificationScreen> {
                         padding: EdgeInsets.all(3.sp),
                         child: Text(
                           'clear all',
-                          style: TextStyle(
-                            fontFamily: 'Inter',
-                            fontWeight: FontWeight.w400,
-                            fontSize: 13.sp,
-                            color: MyColors.darkBlue,
-                          ),
+                          style: AppTextStyle().greyText.copyWith(fontSize: 13.sp,fontWeight:FontWeight.w400,color: MyColors.darkBlue ,
+                      ),
                         ),
                       ),
                       onCompleted: (String value) {
@@ -96,11 +86,7 @@ class _VerificationScreenState extends State<PatientVerificationScreen> {
                     child: _onEditing
                         ? Text(
                       'Please enter full code',
-                      style: TextStyle(
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w400,
-                          fontSize: 13.sp,
-                          color: MyColors.grey),
+                      style: AppTextStyle().greyText.copyWith(fontSize: 13.sp,fontWeight:FontWeight.w400) ,
                     )
                         : const Text(''),
                   ),
@@ -108,7 +94,7 @@ class _VerificationScreenState extends State<PatientVerificationScreen> {
                 SizedBox(
                   height: 28.h,
                 ),
-                const MyBlueButton(text: 'Verify', page: 'PatientCreatePasswordScreen'),
+                 MyBlueButton(text: 'Verify', page: 'PatientCreatePasswordScreen',width: double.infinity,height: 55.h,),
               ],
             ),
           ),

@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nutri_mind_application/shared/widgets/screens_widgets.dart';
 
 import '../../../../shared/Constants/colors.dart';
+import '../../../../shared/widgets/default_items.dart';
 import '../../../../shared/widgets/doctor_profile_widgets.dart';
 
 class DoctorProfile extends StatelessWidget {

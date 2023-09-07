@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nutri_mind_application/modules/ui/doctor_screens/doctor_schedule_&_patientinfo_&_Report_screens/patient_widget_for_doctor_screen.dart';
 
 import '../../../../shared/Constants/colors.dart';
+import '../../../../shared/widgets/default_items.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
 
 class DoctorScheduleScreen extends StatelessWidget {

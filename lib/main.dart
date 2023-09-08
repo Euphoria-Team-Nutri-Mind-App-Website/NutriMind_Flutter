@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nutri_mind_application/core/network/local_network.dart';
-import 'package:nutri_mind_application/modules/blocs/patient_auth_cubit/auth_cubit/auth_cubit.dart';
 import 'package:nutri_mind_application/routes.dart';
 import 'package:nutri_mind_application/shared/Constants/constants.dart';
 import 'core/block_observer/bloc_observer.dart';
+import 'modules/blocs/auth_cubit/auth_cubit.dart';
 import 'modules/ui/splash_screen.dart';
 
 Future<void> main() async {

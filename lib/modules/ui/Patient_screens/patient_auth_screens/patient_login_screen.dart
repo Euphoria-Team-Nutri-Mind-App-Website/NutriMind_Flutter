@@ -5,10 +5,9 @@ import 'package:nutri_mind_application/shared/Constants/text_theme.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/widgets/default_items.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
-import '../../../blocs/patient_auth_cubit/auth_cubit/auth_cubit.dart';
+import '../../../blocs/auth_cubit/auth_cubit.dart';
 
-
-//email: rana123@gmail.com  , password: 123456
+//email: rana123@gmail.com  , password: 123456  , name: rana
 class PatientLoginScreen extends StatefulWidget {
   const PatientLoginScreen({Key? key}) : super(key: key);
 

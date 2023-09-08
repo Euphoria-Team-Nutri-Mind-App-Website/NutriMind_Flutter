@@ -98,14 +98,6 @@ class PatientSignUpScreen extends StatelessWidget {
                       SizedBox(
                         height: 18.h,
                       ),
-                      const MyTextField(
-                          hintText: 'National ID',
-                          obscureText: false,
-                          textType: TextInputType.number
-                      ),
-                      SizedBox(
-                        height: 18.h,
-                      ),
                       MyTextField(
                         controller: passwordController,
                         textType: TextInputType.number,
@@ -204,7 +196,6 @@ class PatientSignUpScreen extends StatelessWidget {
                           staticText: "Already have an account?",
                           dynamicText: " Log in",
                           page: 'PatientLoginScreen'),
-
                     ],
                   ),
                 ),

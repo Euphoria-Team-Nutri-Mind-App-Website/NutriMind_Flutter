@@ -90,11 +90,7 @@ class MyTextGroup extends StatelessWidget {
     return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
       Text(
         '$staticText',
-        style: TextStyle(
-            fontFamily: 'Poppins',
-            fontSize: 12.sp,
-            fontWeight: FontWeight.w500,
-            color: MyColors.black),
+        style: AppTextStyle().greyText.copyWith(color: MyColors.black)
       ),
       InkWell(
         onTap: () {
@@ -102,11 +98,7 @@ class MyTextGroup extends StatelessWidget {
         },
         child: Text(
           '$dynamicText',
-          style: TextStyle(
-              fontFamily: 'Poppins',
-              fontSize: 12.sp,
-              fontWeight: FontWeight.w500,
-              color: MyColors.darkBlue),
+            style: AppTextStyle().greyText.copyWith(color: MyColors.darkBlue)
         ),
       ),
     ]);

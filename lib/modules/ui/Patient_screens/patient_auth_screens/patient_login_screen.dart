@@ -28,7 +28,7 @@ class _PatientLoginScreenState extends State<PatientLoginScreen> {
         child: BlocConsumer<AuthCubit, AuthState>(
           listener: (context ,state){
              if (state is LoginSuccessState) {
-              Navigator.pushNamed(context, 'PatientSetTallScreen');
+              Navigator.pushNamed(context, 'PatientNavBarScreen');
             } else if (state is LoginFailedState) {
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(content:
               Container(
@@ -89,9 +89,8 @@ class _PatientLoginScreenState extends State<PatientLoginScreen> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         InkWell(
-                          onTap: () {
-                            Navigator.pushNamed(context,'PatientForgetPassword');
-                          },
+                          onTap: () =>
+                            Navigator.pushNamed(context,'PatientForgetPassword'),
                           child: Text(
                               "Forget Password?",
                               style: AppTextStyle().greyText.copyWith(color: MyColors.black)

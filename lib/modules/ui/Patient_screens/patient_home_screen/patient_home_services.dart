@@ -70,7 +70,7 @@ class _PatientHomeServicesScreenState extends State<PatientHomeServicesScreen> {
                   height: 20.h,
                 ),
               ),
-            )
+            ),
           ],
       ),
       // appBar: MyAppBar(

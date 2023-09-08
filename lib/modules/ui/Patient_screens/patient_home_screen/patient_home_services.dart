@@ -52,9 +52,12 @@ class _PatientHomeServicesScreenState extends State<PatientHomeServicesScreen> {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Image(
-                image: const AssetImage('assets/images/logo.png'),
-                width: 110.w,
+              Padding(
+                padding : EdgeInsets.only(left: 25.sp),
+                child: Image(
+                  image: const AssetImage('assets/images/logo.png'),
+                  width: 110.w,
+                ),
               )
             ],
           ),

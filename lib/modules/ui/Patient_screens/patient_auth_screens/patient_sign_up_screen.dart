@@ -13,6 +13,8 @@ class PatientSignUpScreen extends StatelessWidget {
   final nameController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final ageController = TextEditingController();
+  final genderController = TextEditingController();
   final confirmPasswordController = TextEditingController();
   final formKey = GlobalKey<FormState>();
 
@@ -83,14 +85,16 @@ class PatientSignUpScreen extends StatelessWidget {
                       SizedBox(
                         height: 18.h,
                       ),
-                      const MyTextField(
+                      MyTextField(
+                          controller: ageController,
                           hintText: 'Age',
                           obscureText: false,
                           textType: TextInputType.number),
                       SizedBox(
                         height: 18.h,
                       ),
-                      const MyTextField(
+                      MyTextField(
+                        controller: genderController,
                           hintText: 'Gender',
                           obscureText: false,
                           textType: TextInputType.text
@@ -127,8 +131,7 @@ class PatientSignUpScreen extends StatelessWidget {
                                 name: nameController.text,
                                 email: emailController.text,
                                 password: passwordController.text,
-                                confirmPassword:
-                                confirmPasswordController.text);
+                                confirmPassword: confirmPasswordController.text);
                           }
                           //Navigator.pushNamed(context, 'PatientSetTallScreen');
                         },
@@ -143,7 +146,8 @@ class PatientSignUpScreen extends StatelessWidget {
                             child: Text(
                                 state is RegisterLoadingState
                                     ? "loading....."
-                                    : "Sign Up",
+                                    :
+                                "Sign Up",
                                 style:AppTextStyle().textBlueButton
                             ),
                           ),
@@ -203,7 +207,7 @@ class PatientSignUpScreen extends StatelessWidget {
             ),
           ),
         );
-      },
-    );
+       },
+     );
   }
 }

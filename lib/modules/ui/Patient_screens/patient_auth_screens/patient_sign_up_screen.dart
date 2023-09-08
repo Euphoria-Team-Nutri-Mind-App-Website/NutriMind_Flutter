@@ -138,7 +138,7 @@ class PatientSignUpScreen extends StatelessWidget {
                                 confirmPassword:
                                 confirmPasswordController.text);
                           }
-                          Navigator.pushNamed(context, 'PatientSetTallScreen');
+                          //Navigator.pushNamed(context, 'PatientSetTallScreen');
                         },
                         child: Container(
                           width: double.infinity,

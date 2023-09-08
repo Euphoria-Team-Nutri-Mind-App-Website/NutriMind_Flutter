@@ -111,7 +111,7 @@ class _PatientLoginScreenState extends State<PatientLoginScreen> {
                               password: passwordController.text
                           );
                         }
-                        Navigator.pushNamed(context, 'PatientSetTallScreen');
+                        //Navigator.pushNamed(context, 'PatientSetTallScreen');
                       },
                       child: Container(
                         width: double.infinity,

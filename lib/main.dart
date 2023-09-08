@@ -6,13 +6,14 @@ import 'package:nutri_mind_application/modules/blocs/patient_auth_cubit/auth_cub
 import 'package:nutri_mind_application/routes.dart';
 import 'package:nutri_mind_application/shared/Constants/constants.dart';
 import 'core/block_observer/bloc_observer.dart';
+import 'modules/ui/Patient_screens/patient_home_screen/patient_nav_bar.dart';
 import 'modules/ui/splash_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = MyBlocObserver();
   await CacheNetwork.cacheInitialization();
-  CacheNetwork.getCacheData(key: 'token');
+  token= CacheNetwork.getCacheData(key: 'token');
   print("token is $token");
   runApp(const MyApp());
 }
@@ -33,8 +34,8 @@ class MyApp extends StatelessWidget {
           ],
           child: MaterialApp(
             debugShowCheckedModeBanner: false,
-            //home: token !=null && token !=""? const SplashScreen():const PatientLoginScreen(),
-            home:const SplashScreen(),
+            home: token !=null && token !=""? const PatientNavBarScreen():const SplashScreen(),
+            //home:const SplashScreen(),
             routes: routes,
           ),
         );

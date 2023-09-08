@@ -16,7 +16,8 @@ class PatientProfile extends StatelessWidget {
     return BlocProvider(
   create: (context) => LayoutCubit()..getUserData(),
   child: BlocConsumer<LayoutCubit, LayoutState>(
-  listener: (context, state) {},
+  listener: (context, state) {
+  },
   builder: (context, state) {
 
     PatientModel? cubit =LayoutCubit.get(context).patientModel;
@@ -47,6 +48,7 @@ class PatientProfile extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              cubit != null ?
               Container(
                 height: 140.h,
                 width: double.infinity,
@@ -77,7 +79,7 @@ class PatientProfile extends StatelessWidget {
                     SizedBox(
                       width: 20.w,
                     ),
-                    cubit != null ?
+                    //cubit != null ?
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -129,11 +131,11 @@ class PatientProfile extends StatelessWidget {
                           ],
                         ),
                       ],
-                    ):
-                    const Center(child: CircularProgressIndicator(),)
+                    )
                   ],
                 ),
-              ),
+              ):
+              const Center(child: CircularProgressIndicator(),),
               SizedBox(
                 height: 20.h,
               ),

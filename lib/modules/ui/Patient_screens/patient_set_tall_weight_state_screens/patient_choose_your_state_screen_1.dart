@@ -39,6 +39,7 @@ class PatientChooseYourStateScreen1 extends StatefulWidget {
 
 class _PatientChooseYourStateScreen1State
     extends State<PatientChooseYourStateScreen1> {
+
   final List<Widget> items = const [
     TextDropDown( title1: 'idle', title2: '( NO or Low practice )'),
     TextDropDown( title1: 'Slack', title2: '( from 1-3 day weekly practice )'),
@@ -74,7 +75,7 @@ class _PatientChooseYourStateScreen1State
                     children: [
                       Expanded(
                         child: Text(
-                          'Choose',
+                          '$selectedValue',
                           style:
                           AppTextStyle().greyText.copyWith(fontSize: 16.sp),
                         ),

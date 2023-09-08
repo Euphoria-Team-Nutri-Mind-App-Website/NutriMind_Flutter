@@ -13,6 +13,8 @@ class PatientSignUpScreen extends StatelessWidget {
   final nameController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final ageController = TextEditingController();
+  final genderController = TextEditingController();
   final confirmPasswordController = TextEditingController();
   final formKey = GlobalKey<FormState>();
 
@@ -20,26 +22,26 @@ class PatientSignUpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // return BlocConsumer<AuthCubit, AuthState>(
-    //   listener: (context, state) {
-    //     if (state is RegisterSuccessState) {
-    //       Navigator.pushReplacement(
-    //           context,
-    //           MaterialPageRoute(
-    //               builder: (context) => const PatientSetTallScreen()));
-    //     } else if (state is RegisterFailedState) {
-    //       showDialog(
-    //           context: context,
-    //           builder: (context) => AlertDialog(
-    //             content: Text(
-    //               state.message,
-    //               style: const TextStyle(color: MyColors.white),
-    //             ),
-    //             backgroundColor: MyColors.darkBlue,
-    //           ));
-    //     }
-    //   },
-    //   builder: (context, state) {
+    return BlocConsumer<AuthCubit, AuthState>(
+      listener: (context, state) {
+        if (state is RegisterSuccessState) {
+          Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const PatientSetTallScreen()));
+        } else if (state is RegisterFailedState) {
+          showDialog(
+              context: context,
+              builder: (context) => AlertDialog(
+                content: Text(
+                  state.message,
+                  style: const TextStyle(color: MyColors.white),
+                ),
+                backgroundColor: MyColors.darkBlue,
+              ));
+        }
+      },
+      builder: (context, state) {
         return Scaffold(
           appBar: MyAppBar(backPage: 'ContinueScreen'),
           body: SingleChildScrollView(
@@ -83,14 +85,16 @@ class PatientSignUpScreen extends StatelessWidget {
                       SizedBox(
                         height: 18.h,
                       ),
-                      const MyTextField(
+                      MyTextField(
+                          controller: ageController,
                           hintText: 'Age',
                           obscureText: false,
                           textType: TextInputType.number),
                       SizedBox(
                         height: 18.h,
                       ),
-                      const MyTextField(
+                      MyTextField(
+                        controller: genderController,
                           hintText: 'Gender',
                           obscureText: false,
                           textType: TextInputType.text
@@ -122,14 +126,14 @@ class PatientSignUpScreen extends StatelessWidget {
                       ),
                       InkWell(
                         onTap: () {
-                          // if (formKey.currentState!.validate()) {
-                          //   BlocProvider.of<AuthCubit>(context).register(
-                          //       name: nameController.text,
-                          //       email: emailController.text,
-                          //       password: passwordController.text,
-                          //       confirmPassword: confirmPasswordController.text);
-                          // }
-                          Navigator.pushNamed(context, 'PatientSetTallScreen');
+                          if (formKey.currentState!.validate()) {
+                            BlocProvider.of<AuthCubit>(context).register(
+                                name: nameController.text,
+                                email: emailController.text,
+                                password: passwordController.text,
+                                confirmPassword: confirmPasswordController.text);
+                          }
+                          //Navigator.pushNamed(context, 'PatientSetTallScreen');
                         },
                         child: Container(
                           width: double.infinity,
@@ -140,9 +144,9 @@ class PatientSignUpScreen extends StatelessWidget {
                           ),
                           child: Center(
                             child: Text(
-                                // state is RegisterLoadingState
-                                //     ? "loading....."
-                                //     :
+                                state is RegisterLoadingState
+                                    ? "loading....."
+                                    :
                                 "Sign Up",
                                 style:AppTextStyle().textBlueButton
                             ),
@@ -203,7 +207,7 @@ class PatientSignUpScreen extends StatelessWidget {
             ),
           ),
         );
-    //   },
-    // );
+       },
+     );
   }
 }

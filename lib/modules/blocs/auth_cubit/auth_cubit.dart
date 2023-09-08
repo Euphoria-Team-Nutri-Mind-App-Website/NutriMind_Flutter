@@ -23,7 +23,7 @@ class AuthCubit extends Cubit<AuthState> {
           'name': name,
           'email': email,
           'password': password,
-          'confirmPassword': confirmPassword,
+          'phone': confirmPassword,
         });
     var responseBody = jsonDecode(response.body);
     if (responseBody['status'] == true) {

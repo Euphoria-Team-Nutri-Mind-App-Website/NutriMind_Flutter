@@ -6,7 +6,6 @@ import 'package:nutri_mind_application/modules/blocs/patient_auth_cubit/auth_cub
 import 'package:nutri_mind_application/routes.dart';
 import 'package:nutri_mind_application/shared/Constants/constants.dart';
 import 'core/block_observer/bloc_observer.dart';
-import 'modules/ui/Patient_screens/patient_home_screen/patient_nav_bar.dart';
 import 'modules/ui/splash_screen.dart';
 
 Future<void> main() async {
@@ -34,8 +33,7 @@ class MyApp extends StatelessWidget {
           ],
           child: MaterialApp(
             debugShowCheckedModeBanner: false,
-            home: token !=null && token !=""? const PatientNavBarScreen():const SplashScreen(),
-            //home:const SplashScreen(),
+            home:const SplashScreen(),
             routes: routes,
           ),
         );

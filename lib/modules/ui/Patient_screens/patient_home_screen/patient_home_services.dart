@@ -17,11 +17,6 @@ class PatientHomeServicesScreen extends StatefulWidget {
 class _PatientHomeServicesScreenState extends State<PatientHomeServicesScreen> {
   List allServices = [
     {
-      "icon": Icons.chat,
-      "name": "Chat",
-      "rout": "PatientListChatsScreen",
-    },
-    {
       "icon": Icons.notes,
       "name": "Notes",
       "rout": "PatientNotesScreen",
@@ -51,32 +46,59 @@ class _PatientHomeServicesScreenState extends State<PatientHomeServicesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(
-        backPage: 'PatientChooseYourStateScreen2',
-        pageTitle: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Image(
-              image: const AssetImage('assets/images/logo.png'),
-              width: 110.w,
+      appBar: AppBar(
+          backgroundColor: MyColors.white,
+          elevation: 0.sp,
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Image(
+                image: const AssetImage('assets/images/logo.png'),
+                width: 110.w,
+              )
+            ],
+          ),
+          actions: [
+            Padding(
+              padding: EdgeInsets.only(right: 12.sp),
+              child: InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, 'PatientNotificationsScreen');
+                },
+                child: Image(
+                  image: const AssetImage("assets/images/blackbell.png"),
+                  height: 20.h,
+                ),
+              ),
             )
           ],
-        ),
-        actionIcon: [
-          Padding(
-            padding: EdgeInsets.only(right: 12.sp),
-            child: InkWell(
-              onTap: () {
-                Navigator.pushNamed(context, 'PatientNotificationsScreen');
-              },
-              child: Image(
-                image: const AssetImage("assets/images/blackbell.png"),
-                height: 20.h,
-              ),
-            ),
-          )
-        ],
       ),
+      // appBar: MyAppBar(
+      //   backPage: 'PatientChooseYourStateScreen2',
+      //   pageTitle: Row(
+      //     mainAxisAlignment: MainAxisAlignment.start,
+      //     children: [
+      //       Image(
+      //         image: const AssetImage('assets/images/logo.png'),
+      //         width: 110.w,
+      //       )
+      //     ],
+      //   ),
+      //   actionIcon: [
+      //     Padding(
+      //       padding: EdgeInsets.only(right: 12.sp),
+      //       child: InkWell(
+      //         onTap: () {
+      //           Navigator.pushNamed(context, 'PatientNotificationsScreen');
+      //         },
+      //         child: Image(
+      //           image: const AssetImage("assets/images/blackbell.png"),
+      //           height: 20.h,
+      //         ),
+      //       ),
+      //     )
+      //   ],
+      // ),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.only(left: 25.sp, right: 25.sp, top: 25.sp),

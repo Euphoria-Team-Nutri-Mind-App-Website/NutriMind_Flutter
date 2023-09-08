@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:page_transition/page_transition.dart';
 import '../../shared/Constants/colors.dart';
+import '../../shared/Constants/constants.dart';
+import 'Patient_screens/patient_home_screen/patient_nav_bar.dart';
 import 'interface_screen.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -18,7 +20,7 @@ class SplashScreen extends StatelessWidget {
       splash: const Image(
         image: AssetImage("assets/images/SplashIcon.png"),
       ),
-      nextScreen: const InterfaceScreen(),
+      nextScreen: token !=null && token !=""? const PatientNavBarScreen():const InterfaceScreen(),
       backgroundColor: MyColors.babyBlue,
     );
   }

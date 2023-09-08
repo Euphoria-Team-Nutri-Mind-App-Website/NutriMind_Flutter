@@ -1,25 +1,89 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:numberpicker/numberpicker.dart';
-
+import 'package:nutri_mind_application/shared/Constants/text_theme.dart';
+import 'package:syncfusion_flutter_sliders/sliders.dart';
 import '../Constants/colors.dart';
 
-class IntegerExample extends StatefulWidget {
-  const IntegerExample({super.key});
-  @override
-  IntegerExampleState createState() => IntegerExampleState();
-}
+class TallComponents extends StatefulWidget {
+  const TallComponents({super.key});
 
-class IntegerExampleState extends State<IntegerExample> {
-  int currentIntValueInKg = 30;
+  @override
+  State<TallComponents> createState() => _TallComponentsState();
+}
+class _TallComponentsState extends State<TallComponents> {
+  double height = 130.0;
+
   @override
   Widget build(BuildContext context) {
-    double currentDoubleValueInLbs = currentIntValueInKg * 2.20462;
-    int currentIntValueInLbs = currentDoubleValueInLbs.toInt();
+    return Column(
+      children: [
+        SfSlider(
+          min: 130.0,
+          max: 220.0,
+          value: height,
+          onChanged: (dynamic value) {
+            setState(() {
+              height = value;
+            });
+          },
+          showTicks: true,
+          showLabels: true,
+          interval: 10.0,
+          activeColor: MyColors.darkBlue,
+          inactiveColor: MyColors.grey,
+        ),
+        SizedBox(
+          height: 70.h,
+        ),
+        Center(
+          child: Container(
+            width: 90.w,
+            padding: EdgeInsets.all(15.sp),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10.r),
+              border: Border.all(color: MyColors.darkBlue),
+              boxShadow: const [
+                BoxShadow(
+                  color: MyColors.darkBlue,
+                  blurRadius: 5.0,
+                ), //BoxShadow
+                BoxShadow(
+                  color: MyColors.white,
+                  offset: Offset(0.0, 0.0),
+                  blurRadius: 0.0,
+                  spreadRadius: 0.0,
+                ),
+              ],
+            ),
+            child: Center(
+              child: Text(
+                "${height.toInt()} cm",
+                  style:AppTextStyle().greyText.copyWith(color: MyColors.black,fontWeight: FontWeight.w700,fontSize:17.sp)
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+//********************************************************************************************
+
+class WeightComponents extends StatefulWidget {
+  const WeightComponents({super.key});
+  @override
+  WeightComponentsState createState() => WeightComponentsState();
+}
+class WeightComponentsState extends State<WeightComponents> {
+  int weight = 30;
+  @override
+  Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
         NumberPicker(
-          value: currentIntValueInKg,
+          value: weight,
           minValue: 30,
           maxValue: 300,
           step: 1,
@@ -29,7 +93,7 @@ class IntegerExampleState extends State<IntegerExample> {
           itemCount: 3,
           textStyle: TextStyle(color: MyColors.grey, fontSize: 20.sp),
           selectedTextStyle: TextStyle(color: MyColors.black, fontSize: 30.sp),
-          onChanged: (value) => setState(() => currentIntValueInKg = value),
+          onChanged: (value) => setState(() => weight = value),
           decoration: const BoxDecoration(
             border: Border(
                 top: BorderSide(
@@ -39,74 +103,33 @@ class IntegerExampleState extends State<IntegerExample> {
           ),
         ),
         SizedBox(height: 60.h),
-         Row(
-            children: [
-              Container(
-                margin: EdgeInsets.only(left: 20.sp),
-                padding:EdgeInsets.all(15.sp),
-                decoration: BoxDecoration(
-                  borderRadius:
-                  BorderRadius.circular(10.r),
-                  border: Border.all(
-                      color: MyColors.darkBlue),
-                  boxShadow: const [
-                    BoxShadow(
-                      color: MyColors.darkBlue,
-                      blurRadius: 5.0,
-                    ), //BoxShadow
-                    BoxShadow(
-                      color: MyColors.white,
-                      offset: Offset(0.0, 0.0),
-                      blurRadius: 0.0,
-                      spreadRadius: 0.0,
-                    ),
-                  ],
+        Center(
+          child: Container(
+            width: 90.w,
+            padding: EdgeInsets.all(15.sp),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10.r),
+              border: Border.all(color: MyColors.darkBlue),
+              boxShadow: const [
+                BoxShadow(
+                  color: MyColors.darkBlue,
+                  blurRadius: 5.0,
+                ), //BoxShadow
+                BoxShadow(
+                  color: MyColors.white,
+                  offset: Offset(0.0, 0.0),
+                  blurRadius: 0.0,
+                  spreadRadius: 0.0,
                 ),
-                child: Center(
-                  child: Text(
-                    "$currentIntValueInKg Kg",
-                    style: TextStyle(
-                      fontSize: 12.sp,
-                        color: MyColors.black,
-                        fontWeight: FontWeight.w700,
-                        fontFamily: 'Inter'),
-                  ),
-                ),
+              ],
+            ),
+            child: Center(
+              child: Text(
+                  "$weight KG",
+                  style:AppTextStyle().greyText.copyWith(color: MyColors.black,fontWeight: FontWeight.w700,fontSize:17.sp)
               ),
-              const Expanded(child: SizedBox()),
-              Container(
-                margin: EdgeInsets.only(right: 20.sp),
-                padding:EdgeInsets.all(15.sp),
-                decoration: BoxDecoration(
-                  borderRadius:
-                  BorderRadius.circular(10.r),
-                  border: Border.all(
-                      color: MyColors.darkBlue),
-                  boxShadow: const [
-                    BoxShadow(
-                      color: MyColors.darkBlue,
-                      blurRadius: 5.0,
-                    ), //BoxShadow
-                    BoxShadow(
-                      color: MyColors.white,
-                      offset: Offset(0.0, 0.0),
-                      blurRadius: 0.0,
-                      spreadRadius: 0.0,
-                    ),
-                  ],
-                ),
-                child: Center(
-                  child: Text(
-                    "$currentIntValueInLbs LBS",
-                    style: TextStyle(
-                        fontSize: 12.sp,
-                        color: MyColors.black,
-                        fontWeight: FontWeight.w700,
-                        fontFamily: 'Inter'),
-                  ),
-                ),
-              ),
-            ],
+            ),
+          ),
         ),
       ],
     );

@@ -1,268 +1,47 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CustDropDown<T> extends StatefulWidget {
-  final List<CustDropdownMenuItem> items;
-  final Function onChanged;
+class CustomDropdownButton<T> extends StatefulWidget {
+  final List<T> items;
+  final T? value;
   final String hintText;
-  final double borderRadius;
-  final double maxListHeight;
-  final double borderWidth;
-  final int defaultSelectedIndex;
-  final bool enabled;
+  final void Function(T?) onChanged;
 
-  const CustDropDown(
-      {required this.items,
-      required this.onChanged,
-      this.hintText = "",
-      this.borderRadius = 0,
-      this.borderWidth = 1,
-      this.maxListHeight = 100,
-      this.defaultSelectedIndex = -1,
-      Key? key,
-      this.enabled = true})
-      : super(key: key);
+  CustomDropdownButton({
+    required this.items,
+    required this.value,
+    required this.hintText,
+    required this.onChanged,
+  });
 
   @override
-  _CustDropDownState createState() => _CustDropDownState();
+  _CustomDropdownButtonState<T> createState() =>
+      _CustomDropdownButtonState<T>();
 }
 
-class _CustDropDownState extends State<CustDropDown>
-    with WidgetsBindingObserver {
-  bool _isOpen = false, _isAnyItemSelected = false, _isReverse = false;
-  late OverlayEntry _overlayEntry;
-  late RenderBox? _renderBox;
-  Widget? _itemSelected;
-  late Offset dropDownOffset;
-  final LayerLink _layerLink = LayerLink();
-
-  @override
-  void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (mounted) {
-        setState(() {
-          dropDownOffset = getOffset();
-        });
-      }
-      if (widget.defaultSelectedIndex > -1) {
-        if (widget.defaultSelectedIndex < widget.items.length) {
-          if (mounted) {
-            setState(() {
-              _isAnyItemSelected = true;
-              _itemSelected = widget.items[widget.defaultSelectedIndex];
-              widget.onChanged(widget.items[widget.defaultSelectedIndex].value);
-            });
-          }
-        }
-      }
-    });
-    WidgetsBinding.instance.addObserver(this);
-    super.initState();
-  }
-
-  void _addOverlay() {
-    if (mounted) {
-      setState(() {
-        _isOpen = true;
-      });
-    }
-
-    _overlayEntry = _createOverlayEntry();
-    Overlay.of(context).insert(_overlayEntry);
-  }
-
-  void _removeOverlay() {
-    if (mounted) {
-      setState(() {
-        _isOpen = false;
-      });
-      _overlayEntry.remove();
-    }
-  }
-
-  @override
-  dispose() {
-    WidgetsBinding.instance.removeObserver(this);
-    super.dispose();
-  }
-
-  OverlayEntry _createOverlayEntry() {
-    _renderBox = context.findRenderObject() as RenderBox?;
-
-    var size = _renderBox!.size;
-
-    dropDownOffset = getOffset();
-
-    return OverlayEntry(
-        maintainState: false,
-        builder: (context) => Align(
-              alignment: Alignment.center,
-              child: CompositedTransformFollower(
-                link: _layerLink,
-                showWhenUnlinked: false,
-                offset: dropDownOffset,
-                child: SizedBox(
-                  height: widget.maxListHeight,
-                  width: size.width,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: _isReverse
-                        ? MainAxisAlignment.end
-                        : MainAxisAlignment.start,
-                    children: <Widget>[
-                      Padding(
-                        padding:  EdgeInsets.only(top: 10.sp),
-                        child: Container(
-                          constraints: BoxConstraints(
-                              maxHeight: widget.maxListHeight,
-                              maxWidth: size.width),
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(12.r)),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(widget.borderRadius),
-                            ),
-                            child: Material(
-                              elevation: 0,
-                              shadowColor: Colors.grey,
-                              child: ListView(
-                                padding: EdgeInsets.zero,
-                                shrinkWrap: true,
-                                children: widget.items
-                                    .map((item) => GestureDetector(
-                                          child: Padding(
-                                            padding:  EdgeInsets.all(8.sp),
-                                            child: item.child,
-                                          ),
-                                          onTap: () {
-                                            if (mounted) {
-                                              setState(() {
-                                                _isAnyItemSelected = true;
-                                                _itemSelected = item.child;
-                                                _removeOverlay();
-                                                widget.onChanged(item.value);
-                                              });
-                                            }
-                                          },
-                                        ))
-                                    .toList(),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ));
-  }
-
-  Offset getOffset() {
-    RenderBox? renderBox = context.findRenderObject() as RenderBox?;
-    double y = renderBox!.localToGlobal(Offset.zero).dy;
-    double spaceAvailable = _getAvailableSpace(y + renderBox.size.height);
-    if (spaceAvailable > widget.maxListHeight) {
-      _isReverse = false;
-      return Offset(0, renderBox.size.height);
-    } else {
-      _isReverse = true;
-      return Offset(
-          0,
-          renderBox.size.height -
-              (widget.maxListHeight + renderBox.size.height));
-    }
-  }
-
-  double _getAvailableSpace(double offsetY) {
-    double safePaddingTop = MediaQuery.of(context).padding.top;
-    double safePaddingBottom = MediaQuery.of(context).padding.bottom;
-
-    double screenHeight =
-        MediaQuery.of(context).size.height - safePaddingBottom - safePaddingTop;
-
-    return screenHeight - offsetY;
-  }
-
+class _CustomDropdownButtonState<T> extends State<CustomDropdownButton<T>> {
   @override
   Widget build(BuildContext context) {
-    return CompositedTransformTarget(
-      link: _layerLink,
-      child: GestureDetector(
-        onTap: widget.enabled
-            ? () {
-                _isOpen ? _removeOverlay() : _addOverlay();
-              }
-            : null,
-        child: Container(
-          padding: EdgeInsets.all(20.sp),
-          decoration: _getDecoration(),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Flexible(
-                flex: 3,
-                child: _isAnyItemSelected
-                    ? Padding(
-                        padding:  EdgeInsets.only(left: 4.sp),
-                        child: _itemSelected!,
-                      )
-                    : Padding(
-                        padding:
-                             EdgeInsets.only(left: 4.sp), // change it here
-                        child: Text(
-                          widget.hintText,
-                          maxLines: 1,
-                          overflow: TextOverflow.clip,
-                        ),
-                      ),
-              ),
-              const Flexible(
-                flex: 1,
-                child: Icon(
-                  Icons.arrow_drop_down,
-                ),
-              ),
-            ],
+    return Container(
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.grey),
+        borderRadius: BorderRadius.circular(8.0),
+      ),
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.0),
+        child: DropdownButtonHideUnderline(
+          child: DropdownButton<T>(
+            items: widget.items
+                .map((item) => DropdownMenuItem<T>(
+              value: item,
+              child: Text(item.toString()),
+            ))
+                .toList(),
+            value: widget.value,
+            hint: Text(widget.hintText),
+            onChanged: widget.onChanged,
           ),
         ),
       ),
     );
-  }
-
-  Decoration? _getDecoration() {
-    if (_isOpen && !_isReverse) {
-      return BoxDecoration(
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(widget.borderRadius),
-              topRight: Radius.circular(
-                widget.borderRadius,
-              )));
-    } else if (_isOpen && _isReverse) {
-      return BoxDecoration(
-          borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(widget.borderRadius),
-              bottomRight: Radius.circular(
-                widget.borderRadius,
-              )));
-    } else if (!_isOpen) {
-      return BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(widget.borderRadius)));
-    }
-    return null;
-  }
-}
-
-class CustDropdownMenuItem<T> extends StatelessWidget {
-  final T value;
-  final Widget child;
-
-  const CustDropdownMenuItem({required this.value, required this.child});
-
-  @override
-  Widget build(BuildContext context) {
-    return child;
   }
 }

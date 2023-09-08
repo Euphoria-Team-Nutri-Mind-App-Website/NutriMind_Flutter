@@ -18,8 +18,7 @@ class AuthCubit extends Cubit<AuthState> {
   }) async {
     emit(RegisterLoadingState());
     Response response = await http.post(
-        Uri.parse(
-            'https://student.valuxapps.com/api//register'),
+        Uri.parse('https://student.valuxapps.com/api//register'),
         body: {
           'name': name,
           'email': email,

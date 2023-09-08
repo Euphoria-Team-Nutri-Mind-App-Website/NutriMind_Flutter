@@ -8,8 +8,15 @@ import '../../../../shared/widgets/default_items.dart';
 import '../../../../shared/widgets/patient_choose_state_widget.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
 
-class PatientChooseYourStateScreen2 extends StatelessWidget {
+class PatientChooseYourStateScreen2 extends StatefulWidget {
   const PatientChooseYourStateScreen2 ({super.key});
+
+  @override
+  State<PatientChooseYourStateScreen2> createState() => _PatientChooseYourStateScreen2State();
+}
+
+class _PatientChooseYourStateScreen2State extends State<PatientChooseYourStateScreen2> {
+  String? selectedValue;
 
   @override
   Widget build(BuildContext context) {
@@ -32,36 +39,16 @@ class PatientChooseYourStateScreen2 extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-            Container(
-                  decoration: BoxDecoration(
-                      color: MyColors.lightGrey,
-                      borderRadius: BorderRadius.circular(12.r)),
-                  child: CustDropDown(
-                    items: const [
-                      CustDropdownMenuItem(
-                        value: 0,
-                        child: Text("idl"),
-                      ),
-                      CustDropdownMenuItem(
-                        value: 0,
-                        child: Text("Slack"),
-                      ),
-                      CustDropdownMenuItem(
-                        value: 0,
-                        child: Text("Active sometimes"),
-                      ),
-                      CustDropdownMenuItem(
-                        value: 0,
-                        child: Text("Very active"),
-                      )
-                    ],
-                    hintText: "Choose",
-                    borderRadius: 5.r,
-                    onChanged: (val) {
-                      print(val);
-                    },
-                  ),
-                ),
+              CustomDropdownButton<String>(
+                items: ['Option 1', 'Option 2', 'Option 3'],
+                value: selectedValue,
+                hintText: 'Select an option',
+                onChanged: (value) {
+                  setState(() {
+                    selectedValue = value;
+                  });
+                },
+              ),
               SizedBox(height: 30.h,),
               Text(
                 "Conclusion :",

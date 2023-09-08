@@ -5,7 +5,6 @@ import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/default_items.dart';
 import '../../../../shared/widgets/patient_tall_weight_screens_widgets.dart';
-import '../../../../shared/widgets/screens_widgets.dart';
 
 class PatientSetWeightScreen extends StatelessWidget {
   const PatientSetWeightScreen({Key? key}) : super(key: key);
@@ -19,7 +18,7 @@ class PatientSetWeightScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Text(
-              'How weight are you',
+              'What\'s your weight ?',
                 style:AppTextStyle().textInAppBar
             ),
           ],
@@ -28,27 +27,25 @@ class PatientSetWeightScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Container(
-            padding: EdgeInsets.only(left: 25.sp, right: 25.sp, top: 50.sp),
+            padding: EdgeInsets.only(left: 25.sp, right: 25.sp, top: 60.sp),
             color: MyColors.white,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Please Enter you weight !',
-                  style: TextStyle(
-                      color: MyColors.grey,
-                      fontWeight: FontWeight.w600,
-                      fontFamily: 'Inter',
-                      fontSize: 15.sp),
+                  'Please enter your weight !',
+                 style: AppTextStyle().greyText.copyWith(fontSize: 15.sp),
                 ),
                 SizedBox(
-                  height: 60.sp,
+                  height: 50.sp,
                 ),
-                const IntegerExample(),
+                const WeightComponents(),
                 SizedBox(
-                  height: 130.sp,
+                  height: 110.sp,
                 ),
-                const MyBlueButton(
+                MyBlueButton(
+                  width: double.infinity,
+                  height: 55.h,
                   text: 'Continue',
                   page: 'PatientChooseYourStateScreen1',
                 )

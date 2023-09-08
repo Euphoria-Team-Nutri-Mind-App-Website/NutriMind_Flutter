@@ -24,6 +24,7 @@ class MyTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      // autofocus: true,
       keyboardType: textType,
       controller: controller,
       obscureText: obscureText,

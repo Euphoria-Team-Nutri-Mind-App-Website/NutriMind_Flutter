@@ -8,15 +8,15 @@ import '../../../blocs/auth_cubit/auth_cubit.dart';
 import '../patient_set_tall_weight_state_screens/patient_set_tall.dart';
 import '../../../../shared/widgets/default_items.dart';
 
-
 class PatientSignUpScreen extends StatelessWidget {
   final nameController = TextEditingController();
   final emailController = TextEditingController();
-  final passwordController = TextEditingController();
   final ageController = TextEditingController();
   final genderController = TextEditingController();
+  final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
-  final formKey = GlobalKey<FormState>();
+  // final formKey = GlobalKey<FormState>();
+  static final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   PatientSignUpScreen({Key? key}) : super(key: key);
 
@@ -29,16 +29,17 @@ class PatientSignUpScreen extends StatelessWidget {
               context,
               MaterialPageRoute(
                   builder: (context) => const PatientSetTallScreen()));
-        } else if (state is RegisterFailedState) {
+        }
+        else if (state is RegisterFailedState) {
           showDialog(
               context: context,
               builder: (context) => AlertDialog(
-                content: Text(
-                  state.message,
-                  style: const TextStyle(color: MyColors.white),
-                ),
-                backgroundColor: MyColors.darkBlue,
-              ));
+                    content: Text(
+                      state.message,
+                      style: const TextStyle(color: MyColors.white),
+                    ),
+                    backgroundColor: MyColors.darkBlue,
+                  ));
         }
       },
       builder: (context, state) {
@@ -47,8 +48,7 @@ class PatientSignUpScreen extends StatelessWidget {
           body: SingleChildScrollView(
             child: SafeArea(
               child: Container(
-                padding:
-                EdgeInsets.only(left: 25.sp, right: 25.sp, bottom: 25.sp),
+                padding: EdgeInsets.only(left: 25.sp, right: 25.sp, bottom: 25.sp),
                 color: MyColors.white,
                 child: Form(
                   key: formKey,
@@ -57,31 +57,38 @@ class PatientSignUpScreen extends StatelessWidget {
                     children: [
                       Text(
                         "Registration",
-                        style:AppTextStyle().textInAppBar.copyWith(fontSize: 28.sp),
+                        style: AppTextStyle()
+                            .textInAppBar
+                            .copyWith(fontSize: 28.sp),
                       ),
                       SizedBox(
                         height: 7.h,
                       ),
-                      Text(
-                          "create your account",
-                          style: AppTextStyle().greyText
-                      ),
+                      Text("create your account",
+                          style: AppTextStyle().greyText),
                       SizedBox(
                         height: 26.h,
                       ),
                       MyTextField(
-                          controller: nameController,
-                          hintText: 'Username',
-                          obscureText: false,
-                          textType: TextInputType.text),
+                        controller: nameController,
+                        hintText: 'Username',
+                        obscureText: false,
+                        textType: TextInputType.text,
+                      ),
                       SizedBox(
                         height: 18.h,
                       ),
                       MyTextField(
-                          controller: emailController,
-                          hintText: 'Email',
-                          obscureText: false,
-                          textType: TextInputType.emailAddress),
+                        controller: emailController,
+                        hintText: 'Email',
+                        obscureText: false,
+                        textType: TextInputType.emailAddress,
+                        // validator: (emailController) {
+                        //   if (!emailController.contains("@")) {
+                        //     return "Please enter valid email";
+                        //   }
+                        //},
+                      ),
                       SizedBox(
                         height: 18.h,
                       ),
@@ -89,24 +96,23 @@ class PatientSignUpScreen extends StatelessWidget {
                           controller: ageController,
                           hintText: 'Age',
                           obscureText: false,
-                          textType: TextInputType.number),
+                          textType: TextInputType.text),
                       SizedBox(
                         height: 18.h,
                       ),
                       MyTextField(
-                        controller: genderController,
+                          controller: genderController,
                           hintText: 'Gender',
                           obscureText: false,
-                          textType: TextInputType.text
-                      ),
+                          textType: TextInputType.text),
                       SizedBox(
                         height: 18.h,
                       ),
                       MyTextField(
                         controller: passwordController,
-                        textType: TextInputType.number,
+                        textType: TextInputType.text,
                         hintText: 'Password',
-                        obscureText: true,
+                        obscureText: false,
                         suffixIcon: const Icon(Icons.remove_red_eye_outlined,
                             color: MyColors.grey),
                       ),
@@ -115,9 +121,9 @@ class PatientSignUpScreen extends StatelessWidget {
                       ),
                       MyTextField(
                         controller: confirmPasswordController,
-                        textType: TextInputType.number,
+                        textType: TextInputType.text,
                         hintText: 'Confirm Password',
-                        obscureText: true,
+                        obscureText: false,
                         suffixIcon: const Icon(Icons.remove_red_eye_outlined,
                             color: MyColors.grey),
                       ),
@@ -127,13 +133,19 @@ class PatientSignUpScreen extends StatelessWidget {
                       InkWell(
                         onTap: () {
                           if (formKey.currentState!.validate()) {
-                            BlocProvider.of<AuthCubit>(context).register(
-                                name: nameController.text,
-                                email: emailController.text,
-                                password: passwordController.text,
-                                confirmPassword: confirmPasswordController.text);
+                            BlocProvider.of<AuthCubit>(context).patientRegister(
+                              name: nameController.text,
+                              email: emailController.text,
+                              age: ageController.text,
+                              gender: genderController.text,
+                              password: passwordController.text,
+                              password_confirmation: confirmPasswordController.text,
+                              height: '',
+                              first_weight: '',
+                              active_status: '',
+                            );
+                            //Navigator.pushNamed(context, 'PatientSetTallScreen');
                           }
-                          //Navigator.pushNamed(context, 'PatientSetTallScreen');
                         },
                         child: Container(
                           width: double.infinity,
@@ -146,10 +158,8 @@ class PatientSignUpScreen extends StatelessWidget {
                             child: Text(
                                 state is RegisterLoadingState
                                     ? "loading....."
-                                    :
-                                "Sign Up",
-                                style:AppTextStyle().textBlueButton
-                            ),
+                                    : "Sign Up",
+                                style: AppTextStyle().textBlueButton),
                           ),
                         ),
                       ),
@@ -160,23 +170,25 @@ class PatientSignUpScreen extends StatelessWidget {
                         children: [
                           const Expanded(
                               child: Divider(
-                                thickness: 1,
-                                color: MyColors.grey,
-                              )),
+                            thickness: 1,
+                            color: MyColors.grey,
+                          )),
                           SizedBox(
                             width: 15.w,
                           ),
                           Text(
                             "Or Sign Up with",
-                            style:  AppTextStyle().greyText.copyWith(color: MyColors.black,fontSize: 14.sp),),
+                            style: AppTextStyle().greyText.copyWith(
+                                color: MyColors.black, fontSize: 14.sp),
+                          ),
                           SizedBox(
                             width: 15.w,
                           ),
                           const Expanded(
                               child: Divider(
-                                thickness: 1,
-                                color: MyColors.grey,
-                              )),
+                            thickness: 1,
+                            color: MyColors.grey,
+                          )),
                         ],
                       ),
                       SizedBox(
@@ -207,7 +219,7 @@ class PatientSignUpScreen extends StatelessWidget {
             ),
           ),
         );
-       },
-     );
+      },
+    );
   }
 }

@@ -19,12 +19,12 @@ class MyTextField extends StatelessWidget {
     this.suffixIcon,
     required this.textType,
     this.validator,
+
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      // autofocus: true,
       keyboardType: textType,
       controller: controller,
       obscureText: obscureText,
@@ -47,7 +47,7 @@ class MyTextField extends StatelessWidget {
         hintText: hintText,
         hintStyle: AppTextStyle().greyText,
         suffixIcon: suffixIcon,
-      ),
+      )
     );
   }
 }

@@ -7,7 +7,7 @@ import '../../../../shared/widgets/default_items.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
 import '../../../blocs/auth_cubit/auth_cubit.dart';
 
-//email: rana123@gmail.com  , password: 123456  , name: rana
+//email: rana5@gmail.com  , password: 987654321
 class PatientLoginScreen extends StatefulWidget {
   const PatientLoginScreen({Key? key}) : super(key: key);
 

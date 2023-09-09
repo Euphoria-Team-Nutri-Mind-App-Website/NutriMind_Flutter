@@ -9,83 +9,71 @@ part 'auth_state.dart';
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(AuthInitialState());
 //***************************************************************************************************************
-//   Future<void> patientRegister({
-//     required String name,
-//     required String email,
-//     required String password,
-//     required String password_confirmation,
-//     String? age,
-//     String? gender,
-//     String? height,
-//     String? first_weight,
-//     String? active_status,
-//   }) async {
-//     emit(RegisterLoadingState());
-//
-//     try {
-//       final response = await http.post(
-//         Uri.parse('http://heda.azq1.com/patient/api/patient/register'),
-//         headers: {'lang': 'en'},
-//         body: {
-//           'name': name,
-//           'email': email,
-//           'age': age,
-//           'gender': gender,
-//           'password': password,
-//           'password_confirmation': password_confirmation,
-//           'height': height,
-//           'first_weight': first_weight,
-//           'active_status': active_status,
-//         },
-//       );
-//
-//       if (response.statusCode == 200) {
-//         final responseBody = json.decode(response.body);
-//         if (responseBody['status'] == true) {
-//           emit(RegisterSuccessState());
-//         } else {
-//           emit(RegisterFailedState(message: responseBody['message']));
-//         }
-//       }
-//       else {
-//         emit(RegisterFailedState(message: 'Server error: ${response.statusCode}'));
-//       }
-//     } catch (e) {
-//       emit(RegisterFailedState(message: 'An error occurred: $e'));
-//     }
-//   }
 
   void patientRegister({
     required String name,
     required String email,
     required String password,
     required String password_confirmation,
-    String? age,
-    String? gender,
-    String? height,
-    String? first_weight,
-    String? active_status,
   }) async {
     emit(RegisterLoadingState());
-    Response response = await http.post(
-        Uri.parse(
-            'heda.azq1.com/patient/api/patient/register'),
-        body: {
-          'name': name,
-          'email': email,
-          'password': password,
-          'password_confirmation': password_confirmation,
-          'height': height,
-          'first_weight': first_weight,
-          'active_status': active_status,
-        });
-    var responseBody = jsonDecode(response.body);
-    if (responseBody['status'] == true) {
-      emit(RegisterSuccessState());
-    } else {
-      emit(RegisterFailedState(message: responseBody['message']));
+    try {
+      Response response = await http.post(
+          Uri.parse(
+              'http://heda.azq1.com/patient/api/patient/register'),
+          body: {
+            'name': name,
+            'email': email,
+            'password': password,
+            'password_confirmation': password_confirmation,
+          });
+      var responseBody = jsonDecode(response.body);
+      if (responseBody['status'] == 'True') {
+        print(responseBody['message']);
+        emit(RegisterSuccessState());
+      } else {
+        print(responseBody['message']);
+        emit(RegisterFailedState(message: responseBody['message']));
+      }
+    } catch(e){
+      print(e);
+      emit(RegisterFailedState(message: e.toString()));
     }
   }
+
+
+
+//   void patientRegister({
+//   required String name,
+//   required String email,
+//   required String password,
+//   required String password_confirmation,
+//   }) async {
+//     emit(RegisterLoadingState());
+//     try {
+//       Response response = await http
+//           .post(Uri.parse("http://heda.azq1.com/patient/api/patient/register"), body: {
+//                 'name': name,
+//                 'email': email,
+//                 'password': password,
+//                 'password_confirmation': password_confirmation,
+//       });
+//       if (response.statusCode == 200) {
+//         var responseData = jsonDecode(response.body);
+//         if (responseData['status'] == 'True') {
+//           emit(RegisterSuccessState());
+//         }
+//         else {
+//           emit(RegisterFailedState(message: responseData['message']));
+//         }
+//       }
+//     } catch (e) {
+//       print(e);
+//       emit(RegisterFailedState(message: e.toString()));
+//     }
+//   }
+// }
+
 
 
 //***************************************************************************************************************
@@ -93,24 +81,28 @@ class AuthCubit extends Cubit<AuthState> {
     emit(LoginLoadingState());
     try {
       Response response = await http
-          .post(Uri.parse("heda.azq1.com/patient/api/patient/login"), body: {
+          .post(Uri.parse("http://heda.azq1.com/patient/api/patient/login"), body: {
         'email': email,
         'password': password,
       });
       if (response.statusCode == 200) {
         var responseData = jsonDecode(response.body);
-        if (responseData['status'] == true) {
+        //print(responseData);
+        if (responseData['status'] == 'True') {
           //debugPrint("user login success and his data is : $data");
           await CacheNetwork.insertToCache(
-              key: "token", value: responseData['0']['accessToken']);
+              key: "accessToken", value: responseData['0']['accessToken']);
+          print("token is${responseData['0']['accessToken']}");
           emit(LoginSuccessState());
-        } else {
+        }
+        else {
           debugPrint(
               "failed to  login success and his data is : ${responseData['message']}");
           emit(LoginFailedState(message: responseData['message']));
         }
       }
     } catch (e) {
+      print(e);
       emit(LoginFailedState(message: e.toString()));
     }
   }

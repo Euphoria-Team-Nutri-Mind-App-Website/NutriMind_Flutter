@@ -20,7 +20,7 @@ class SplashScreen extends StatelessWidget {
       splash: const Image(
         image: AssetImage("assets/images/SplashIcon.png"),
       ),
-      nextScreen: token !=null && token !=""? const PatientNavBarScreen():const InterfaceScreen(),
+      nextScreen: accessToken !=null && accessToken !=""? const PatientNavBarScreen():const InterfaceScreen(),
       backgroundColor: MyColors.babyBlue,
     );
   }

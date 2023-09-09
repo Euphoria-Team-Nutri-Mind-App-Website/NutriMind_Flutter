@@ -12,8 +12,8 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = MyBlocObserver();
   await CacheNetwork.cacheInitialization();
-  token= CacheNetwork.getCacheData(key: 'token');
-  print("token is $token");
+  accessToken= CacheNetwork.getCacheData(key: 'token');
+  print("token is $accessToken");
   runApp(const MyApp());
 }
 

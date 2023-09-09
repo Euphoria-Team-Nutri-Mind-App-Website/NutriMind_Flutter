@@ -15,8 +15,8 @@ class PatientSignUpScreen extends StatelessWidget {
   final genderController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
-  // final formKey = GlobalKey<FormState>();
-  static final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final formKey = GlobalKey<FormState>();
+  //static final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   PatientSignUpScreen({Key? key}) : super(key: key);
 
@@ -83,25 +83,20 @@ class PatientSignUpScreen extends StatelessWidget {
                         hintText: 'Email',
                         obscureText: false,
                         textType: TextInputType.emailAddress,
-                        // validator: (emailController) {
-                        //   if (!emailController.contains("@")) {
-                        //     return "Please enter valid email";
-                        //   }
-                        //},
                       ),
                       SizedBox(
                         height: 18.h,
                       ),
                       MyTextField(
-                          controller: ageController,
+                        controller: ageController,
                           hintText: 'Age',
                           obscureText: false,
-                          textType: TextInputType.text),
+                          textType: TextInputType.number),
                       SizedBox(
                         height: 18.h,
                       ),
                       MyTextField(
-                          controller: genderController,
+                        controller: genderController,
                           hintText: 'Gender',
                           obscureText: false,
                           textType: TextInputType.text),
@@ -110,7 +105,7 @@ class PatientSignUpScreen extends StatelessWidget {
                       ),
                       MyTextField(
                         controller: passwordController,
-                        textType: TextInputType.text,
+                        textType: TextInputType.number,
                         hintText: 'Password',
                         obscureText: false,
                         suffixIcon: const Icon(Icons.remove_red_eye_outlined,
@@ -121,7 +116,7 @@ class PatientSignUpScreen extends StatelessWidget {
                       ),
                       MyTextField(
                         controller: confirmPasswordController,
-                        textType: TextInputType.text,
+                        textType: TextInputType.number,
                         hintText: 'Confirm Password',
                         obscureText: false,
                         suffixIcon: const Icon(Icons.remove_red_eye_outlined,
@@ -136,13 +131,14 @@ class PatientSignUpScreen extends StatelessWidget {
                             BlocProvider.of<AuthCubit>(context).patientRegister(
                               name: nameController.text,
                               email: emailController.text,
-                              age: ageController.text,
-                              gender: genderController.text,
                               password: passwordController.text,
                               password_confirmation: confirmPasswordController.text,
-                              height: '',
-                              first_weight: '',
-                              active_status: '',
+                              age: ageController.text,
+                              gender: genderController.text,
+                              height: '44',
+                              first_weight: '99',
+                              active_status: 'active',
+                              credit_card_number: '9999',
                             );
                             //Navigator.pushNamed(context, 'PatientSetTallScreen');
                           }

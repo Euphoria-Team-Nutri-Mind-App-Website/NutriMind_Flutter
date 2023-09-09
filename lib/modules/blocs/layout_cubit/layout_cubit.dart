@@ -17,13 +17,13 @@ class LayoutCubit extends Cubit<LayoutState> {
 
   void getUserData() async {
     emit(GetUserDataLoadingState());
-    print(" is $token token ");
+    print(" is $accessToken token ");
 
     http.get(
-        Uri.parse("https://student.valuxapps.com/api/profile"),
+        Uri.parse("https://heda.azq1.com/patient/api/patient/profile"),
         headers:
         {
-          'Authorization': token!,
+          'Authorization': accessToken!,
           'lang': "en"
         }
     ).then((value) {

@@ -102,7 +102,7 @@ class AuthCubit extends Cubit<AuthState> {
         if (responseData['status'] == true) {
           //debugPrint("user login success and his data is : $data");
           await CacheNetwork.insertToCache(
-              key: "accessToken", value: responseData['0']['accessToken']);
+              key: "token", value: responseData['0']['accessToken']);
           emit(LoginSuccessState());
         } else {
           debugPrint(

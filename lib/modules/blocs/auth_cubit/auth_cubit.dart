@@ -13,8 +13,14 @@ class AuthCubit extends Cubit<AuthState> {
   void patientRegister({
     required String name,
     required String email,
+    required String age,
+    required String gender,
     required String password,
     required String password_confirmation,
+    required String height,
+    required String first_weight,
+    required String active_status,
+    required String credit_card_number,
   }) async {
     emit(RegisterLoadingState());
     try {
@@ -24,8 +30,14 @@ class AuthCubit extends Cubit<AuthState> {
           body: {
             'name': name,
             'email': email,
+            'age': age,
+            'gender': gender,
             'password': password,
             'password_confirmation': password_confirmation,
+            'height': height,
+            'first_weight': first_weight,
+            'active_status': active_status,
+            'credit_card_number': credit_card_number,
           });
       var responseBody = jsonDecode(response.body);
       if (responseBody['status'] == 'True') {

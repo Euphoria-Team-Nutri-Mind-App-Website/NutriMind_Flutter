@@ -133,6 +133,12 @@ class PatientSignUpScreen extends StatelessWidget {
                               email: emailController.text,
                               password: passwordController.text,
                               password_confirmation: confirmPasswordController.text,
+                              age: ageController.text,
+                              gender: genderController.text,
+                              height: '44',
+                              first_weight: '99',
+                              active_status: 'active',
+                              credit_card_number: '9999',
                             );
                             //Navigator.pushNamed(context, 'PatientSetTallScreen');
                           }

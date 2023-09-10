@@ -17,18 +17,18 @@ class LayoutCubit extends Cubit<LayoutState> {
 
   void getUserData() async {
     emit(GetUserDataLoadingState());
-    print(" is $accessToken token ");
+    print("your token is $accessToken");
 
     http.get(
         Uri.parse("https://heda.azq1.com/patient/api/patient/profile"),
         headers:
         {
           'Authorization': accessToken!,
-          'lang': "en"
         }
     ).then((value) {
       var responseDate = jsonDecode(value.body);
-      patientModel = PatientModel.fromJson(data: responseDate['data']);
+      print(responseDate);
+      patientModel = PatientModel.fromJson(data: responseDate['0']);
       emit(GetUserDataSuccessState());
     }).catchError((onError){
       emit(FailedToGetUserDataState(error: onError));

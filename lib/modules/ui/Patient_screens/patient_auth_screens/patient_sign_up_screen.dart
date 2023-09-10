@@ -24,6 +24,40 @@ class PatientSignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
+        // if( state is RegisterLoadingState )
+        // {
+        //   showDialog(
+        //       context: context,
+        //       builder: (context) => const AlertDialog(
+        //         content: Center(
+        //           child: Text(
+        //             "wait",
+        //             style: TextStyle(
+        //               fontSize: 22,
+        //                 color: MyColors.white),
+        //           ),
+        //         ),
+        //         backgroundColor: MyColors.darkBlue,
+        //       ));
+        // }
+        // else if( state is RegisterFailedState )
+        // {
+        //   showDialog(
+        //           context: context,
+        //           builder: (context) => AlertDialog(
+        //                 content: Text(
+        //                   state.message,
+        //                   style: const TextStyle(color: MyColors.white),
+        //                 ),
+        //                 backgroundColor: Colors.red,
+        //               ));
+        // }
+        // else if ( state is RegisterSuccessState )
+        // {
+        //   Navigator.pop(context);
+        //   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> PatientSetTallScreen()));
+        // }
+
         if (state is RegisterSuccessState) {
           Navigator.pushReplacement(
               context,
@@ -127,7 +161,7 @@ class PatientSignUpScreen extends StatelessWidget {
                       ),
                       InkWell(
                         onTap: () {
-                          if (formKey.currentState!.validate()) {
+                          if (formKey.currentState!.validate()==true) {
                             BlocProvider.of<AuthCubit>(context).patientRegister(
                               name: nameController.text,
                               email: emailController.text,
@@ -135,10 +169,6 @@ class PatientSignUpScreen extends StatelessWidget {
                               password_confirmation: confirmPasswordController.text,
                               age: ageController.text,
                               gender: genderController.text,
-                              height: '44',
-                              first_weight: '99',
-                              active_status: 'active',
-                              credit_card_number: '9999',
                             );
                             //Navigator.pushNamed(context, 'PatientSetTallScreen');
                           }

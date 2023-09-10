@@ -10,17 +10,14 @@ class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(AuthInitialState());
 //***************************************************************************************************************
 
-  void patientRegister({
-    required String name,
-    required String email,
-    required String age,
-    required String gender,
-    required String password,
-    required String password_confirmation,
-    required String height,
-    required String first_weight,
-    required String active_status,
-    required String credit_card_number,
+
+void patientRegister({
+required String name,
+required String email,
+required String age,
+required String gender,
+required String password,
+required String password_confirmation,
   }) async {
     emit(RegisterLoadingState());
     try {
@@ -28,19 +25,16 @@ class AuthCubit extends Cubit<AuthState> {
           Uri.parse(
               'http://heda.azq1.com/patient/api/patient/register'),
           body: {
-            'name': name,
-            'email': email,
-            'age': age,
-            'gender': gender,
-            'password': password,
-            'password_confirmation': password_confirmation,
-            'height': height,
-            'first_weight': first_weight,
-            'active_status': active_status,
-            'credit_card_number': credit_card_number,
+                        'name': name,
+                        'email': email,
+                        'age': age,
+                        'gender': gender,
+                        'password': password,
+                        'password_confirmation': password_confirmation,
+
           });
       var responseBody = jsonDecode(response.body);
-      if (responseBody['status'] == 'True') {
+      if (responseBody['status'] == true) {
         print(responseBody['message']);
         emit(RegisterSuccessState());
       } else {
@@ -52,40 +46,6 @@ class AuthCubit extends Cubit<AuthState> {
       emit(RegisterFailedState(message: e.toString()));
     }
   }
-
-
-
-//   void patientRegister({
-//   required String name,
-//   required String email,
-//   required String password,
-//   required String password_confirmation,
-//   }) async {
-//     emit(RegisterLoadingState());
-//     try {
-//       Response response = await http
-//           .post(Uri.parse("http://heda.azq1.com/patient/api/patient/register"), body: {
-//                 'name': name,
-//                 'email': email,
-//                 'password': password,
-//                 'password_confirmation': password_confirmation,
-//       });
-//       if (response.statusCode == 200) {
-//         var responseData = jsonDecode(response.body);
-//         if (responseData['status'] == 'True') {
-//           emit(RegisterSuccessState());
-//         }
-//         else {
-//           emit(RegisterFailedState(message: responseData['message']));
-//         }
-//       }
-//     } catch (e) {
-//       print(e);
-//       emit(RegisterFailedState(message: e.toString()));
-//     }
-//   }
-// }
-
 
 
 //***************************************************************************************************************

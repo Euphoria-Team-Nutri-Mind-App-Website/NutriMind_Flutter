@@ -102,7 +102,7 @@ class PatientProfile extends StatelessWidget {
                               width: 5.w,
                             ),
                             Text(
-                              "${cubit.phone}",
+                              "${cubit.name}",
                               style: TextStyle(
                                   fontFamily: 'Inter',
                                   color: MyColors.grey,

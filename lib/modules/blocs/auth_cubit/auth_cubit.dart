@@ -37,7 +37,7 @@ class AuthCubit extends Cubit<AuthState> {
       var responseBody = jsonDecode(response.body);
       print(responseBody);
       print(responseBody['status']);
-      if (responseBody['status'] == true) {
+      if (responseBody['status'] == 'True') {
         print(responseBody['message']);
         emit(RegisterSuccessState());
       } else {

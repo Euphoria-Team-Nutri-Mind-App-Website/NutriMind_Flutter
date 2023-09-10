@@ -88,7 +88,7 @@ class PatientProfile extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "${cubit.patientInformation![0].name}",
+                          "${cubit.patientInformation![0].name!}",
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                             fontFamily: 'Poppins',
@@ -105,7 +105,7 @@ class PatientProfile extends StatelessWidget {
                               width: 5.w,
                             ),
                             Text(
-                                "${cubit.patientInformation![0].name}",
+                                "${cubit.patientInformation![0].name!}",
                               style: TextStyle(
                                   fontFamily: 'Inter',
                                   color: MyColors.grey,
@@ -124,7 +124,7 @@ class PatientProfile extends StatelessWidget {
                               width: 5.w,
                             ),
                             Text(
-                                "${cubit.patientInformation![0].name}",
+                                "${cubit.patientInformation![0].name}!",
                               style: TextStyle(
                                   fontFamily: 'Inter',
                                   color: MyColors.grey,

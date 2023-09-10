@@ -23,6 +23,7 @@ class LayoutCubit extends Cubit<LayoutState> {
         Uri.parse("https://heda.azq1.com/patient/api/patient/profile"),
         headers:
         {
+          'Accept': "application/json",
           'Authorization': accessToken!,
         }
     ).then((value) {

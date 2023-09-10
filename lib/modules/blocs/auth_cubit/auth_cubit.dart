@@ -15,7 +15,7 @@ class AuthCubit extends Cubit<AuthState> {
   void patientRegister({
     required String name,
     required String email,
-    required int age,
+    required String age,
     required String gender,
     required String password,
     required String password_confirmation,
@@ -37,7 +37,7 @@ class AuthCubit extends Cubit<AuthState> {
       var responseBody = jsonDecode(response.body);
       print(responseBody);
       print(responseBody['status']);
-      if (responseBody['status'] == true) {
+      if (responseBody['status'] == 'True') {
         print(responseBody['message']);
         emit(RegisterSuccessState());
       } else {

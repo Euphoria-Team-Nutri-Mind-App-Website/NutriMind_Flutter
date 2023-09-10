@@ -104,9 +104,9 @@ class _PatientLoginScreenState extends State<PatientLoginScreen> {
                       ),
                       validator: (val) {
                           if (val.isEmpty) {
-                            return "Email must not be empty";
-                          } else if (val.length < 7) {
-                            return "Password must be more than 6 numbers";
+                            return "Password must not be empty";
+                          } else if (val.length < 8) {
+                            return "Password must be more than 7 numbers";
                           } else {
                             return null;
                           }

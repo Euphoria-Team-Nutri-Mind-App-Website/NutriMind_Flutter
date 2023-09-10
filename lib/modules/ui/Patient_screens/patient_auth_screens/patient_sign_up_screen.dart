@@ -16,9 +16,7 @@ class PatientSignUpScreen extends StatelessWidget {
   final genderController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
-  //static final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  final formKey = GlobalKey<FormState>();
-
+  static final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   PatientSignUpScreen({Key? key}) : super(key: key);
 
@@ -192,8 +190,7 @@ class PatientSignUpScreen extends StatelessWidget {
                   InkWell(
                     onTap: () async {
                       var headers = {'Accept': 'application/json'};
-                      var request = http.MultipartRequest('POST',
-                          Uri.parse('http://heda.azq1.com/patient/api/patient/register'));
+                      var request = http.MultipartRequest('POST', Uri.parse('http://heda.azq1.com/patient/api/patient/register'));
                       request.fields.addAll({
                         'name': nameController.text,
                         'email': emailController.text,

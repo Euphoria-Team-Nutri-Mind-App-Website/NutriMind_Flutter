@@ -8,16 +8,17 @@ part 'auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(AuthInitialState());
+
 //***************************************************************************************************************
 
 
-void patientRegister({
-required String name,
-required String email,
-required String age,
-required String gender,
-required String password,
-required String password_confirmation,
+  void patientRegister({
+    required String name,
+    required String email,
+    required int age,
+    required String gender,
+    required String password,
+    required String password_confirmation,
   }) async {
     emit(RegisterLoadingState());
     try {
@@ -25,15 +26,17 @@ required String password_confirmation,
           Uri.parse(
               'http://heda.azq1.com/patient/api/patient/register'),
           body: {
-                        'name': name,
-                        'email': email,
-                        'age': age,
-                        'gender': gender,
-                        'password': password,
-                        'password_confirmation': password_confirmation,
+            'name': name,
+            'email': email,
+            'age': age.toString(),
+            'gender': gender,
+            'password': password.toString(),
+            'password_confirmation': password_confirmation.toString(),
 
           });
       var responseBody = jsonDecode(response.body);
+      print(responseBody);
+      print(responseBody['status']);
       if (responseBody['status'] == true) {
         print(responseBody['message']);
         emit(RegisterSuccessState());
@@ -46,6 +49,7 @@ required String password_confirmation,
       emit(RegisterFailedState(message: e.toString()));
     }
   }
+
 
 
 //***************************************************************************************************************

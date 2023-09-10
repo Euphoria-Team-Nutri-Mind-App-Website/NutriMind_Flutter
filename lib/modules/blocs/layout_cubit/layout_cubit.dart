@@ -28,7 +28,7 @@ class LayoutCubit extends Cubit<LayoutState> {
     ).then((value) {
       var responseDate = jsonDecode(value.body);
       print(responseDate);
-      patientModel = PatientModel.fromJson(data: responseDate['0']);
+      patientModel = PatientModel.fromJson(json: responseDate['patient information']);
       emit(GetUserDataSuccessState());
     }).catchError((onError){
       emit(FailedToGetUserDataState(error: onError));

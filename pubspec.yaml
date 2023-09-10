@@ -36,6 +36,7 @@ dependencies:
   dropdown_button2: ^2.3.9
   #flutter_offline: ^3.0.0
   connectivity_plus: ^4.0.2
+  firebase_core: ^2.15.1
 
 
 dev_dependencies:

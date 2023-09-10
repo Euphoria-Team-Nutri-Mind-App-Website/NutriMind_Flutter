@@ -15,7 +15,7 @@ class AuthCubit extends Cubit<AuthState> {
   void patientRegister({
     required String name,
     required String email,
-    required int age,
+    required String age,
     required String gender,
     required String password,
     required String password_confirmation,

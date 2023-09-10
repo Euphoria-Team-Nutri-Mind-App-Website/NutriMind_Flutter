@@ -28,13 +28,7 @@ class MyTextField extends StatelessWidget {
       keyboardType: textType,
       controller: controller,
       obscureText: obscureText,
-      validator: (input) {
-        if (controller.text.isEmpty) {
-          return '$hintText must not be empty';
-        } else {
-          return null;
-        }
-      },
+      validator:validator,
       decoration: InputDecoration(
         enabledBorder: OutlineInputBorder(
             borderSide: const BorderSide(color: MyColors.darkBlue),

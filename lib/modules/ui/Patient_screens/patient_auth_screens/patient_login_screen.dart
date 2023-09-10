@@ -7,7 +7,6 @@ import '../../../../shared/widgets/default_items.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
 import '../../../blocs/auth_cubit/auth_cubit.dart';
 
-//email: rana5@gmail.com  , password: 987654321
 class PatientLoginScreen extends StatefulWidget {
   const PatientLoginScreen({Key? key}) : super(key: key);
 
@@ -18,28 +17,35 @@ class PatientLoginScreen extends StatefulWidget {
 class _PatientLoginScreenState extends State<PatientLoginScreen> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
-  final formKey =GlobalKey<FormState>();
+  final formKey = GlobalKey<FormState>();
+  bool obscureText = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(backPage: 'ContinueScreen',),
+      appBar: MyAppBar(
+        backPage: 'ContinueScreen',
+      ),
       body: SingleChildScrollView(
         child: BlocConsumer<AuthCubit, AuthState>(
-          listener: (context ,state){
-             if (state is LoginSuccessState) {
+          listener: (context, state) {
+            if (state is LoginSuccessState) {
               Navigator.pushNamed(context, 'PatientNavBarScreen');
             } else if (state is LoginFailedState) {
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content:
-              Container(
-                alignment: Alignment.center,
-                height: 50,
-                child: Text(state.message),
-              )
-              ));
+              showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                  content: Text(
+                    state.message,
+                    style:
+                        AppTextStyle().greyText.copyWith(color: MyColors.white),
+                  ),
+                  backgroundColor: MyColors.darkBlue,
+                ),
+              );
             }
           },
-          builder: (context, state){
+          builder: (context, state) {
             return Container(
               padding: EdgeInsets.all(25.sp),
               color: MyColors.white,
@@ -51,7 +57,9 @@ class _PatientLoginScreenState extends State<PatientLoginScreen> {
                   children: [
                     Text(
                       "Welcome To",
-                      style:AppTextStyle().textInAppBar.copyWith(fontWeight:FontWeight.w500),
+                      style: AppTextStyle()
+                          .textInAppBar
+                          .copyWith(fontWeight: FontWeight.w500),
                     ),
                     SizedBox(
                       height: 7.h,
@@ -66,11 +74,19 @@ class _PatientLoginScreenState extends State<PatientLoginScreen> {
                       height: 45.h,
                     ),
                     MyTextField(
-                      controller: emailController,
-                      hintText: 'Enter your email',
-                      obscureText: false,
-                      textType: TextInputType.emailAddress,
-                    ),
+                        controller: emailController,
+                        hintText: 'Enter your email',
+                        obscureText: false,
+                        textType: TextInputType.emailAddress,
+                        validator: (val) {
+                          if (val.isEmpty) {
+                            return "Email must not be empty";
+                          } else if (!val.contains("@") || !val.contains(".")) {
+                            return "Enter a valid email";
+                          } else {
+                            return null;
+                          }
+                        }),
                     SizedBox(
                       height: 20.h,
                     ),
@@ -78,10 +94,22 @@ class _PatientLoginScreenState extends State<PatientLoginScreen> {
                       controller: passwordController,
                       textType: TextInputType.number,
                       hintText: 'Password',
-                      obscureText: false,
-                      suffixIcon:
-                      const Icon(Icons.remove_red_eye_outlined, color: MyColors.grey),
-                    ),
+                      obscureText: obscureText,
+                      suffixIcon: IconButton(
+                        icon: Icon(obscureText ? Icons.visibility_off : Icons.visibility),
+                        color: MyColors.grey,
+                        onPressed: () {setState(() {obscureText = !obscureText;});},
+                      ),
+                      validator: (val) {
+                          if (val.isEmpty) {
+                            return "Email must not be empty";
+                          } else if (val.length < 7) {
+                            return "Password must be more than 6 numbers";
+                          } else {
+                            return null;
+                          }
+                        }
+                        ),
                     SizedBox(
                       height: 20.h,
                     ),
@@ -89,12 +117,12 @@ class _PatientLoginScreenState extends State<PatientLoginScreen> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         InkWell(
-                          onTap: () =>
-                            Navigator.pushNamed(context,'PatientForgetPassword'),
-                          child: Text(
-                              "Forget Password?",
-                              style: AppTextStyle().greyText.copyWith(color: MyColors.black)
-                          ),
+                          onTap: () => Navigator.pushNamed(
+                              context, 'PatientForgetPassword'),
+                          child: Text("Forget Password?",
+                              style: AppTextStyle()
+                                  .greyText
+                                  .copyWith(color: MyColors.black)),
                         ),
                       ],
                     ),
@@ -103,13 +131,11 @@ class _PatientLoginScreenState extends State<PatientLoginScreen> {
                     ),
                     InkWell(
                       onTap: () {
-                        if (formKey.currentState!.validate()== true) {
+                        if (formKey.currentState!.validate() == true) {
                           BlocProvider.of<AuthCubit>(context).login(
                               email: emailController.text,
-                              password: passwordController.text
-                          );
+                              password: passwordController.text);
                         }
-                        //Navigator.pushNamed(context, 'PatientSetTallScreen');
                       },
                       child: Container(
                         width: double.infinity,
@@ -123,8 +149,7 @@ class _PatientLoginScreenState extends State<PatientLoginScreen> {
                               state is LoginLoadingState
                                   ? "loading....."
                                   : "Login",
-                              style:AppTextStyle().textBlueButton
-                          ),
+                              style: AppTextStyle().textBlueButton),
                         ),
                       ),
                     ),
@@ -135,24 +160,23 @@ class _PatientLoginScreenState extends State<PatientLoginScreen> {
                       children: [
                         const Expanded(
                             child: Divider(
-                              thickness: 1,
-                              color: MyColors.grey,
-                            )),
+                          thickness: 1,
+                          color: MyColors.grey,
+                        )),
                         SizedBox(
                           width: 15.w,
                         ),
-                        Text(
-                            "Or Log in with",
-                            style: AppTextStyle().greyText.copyWith(color: MyColors.black,fontSize: 14.sp)
-                        ),
+                        Text("Or Log in with",
+                            style: AppTextStyle().greyText.copyWith(
+                                color: MyColors.black, fontSize: 14.sp)),
                         SizedBox(
                           width: 15.w,
                         ),
                         const Expanded(
                             child: Divider(
-                              thickness: 1,
-                              color: MyColors.grey,
-                            )),
+                          thickness: 1,
+                          color: MyColors.grey,
+                        )),
                       ],
                     ),
                     SizedBox(
@@ -160,26 +184,27 @@ class _PatientLoginScreenState extends State<PatientLoginScreen> {
                     ),
                     Row(
                       children: [
-                        const MySmallButton(imageAsset: "assets/images/face.png"),
+                        const MySmallButton(
+                            imageAsset: "assets/images/face.png"),
                         SizedBox(
                           width: 10.w,
                         ),
-                        const MySmallButton(imageAsset: "assets/images/google.png"),
-                        SizedBox(
-                          width: 10.w,
-                        ),
+                        const MySmallButton(
+                            imageAsset: "assets/images/google.png"),
                       ],
+                    ),
+                    SizedBox(
+                      height: 90.h,
                     ),
                   ],
                 ),
               ),
             );
           },
-        )
+        ),
       ),
       bottomNavigationBar: BottomAppBar(
         height: 40.h,
-        color: Colors.transparent,
         elevation: 0.sp,
         child: const MyTextGroup(
             staticText: "Don’t have an account?",

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:http/http.dart'as http;
 import 'package:nutri_mind_application/models/patient_model.dart';
+import '../../../../shared/Constants/constants.dart';
 import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/default_items.dart';
 import '../../../../shared/Constants/colors.dart';
@@ -177,7 +179,35 @@ class PatientProfile extends StatelessWidget {
               ),
               SizedBox(height: 13.h),
               InkWell(
-                  onTap: (){ Navigator.pushNamed(context, 'ContinueScreen');},
+                  onTap: () async {
+                    var headers = {
+                      'Accept': 'application/json',
+                      'Authorization': accessToken!,
+                    };
+                    var request = http.Request('GET', Uri.parse('http://heda.azq1.com/patient/api/patient/logout'));
+
+                    request.headers.addAll(headers);
+
+                    http.StreamedResponse response = await request.send();
+
+                    if (response.statusCode == 200) {
+                      Navigator.pushNamed(context, 'ContinueScreen');
+                      showDialog(
+                                  context: context,
+                                  builder: (context) => AlertDialog(
+                                    content: Text(
+                                      "Logged out sucsessfully",
+                                      style:
+                                      AppTextStyle().greyText.copyWith(color: MyColors.white),
+                                    ),
+                                    backgroundColor: MyColors.darkBlue,
+                                  ),
+                                );
+                    }
+                    else {
+                    print(response.reasonPhrase);
+                    }
+                    },
                   child:ProfileButtons(icon:Icons.logout,text:'Log out',)
               ),
             ],

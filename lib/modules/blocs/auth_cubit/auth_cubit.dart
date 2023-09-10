@@ -28,10 +28,10 @@ class AuthCubit extends Cubit<AuthState> {
           body: {
             'name': name,
             'email': email,
-            'age': age.toString(),
+            'age': age,
             'gender': gender,
-            'password': password.toString(),
-            'password_confirmation': password_confirmation.toString(),
+            'password': password,
+            'password_confirmation': password_confirmation,
 
           });
       var responseBody = jsonDecode(response.body);

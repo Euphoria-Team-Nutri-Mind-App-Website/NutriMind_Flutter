@@ -9,6 +9,7 @@ import '../../../../shared/widgets/default_items.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/widgets/doctor_profile_widgets.dart';
 import '../../../blocs/layout_cubit/layout_cubit.dart';
+import '../patient_password_screens/set_password_widget.dart';
 
 class PatientProfile extends StatelessWidget {
   const PatientProfile({Key? key}) : super(key: key);
@@ -87,7 +88,7 @@ class PatientProfile extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "${cubit.name}",
+                          "${cubit.patientInformation![0].name}",
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                             fontFamily: 'Poppins',
@@ -104,7 +105,7 @@ class PatientProfile extends StatelessWidget {
                               width: 5.w,
                             ),
                             Text(
-                              "${cubit.name}",
+                                "${cubit.patientInformation![0].name}",
                               style: TextStyle(
                                   fontFamily: 'Inter',
                                   color: MyColors.grey,
@@ -123,7 +124,7 @@ class PatientProfile extends StatelessWidget {
                               width: 5.w,
                             ),
                             Text(
-                                "${cubit.email}",
+                                "${cubit.patientInformation![0].name}",
                               style: TextStyle(
                                   fontFamily: 'Inter',
                                   color: MyColors.grey,
@@ -179,34 +180,17 @@ class PatientProfile extends StatelessWidget {
               ),
               SizedBox(height: 13.h),
               InkWell(
-                  onTap: () async {
-                    var headers = {
-                      'Accept': 'application/json',
-                      'Authorization': accessToken!,
-                    };
-                    var request = http.Request('GET', Uri.parse('http://heda.azq1.com/patient/api/patient/logout'));
-
-                    request.headers.addAll(headers);
-
-                    http.StreamedResponse response = await request.send();
-
-                    if (response.statusCode == 200) {
-                      Navigator.pushNamed(context, 'ContinueScreen');
-                      showDialog(
-                                  context: context,
-                                  builder: (context) => AlertDialog(
-                                    content: Text(
-                                      "Logged out sucsessfully",
-                                      style:
-                                      AppTextStyle().greyText.copyWith(color: MyColors.white),
-                                    ),
-                                    backgroundColor: MyColors.darkBlue,
-                                  ),
-                                );
-                    }
-                    else {
-                    print(response.reasonPhrase);
-                    }
+                  onTap: () {
+                    // const Center(
+                    //   child: SetPassword(
+                    //     text: "Set password",
+                    //     backText: "Login",
+                    //     yourText: "Your reset",
+                    //     nextScreen: "ContinueScreen",
+                    //     DONE: "DONE",
+                    //   ),
+                    // );
+                    Navigator.pushNamed(context, 'ContinueScreen');
                     },
                   child:ProfileButtons(icon:Icons.logout,text:'Log out',)
               ),

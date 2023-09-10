@@ -29,8 +29,7 @@ class PatientSignUpScreen extends StatelessWidget {
               context,
               MaterialPageRoute(
                   builder: (context) => const PatientSetTallScreen()));
-        }
-        else if (state is RegisterFailedState) {
+        } else if (state is RegisterFailedState) {
           showDialog(
               context: context,
               builder: (context) => AlertDialog(
@@ -48,7 +47,8 @@ class PatientSignUpScreen extends StatelessWidget {
           body: SingleChildScrollView(
             child: SafeArea(
               child: Container(
-                padding: EdgeInsets.only(left: 25.sp, right: 25.sp, bottom: 25.sp),
+                padding:
+                    EdgeInsets.only(left: 25.sp, right: 25.sp, bottom: 25.sp),
                 color: MyColors.white,
                 child: Form(
                   key: formKey,
@@ -88,7 +88,7 @@ class PatientSignUpScreen extends StatelessWidget {
                         height: 18.h,
                       ),
                       MyTextField(
-                        controller: ageController,
+                          controller: ageController,
                           hintText: 'Age',
                           obscureText: false,
                           textType: TextInputType.number),
@@ -96,7 +96,7 @@ class PatientSignUpScreen extends StatelessWidget {
                         height: 18.h,
                       ),
                       MyTextField(
-                        controller: genderController,
+                          controller: genderController,
                           hintText: 'Gender',
                           obscureText: false,
                           textType: TextInputType.text),
@@ -132,7 +132,8 @@ class PatientSignUpScreen extends StatelessWidget {
                               name: nameController.text,
                               email: emailController.text,
                               password: passwordController.text,
-                              password_confirmation: confirmPasswordController.text,
+                              password_confirmation:
+                                  confirmPasswordController.text,
                               age: ageController.text,
                               gender: genderController.text,
                               height: '44',

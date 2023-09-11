@@ -13,7 +13,9 @@ Future<void> main() async {
   Bloc.observer = MyBlocObserver();
   await CacheNetwork.cacheInitialization();
   accessToken= CacheNetwork.getCacheData(key: 'accessToken');
+  currentPassword= CacheNetwork.getCacheData(key: 'password');
   print("token is $accessToken");
+  print("currentPassword is $currentPassword");
   runApp(const MyApp());
 }
 

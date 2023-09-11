@@ -1,10 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../models/patient_model.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/patient_settings_widgets.dart';
 import '../../../../shared/widgets/default_items.dart';
+import '../../../blocs/layout_cubit/layout_cubit.dart';
 
 class PatientSettingScreen extends StatefulWidget {
   const PatientSettingScreen({Key? key}) : super(key: key);
@@ -18,6 +21,13 @@ class _PatientSettingScreenState extends State<PatientSettingScreen> {
 
   @override
   Widget build(BuildContext context) {
+    return BlocProvider(
+  create: (context) => LayoutCubit()..getUserData(),
+  child: BlocConsumer<LayoutCubit, LayoutState>(
+  listener: (context, state) {
+  },
+  builder: (context, state) {
+    PatientModel? cubit =LayoutCubit.get(context).patientModel;
     return Scaffold(
       appBar: MyAppBar(
         backPage: 'PatientProfile',
@@ -64,7 +74,7 @@ class _PatientSettingScreenState extends State<PatientSettingScreen> {
               SizedBox(
                 height: 10.h,
               ),
-              const PatientChangeInfo(text:'Name',hintText:'Ahmed Mohamed',),
+              PatientChangeInfo(text:'Name',hintText:'${cubit?.patientInformation?[0].name}',),
               SizedBox(
                 height: 20.h,
               ),
@@ -89,7 +99,7 @@ class _PatientSettingScreenState extends State<PatientSettingScreen> {
               SizedBox(
                 height: 10.h,
               ),
-              const PatientChangeInfo(text:'Email',hintText:'ahmed20@gmail.com',),
+              PatientChangeInfo(text:'Email',hintText:'${cubit?.patientInformation?[0].email}',),
               SizedBox(
                 height: 20.h,
               ),
@@ -265,5 +275,8 @@ class _PatientSettingScreenState extends State<PatientSettingScreen> {
         ),
       ),
     );
+  },
+),
+);
   }
 }

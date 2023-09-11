@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart';
 import 'package:http/http.dart' as http;
 import 'package:nutri_mind_application/core/network/local_network.dart';
+
+import '../../../shared/Constants/constants.dart';
 part 'auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
@@ -66,9 +68,15 @@ class AuthCubit extends Cubit<AuthState> {
         //print(responseData);
         if (responseData['status'] == 'True') {
           //debugPrint("user login success and his data is : $data");
-          await CacheNetwork.insertToCache(
-              key: "accessToken", value: responseData['0']['accessToken']);
-          print("token is${responseData['0']['accessToken']}");
+
+          await CacheNetwork.insertToCache(key: "accessToken", value: responseData['0']['accessToken']);
+          await CacheNetwork.insertToCache(key: "password", value: password);
+          accessToken=await CacheNetwork.getCacheData(key: "accessToken");
+          currentPassword=await CacheNetwork.getCacheData(key: "password");
+
+          print("token is ${responseData['0']['accessToken']}");
+          print("currentPassword is ${password}");
+
           emit(LoginSuccessState());
         }
         else {

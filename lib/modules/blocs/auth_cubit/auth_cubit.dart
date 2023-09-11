@@ -10,8 +10,6 @@ class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(AuthInitialState());
 
 //***************************************************************************************************************
-
-
   void patientRegister({
     required String name,
     required String email,
@@ -49,9 +47,6 @@ class AuthCubit extends Cubit<AuthState> {
       emit(RegisterFailedState(message: e.toString()));
     }
   }
-
-
-
 //***************************************************************************************************************
   void login({required String email, required String password}) async {
     emit(LoginLoadingState());

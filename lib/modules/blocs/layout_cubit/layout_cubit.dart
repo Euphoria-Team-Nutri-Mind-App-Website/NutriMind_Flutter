@@ -1,11 +1,8 @@
 import 'dart:convert';
-import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:meta/meta.dart';
 import 'package:http/http.dart' as http;
 import '../../../models/patient_model.dart';
 import '../../../shared/Constants/constants.dart';
-
 part 'layout_state.dart';
 
 class LayoutCubit extends Cubit<LayoutState> {
@@ -36,7 +33,5 @@ class LayoutCubit extends Cubit<LayoutState> {
       emit(FailedToGetUserDataState(error: onError.toString()));
 
     });
-
   }
-
 }

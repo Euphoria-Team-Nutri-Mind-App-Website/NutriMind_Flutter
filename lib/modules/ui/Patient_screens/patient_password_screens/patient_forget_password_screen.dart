@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/default_items.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
-
 
 class PatientForgetPassword extends StatelessWidget {
   const PatientForgetPassword({Key? key}) : super(key: key);
@@ -32,15 +30,24 @@ class PatientForgetPassword extends StatelessWidget {
                 ),
                 Text(
                   "Please enter your email address!",
-                  style: AppTextStyle().greyText.copyWith(fontSize: 13.sp,fontWeight:FontWeight.w400) ,),
+                  style: AppTextStyle().greyText.copyWith(fontSize: 13.sp,fontWeight:FontWeight.w500) ,),
                 SizedBox(
                   height: 40.h,
                 ),
-                const MyTextField(
-                  hintText: 'Enter your email',
-                  obscureText: false,
-                  textType: TextInputType.emailAddress,
-                ),
+                MyTextField(
+                    // controller: emailController,
+                    hintText: 'Enter your email',
+                    obscureText: false,
+                    textType: TextInputType.emailAddress,
+                    validator: (val) {
+                      if (val.isEmpty) {
+                        return "Email must not be empty";
+                      } else if (!val.contains("@") || !val.contains(".")) {
+                        return "Enter a valid email";
+                      } else {
+                        return null;
+                      }
+                    }),
                 SizedBox(
                   height: 28.h,
                 ),
@@ -55,7 +62,7 @@ class PatientForgetPassword extends StatelessWidget {
         ),
       bottomNavigationBar: BottomAppBar(
         height: 40.h,
-          color: Colors.transparent,
+          color: MyColors.white,
           elevation: 0.sp,
           child: const MyTextGroup(
               staticText: "Remember Password?",

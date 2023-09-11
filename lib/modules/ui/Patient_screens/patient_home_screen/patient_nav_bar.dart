@@ -8,7 +8,6 @@ import '../patient_puzzle_screens/puzzle_start_screen.dart';
 
 class PatientNavBarScreen extends StatefulWidget {
   const PatientNavBarScreen({Key? key}) : super(key: key);
-
   @override
   State<StatefulWidget> createState() {
     return PatientNavBarScreenState();
@@ -45,7 +44,7 @@ class PatientNavBarScreenState extends State<PatientNavBarScreen> {
             label: 'Chats',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.align_vertical_center),
+            icon: Icon(Icons.games),
             label: 'Puzzle',
           ),
           BottomNavigationBarItem(

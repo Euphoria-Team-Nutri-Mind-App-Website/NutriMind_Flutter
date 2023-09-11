@@ -36,6 +36,7 @@ import 'modules/ui/Patient_screens/patient_set_tall_weight_state_screens/patient
 import 'modules/ui/Patient_screens/patient_track_eat_screen/breakfast_screen.dart';
 import 'modules/ui/Patient_screens/patient_track_eat_screen/dairy_My_food_screen.dart';
 import 'modules/ui/Patient_screens/patient_track_eat_screen/patient_track_eat_screen.dart';
+import 'modules/ui/Patient_screens/patient_track_weight_screen/patient_track_weight_screen.dart';
 import 'modules/ui/continue_screen.dart';
 import 'modules/ui/doctor_screens/doctor_auth_screen/doctor_choose_time_screen.dart';
 import 'modules/ui/doctor_screens/doctor_auth_screen/doctor_login_screen.dart';
@@ -54,6 +55,7 @@ import 'modules/ui/interface_screen.dart';
 Map<String, WidgetBuilder> routes = {
   'InterfaceScreen': (context) => const InterfaceScreen(),
   'ContinueScreen': (context) => const ContinueScreen(),
+  //****************************************************************************************
   'PatientLoginScreen': (context) => const PatientLoginScreen(),
   'PatientSignUpScreen': (context) => PatientSignUpScreen(),
   'PatientForgetPassword': (context) => const PatientForgetPassword(),
@@ -61,6 +63,8 @@ Map<String, WidgetBuilder> routes = {
   'PatientCreatePasswordScreen': (context) => const PatientCreatePasswordScreen(),
   'PatientSetTallScreen': (context) => const PatientSetTallScreen(),
   'PatientSetWeightScreen': (context) => const PatientSetWeightScreen(),
+  'PatientChooseYourStateScreen1': (context) => const PatientChooseYourStateScreen1(),
+  'PatientChooseYourStateScreen2': (context) => const PatientChooseYourStateScreen2(),
   'PatientNavBarScreen': (context) => const PatientNavBarScreen(),
   'PatientNotificationsScreen': (context) => const PatientNotificationsScreen(),
   'PatientAppointmentInDoctor': (context) => const PatientAppointmentInDoctor(),
@@ -86,11 +90,11 @@ Map<String, WidgetBuilder> routes = {
   'PatientQuestionScreenThree': (context) => const PatientQuestionScreenThree(),
   'PatientQuestionScreenFour': (context) => const PatientQuestionScreenFour(),
   'PatientQuestionScreenFive': (context) => const PatientQuestionScreenFive(),
-  'PatientChooseYourStateScreen1': (context) => const PatientChooseYourStateScreen1(),
-  'PatientChooseYourStateScreen2': (context) => const PatientChooseYourStateScreen2(),
+  'PatientTrackWeightScreen': (context) => const PatientTrackWeightScreen(),
   'BreakfastScreen': (context) => const BreakfastScreen(),
   'DairyMyFoodScreen': (context) => const DairyMyFoodScreen(),
   'DoctorListForPatientScreen': (context) => const DoctorListForPatientScreen(),
+  //****************************************************************************************
   'DoctorLoginScreen': (context) => const DoctorLoginScreen(),
   'DoctorSignUpScreen': (context) => const DoctorSignUpScreen(),
   'DoctorForgetPassword': (context) => const DoctorForgetPassword(),

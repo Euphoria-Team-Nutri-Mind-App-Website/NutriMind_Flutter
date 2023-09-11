@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-//import 'package:flutter_offline/flutter_offline.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nutri_mind_application/shared/Constants/text_theme.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
 import 'doctor_widget_for_patient.dart';
@@ -37,10 +37,15 @@ class _PatientHomeServicesScreenState extends State<PatientHomeServicesScreen> {
       "rout": "PatientQuestionScreen",
     },
     {
+      "icon": Icons.monitor_weight_outlined,
+      "name": "Track Weight",
+      "rout": "PatientTrackWeightScreen",
+    },
+    {
       "icon": Icons.local_fire_department,
       "name": "Track Eating",
       "rout": "PatientTrackEatingScreen",
-    }
+    },
   ];
   //bool click = true;
   @override
@@ -76,8 +81,7 @@ class _PatientHomeServicesScreenState extends State<PatientHomeServicesScreen> {
             ),
           ],
       ),
-      body:
-      SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.only(left: 25.sp, right: 25.sp, top: 25.sp),
           child: Column(
@@ -97,10 +101,7 @@ class _PatientHomeServicesScreenState extends State<PatientHomeServicesScreen> {
                 children: [
                   Text(
                     "All services",
-                    style: TextStyle(
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.w600,
-                        fontSize: 15.sp),
+                    style: AppTextStyle().textInAppBar.copyWith(fontSize: 16.sp),
                   )
                 ],
               ),
@@ -147,9 +148,7 @@ class _PatientHomeServicesScreenState extends State<PatientHomeServicesScreen> {
                                   const SizedBox(height: 8),
                                   Text(
                                     "${allServices[index]['name']}",
-                                    style: TextStyle(
-                                        fontSize: 16.sp,
-                                        color: MyColors.darkBlue
+                                    style:AppTextStyle().textInAppBar.copyWith(color: MyColors.darkBlue,fontSize:15.sp,fontWeight: FontWeight.w500
                                       //click ? MyColors.darkBlue : MyColors.lightGrey
                                     ),
                                   )
@@ -171,10 +170,7 @@ class _PatientHomeServicesScreenState extends State<PatientHomeServicesScreen> {
                 children: [
                   Text(
                     "Top doctors",
-                    style: TextStyle(
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.w600,
-                        fontSize: 15.sp),
+                    style:AppTextStyle().textInAppBar.copyWith(fontSize: 16.sp)
                   ),
                   InkWell(
                     onTap: () {
@@ -183,11 +179,7 @@ class _PatientHomeServicesScreenState extends State<PatientHomeServicesScreen> {
                     },
                     child: Text(
                       "See all",
-                      style: TextStyle(
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.w500,
-                          fontSize: 12.sp,
-                          color: MyColors.grey),
+                      style:AppTextStyle().greyText
                     ),
                   )
                 ],
@@ -206,172 +198,6 @@ class _PatientHomeServicesScreenState extends State<PatientHomeServicesScreen> {
           ),
         ),
       ),
-      // OfflineBuilder(
-      //     connectivityBuilder: (
-      //         BuildContext context,
-      //         ConnectivityResult connectivity,
-      //         Widget child,
-      //     ){
-      //       final bool connected = connectivity != ConnectivityResult.none;
-      //       if(connected){
-      //         return
-      //           SingleChildScrollView(
-      //           child: Padding(
-      //             padding: EdgeInsets.only(left: 25.sp, right: 25.sp, top: 25.sp),
-      //             child: Column(
-      //               mainAxisAlignment: MainAxisAlignment.center,
-      //               children: [
-      //                 const SmallTextField(
-      //                   hintText: 'Search for service',
-      //                   suffixIcon: Icon(Icons.search_outlined),
-      //                   obscureText: true,
-      //                   textType: TextInputType.text,
-      //                 ),
-      //                 SizedBox(
-      //                   height: 25.sp,
-      //                 ),
-      //                 Row(
-      //                   mainAxisAlignment: MainAxisAlignment.start,
-      //                   children: [
-      //                     Text(
-      //                       "All services",
-      //                       style: TextStyle(
-      //                           fontFamily: 'Inter',
-      //                           fontWeight: FontWeight.w600,
-      //                           fontSize: 15.sp),
-      //                     )
-      //                   ],
-      //                 ),
-      //                 SizedBox(
-      //                   height: 17.sp,
-      //                 ),
-      //                 SingleChildScrollView(
-      //                   child: Column(
-      //                     children: [
-      //                       SizedBox(
-      //                         height: 120.h,
-      //                         child: ListView.builder(
-      //                           itemCount: allServices.length,
-      //                           scrollDirection: Axis.horizontal,
-      //                           itemBuilder: (context, index) => Container(
-      //                             margin: EdgeInsets.all(9.sp),
-      //                             decoration: BoxDecoration(
-      //                                 borderRadius: BorderRadius.circular(20.r),
-      //                                 color: MyColors.lightGrey
-      //                                 //click ? MyColors.lightGrey : MyColors.darkBlue,
-      //                                 ),
-      //                             child: InkWell(
-      //                               onTap: () {
-      //                                 Navigator.pushNamed(
-      //                                     context, allServices[index]['rout']);
-      //                                 // setState(() {
-      //                                 //   //click = !click;
-      //                                 // });
-      //                               },
-      //                               child: Container(
-      //                                 height: 150.h,
-      //                                 width: 90.w,
-      //                                 margin: const EdgeInsets.all(10),
-      //                                 decoration: BoxDecoration(
-      //                                   borderRadius: BorderRadius.circular(33),
-      //                                 ),
-      //                                 child: Column(
-      //                                   mainAxisAlignment: MainAxisAlignment.center,
-      //                                   children: [
-      //                                     Icon(allServices[index]['icon'],
-      //                                         size: 27.sp, color: MyColors.darkBlue
-      //                                         //click ? MyColors.darkBlue: MyColors.lightGrey
-      //                                         ),
-      //                                     const SizedBox(height: 8),
-      //                                     Text(
-      //                                       "${allServices[index]['name']}",
-      //                                       style: TextStyle(
-      //                                           fontSize: 16.sp,
-      //                                           color: MyColors.darkBlue
-      //                                           //click ? MyColors.darkBlue : MyColors.lightGrey
-      //                                           ),
-      //                                     )
-      //                                   ],
-      //                                 ),
-      //                               ),
-      //                             ),
-      //                           ),
-      //                         ),
-      //                       )
-      //                     ],
-      //                   ),
-      //                 ),
-      //                 SizedBox(
-      //                   height: 25.sp,
-      //                 ),
-      //                 Row(
-      //                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      //                   children: [
-      //                     Text(
-      //                       "Top doctors",
-      //                       style: TextStyle(
-      //                           fontFamily: 'Inter',
-      //                           fontWeight: FontWeight.w600,
-      //                           fontSize: 15.sp),
-      //                     ),
-      //                     InkWell(
-      //                       onTap: () {
-      //                         Navigator.pushNamed(
-      //                             context, 'DoctorListForPatientScreen');
-      //                       },
-      //                       child: Text(
-      //                         "See all",
-      //                         style: TextStyle(
-      //                             fontFamily: 'Poppins',
-      //                             fontWeight: FontWeight.w500,
-      //                             fontSize: 12.sp,
-      //                             color: MyColors.grey),
-      //                       ),
-      //                     )
-      //                   ],
-      //                 ),
-      //                 SizedBox(
-      //                   height: 17.sp,
-      //                 ),
-      //                 const Column(
-      //                   children: [
-      //                     DoctorWidgetForPatientScreen(),
-      //                     SizedBox(height: 18),
-      //                     DoctorWidgetForPatientScreen(),
-      //                   ],
-      //                 )
-      //               ],
-      //             ),
-      //           ),
-      //         );
-      //       }else{
-      //         return buildNoEnternetWidget();
-      //       }
-      //     },
-      //   child: const Center(
-      //     child: CircularProgressIndicator(
-      //       color: MyColors.darkBlue,
-      //     ),
-      //   ),
-      //     )
     );
   }
 }
-
-//
-// Widget buildNoEnternetWidget(){
-//   return Center(
-//     child: Container(
-//       color: MyColors.white,
-//       child: Column(
-//         children: [
-//           SizedBox(
-//             height: 20.h,
-//           ),
-//           Text("can\'t connect check internet",style: TextStyle(fontSize: 22,color: MyColors.darkBlue),),
-//           Image.asset("assets/images/not_found.png")
-//         ],
-//       ),
-//     ),
-//   );
-// }

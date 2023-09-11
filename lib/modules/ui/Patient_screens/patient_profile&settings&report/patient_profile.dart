@@ -22,7 +22,6 @@ class PatientProfile extends StatelessWidget {
   listener: (context, state) {
   },
   builder: (context, state) {
-
     PatientModel? cubit =LayoutCubit.get(context).patientModel;
     //print(cubit?.name);
     //LayoutCubit.get(context).minus();
@@ -105,7 +104,11 @@ class PatientProfile extends StatelessWidget {
                               width: 5.w,
                             ),
                             Text(
+<<<<<<< HEAD
                                 "${cubit.patientInformation?[0].name}",
+=======
+                                "${cubit.patientInformation?[0].email}",
+>>>>>>> ff19fd106ba52c73b68b6bdf7dcd8b4ae8368161
                               style: TextStyle(
                                   fontFamily: 'Inter',
                                   color: MyColors.grey,
@@ -124,7 +127,11 @@ class PatientProfile extends StatelessWidget {
                               width: 5.w,
                             ),
                             Text(
+<<<<<<< HEAD
                                 "${cubit.patientInformation?[0].email}",
+=======
+                                "${cubit.patientInformation?[0].name}",
+>>>>>>> ff19fd106ba52c73b68b6bdf7dcd8b4ae8368161
                               style: TextStyle(
                                   fontFamily: 'Inter',
                                   color: MyColors.grey,

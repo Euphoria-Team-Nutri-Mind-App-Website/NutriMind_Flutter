@@ -1,8 +1,7 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:nutri_mind_application/shared/Constants/text_theme.dart';
 import '../../../../shared/Constants/colors.dart';
 
 class SetPassword extends StatelessWidget {
@@ -58,13 +57,10 @@ class SetPassword extends StatelessWidget {
                           ],
                         ),
                         child: Center(
-                          child: Text(
-                            "Back to ${backText}",
-                            style: const TextStyle(
-                                color: MyColors.darkBlue,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'Poppins'),
-                          ),
+                          child: Text("Back to $backText",
+                              style: AppTextStyle().greyText.copyWith(
+                                  color: MyColors.darkBlue,
+                                  fontWeight: FontWeight.w600)),
                         ),
                       ),
                       SizedBox(
@@ -81,24 +77,18 @@ class SetPassword extends StatelessWidget {
                 children: [
                   Center(child: Image.asset("assets/images/true.png")),
                   SizedBox(height: 17.h),
-                  Text(
-                    "$yourText",
-                    style:
-                        const TextStyle(color: MyColors.grey, fontFamily: 'Poppins'),
-                  ),
+                  Text("$yourText",
+                      style: AppTextStyle().greyText.copyWith(fontSize: 16.sp)),
                   SizedBox(height: 10.h),
-                  Text(
-                    "$DONE",
-                    style: TextStyle(
-                        color: MyColors.darkBlue,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15.sp,
-                        fontFamily: 'Poppins'),
-                  ),
+                  Text("$DONE",
+                      style: AppTextStyle().greyText.copyWith(
+                          color: MyColors.darkBlue,
+                          fontWeight: FontWeight.w700,
+                          fontSize: 16.sp)),
                 ],
               ),
             ),
-            contentPadding: EdgeInsets.all(20.sp),
+            contentPadding: EdgeInsets.all(10.sp),
           ),
           transitionBuilder: (ctx, anim1, anim2, child) => BackdropFilter(
             filter: ImageFilter.blur(

@@ -17,10 +17,27 @@ class FailedToGetUserDataState extends LayoutState {
 
 //***************************************************************************************************************
 
+class GetDoctorListSuccessState extends LayoutState {}
+
+class GetDoctorListLoadingState extends LayoutState {}
+
+class FailedToDoctorListDataState extends LayoutState {
+  String error;
+  FailedToDoctorListDataState({required this.error});
+}
+
+//***************************************************************************************************************
+
 class ChangePasswordLoadingState extends LayoutState{}
 class ChangePasswordSuccessState extends LayoutState{}
 class ChangePasswordWithFailureState extends LayoutState{
   String error;
 
   ChangePasswordWithFailureState(this.error);
+}
+//***************************************************************************************************************
+
+class GenerateOtpLoadingState extends LayoutState{}
+class GenerateOtpSuccessState extends LayoutState{}
+class GenerateOtpWithFailureState extends LayoutState{
 }

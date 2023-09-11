@@ -4,6 +4,8 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:http/http.dart' as http;
 import '../../../core/network/local_network.dart';
+import '../../../models/doctor_list_model.dart';
+import '../../../models/forget_password/generate_otp_model.dart';
 import '../../../models/patient_model.dart';
 import '../../../shared/Constants/constants.dart';
 part 'layout_state.dart';
@@ -41,6 +43,34 @@ class LayoutCubit extends Cubit<LayoutState> {
 
 //***************************************************************************************************************
 
+  DoctorListModel? doctorListModel;
+  void getDoctorsList() async {
+    emit(GetDoctorListLoadingState());
+    print("your token is $accessToken");
+
+    http.get(
+        Uri.parse("https://heda.azq1.com/api/doctors"),
+        headers:
+        {
+          'Accept': "application/json",
+          'Authorization': 'Bearer ${accessToken!}',
+        }
+    ).then((value) {
+      var responseDate = jsonDecode(value.body);
+      //print(responseDate);
+      patientModel = PatientModel.fromJson(responseDate);
+      print("mmmm ${patientModel?.patientInformation?[0]}");
+      emit(GetDoctorListSuccessState());
+
+    }).catchError((onError){
+      print("onError error ${onError.toString()}");
+      emit(FailedToDoctorListDataState(error: onError.toString()));
+
+    });
+  }
+
+//***************************************************************************************************************
+
 
   // void changePassword({required String userCurrentPassword,required String newPassword}) async {
   //   emit(ChangePasswordLoadingState());
@@ -73,5 +103,32 @@ class LayoutCubit extends Cubit<LayoutState> {
   //   }
   // }
 
+
+//***************************************************************************************************************
+
+  GenerateOtpModel?generateOtpModel;
+  void generatOtp({
+    required String email, })async {
+    emit(GenerateOtpLoadingState());
+    print("your token is $accessToken");
+
+    http.get(
+        Uri.parse("http://heda.azq1.com/patient/api/patient/generate-otp?${email}"),
+        headers:
+        {
+          'Accept': "application/json",
+          'Authorization': 'Bearer ${accessToken!}',
+        },
+    ).then((value) {
+      var responseDate = jsonDecode(value.body);
+      print(responseDate);
+      patientModel = PatientModel.fromJson(responseDate);
+      emit(GenerateOtpSuccessState());
+    }).catchError((onError){
+      print("onError error ${onError.toString()}");
+      emit(GenerateOtpWithFailureState());
+
+    });
+  }
 
 }

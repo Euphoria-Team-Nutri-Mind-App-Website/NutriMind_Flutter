@@ -83,7 +83,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                   Text(
                     "Registration",
                     style:
-                        AppTextStyle().textInAppBar.copyWith(fontSize: 28.sp),
+                    AppTextStyle().textInAppBar.copyWith(fontSize: 28.sp),
                   ),
                   SizedBox(
                     height: 7.h,
@@ -206,6 +206,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                   ),
                   InkWell(
                     onTap: () async {
+<<<<<<< HEAD
                       if (formKey.currentState!.validate()==true) {
                         BlocProvider.of<AuthCubit>(context).patientRegister(
                           name: nameController.text,
@@ -217,6 +218,51 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                         );
                         //Navigator.pushNamed(context, 'PatientSetTallScreen');
                       }
+=======
+                      var headers = {'Accept': 'application/json'};
+                      var request = http.MultipartRequest(
+                          'POST',
+                          Uri.parse(
+                              'http://heda.azq1.com/patient/api/patient/register'));
+                      request.fields.addAll({
+                        'name': nameController.text,
+                        'email': emailController.text,
+                        'password': passwordController.text,
+                        'password_confirmation': confirmPasswordController.text,
+                        'gender': genderController.text,
+                        'age': ageController.text,
+                      });
+                      request.headers.addAll(headers);
+                      http.StreamedResponse response = await request.send();
+
+                      if (response.statusCode == 200) {
+                        Navigator.pushNamed(context, 'PatientSetTallScreen');
+                      } else {
+                        showDialog(
+                            context: context,
+                            builder: (context) => AlertDialog(
+                              content: Text(
+                                "${response.reasonPhrase}",
+                                style:
+                                const TextStyle(color: MyColors.white),
+                              ),
+                              backgroundColor: MyColors.darkBlue,
+                            ));
+                        print(response.reasonPhrase);
+                      }
+                      // if (formKey.currentState!.validate()==true) {
+                      //   BlocProvider.of<AuthCubit>(context).patientRegister(
+                      //     name: nameController.text,
+                      //     email: emailController.text,
+                      //     password: int.parse(passwordController.text),
+                      //     password_confirmation:
+                      //         int.parse(confirmPasswordController.text),
+                      //     age:int.parse(ageController.text),
+                      //     gender: genderController.text,
+                      //   );
+                      //   //Navigator.pushNamed(context, 'PatientSetTallScreen');
+                      // }
+>>>>>>> 69e3248249065a8dfb17bd3b5e170661875fdd1e
                     },
                     child: Container(
                       width: double.infinity,
@@ -227,9 +273,9 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                       ),
                       child: Center(
                         child: Text(
-                            // state is RegisterLoadingState
-                            //     ? "loading....."
-                            //     :
+                          // state is RegisterLoadingState
+                          //     ? "loading....."
+                          //     :
                             "Sign Up",
                             style: AppTextStyle().textBlueButton),
                       ),
@@ -242,9 +288,9 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                     children: [
                       const Expanded(
                           child: Divider(
-                        thickness: 1,
-                        color: MyColors.grey,
-                      )),
+                            thickness: 1,
+                            color: MyColors.grey,
+                          )),
                       SizedBox(
                         width: 15.w,
                       ),
@@ -259,9 +305,9 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                       ),
                       const Expanded(
                           child: Divider(
-                        thickness: 1,
-                        color: MyColors.grey,
-                      )),
+                            thickness: 1,
+                            color: MyColors.grey,
+                          )),
                     ],
                   ),
                   SizedBox(

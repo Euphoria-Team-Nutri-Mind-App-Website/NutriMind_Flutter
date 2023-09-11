@@ -126,6 +126,7 @@ class _PatientForgetPasswordState extends State<PatientForgetPassword> {
                     ),
                   ),
                 ),
+<<<<<<< HEAD
               ),
               bottomNavigationBar: BottomAppBar(
                 height: 40.h,
@@ -139,6 +140,49 @@ class _PatientForgetPasswordState extends State<PatientForgetPassword> {
           );
         },
       ),
+=======
+                Text(
+                  "Please enter your email address!",
+                  style: AppTextStyle().greyText.copyWith(fontSize: 13.sp,fontWeight:FontWeight.w500) ,),
+                SizedBox(
+                  height: 40.h,
+                ),
+                MyTextField(
+                    // controller: emailController,
+                    hintText: 'Enter your email',
+                    obscureText: false,
+                    textType: TextInputType.emailAddress,
+                    validator: (val) {
+                      if (val.isEmpty) {
+                        return "Email must not be empty";
+                      } else if (!val.contains("@") || !val.contains(".")) {
+                        return "Enter a valid email";
+                      } else {
+                        return null;
+                      }
+                    }),
+                SizedBox(
+                  height: 28.h,
+                ),
+                 MyBlueButton(
+                  width: double.infinity,
+                    height: 55.h,
+                    text: 'Send Code',
+                    page: 'PatientVerificationScreen'),
+              ],
+            ),
+          ),
+        ),
+      bottomNavigationBar: BottomAppBar(
+        height: 40.h,
+          // color: MyColors.white,
+          elevation: 0.sp,
+          child: const MyTextGroup(
+              staticText: "Remember Password?",
+              dynamicText: "  Log In",
+              page: 'PatientLoginScreen'),
+        )
+>>>>>>> 69e3248249065a8dfb17bd3b5e170661875fdd1e
     );
   }
 }

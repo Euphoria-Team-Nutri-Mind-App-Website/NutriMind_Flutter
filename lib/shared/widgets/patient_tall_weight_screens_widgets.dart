@@ -29,12 +29,12 @@ class _TallComponentsState extends State<TallComponents> {
           },
           showTicks: true,
           showLabels: true,
-          interval: 10.0,
+          interval: 10,
           activeColor: MyColors.darkBlue,
           inactiveColor: MyColors.grey,
         ),
         SizedBox(
-          height: 70.h,
+          height: 90.h,
         ),
         Center(
           child: Container(

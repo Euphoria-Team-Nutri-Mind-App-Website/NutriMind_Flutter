@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart';
 import 'package:http/http.dart' as http;
 import 'package:nutri_mind_application/core/network/local_network.dart';
-
 import '../../../shared/Constants/constants.dart';
 part 'auth_state.dart';
 
@@ -36,7 +35,6 @@ class AuthCubit extends Cubit<AuthState> {
             'gender': gender,
             'password': password,
             'password_confirmation': password_confirmation,
-
           });
       var responseBody = jsonDecode(response.body);
       print(responseBody);

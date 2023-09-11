@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nutri_mind_application/shared/Constants/colors.dart';
+import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/doctor_profile_widgets.dart';
 import '../../../../shared/widgets/default_items.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -38,11 +39,7 @@ class _PatientLibraryScreenState extends State<PatientLibraryScreen> {
             children: [
               Text(
                 'To know more information about \nEating Disorder...',
-                style: TextStyle(
-                    color: MyColors.black,
-                    fontSize: 15.sp,
-                    fontWeight: FontWeight.w600,
-                    fontFamily: "Poppins"),
+                style:AppTextStyle().textInAppBar.copyWith(fontSize: 16.sp,height: 1.2.sp)
               ),
               SizedBox(
                 height: 50.h,
@@ -50,6 +47,7 @@ class _PatientLibraryScreenState extends State<PatientLibraryScreen> {
               InkWell(
                   // onTap: () => launch(''),
                   child: ProfileButtons(
+                    icon:Icons.web,
                     text: 'Go to url link',
                   ),),
               SizedBox(height: 70.h,),

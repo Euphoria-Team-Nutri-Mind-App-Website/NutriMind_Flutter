@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nutri_mind_application/shared/Constants/colors.dart';
@@ -26,33 +25,30 @@ class _PatientSetTallScreenState extends State<PatientSetTallScreen> {
           ],
         ),
       ),
-      body: SingleChildScrollView(
-        child: SafeArea(
+      body: SafeArea(
           child: Container(
             padding: EdgeInsets.only(left: 25.sp, right: 25.sp, top: 80.sp),
             color: MyColors.white,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Please enter your height !',
+                Text('Please enter your tall !',
                     style: AppTextStyle().greyText.copyWith(fontSize: 15.sp)),
                 SizedBox(
-                  height: 60.h,
+                  height: 80.h,
                 ),
                 const TallComponents(),
-                SizedBox(
-                  height: 70.h,
-                ),
+                const Expanded(child: SizedBox()),
                 MyBlueButton(
                   width:double.infinity,
                   height: 55.h,
                   text: 'Next',
                   page: 'PatientSetWeightScreen',
-                )
+                ),
+                SizedBox(height:70.h)
               ],
             ),
           ),
-        ),
       ),
     );
   }

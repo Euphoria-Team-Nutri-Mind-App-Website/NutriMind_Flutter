@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nutri_mind_application/shared/Constants/text_theme.dart';
 import '../../../../shared/Constants/colors.dart';
+import '../../../../shared/widgets/default_items.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
 import 'doctor_widget_for_patient.dart';
-
 
 class PatientHomeServicesScreen extends StatefulWidget {
   const PatientHomeServicesScreen({Key? key}) : super(key: key);
@@ -51,35 +51,34 @@ class _PatientHomeServicesScreenState extends State<PatientHomeServicesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          backgroundColor: MyColors.white,
-          elevation: 0.sp,
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Padding(
-                padding : EdgeInsets.only(left: 25.sp),
-                child: Image(
-                  image: const AssetImage('assets/images/logo.png'),
-                  width: 110.w,
-                ),
-              )
-            ],
-          ),
-          actions: [
+      appBar: MyAppBar(
+        backPage: 'PatientSetTallScreen',
+        pageTitle: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
             Padding(
-              padding: EdgeInsets.only(right: 12.sp),
-              child: InkWell(
-                onTap: () {
-                  Navigator.pushNamed(context, 'PatientNotificationsScreen');
-                },
-                child: Image(
-                  image: const AssetImage("assets/images/blackbell.png"),
-                  height: 20.h,
-                ),
+              padding: EdgeInsets.only(left: 5.sp),
+              child: Image(
+                image: const AssetImage('assets/images/logo.png'),
+                width: 110.w,
+              ),
+            )
+          ],
+        ),
+        actionIcon: [
+          Padding(
+            padding: EdgeInsets.only(right: 12.sp),
+            child: InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, 'PatientNotificationsScreen');
+              },
+              child: Image(
+                image: const AssetImage("assets/images/blackbell.png"),
+                height: 20.h,
               ),
             ),
-          ],
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -101,7 +100,8 @@ class _PatientHomeServicesScreenState extends State<PatientHomeServicesScreen> {
                 children: [
                   Text(
                     "All services",
-                    style: AppTextStyle().textInAppBar.copyWith(fontSize: 16.sp),
+                    style:
+                        AppTextStyle().textInAppBar.copyWith(fontSize: 16.sp),
                   )
                 ],
               ),
@@ -121,8 +121,8 @@ class _PatientHomeServicesScreenState extends State<PatientHomeServicesScreen> {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20.r),
                               color: MyColors.lightGrey
-                            //click ? MyColors.lightGrey : MyColors.darkBlue,
-                          ),
+                              //click ? MyColors.lightGrey : MyColors.darkBlue,
+                              ),
                           child: InkWell(
                             onTap: () {
                               Navigator.pushNamed(
@@ -143,14 +143,17 @@ class _PatientHomeServicesScreenState extends State<PatientHomeServicesScreen> {
                                 children: [
                                   Icon(allServices[index]['icon'],
                                       size: 27.sp, color: MyColors.darkBlue
-                                    //click ? MyColors.darkBlue: MyColors.lightGrey
-                                  ),
+                                      //click ? MyColors.darkBlue: MyColors.lightGrey
+                                      ),
                                   const SizedBox(height: 8),
                                   Text(
                                     "${allServices[index]['name']}",
-                                    style:AppTextStyle().textInAppBar.copyWith(color: MyColors.darkBlue,fontSize:15.sp,fontWeight: FontWeight.w500
-                                      //click ? MyColors.darkBlue : MyColors.lightGrey
-                                    ),
+                                    style: AppTextStyle().textInAppBar.copyWith(
+                                        color: MyColors.darkBlue,
+                                        fontSize: 15.sp,
+                                        fontWeight: FontWeight.w500
+                                        //click ? MyColors.darkBlue : MyColors.lightGrey
+                                        ),
                                   )
                                 ],
                               ),
@@ -168,19 +171,16 @@ class _PatientHomeServicesScreenState extends State<PatientHomeServicesScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    "Top doctors",
-                    style:AppTextStyle().textInAppBar.copyWith(fontSize: 16.sp)
-                  ),
+                  Text("Top doctors",
+                      style: AppTextStyle()
+                          .textInAppBar
+                          .copyWith(fontSize: 16.sp)),
                   InkWell(
                     onTap: () {
                       Navigator.pushNamed(
                           context, 'DoctorListForPatientScreen');
                     },
-                    child: Text(
-                      "See all",
-                      style:AppTextStyle().greyText
-                    ),
+                    child: Text("See all", style: AppTextStyle().greyText),
                   )
                 ],
               ),

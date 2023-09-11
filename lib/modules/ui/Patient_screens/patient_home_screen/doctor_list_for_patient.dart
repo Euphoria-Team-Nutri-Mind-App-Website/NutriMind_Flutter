@@ -69,16 +69,7 @@ class _DoctorListForPatientScreenState
               SizedBox(
                 height: 5.sp,
               ),
-              Expanded(
-                child: ListView.builder(
-                  itemCount: 10,
-                  scrollDirection: Axis.vertical,
-                  itemBuilder: (context, index) => Padding(
-                    padding: EdgeInsets.only(top: 18.sp),
-                    child: const DoctorWidgetForPatientScreen(),
-                  ),
-                ),
-              )
+              DoctorWidgetForPatientScreen(),
             ],
           ),
         ));

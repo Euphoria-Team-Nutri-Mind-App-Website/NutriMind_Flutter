@@ -25,6 +25,10 @@ class AuthCubit extends Cubit<AuthState> {
       Response response = await http.post(
           Uri.parse(
               'http://heda.azq1.com/patient/api/patient/register'),
+          headers:
+          {
+            'Accept': "application/json",
+          },
           body: {
             'name': name,
             'email': email,
@@ -37,7 +41,14 @@ class AuthCubit extends Cubit<AuthState> {
       var responseBody = jsonDecode(response.body);
       print(responseBody);
       print(responseBody['status']);
-      if (responseBody['status'] == 'True') {
+      if (responseBody['status'] == true) {
+        await CacheNetwork.insertToCache(key: "accessToken", value: responseBody['0']['accessToken']);
+        await CacheNetwork.insertToCache(key: "password", value: password);
+        accessToken=await CacheNetwork.getCacheData(key: "accessToken");
+        currentPassword=await CacheNetwork.getCacheData(key: "password");
+
+        print("token is ${responseBody['0']['accessToken']}");
+        print("currentPassword is ${password}");
         print(responseBody['message']);
         emit(RegisterSuccessState());
       } else {

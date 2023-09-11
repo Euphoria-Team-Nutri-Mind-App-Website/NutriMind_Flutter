@@ -12,8 +12,7 @@ class PatientForgetPassword extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppBar(backPage: 'PatientLoginScreen'),
-      body: SingleChildScrollView(
-        child:Container(
+      body:Container(
             padding: EdgeInsets.all(25.sp),
             color: MyColors.white,
             child: Column(
@@ -56,10 +55,11 @@ class PatientForgetPassword extends StatelessWidget {
                     height: 55.h,
                     text: 'Send Code',
                     page: 'PatientVerificationScreen'),
+                const Expanded(child: SizedBox()),
+
               ],
             ),
           ),
-        ),
       bottomNavigationBar: BottomAppBar(
         height: 40.h,
           // color: MyColors.white,

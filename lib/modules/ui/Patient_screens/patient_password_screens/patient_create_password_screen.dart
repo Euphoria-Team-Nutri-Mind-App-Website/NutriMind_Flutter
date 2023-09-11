@@ -20,8 +20,7 @@ class _PatientCreatePasswordScreenState extends State<PatientCreatePasswordScree
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: MyAppBar(backPage: 'PatientVerificationScreen'),
-        body: SingleChildScrollView(
-          child: SafeArea(
+        body: SafeArea(
             child: Container(
               padding: EdgeInsets.all(25.sp),
               color: MyColors.white,
@@ -100,14 +99,14 @@ class _PatientCreatePasswordScreenState extends State<PatientCreatePasswordScree
                       DONE: "DONE",
                     ),
                   ),
+                    const Expanded(child:SizedBox())
                 ],
               ),
             ),
           ),
-        ),
         bottomNavigationBar: BottomAppBar(
           height: 40.h,
-          color: Colors.transparent,
+          color: MyColors.white,
           elevation: 0.sp,
           child: const MyTextGroup(
               staticText: "Remember Password?",

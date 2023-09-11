@@ -20,8 +20,7 @@ class _VerificationScreenState extends State<PatientVerificationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppBar(backPage: 'PatientForgetPassword'),
-      body: SingleChildScrollView(
-        child: SafeArea(
+      body: SafeArea(
           child: Container(
             color: MyColors.white,
             padding: EdgeInsets.all(25.sp),
@@ -95,14 +94,15 @@ class _VerificationScreenState extends State<PatientVerificationScreen> {
                   height: 28.h,
                 ),
                  MyBlueButton(text: 'Verify', page: 'PatientCreatePasswordScreen',width: double.infinity,height: 55.h,),
-              ],
+                const Expanded(child: SizedBox()),
+              ]
+              ,
             ),
           ),
-        ),
       ),
         bottomNavigationBar: BottomAppBar(
           height: 40.h,
-          color: Colors.transparent,
+          color: MyColors.white,
           elevation: 0.sp,
           child: const MyTextGroup(
               staticText: "Didn’t received code?",

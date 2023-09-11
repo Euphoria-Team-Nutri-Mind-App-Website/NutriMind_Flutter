@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../shared/Constants/colors.dart';
+import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/default_items.dart';
 
 class PatientMotivzoneScreen extends StatefulWidget {
-  final text;
-  const PatientMotivzoneScreen({Key? key, this.text}) : super(key: key);
-
+  const PatientMotivzoneScreen({Key? key}) : super(key: key);
   @override
   State<PatientMotivzoneScreen> createState() => _PatientMotivzoneScreenState();
 }
@@ -16,20 +15,22 @@ class _PatientMotivzoneScreenState extends State<PatientMotivzoneScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: MyAppBar(
-          backPage: 'PatientNavBarScreen',
-          pageTitle: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Image(
-                image: const AssetImage('assets/images/moTivZone.png'),
-                width: 110.w,
-              )
-            ],
-          ),
+      appBar: MyAppBar(
+        backPage: 'PatientNavBarScreen',
+        pageTitle: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Image(
+              image: const AssetImage('assets/images/moTivZone.png'),
+              width: 110.w,
+            )
+          ],
         ),
-        body: Padding(
-          padding: EdgeInsets.only(left: 25.sp, right: 25.sp),
+      ),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 25.sp),
+        child: Container(
+          color: MyColors.white,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -55,93 +56,49 @@ class _PatientMotivzoneScreenState extends State<PatientMotivzoneScreen> {
                     ),
                     child: Center(
                       child: Padding(
-                        padding: EdgeInsets.only(left:25.sp,right: 25.sp),
+                        padding: EdgeInsets.symmetric(horizontal: 25.sp),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Row(
-                             mainAxisAlignment: MainAxisAlignment.end,
+                              mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 Container(
-                                  padding: EdgeInsets.only(left:15.sp,right: 15.sp,top: 7.sp,bottom: 7.sp),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10.r),
-                                    color: MyColors.highLightBlue
-                                  ),
-                                  child:  Text("Motivation",style: TextStyle(
-                                    color: MyColors.white,
-                                    fontFamily: "Poppins",
-                                    fontWeight: FontWeight.w600,fontSize: 12.sp
-                                  ),),
-                                )
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 15.sp, vertical: 7.sp),
+                                    decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(10.r),
+                                        color: MyColors.highLightBlue),
+                                    child: Text(
+                                      "Motivation",
+                                      style: AppTextStyle()
+                                          .textBlueButton
+                                          .copyWith(fontSize: 12.sp),
+                                    ))
                               ],
                             ),
-                            SizedBox(height: 10.h,),
-                            Text(
-                              "“When your healthy self is strong enough to deal with all that comes your way in life,"
-                              " your eating disorder self will no longer be useful or necessary.",
-                              style: TextStyle(
-                                  height: 1.sp,
-                                  wordSpacing: 7.sp,
-                                  color: MyColors.darkBlue,
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 14.sp,
-                                  fontFamily: 'Poppins'),
+                            SizedBox(
+                              height: 30.h,
                             ),
-                            SizedBox(height: 10.h),
                             Text(
-                              "- Carolyn Costin ",
-                              style: TextStyle(
-                                color: MyColors.darkBlue,
-                                fontWeight: FontWeight.w600,
-                                fontFamily: 'Poppins',
-                                fontSize: 14.sp,
+                                "“When your healthy self is strong enough to deal with all that comes your way in life,"
+                                " your eating disorder self will no longer be useful or necessary.“",
+                                style: AppTextStyle().textInAppBar.copyWith(
+                                    fontSize: 14.sp,
+                                    color: MyColors.darkBlue,
+                                    height: 1.5.sp,
+                                    wordSpacing: 2.sp),
+                            ),
+                            SizedBox(height: 30.h),
+                            Text(
+                              "- Carolyn Costin -",
+                              style: AppTextStyle().textInAppBar.copyWith(
+                                  fontSize: 14.sp,
+                                  color: MyColors.darkBlue,
                               ),
                             ),
-                            SizedBox(height: 20.h),
-                            Row(
-                              children: [
-                                Image.asset(
-                                  "assets/images/heart.png",
-                                ),
-                                SizedBox(
-                                  width: 5.w,
-                                ),
-                                Text(
-                                  "1.5k",
-                                  style: TextStyle(
-                                    color: MyColors.grey,
-                                    fontWeight: FontWeight.w600,
-                                    fontFamily: 'Poppins',
-                                    fontSize: 14.sp,
-                                  ),
-                                ),
-                                SizedBox(width: 20.w),
-                                const Icon(
-                                  Icons.share,
-                                  color: MyColors.darkBlue,
-                                ),
-                                SizedBox(
-                                  width: 5.w,
-                                ),
-                                Text(
-                                  "300",
-                                  style: TextStyle(
-                                    color: MyColors.grey,
-                                    fontWeight: FontWeight.w600,
-                                    fontFamily: 'Poppins',
-                                    fontSize: 14.sp,
-                                  ),
-                                ),
-                                const Spacer(),
-                                 Icon(
-                                  Icons.save,
-                                  color: MyColors.darkBlue,
-                                  size: 25.sp,
-                                ),
-                              ],
-                            )
                           ],
                         ),
                       ),
@@ -163,11 +120,9 @@ class _PatientMotivzoneScreenState extends State<PatientMotivzoneScreen> {
                   ),
                   Text(
                     "Swipe Left & right For next",
-                    style: TextStyle(
-                      color: MyColors.darkBlue,
-                      fontWeight: FontWeight.w600,
-                      fontFamily: 'Poppins',
+                    style: AppTextStyle().textInAppBar.copyWith(
                       fontSize: 14.sp,
+                      color: MyColors.darkBlue,
                     ),
                   ),
                   const Icon(
@@ -178,6 +133,8 @@ class _PatientMotivzoneScreenState extends State<PatientMotivzoneScreen> {
               )
             ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

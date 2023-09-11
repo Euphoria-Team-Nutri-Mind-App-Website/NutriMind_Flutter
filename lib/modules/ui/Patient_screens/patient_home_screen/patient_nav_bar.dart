@@ -15,8 +15,8 @@ class PatientNavBarScreen extends StatefulWidget {
 }
 
 class PatientNavBarScreenState extends State<PatientNavBarScreen> {
-  int _currentIndex = 0;
-  bool click = true;
+  int _currentIndex = 0 ;
+  bool click = true ;
 
   List<Widget> widgetList = [
     const PatientHomeServicesScreen(),

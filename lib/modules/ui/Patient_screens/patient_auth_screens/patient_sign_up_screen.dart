@@ -337,7 +337,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                   Text(
                     "Registration",
                     style:
-                        AppTextStyle().textInAppBar.copyWith(fontSize: 28.sp),
+                    AppTextStyle().textInAppBar.copyWith(fontSize: 28.sp),
                   ),
                   SizedBox(
                     height: 7.h,
@@ -488,21 +488,20 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                       http.StreamedResponse response = await request.send();
 
                       if (response.statusCode == 200) {
-                        Navigator.pushNamed(context, 'PatientNavBarScreen');
+                        Navigator.pushNamed(context, 'PatientSetTallScreen');
                       } else {
                         showDialog(
                             context: context,
                             builder: (context) => AlertDialog(
-                                  content: Text(
-                                    "${response.reasonPhrase}",
-                                    style:
-                                        const TextStyle(color: MyColors.white),
-                                  ),
-                                  backgroundColor: MyColors.darkBlue,
-                                ));
+                              content: Text(
+                                "${response.reasonPhrase}",
+                                style:
+                                const TextStyle(color: MyColors.white),
+                              ),
+                              backgroundColor: MyColors.darkBlue,
+                            ));
                         print(response.reasonPhrase);
                       }
-
                       // if (formKey.currentState!.validate()==true) {
                       //   BlocProvider.of<AuthCubit>(context).patientRegister(
                       //     name: nameController.text,
@@ -525,9 +524,9 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                       ),
                       child: Center(
                         child: Text(
-                            // state is RegisterLoadingState
-                            //     ? "loading....."
-                            //     :
+                          // state is RegisterLoadingState
+                          //     ? "loading....."
+                          //     :
                             "Sign Up",
                             style: AppTextStyle().textBlueButton),
                       ),
@@ -540,9 +539,9 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                     children: [
                       const Expanded(
                           child: Divider(
-                        thickness: 1,
-                        color: MyColors.grey,
-                      )),
+                            thickness: 1,
+                            color: MyColors.grey,
+                          )),
                       SizedBox(
                         width: 15.w,
                       ),
@@ -557,9 +556,9 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                       ),
                       const Expanded(
                           child: Divider(
-                        thickness: 1,
-                        color: MyColors.grey,
-                      )),
+                            thickness: 1,
+                            color: MyColors.grey,
+                          )),
                     ],
                   ),
                   SizedBox(

@@ -261,16 +261,29 @@ import '../../../../shared/widgets/screens_widgets.dart';
 //import '../patient_set_tall_weight_state_screens/patient_set_tall.dart';
 import '../../../../shared/widgets/default_items.dart';
 
-class PatientSignUpScreen extends StatelessWidget {
-  final nameController = TextEditingController();
-  final emailController = TextEditingController();
-  final ageController = TextEditingController();
-  final genderController = TextEditingController();
-  final passwordController = TextEditingController();
-  final confirmPasswordController = TextEditingController();
+class PatientSignUpScreen extends StatefulWidget {
   static final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   PatientSignUpScreen({Key? key}) : super(key: key);
+
+  @override
+  State<PatientSignUpScreen> createState() => _PatientSignUpScreenState();
+}
+
+class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
+  final nameController = TextEditingController();
+
+  final emailController = TextEditingController();
+
+  final ageController = TextEditingController();
+
+  final genderController = TextEditingController();
+
+  final passwordController = TextEditingController();
+
+  final confirmPasswordController = TextEditingController();
+
+  bool obscureText = false;
 
   @override
   Widget build(BuildContext context) {
@@ -317,14 +330,14 @@ class PatientSignUpScreen extends StatelessWidget {
             padding: EdgeInsets.only(left: 25.sp, right: 25.sp, bottom: 25.sp),
             color: MyColors.white,
             child: Form(
-              key: formKey,
+              key: PatientSignUpScreen.formKey,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
                     "Registration",
                     style:
-                    AppTextStyle().textInAppBar.copyWith(fontSize: 28.sp),
+                        AppTextStyle().textInAppBar.copyWith(fontSize: 28.sp),
                   ),
                   SizedBox(
                     height: 7.h,
@@ -344,8 +357,7 @@ class PatientSignUpScreen extends StatelessWidget {
                         } else {
                           return null;
                         }
-                      }
-                  ),
+                      }),
                   SizedBox(
                     height: 18.h,
                   ),
@@ -377,8 +389,7 @@ class PatientSignUpScreen extends StatelessWidget {
                         } else {
                           return null;
                         }
-                      }
-                  ),
+                      }),
                   SizedBox(
                     height: 18.h,
                   ),
@@ -390,7 +401,10 @@ class PatientSignUpScreen extends StatelessWidget {
                       validator: (val) {
                         if (val.isEmpty) {
                           return "Gender must not be empty";
-                        } else if (val !='female'||val !='Female'||val !='male'||val !='Male'){
+                        } else if (val != 'female' ||
+                            val != 'Female' ||
+                            val != 'male' ||
+                            val != 'Male') {
                           return "Enter a valid Gender";
                         } else {
                           return null;
@@ -404,8 +418,17 @@ class PatientSignUpScreen extends StatelessWidget {
                       textType: TextInputType.text,
                       hintText: 'Password',
                       obscureText: false,
-                      suffixIcon: const Icon(Icons.remove_red_eye_outlined,
-                          color: MyColors.grey),
+                      suffixIcon: IconButton(
+                        icon: Icon(obscureText
+                            ? Icons.visibility_off
+                            : Icons.visibility),
+                        color: MyColors.grey,
+                        onPressed: () {
+                          setState(() {
+                            obscureText = !obscureText;
+                          });
+                        },
+                      ),
                       validator: (val) {
                         if (val.isEmpty) {
                           return "Password must not be empty";
@@ -414,8 +437,7 @@ class PatientSignUpScreen extends StatelessWidget {
                         } else {
                           return null;
                         }
-                      }
-                  ),
+                      }),
                   SizedBox(
                     height: 18.h,
                   ),
@@ -424,8 +446,17 @@ class PatientSignUpScreen extends StatelessWidget {
                       textType: TextInputType.text,
                       hintText: 'Confirm Password',
                       obscureText: false,
-                      suffixIcon: const Icon(Icons.remove_red_eye_outlined,
-                          color: MyColors.grey),
+                      suffixIcon: IconButton(
+                        icon: Icon(obscureText
+                            ? Icons.visibility_off
+                            : Icons.visibility),
+                        color: MyColors.grey,
+                        onPressed: () {
+                          setState(() {
+                            obscureText = !obscureText;
+                          });
+                        },
+                      ),
                       validator: (val) {
                         if (val.isEmpty) {
                           return "Confirm Password must not be empty";
@@ -434,15 +465,17 @@ class PatientSignUpScreen extends StatelessWidget {
                         } else {
                           return null;
                         }
-                      }
-                  ),
+                      }),
                   SizedBox(
                     height: 18.h,
                   ),
                   InkWell(
                     onTap: () async {
                       var headers = {'Accept': 'application/json'};
-                      var request = http.MultipartRequest('POST', Uri.parse('http://heda.azq1.com/patient/api/patient/register'));
+                      var request = http.MultipartRequest(
+                          'POST',
+                          Uri.parse(
+                              'http://heda.azq1.com/patient/api/patient/register'));
                       request.fields.addAll({
                         'name': nameController.text,
                         'email': emailController.text,
@@ -460,13 +493,13 @@ class PatientSignUpScreen extends StatelessWidget {
                         showDialog(
                             context: context,
                             builder: (context) => AlertDialog(
-                              content: Text(
-                                "${response.reasonPhrase}",
-                                style:
-                                const TextStyle(color: MyColors.white),
-                              ),
-                              backgroundColor: MyColors.darkBlue,
-                            ));
+                                  content: Text(
+                                    "${response.reasonPhrase}",
+                                    style:
+                                        const TextStyle(color: MyColors.white),
+                                  ),
+                                  backgroundColor: MyColors.darkBlue,
+                                ));
                         print(response.reasonPhrase);
                       }
 
@@ -492,9 +525,9 @@ class PatientSignUpScreen extends StatelessWidget {
                       ),
                       child: Center(
                         child: Text(
-                          // state is RegisterLoadingState
-                          //     ? "loading....."
-                          //     :
+                            // state is RegisterLoadingState
+                            //     ? "loading....."
+                            //     :
                             "Sign Up",
                             style: AppTextStyle().textBlueButton),
                       ),
@@ -507,9 +540,9 @@ class PatientSignUpScreen extends StatelessWidget {
                     children: [
                       const Expanded(
                           child: Divider(
-                            thickness: 1,
-                            color: MyColors.grey,
-                          )),
+                        thickness: 1,
+                        color: MyColors.grey,
+                      )),
                       SizedBox(
                         width: 15.w,
                       ),
@@ -524,9 +557,9 @@ class PatientSignUpScreen extends StatelessWidget {
                       ),
                       const Expanded(
                           child: Divider(
-                            thickness: 1,
-                            color: MyColors.grey,
-                          )),
+                        thickness: 1,
+                        color: MyColors.grey,
+                      )),
                     ],
                   ),
                   SizedBox(

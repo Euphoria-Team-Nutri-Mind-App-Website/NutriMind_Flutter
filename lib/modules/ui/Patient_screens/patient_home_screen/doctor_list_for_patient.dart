@@ -62,10 +62,7 @@ class _DoctorListForPatientScreenState
                 children: [
                   Text(
                     "All Doctors",
-                    style: TextStyle(
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.w600,
-                        fontSize: 15.sp),
+                    style: AppTextStyle().textInAppBar.copyWith(fontSize: 16.sp),
                   ),
                 ],
               ),

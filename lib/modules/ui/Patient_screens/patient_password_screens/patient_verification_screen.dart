@@ -41,7 +41,7 @@ class _VerificationScreenState extends State<PatientVerificationScreen> {
                 Text(
                   "Please enter the code sent on your email address!",
                   textAlign: TextAlign.center,
-                  style: AppTextStyle().greyText.copyWith(fontSize: 13.sp,fontWeight:FontWeight.w400) ,
+                  style: AppTextStyle().greyText.copyWith(fontSize: 13.sp,fontWeight:FontWeight.w500) ,
           ),
                 SizedBox(
                   height: 30.h,

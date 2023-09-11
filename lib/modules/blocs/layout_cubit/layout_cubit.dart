@@ -1,9 +1,6 @@
 import 'dart:convert';
-<<<<<<< HEAD
 import 'package:bloc/bloc.dart';
 //import 'package:dio/dio.dart';
-=======
->>>>>>> ff19fd106ba52c73b68b6bdf7dcd8b4ae8368161
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:http/http.dart' as http;
 import '../../../core/network/local_network.dart';
@@ -40,7 +37,6 @@ class LayoutCubit extends Cubit<LayoutState> {
 
     });
   }
-<<<<<<< HEAD
 
 
 //***************************************************************************************************************
@@ -78,6 +74,4 @@ class LayoutCubit extends Cubit<LayoutState> {
   // }
 
 
-=======
->>>>>>> ff19fd106ba52c73b68b6bdf7dcd8b4ae8368161
 }

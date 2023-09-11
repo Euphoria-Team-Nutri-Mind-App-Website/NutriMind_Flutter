@@ -4,11 +4,8 @@ abstract class LayoutState {}
 
 class LayoutInitial extends LayoutState {}
 
-<<<<<<< HEAD
 //***************************************************************************************************************
 
-=======
->>>>>>> ff19fd106ba52c73b68b6bdf7dcd8b4ae8368161
 class GetUserDataSuccessState extends LayoutState {}
 
 class GetUserDataLoadingState extends LayoutState {}

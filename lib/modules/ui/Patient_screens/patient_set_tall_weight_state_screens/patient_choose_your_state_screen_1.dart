@@ -15,30 +15,24 @@ class TextDropDown extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(title1,
-            style: AppTextStyle()
-                .greyText
-                .copyWith(color: MyColors.darkBlue,fontSize:15.sp)),
+        Text(title1, style: AppTextStyle().greyText.copyWith(color: MyColors.darkBlue,fontSize:15.sp)),
         SizedBox(width: 5.w),
-        Text(title2,
-            style: AppTextStyle()
-                .greyText.copyWith(fontSize: 10.sp)
+        Text(title2, style: AppTextStyle().greyText.copyWith(fontSize: 10.sp)
         ),
       ],
     );
   }
 }
 
+//**************************************************************************************
+
 class PatientChooseYourStateScreen1 extends StatefulWidget {
   const PatientChooseYourStateScreen1({Key? key}) : super(key: key);
 
   @override
-  State<PatientChooseYourStateScreen1> createState() =>
-      _PatientChooseYourStateScreen1State();
+  State<PatientChooseYourStateScreen1> createState() => _PatientChooseYourStateScreen1State();
 }
-
-class _PatientChooseYourStateScreen1State
-    extends State<PatientChooseYourStateScreen1> {
+class _PatientChooseYourStateScreen1State extends State<PatientChooseYourStateScreen1> {
 
   final List<Widget> items = const [
     TextDropDown( title1: 'idle', title2: '( NO or Low practice )'),
@@ -46,7 +40,8 @@ class _PatientChooseYourStateScreen1State
     TextDropDown( title1: 'Active sometimes', title2: '( from 3-5 day weekly practice )'),
     TextDropDown( title1: 'Very active', title2: '( from 6-7 day weekly practice )'),
   ];
-  String? selectedValue;
+  Widget selectedValue = Row(children: [Text('Choose', style: AppTextStyle().greyText.copyWith(fontSize: 16.sp))],);
+  Widget? selectedItem;
 
   @override
   Widget build(BuildContext context) {
@@ -63,25 +58,14 @@ class _PatientChooseYourStateScreen1State
           ],
         ),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
+      body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 25.sp, vertical: 60.sp),
           child: Column(
             children: [
               DropdownButtonHideUnderline(
                 child: DropdownButton2<Widget>(
                   isExpanded: true,
-                  hint: Row(
-                    children: [
-                      Expanded(
-                        child: Text(
-                          '$selectedValue',
-                          style:
-                          AppTextStyle().greyText.copyWith(fontSize: 16.sp),
-                        ),
-                      ),
-                    ],
-                  ),
+                  hint :selectedValue,
                   items: items.map((Widget item) => DropdownMenuItem<Widget>(
                     value: item,
                     child: Column(
@@ -92,9 +76,9 @@ class _PatientChooseYourStateScreen1State
                     ),
                   )).toList(),
                   onChanged: (Widget? value) {
-                    setState(() {
-                      selectedValue = value?.toString();
-                    });
+                    // setState(() {
+                    //   // selectedValue = value?.toString();
+                    // });
                   },
                   buttonStyleData: ButtonStyleData(
                     height: 60.h,
@@ -129,22 +113,17 @@ class _PatientChooseYourStateScreen1State
                   // ),
                 ),
               ),
-              const SizedBox(height: 20.0),
-              Text(
-                'Selected Value: $selectedValue',
-                style: const TextStyle(fontSize: 16.0),
-              ),
-              const SizedBox(height: 20.0),
-               MyBlueButton(
+               const Expanded(child: SizedBox()),
+              MyBlueButton(
                 width:double.infinity,
                 height: 55.h,
                 text: 'Calculate',
                 page: 'PatientChooseYourStateScreen2',
-              )
+              ),
+              SizedBox(height: 40.h,)
             ],
           ),
         ),
-      ),
     );
   }
 }

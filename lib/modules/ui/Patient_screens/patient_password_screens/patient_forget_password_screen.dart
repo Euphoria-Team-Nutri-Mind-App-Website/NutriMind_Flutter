@@ -62,7 +62,7 @@ class PatientForgetPassword extends StatelessWidget {
         ),
       bottomNavigationBar: BottomAppBar(
         height: 40.h,
-          color: MyColors.white,
+          // color: MyColors.white,
           elevation: 0.sp,
           child: const MyTextGroup(
               staticText: "Remember Password?",

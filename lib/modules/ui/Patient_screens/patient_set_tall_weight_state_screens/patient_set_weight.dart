@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../shared/Constants/colors.dart';
@@ -24,8 +23,7 @@ class PatientSetWeightScreen extends StatelessWidget {
           ],
         ),
       ),
-      body: SingleChildScrollView(
-        child: SafeArea(
+      body: SafeArea(
           child: Container(
             padding: EdgeInsets.only(left: 25.sp, right: 25.sp, top: 60.sp),
             color: MyColors.white,
@@ -40,20 +38,18 @@ class PatientSetWeightScreen extends StatelessWidget {
                   height: 50.sp,
                 ),
                 const WeightComponents(),
-                SizedBox(
-                  height: 110.sp,
-                ),
+                const Expanded(child: SizedBox()),
                 MyBlueButton(
                   width: double.infinity,
                   height: 55.h,
                   text: 'Continue',
                   page: 'PatientChooseYourStateScreen1',
-                )
+                ),
+                SizedBox(height: 70.h,)
               ],
             ),
           ),
         ),
-      ),
     );
   }
 }

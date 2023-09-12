@@ -5,7 +5,6 @@ import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/default_items.dart';
 import '../../../../shared/widgets/patient_settings_widgets.dart';
-import '../../../../shared/widgets/screens_widgets.dart';
 
 class DoctorSettingScreen extends StatefulWidget {
   const DoctorSettingScreen({Key? key}) : super(key: key);

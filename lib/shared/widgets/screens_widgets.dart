@@ -105,6 +105,7 @@ class SmallTextField extends StatelessWidget {
   final suffixIcon;
   final prefixIcon;
   final textType;
+  final validator;
   final String hintText;
   final bool obscureText;
 
@@ -116,11 +117,13 @@ class SmallTextField extends StatelessWidget {
     this.suffixIcon,
     this.prefixIcon,
     this.textType,
+    this.validator,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: validator,
       keyboardType: textType,
       controller: controller,
       obscureText: obscureText,

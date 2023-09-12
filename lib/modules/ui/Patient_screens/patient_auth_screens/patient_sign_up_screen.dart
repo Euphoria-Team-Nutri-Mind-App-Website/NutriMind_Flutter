@@ -35,30 +35,27 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
       listener: (context, state) {
       if( state is RegisterLoadingState )
       {
-        showAlertDialog(
+        showDialog(
             context: context,
-            backgroundColor: Colors.white,
-            content: AnimatedContainer(
-              duration: const Duration(seconds: 1),
-              curve: Curves.easeIn,
-              child: const Row(
-                children:
-                [
-                  CupertinoActivityIndicator(color: MyColors.darkBlue),
-                  SizedBox(width: 12.5,),
-                  Text("wait",style: TextStyle(fontWeight: FontWeight.w500),),
-                ],
+            builder: (context) => const AlertDialog(
+              content: Text(
+                "wait",
+                style: TextStyle(color:MyColors.white),
               ),
-            )
-        );
+              backgroundColor: MyColors.darkBlue,
+            ));
       }
       else if( state is RegisterFailedState )
       {
-        showAlertDialog(
+        showDialog(
             context: context,
-            backgroundColor: Colors.red,
-            content: Text(state.message,textDirection: TextDirection.rtl,)
-        );
+            builder: (context) => AlertDialog(
+              content: Text(
+                state.message,
+                style: const TextStyle(color:MyColors.white),
+              ),
+              backgroundColor: MyColors.darkBlue,
+            ));
       }
       else if ( state is RegisterSuccessState )
       {

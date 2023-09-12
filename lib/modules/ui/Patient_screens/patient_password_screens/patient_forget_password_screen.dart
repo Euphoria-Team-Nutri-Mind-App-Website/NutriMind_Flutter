@@ -100,7 +100,7 @@ class _PatientForgetPasswordState extends State<PatientForgetPassword> {
                       //    page: 'PatientVerificationScreen'),
                       InkWell(
                         onTap: () {
-                          if (formKey.currentState!.validate() == true) {
+                          if (formKey.currentState!.validate()) {
                             // BlocProvider.of<LayoutCubit>(context).generateOtpModel!(
                             //     email: emailController.text,
                             // );

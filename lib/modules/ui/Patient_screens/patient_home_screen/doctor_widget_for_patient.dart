@@ -20,7 +20,11 @@ class DoctorWidgetForPatientScreen extends StatelessWidget {
     DoctorListModel? cubit =LayoutCubit.get(context).doctorListModel;
 
     return Expanded(
-      child: ListView.builder(
+      child: state is GetDoctorListLoadingState?
+          const Center(
+        child: CircularProgressIndicator(),
+    ):
+      ListView.builder(
         itemCount: cubit?.doctorInfo?.data?.length,
         scrollDirection: Axis.vertical,
         itemBuilder: (context, index) => Padding(
@@ -46,6 +50,7 @@ class DoctorWidgetForPatientScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Image.asset("assets/images/doctor.png"),
+                    //Image.asset("${cubit?.doctorInfo?.data?[index].image}"),
                     SizedBox(
                       width: 10.sp,
                     ),

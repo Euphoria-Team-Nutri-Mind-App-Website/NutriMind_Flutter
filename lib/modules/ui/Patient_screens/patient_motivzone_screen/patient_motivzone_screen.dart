@@ -36,70 +36,72 @@ class _PatientMotivzoneScreenState extends State<PatientMotivzoneScreen> {
             children: [
               Swiper(
                 itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.r),
-                      border: Border.all(color: MyColors.darkBlue),
-                      boxShadow: const [
-                        BoxShadow(
-                          color: MyColors.darkBlue,
-                          blurRadius: 10.0,
-                          spreadRadius: 2.0,
-                        ), //BoxShadow
-                        BoxShadow(
-                          color: Colors.white,
-                          offset: Offset(0.0, 0.0),
-                          blurRadius: 0.0,
-                          spreadRadius: 0.0,
-                        ),
-                      ],
-                    ),
-                    child: Center(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 25.sp),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Container(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 15.sp, vertical: 7.sp),
-                                    decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(10.r),
-                                        color: MyColors.highLightBlue),
-                                    child: Text(
-                                      "Motivation",
-                                      style: AppTextStyle()
-                                          .textBlueButton
-                                          .copyWith(fontSize: 12.sp),
-                                    ))
-                              ],
-                            ),
-                            SizedBox(
-                              height: 30.h,
-                            ),
-                            Text(
-                                "“When your healthy self is strong enough to deal with all that comes your way in life,"
-                                " your eating disorder self will no longer be useful or necessary.“",
+                  return Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10.r),
+                        border: Border.all(color: MyColors.darkBlue),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: MyColors.darkBlue,
+                            blurRadius: 10.0,
+                            spreadRadius: 2.0,
+                          ), //BoxShadow
+                          BoxShadow(
+                            color: Colors.white,
+                            offset: Offset(0.0, 0.0),
+                            blurRadius: 0.0,
+                            spreadRadius: 0.0,
+                          ),
+                        ],
+                      ),
+                      child: Center(
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 25.sp),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Container(
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 15.sp, vertical: 7.sp),
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(10.r),
+                                          color: MyColors.highLightBlue),
+                                      child: Text(
+                                        "Motivation",
+                                        style: AppTextStyle()
+                                            .textBlueButton
+                                            .copyWith(fontSize: 12.sp),
+                                      ))
+                                ],
+                              ),
+                              SizedBox(
+                                height: 30.h,
+                              ),
+                              Text(
+                                  "“When your healthy self is strong enough to deal with all that comes your way in life,"
+                                  " your eating disorder self will no longer be useful or necessary.“",
+                                  style: AppTextStyle().textInAppBar.copyWith(
+                                      fontSize: 14.sp,
+                                      color: MyColors.darkBlue,
+                                      height: 1.5.sp,
+                                      wordSpacing: 2.sp),
+                              ),
+                              SizedBox(height: 30.h),
+                              Text(
+                                "- Carolyn Costin -",
                                 style: AppTextStyle().textInAppBar.copyWith(
                                     fontSize: 14.sp,
                                     color: MyColors.darkBlue,
-                                    height: 1.5.sp,
-                                    wordSpacing: 2.sp),
-                            ),
-                            SizedBox(height: 30.h),
-                            Text(
-                              "- Carolyn Costin -",
-                              style: AppTextStyle().textInAppBar.copyWith(
-                                  fontSize: 14.sp,
-                                  color: MyColors.darkBlue,
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),

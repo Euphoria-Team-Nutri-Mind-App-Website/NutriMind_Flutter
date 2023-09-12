@@ -24,8 +24,7 @@ class _PatientSettingScreenState extends State<PatientSettingScreen> {
     return BlocProvider(
   create: (context) => LayoutCubit()..getUserData(),
   child: BlocConsumer<LayoutCubit, LayoutState>(
-  listener: (context, state) {
-  },
+  listener: (context, state) {},
   builder: (context, state) {
     PatientModel? cubit =LayoutCubit.get(context).patientModel;
     return Scaffold(
@@ -37,7 +36,6 @@ class _PatientSettingScreenState extends State<PatientSettingScreen> {
             Text(
               "Settings",
                 style:AppTextStyle().textInAppBar
-
             )
           ],
         ),
@@ -57,11 +55,7 @@ class _PatientSettingScreenState extends State<PatientSettingScreen> {
                 children: [
                   Text(
                     "Personal information",
-                    style: TextStyle(
-                        fontFamily: 'Poppins',
-                        fontSize: 15.sp,
-                        fontWeight: FontWeight.w600,
-                        color: MyColors.black),
+                    style: AppTextStyle().textInAppBar.copyWith(fontSize: 16.sp)
                   ),
                   const Spacer(),
                   Icon(
@@ -72,21 +66,17 @@ class _PatientSettingScreenState extends State<PatientSettingScreen> {
                 ],
               ),
               SizedBox(
-                height: 10.h,
+                height: 15.h,
               ),
               PatientChangeInfo(text:'Name',hintText:'${cubit?.patientInformation?[0].name}',),
               SizedBox(
-                height: 20.h,
+                height: 25.h,
               ),
               Row(
                 children: [
                   Text(
                     "Email",
-                    style: TextStyle(
-                        fontFamily: 'Poppins',
-                        fontSize: 15.sp,
-                        fontWeight: FontWeight.w600,
-                        color: MyColors.black),
+                      style: AppTextStyle().textInAppBar.copyWith(fontSize: 16.sp)
                   ),
                   const Spacer(),
                   Icon(
@@ -97,21 +87,17 @@ class _PatientSettingScreenState extends State<PatientSettingScreen> {
                 ],
               ),
               SizedBox(
-                height: 10.h,
+                height: 15.h,
               ),
               PatientChangeInfo(text:'Email',hintText:'${cubit?.patientInformation?[0].email}',),
               SizedBox(
-                height: 20.h,
+                height: 25.h,
               ),
               Row(
                 children: [
                   Text(
                     "Password",
-                    style: TextStyle(
-                        fontFamily: 'Poppins',
-                        fontSize: 15.sp,
-                        fontWeight: FontWeight.w600,
-                        color: MyColors.black),
+                      style: AppTextStyle().textInAppBar.copyWith(fontSize: 16.sp)
                   ),
                   const Spacer(),
                   Icon(
@@ -122,118 +108,17 @@ class _PatientSettingScreenState extends State<PatientSettingScreen> {
                 ],
               ),
               SizedBox(
-                height: 10.h,
+                height: 15.h,
               ),
               const PatientChangeInfo(text:'Password',hintText:'.......',),
               SizedBox(
-                height: 20.h,
-              ),
-              Text(
-                "Notifications",
-                style: TextStyle(
-                    fontFamily: 'Poppins',
-                    fontSize: 15.sp,
-                    fontWeight: FontWeight.w600,
-                    color: MyColors.black),
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
-              Container(
-                padding: EdgeInsets.only(
-                    left: 15.sp, right: 15.sp, top: 6.sp, bottom: 6.sp),
-                decoration: BoxDecoration(
-                  color: MyColors.lightGrey,
-                  borderRadius: BorderRadius.circular(10.r),
-                  boxShadow: const [
-                    BoxShadow(
-                        color: MyColors.grey,
-                        blurRadius: 7.0,
-                        spreadRadius: 1.0,
-                        offset: Offset(4, 4)), //BoxShadow
-                  ],
-                ),
-                child: Row(
-                  children: [
-                    Text(
-                      "State",
-                      style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontFamily: "Poppins",
-                          color: MyColors.grey,
-                          fontSize: 15.sp),
-                    ),
-                    const Spacer(),
-                Transform.scale(
-                  scale: 0.6.sp,
-                  child: CupertinoSwitch(
-                    value: switchValue,
-                    activeColor: MyColors.darkBlue,
-
-                    onChanged: (bool? value) {
-                      setState(() {
-                        switchValue = value ?? false;
-                      },);}
-                  ),
-                )
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 15.h,
-              ),
-              Container(
-                padding: EdgeInsets.only(
-                    left: 15.sp, right: 15.sp, top: 6.sp, bottom: 6.sp),
-                decoration: BoxDecoration(
-                  color: MyColors.lightGrey,
-                  borderRadius: BorderRadius.circular(10.r),
-                  boxShadow: const [
-                    BoxShadow(
-                        color: MyColors.grey,
-                        blurRadius: 7.0,
-                        spreadRadius: 1.0,
-                        offset: Offset(4, 4)), //BoxShadow
-                  ],
-                ),
-                child: Row(
-                  children: [
-                    Text(
-                      "News",
-                      style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontFamily: "Poppins",
-                          color: MyColors.grey,
-                          fontSize: 15.sp),
-                    ),
-                    const Spacer(),
-                    Transform.scale(
-                      scale: 0.6.sp,
-                      child: CupertinoSwitch(
-                          value: switchValue,
-                          activeColor: MyColors.darkBlue,
-
-                          onChanged: (bool? value) {
-                            setState(() {
-                              switchValue = value ?? false;
-                            },);}
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 20.h,
+                height: 25.h,
               ),
               Text(
                 "Help Center",
-                style: TextStyle(
-                    fontFamily: 'Poppins',
-                    fontSize: 15.sp,
-                    fontWeight: FontWeight.w600,
-                    color: MyColors.black),
+                  style: AppTextStyle().textInAppBar.copyWith(fontSize: 16.sp)
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(height: 15.h,),
               Container(
                 padding: EdgeInsets.only(
                     left: 15.sp, right: 15.sp, top: 13.sp, bottom: 13.sp),
@@ -252,11 +137,7 @@ class _PatientSettingScreenState extends State<PatientSettingScreen> {
                   children: [
                     Text(
                       "FAQ",
-                      style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontFamily: "Poppins",
-                          color: MyColors.grey,
-                          fontSize: 15.sp),
+                      style:AppTextStyle().greyText.copyWith(fontSize: 16.sp)
                     ),
                     const Spacer(),
                     InkWell(

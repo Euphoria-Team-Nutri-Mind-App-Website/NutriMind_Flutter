@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:nutri_mind_application/shared/Constants/text_theme.dart';
 import '../Constants/colors.dart';
 
 class PatientChangeInfo extends StatelessWidget {
@@ -11,8 +11,7 @@ class PatientChangeInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.only(
-            left: 15.sp, right: 15.sp, top: 20.sp, bottom: 10.sp),
+        padding: EdgeInsets.only(left: 15.sp, right: 15.sp, top: 20.sp, bottom: 10.sp),
         decoration: BoxDecoration(
             color: MyColors.lightGrey,
             borderRadius: BorderRadius.circular(15.r),
@@ -36,16 +35,11 @@ class PatientChangeInfo extends StatelessWidget {
           children: [
             Text(
               text,
-              style: TextStyle(
-                  fontSize: 13.sp,
-                  fontWeight: FontWeight.w500,
-                  fontFamily: "Poppins",
-                  color: MyColors.black),
+              style:AppTextStyle().greyText.copyWith(color: MyColors.black,fontWeight: FontWeight.w600)
             ),
             TextFormField(
-              cursorColor: MyColors.darkBlue,
-              decoration:
-                  InputDecoration(border: InputBorder.none, hintText: hintText),
+              cursorColor: MyColors.grey,
+              decoration: InputDecoration(border: InputBorder.none, hintText: hintText),
             )
           ],
         ),

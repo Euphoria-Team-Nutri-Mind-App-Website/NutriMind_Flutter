@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:bloc/bloc.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:http/http.dart' as http;
 import '../../../models/doctor_list_model.dart';
@@ -70,41 +69,6 @@ class LayoutCubit extends Cubit<LayoutState> {
 
 //***************************************************************************************************************
 
-
-  // void changePassword({required String userCurrentPassword,required String newPassword}) async {
-  //   emit(ChangePasswordLoadingState());
-  //   Response response = await http.post(
-  //       Uri.parse("https://student.valuxapps.com/api/change-password"),
-  //       headers:
-  //       {
-  //         'Accept': 'application/json'
-  //       },
-  //       body: {
-  //         'current_password' : userCurrentPassword,
-  //         'new_password' : newPassword,
-  //       }
-  //   );
-  //   var responseDecoded = jsonDecode(response.body);
-  //   if( response.statusCode == 200 )
-  //   {
-  //     if( responseDecoded['status'] == true )
-  //     {
-  //       emit(ChangePasswordSuccessState());
-  //     }
-  //     else
-  //     {
-  //       emit(ChangePasswordWithFailureState(responseDecoded['message']));
-  //     }
-  //   }
-  //   else
-  //   {
-  //     emit(ChangePasswordWithFailureState("something went wrong, try again later"));
-  //   }
-  // }
-
-
-//***************************************************************************************************************
-
   GenerateOtpModel?generateOtpModel;
   void generatOtp({
     required String email, })async {
@@ -112,7 +76,7 @@ class LayoutCubit extends Cubit<LayoutState> {
     print("your token is $accessToken");
 
     http.get(
-        Uri.parse("http://heda.azq1.com/patient/api/patient/generate-otp?email=${email}"),
+        Uri.parse("http://heda.azq1.com/patient/api/patient/generate-otp?email=$email"),
         headers:
         {
           'Accept': "application/json",
@@ -125,7 +89,7 @@ class LayoutCubit extends Cubit<LayoutState> {
       emit(GenerateOtpSuccessState());
     }).catchError((onError){
       print("onError error ${onError.toString()}");
-      emit(GenerateOtpWithFailureState());
+      emit(GenerateOtpWithFailureState(error: onError.toString()));
 
     });
   }

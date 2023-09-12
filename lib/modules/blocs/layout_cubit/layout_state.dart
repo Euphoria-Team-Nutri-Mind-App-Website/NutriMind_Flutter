@@ -28,18 +28,11 @@ class FailedToDoctorListDataState extends LayoutState {
 
 //***************************************************************************************************************
 
-// class ChangePasswordLoadingState extends LayoutState{}
-// class ChangePasswordSuccessState extends LayoutState{}
-// class ChangePasswordWithFailureState extends LayoutState{
-//   String error;
-//
-//   ChangePasswordWithFailureState(this.error);
-// }
-//***************************************************************************************************************
-
 class GenerateOtpLoadingState extends LayoutState{}
 class GenerateOtpSuccessState extends LayoutState{}
 class GenerateOtpWithFailureState extends LayoutState{
+  String error;
+  GenerateOtpWithFailureState({required this.error});
 }
 //***************************************************************************************************************
 
@@ -47,5 +40,5 @@ class HeightLoadingState extends LayoutState{}
 class HeightSuccessState extends LayoutState{}
 class HeighWithFailureState extends LayoutState{
   String error;
-  HeighWithFailureState(this.error);
+  HeighWithFailureState({required this.error});
 }

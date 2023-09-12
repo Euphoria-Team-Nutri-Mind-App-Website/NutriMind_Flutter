@@ -206,7 +206,6 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                   ),
                   InkWell(
                     onTap: () async {
-<<<<<<< HEAD
                       if (formKey.currentState!.validate()==true) {
                         BlocProvider.of<AuthCubit>(context).patientRegister(
                           name: nameController.text,
@@ -218,51 +217,6 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                         );
                         //Navigator.pushNamed(context, 'PatientSetTallScreen');
                       }
-=======
-                      var headers = {'Accept': 'application/json'};
-                      var request = http.MultipartRequest(
-                          'POST',
-                          Uri.parse(
-                              'http://heda.azq1.com/patient/api/patient/register'));
-                      request.fields.addAll({
-                        'name': nameController.text,
-                        'email': emailController.text,
-                        'password': passwordController.text,
-                        'password_confirmation': confirmPasswordController.text,
-                        'gender': genderController.text,
-                        'age': ageController.text,
-                      });
-                      request.headers.addAll(headers);
-                      http.StreamedResponse response = await request.send();
-
-                      if (response.statusCode == 200) {
-                        Navigator.pushNamed(context, 'PatientSetTallScreen');
-                      } else {
-                        showDialog(
-                            context: context,
-                            builder: (context) => AlertDialog(
-                              content: Text(
-                                "${response.reasonPhrase}",
-                                style:
-                                const TextStyle(color: MyColors.white),
-                              ),
-                              backgroundColor: MyColors.darkBlue,
-                            ));
-                        print(response.reasonPhrase);
-                      }
-                      // if (formKey.currentState!.validate()==true) {
-                      //   BlocProvider.of<AuthCubit>(context).patientRegister(
-                      //     name: nameController.text,
-                      //     email: emailController.text,
-                      //     password: int.parse(passwordController.text),
-                      //     password_confirmation:
-                      //         int.parse(confirmPasswordController.text),
-                      //     age:int.parse(ageController.text),
-                      //     gender: genderController.text,
-                      //   );
-                      //   //Navigator.pushNamed(context, 'PatientSetTallScreen');
-                      // }
->>>>>>> 69e3248249065a8dfb17bd3b5e170661875fdd1e
                     },
                     child: Container(
                       width: double.infinity,
@@ -273,9 +227,6 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                       ),
                       child: Center(
                         child: Text(
-                          // state is RegisterLoadingState
-                          //     ? "loading....."
-                          //     :
                             "Sign Up",
                             style: AppTextStyle().textBlueButton),
                       ),

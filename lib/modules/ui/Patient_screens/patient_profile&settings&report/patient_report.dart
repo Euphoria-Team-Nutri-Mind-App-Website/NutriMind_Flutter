@@ -24,8 +24,7 @@ class PatientReport extends StatelessWidget {
               child: Image.asset('assets/images/careLogo.png'))
         ],
       ),
-      body: SingleChildScrollView(
-        child: Padding(
+      body: Padding(
           padding: EdgeInsets.only(left: 25.sp, right: 25.sp, top: 30.sp),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -96,17 +95,17 @@ class PatientReport extends StatelessWidget {
                   "Being preoccupied with your body shape and weight \nLiving in fear of gaining weight \nRepeated episodes of eating abnormally large amounts \nof food in one sitting\nFeeling a loss of control during bingeing — like you can't\nstop eating or can't control what you eat\nForcing yourself to vomit or exercising too much to kee\nfrom gaining weight after bingeing",
                   style: AppTextStyle().greyText.copyWith(
                       fontSize: 13.sp, height: 1.2.sp, wordSpacing: 2.sp)),
-              SizedBox(height: 60.h),
+              const Expanded(child: SizedBox()),
               MyBlueButton(
                 text: "Back",
                 page: 'PatientProfile',
                 height: 55.h,
                 width: double.infinity,
               ),
+              SizedBox(height: 40.h),
             ],
           ),
         ),
-      ),
     );
   }
 }

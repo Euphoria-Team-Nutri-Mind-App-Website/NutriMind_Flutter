@@ -1,7 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../shared/Constants/colors.dart';
+import '../../../../shared/Constants/text_theme.dart';
 
 class PatientWidgetForDoctorScreen extends StatelessWidget {
   const PatientWidgetForDoctorScreen({Key? key}) : super(key: key);
@@ -13,8 +13,7 @@ class PatientWidgetForDoctorScreen extends StatelessWidget {
         Navigator.pushNamed(context, 'Doctor_PatientInfo');
       },
       child: Container(
-        padding: EdgeInsets.only(
-            right: 20.sp, left: 20.sp, top: 25.sp, bottom: 25.sp),
+        padding: EdgeInsets.all(25.sp),
         decoration: BoxDecoration(
           color: MyColors.lightGrey,
           borderRadius: BorderRadius.circular(20.r),
@@ -44,40 +43,30 @@ class PatientWidgetForDoctorScreen extends StatelessWidget {
                       children: [
                         Text(
                           "Ahmed Mohamed",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 16.sp,
-                              fontFamily: 'Inter'),
+                          style: AppTextStyle().textInAppBar.copyWith(
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w700,
+                              ),
                         ),
                       ],
                     ),
                     SizedBox(
-                      height: 3.sp,
+                      height: 5.sp,
                     ),
-                    const Text(
-                      "Bulimic patient",
-                      style: TextStyle(fontFamily: "Poppins"),
-                    ),
+                    Text("Bulimic patient", style: AppTextStyle().greyText),
                     SizedBox(
-                      height: 3.sp,
+                      height: 5.sp,
                     ),
-                    const Text(
-                      "Consultation\n From 2:00 - 2:30 Pm",
-                      style: TextStyle(fontFamily: "Poppins"),
-                    ),
+                    Text("Consultation\nFrom 2:00 - 2:30 Pm",
+                        style: AppTextStyle().greyText),
                   ],
                 ),
                 const Spacer(),
-                InkWell(
-                  onTap: () {
-                    Navigator.pushNamed(context, 'Doctor_PatientInfo');
-                  },
-                  child: Icon(
-                    Icons.arrow_forward_ios,
-                    size: 20.sp,
-                    color: MyColors.grey,
-                  ),
-                )
+                Icon(
+                  Icons.arrow_forward_ios,
+                  size: 20.sp,
+                  color: MyColors.grey,
+                ),
               ],
             ),
           ],

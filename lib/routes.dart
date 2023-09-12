@@ -41,12 +41,14 @@ import 'modules/ui/continue_screen.dart';
 import 'modules/ui/doctor_screens/doctor_auth_screen/doctor_choose_time_screen.dart';
 import 'modules/ui/doctor_screens/doctor_auth_screen/doctor_login_screen.dart';
 import 'modules/ui/doctor_screens/doctor_auth_screen/doctor_sign_up_screen.dart';
+import 'modules/ui/doctor_screens/doctor_chat_screens/doctor_chat_screen.dart';
 import 'modules/ui/doctor_screens/doctor_passwords_screens/doctor_create_password_screen.dart';
 import 'modules/ui/doctor_screens/doctor_passwords_screens/doctor_forget_password_screen.dart';
 import 'modules/ui/doctor_screens/doctor_passwords_screens/doctor_verification_screen.dart';
 import 'modules/ui/doctor_screens/doctor_profile/doctor_help&support_screen.dart';
 import 'modules/ui/doctor_screens/doctor_profile/doctor_profile.dart';
 import 'modules/ui/doctor_screens/doctor_profile/doctor_settings_screen.dart';
+import 'modules/ui/doctor_screens/doctor_reservation_receipts_Screens/doctor_reservation_receipts_screen.dart';
 import 'modules/ui/doctor_screens/doctor_schedule_&_patientinfo_&_Report_screens/docter_patientinfo_screen.dart';
 import 'modules/ui/doctor_screens/doctor_schedule_&_patientinfo_&_Report_screens/doctor_report_screen.dart';
 import 'modules/ui/doctor_screens/doctor_schedule_&_patientinfo_&_Report_screens/doctor_schedule_screen.dart';
@@ -107,4 +109,6 @@ Map<String, WidgetBuilder> routes = {
   'DoctorSettingScreen': (context) => const DoctorSettingScreen(),
   'DoctorHelpAndSupport': (context) => const DoctorHelpAndSupport(),
   'DoctorChooseTimeScreen': (context) => const DoctorChooseTimeScreen(),
+  'DoctorChatScreen': (context) => const DoctorChatScreen(),
+  'DoctorReservationReceiptsScreen': (context) => const DoctorReservationReceiptsScreen(),
 };

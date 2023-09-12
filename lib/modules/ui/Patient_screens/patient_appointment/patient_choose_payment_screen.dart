@@ -22,7 +22,7 @@ class _PatientChoosePaymentScreenState
       appBar: MyAppBar(
         backPage: 'PatientBookAppointment',
         pageTitle: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Text(
               "Payment",
@@ -62,80 +62,65 @@ class _PatientChoosePaymentScreenState
                   children: [
                     CircleAvatar(
                       backgroundColor: MyColors.white,
-                      radius: 30.r,
+                      radius: 35.r,
                       child: Image.asset('assets/images/doctor2.png'),
                     ),
                     SizedBox(
-                      width: 20.w,
+                      width: 10.w,
                     ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Text(
-                              "Dr. John Smith",
-                              style: TextStyle(
+                    Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Text(
+                                "Dr. John Smith",
+                                style: AppTextStyle().textInAppBar.copyWith(
+                                  fontSize: 16.sp,
                                   fontWeight: FontWeight.w600,
-                                  fontSize: 14.sp,
-                                  fontFamily: 'Inter'),
-                            ),
-                            SizedBox(
-                              width: 40.w,
-                            ),
-                            Text(
-                              "5.00\$",
-                              style: TextStyle(
+                                ),
+                              ),
+                              const Spacer(),
+                              Text(
+                                "5.00\$",
+                                style: AppTextStyle().textInAppBar.copyWith(
+                                  fontSize: 16.sp,
                                   fontWeight: FontWeight.w600,
-                                  fontSize: 14.sp,
-                                  fontFamily: 'Inter'),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 5.h,
-                        ),
-                        Text(
-                          "Psychiatrist and",
-                          style: TextStyle(
-                              color: MyColors.grey,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 12.sp,
-                              fontFamily: 'Poppins'),
-                        ),
-                        SizedBox(
-                          height: 5.h,
-                        ),
-                        Text(
-                          "nutritionist",
-                          style: TextStyle(
-                              color: MyColors.grey,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 12.sp,
-                              fontFamily: 'Poppins'),
-                        ),
-                        SizedBox(
-                          height: 5.h,
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              "4.6",
-                              style: TextStyle(
-                                  color: MyColors.black,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 5.h,
+                          ),
+                          Text(
+                            "Psychiatrist and\nnutritionist",
+                              style:AppTextStyle().greyText.copyWith(fontSize: 12.sp,height: 1.h)
+                          ),
+                          SizedBox(
+                            height: 5.h,
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                "4.6",
+                                style: AppTextStyle().textInAppBar.copyWith(
+                                  fontSize: 13.sp,
                                   fontWeight: FontWeight.w600,
-                                  fontSize: 12.sp,
-                                  fontFamily: 'Poppins'),
-                            ),
-                            const Icon(
-                              Icons.star,
-                              size: 16,
-                              color: MyColors.yellow,
-                            )
-                          ],
-                        )
-                      ],
+                                ),
+                              ),
+                              SizedBox(width: 2.w),
+                              const Icon(
+                                Icons.star,
+                                size: 20,
+                                color: MyColors.yellow,
+                              )
+                            ],
+                          )
+                        ],
+                      ),
                     )
                   ],
                 ),
@@ -148,20 +133,15 @@ class _PatientChoosePaymentScreenState
                 children: [
                   Text(
                     "Payment Method",
-                    style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 16.sp,
-                        fontFamily: 'Inter'),
-                  ),
+                      style: AppTextStyle().textInAppBar.copyWith(fontSize: 16.sp)),
                   Row(
                     children: [
                       Padding(
                         padding: EdgeInsets.all(8.sp),
-                        child: Image.asset("assets/images/masterCard.png"),
                       ),
                       Padding(
                         padding: EdgeInsets.all(8.sp),
-                        child: Image.asset("assets/images/paypal2.png"),
+                        child: Image.asset("assets/images/cash.png"),
                       ),
                       Padding(
                         padding: EdgeInsets.all(8.sp),
@@ -173,11 +153,8 @@ class _PatientChoosePaymentScreenState
                             borderRadius: BorderRadius.circular(10.r),
                             border: Border.all(color: MyColors.lightGrey),
                           ),
-                          child: Icon(
-                            Icons.add,
-                            size: 20.sp,
-                            color: MyColors.darkBlue,
-                          ),
+                          child:Image.asset("assets/images/vecteezy.png"),
+
                         ),
                       )
                     ],

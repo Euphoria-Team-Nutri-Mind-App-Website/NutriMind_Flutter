@@ -1,8 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nutri_mind_application/shared/widgets/screens_widgets.dart';
-
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/default_items.dart';
@@ -17,7 +14,7 @@ class DoctorProfile extends StatelessWidget {
       appBar: MyAppBar(
         backPage: 'DoctorLoginScreen',
         pageTitle: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Text(
               "Profile",
@@ -27,7 +24,7 @@ class DoctorProfile extends StatelessWidget {
         ),
         actionIcon: [
           Padding(
-              padding: EdgeInsets.only(right: 25.sp),
+              padding: EdgeInsets.only(right: 10.sp),
               child: Image.asset('assets/images/careLogo.png'))
         ],
       ),
@@ -73,33 +70,12 @@ class DoctorProfile extends StatelessWidget {
                       children: [
                         Text(
                           "Dr.John Smith",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontFamily: 'Poppins',
-                            fontSize: 16.sp,
-                          ),
+                      style: AppTextStyle()
+                          .textInAppBar
+                          .copyWith(fontSize: 16.sp),
                         ),
                         SizedBox(
-                          height: 10.h,
-                        ),
-                        Row(
-                          children: [
-                            Image.asset('assets/images/call.png'),
-                            SizedBox(
-                              width: 5.w,
-                            ),
-                            Text(
-                              '+234 657 987',
-                              style: TextStyle(
-                                  fontFamily: 'Inter',
-                                  color: MyColors.grey,
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 12.sp),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          height: 10.h,
+                          height: 7.h,
                         ),
                         Row(
                           children: [
@@ -107,13 +83,13 @@ class DoctorProfile extends StatelessWidget {
                             SizedBox(
                               width: 5.w,
                             ),
-                            Text(
-                              'john20@gmail.com',
-                              style: TextStyle(
-                                  fontFamily: 'Inter',
-                                  color: MyColors.grey,
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 12.sp),
+                            SizedBox(
+                              width: 130.w,
+                              child: Text(
+                                  "john@gmail.com",
+                                  style: AppTextStyle()
+                                      .greyText
+                                      .copyWith(fontSize: 12.sp)),
                             )
                           ],
                         ),
@@ -123,20 +99,8 @@ class DoctorProfile extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 20.h,
+                height: 30.h,
               ),
-              Text(
-                "National Id",
-                style: TextStyle(
-                    color: MyColors.black,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w500,
-                    fontSize: 16.sp),
-              ),
-
-              SizedBox(height: 6.h),
-              const ProfileContainer(text: "7654 7790 54533"),
-              SizedBox(height: 13.h),
               InkWell(
                   onTap: () {
                     Navigator.pushNamed(context, 'DoctorScheduleScreen');
@@ -146,13 +110,35 @@ class DoctorProfile extends StatelessWidget {
                     text: 'My schedule',
                   )),
               SizedBox(
-                height: 13.h,
+                height: 20.h,
+              ),
+              InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, 'DoctorChatScreen');
+                  },
+                  child: ProfileButtons(
+                    icon: Icons.chat_outlined,
+                    text: 'My Chats',
+                  )),
+              SizedBox(
+                height: 20.h,
+              ),
+              InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, 'DoctorReservationReceiptsScreen');
+                  },
+                  child: ProfileButtons(
+                    icon: Icons.receipt_long_outlined,
+                    text: 'Reservation receipts',
+                  )),
+              SizedBox(
+                height: 20.h,
               ),
               InkWell(
                   onTap: (){Navigator.pushNamed(context, 'DoctorSettingScreen');},
                   child:ProfileButtons(icon:Icons.settings,text:'Settings',)
               ),
-              SizedBox(height: 13.h),
+              SizedBox(height: 20.h),
               InkWell(
                   onTap: () {
                     Navigator.pushNamed(context, 'ContinueScreen');

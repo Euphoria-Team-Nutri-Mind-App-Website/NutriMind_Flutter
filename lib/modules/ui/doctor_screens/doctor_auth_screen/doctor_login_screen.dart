@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../shared/Constants/colors.dart';
+import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/default_items.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
 
@@ -13,53 +14,81 @@ class DoctorLoginScreen extends StatefulWidget {
 
 class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
   final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+  bool obscureText = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppBar(backPage: 'ContinueScreen'),
-      body: SingleChildScrollView(
-        child: SafeArea(
-          child: Container(
-            padding: EdgeInsets.all(25.sp),
-            color: MyColors.white,
-            child: Column(
+      body: SafeArea(
+        child: Container(
+          padding: EdgeInsets.all(25.sp),
+          color: MyColors.white,
+          child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   "Welcome To",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 24.sp,
-                      fontFamily: 'Poppins'),
+                  style: AppTextStyle()
+                      .textInAppBar
+                      .copyWith(fontWeight: FontWeight.w500),
                 ),
                 SizedBox(
-                  height: 5.h,
+                  height: 7.h,
                 ),
                 Image(
                   image: const AssetImage(
                     "assets/images/logo.png",
                   ),
-                  width: 180.w,
+                  width: 160.w,
                 ),
                 SizedBox(
                   height: 45.h,
                 ),
-                const MyTextField(
-                  hintText: 'Enter your email',
-                  obscureText: false,
-                  textType: TextInputType.emailAddress,
-                ),
+                MyTextField(
+                    controller: emailController,
+                    hintText: 'Enter your email',
+                    obscureText: false,
+                    textType: TextInputType.emailAddress,
+                    validator: (val) {
+                      if (val.isEmpty) {
+                        return "Email must not be empty";
+                      } else if (!val.contains("@") || !val.contains(".")) {
+                        return "Enter a valid email";
+                      } else {
+                        return null;
+                      }
+                    }),
                 SizedBox(
                   height: 20.h,
                 ),
-                const MyTextField(
-                  textType: TextInputType.number,
-                  hintText: 'Password',
-                  obscureText: false,
-                  suffixIcon:
-                      Icon(Icons.remove_red_eye_outlined, color: MyColors.grey),
-                ),
+                MyTextField(
+                    controller: passwordController,
+                    textType: TextInputType.number,
+                    hintText: 'Password',
+                    obscureText: obscureText,
+                    suffixIcon: IconButton(
+                      icon: Icon(obscureText
+                          ? Icons.visibility_off
+                          : Icons.visibility),
+                      color: MyColors.grey,
+                      onPressed: () {
+                        setState(() {
+                          obscureText = !obscureText;
+                        });
+                      },
+                    ),
+                    validator: (val) {
+                      if (val.isEmpty) {
+                        return "Password must not be empty";
+                      } else if (val.length < 8) {
+                        return "Password must be more than 7 numbers";
+                      } else {
+                        return null;
+                      }
+                    }),
                 SizedBox(
                   height: 20.h,
                 ),
@@ -67,27 +96,42 @@ class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     InkWell(
-                      onTap: () {
-                        Navigator.pushNamed(context, 'DoctorForgetPassword');
-                      },
-                      child: Text(
-                        "Forget Password?",
-                        style: TextStyle(
-                          fontFamily: 'Inter',
-                          fontSize: 15.sp,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
+                      onTap: () =>
+                          Navigator.pushNamed(context, 'DoctorForgetPassword'),
+                      child: Text("Forget Password?",
+                          style: AppTextStyle()
+                              .greyText
+                              .copyWith(color: MyColors.black)),
                     ),
                   ],
                 ),
                 SizedBox(
                   height: 38.h,
                 ),
-                const InkWell(
-                  child: MyBlueButton(
-                    text: "Log IN",
-                    page: 'DoctorProfile',
+                InkWell(
+                  // onTap: () {
+                  //   if (formKey.currentState!.validate() == true) {
+                  //     BlocProvider.of<AuthCubit>(context).login(
+                  //         email: emailController.text,
+                  //         password: passwordController.text);
+                  //   }
+                  // },
+                  onTap: () {
+                    Navigator.pushNamed(context, 'DoctorProfile');
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    height: 60.h,
+                    decoration: BoxDecoration(
+                      color: MyColors.darkBlue,
+                      borderRadius: BorderRadius.circular(10.r),
+                    ),
+                    child: Center(
+                      child: Text(
+                          // state is LoginLoadingState? "loading.....":
+                          "Login",
+                          style: AppTextStyle().textBlueButton),
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -103,14 +147,10 @@ class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
                     SizedBox(
                       width: 15.w,
                     ),
-                    Text(
-                      "Or Log in with",
-                      style: TextStyle(
-                          color: MyColors.black,
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: 'Poppins'),
-                    ),
+                    Text("Or Log in with",
+                        style: AppTextStyle()
+                            .greyText
+                            .copyWith(color: MyColors.black, fontSize: 14.sp)),
                     SizedBox(
                       width: 15.w,
                     ),
@@ -131,22 +171,18 @@ class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
                       width: 10.w,
                     ),
                     const MySmallButton(imageAsset: "assets/images/google.png"),
-                    SizedBox(
-                      width: 10.w,
-                    ),
                   ],
                 ),
-              ],
-            ),
-          ),
+                const Expanded(child: SizedBox()),
+              ]),
         ),
       ),
       bottomNavigationBar: BottomAppBar(
-        height :40.h,
-        color: Colors.transparent,
+        height: 40.h,
+        color: MyColors.white,
         elevation: 0.sp,
         child: const MyTextGroup(
-            staticText: "Don’t have an account?",
+            staticText: "Don’t have an account ?",
             dynamicText: " Sign up",
             page: 'DoctorSignUpScreen'),
       ),

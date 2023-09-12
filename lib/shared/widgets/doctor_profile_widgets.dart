@@ -56,7 +56,7 @@ class ProfileButtons extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Icon(icon,color: MyColors.grey,),
+          Icon(icon,color: MyColors.darkBlue,),
           SizedBox(width: 10.w,),
           Text(
             text,

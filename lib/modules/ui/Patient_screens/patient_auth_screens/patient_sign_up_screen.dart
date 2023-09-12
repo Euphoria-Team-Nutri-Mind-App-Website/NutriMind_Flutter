@@ -144,7 +144,13 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                       hintText: 'Gender',
                       obscureText: false,
                       textType: TextInputType.text,
-                      ),
+                      validator: (val) {
+                        if (val.isEmpty) {
+                          return "Gender must not be empty";
+                        }else {
+                          return null;
+                        }
+                      }),
                   SizedBox(
                     height: 18.h,
                   ),

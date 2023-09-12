@@ -47,7 +47,10 @@ class Assets {
   static const String imagesUser1 = 'assets/images/user1.png';
   static const String imagesVecteezy = 'assets/images/vecteezy.png';
   static const String imagesVerygood = 'assets/images/verygood.png';
+<<<<<<< HEAD
   static const String imagesVoda = 'assets/images/voda.png';
+=======
+>>>>>>> master
   static const String imagesWhitebell = 'assets/images/whitebell.png';
   static const String imagesWin = 'assets/images/win.png';
   static const String imagesWordJourney = 'assets/images/WordJourney.png';

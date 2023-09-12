@@ -5,6 +5,7 @@ import 'package:http/http.dart' as http;
 import '../../../models/doctor_list_model.dart';
 import '../../../models/forget_password/generate_otp_model.dart';
 import '../../../models/patient_model.dart';
+import '../../../models/quotes_model.dart';
 import '../../../shared/Constants/constants.dart';
 part 'layout_state.dart';
 
@@ -95,6 +96,31 @@ class LayoutCubit extends Cubit<LayoutState> {
 
 //***************************************************************************************************************
 
+  QoutesModel?qoutesModel;
+  void Qoutes()async {
+    emit(QuotesLoadingState());
+    print("your token is $accessToken");
+
+    http.get(
+      Uri.parse("http://heda.azq1.com/api/qoutes"),
+      headers:
+      {
+        'Accept': "application/json",
+        'Authorization': 'Bearer ${accessToken!}',
+      },
+    ).then((value) {
+      var responseDate = jsonDecode(value.body);
+      print(responseDate);
+      qoutesModel = QoutesModel.fromJson(responseDate);
+      print("lllll${qoutesModel?.quotes?.length}");
+      print("lllll${qoutesModel?.quotes?[0]}");
+      emit(QuotesSuccessState());
+    }).catchError((onError){
+      print("onError error ${onError.toString()}");
+      emit(QuotesWithFailureState(error: onError.toString()));
+
+    });
+  }
 
 
 

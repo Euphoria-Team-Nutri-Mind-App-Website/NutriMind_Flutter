@@ -42,3 +42,12 @@ class HeighWithFailureState extends LayoutState{
   String error;
   HeighWithFailureState({required this.error});
 }
+
+//***************************************************************************************************************
+
+class QuotesLoadingState extends LayoutState{}
+class QuotesSuccessState extends LayoutState{}
+class QuotesWithFailureState extends LayoutState{
+  String error;
+  QuotesWithFailureState({required this.error});
+}

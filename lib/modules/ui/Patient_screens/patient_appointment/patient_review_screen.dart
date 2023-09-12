@@ -1,12 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/doctor_review_screen_widgets.dart';
-import '../../../../shared/widgets/default_items.dart';
 
 class PatientReviewScreen extends StatefulWidget {
   const PatientReviewScreen({Key? key}) : super(key: key);
@@ -16,23 +13,21 @@ class PatientReviewScreen extends StatefulWidget {
 }
 
 class _PatientReviewScreenState extends State<PatientReviewScreen> {
-  double rating =0 ;
+  double rating = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(
-        backPage: 'PatientAppointmentInDoctor',
-        pageTitle: Row(
+      appBar: AppBar(
+        backgroundColor: MyColors.white,
+        elevation: 0.sp,
+        title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              "Patient Review",
-                style:AppTextStyle().textInAppBar
-            )
+            Text("Patient Review", style: AppTextStyle().textInAppBar)
           ],
         ),
-        actionIcon: [
+        actions: [
           Padding(
               padding: EdgeInsets.only(right: 25.sp),
               child: InkWell(
@@ -54,13 +49,7 @@ class _PatientReviewScreenState extends State<PatientReviewScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
-                "Put your Review !",
-                style: TextStyle(
-                    fontSize: 20.sp,
-                    fontWeight: FontWeight.w600,
-                    fontFamily: 'Poppins'),
-              ),
+              Text("Put your Review !", style: AppTextStyle().textInAppBar),
               SizedBox(height: 25.h),
               Container(
                 height: 300.h,
@@ -85,7 +74,7 @@ class _PatientReviewScreenState extends State<PatientReviewScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Emoji(rating: rating),
-                     SizedBox(height: 40.h),
+                    SizedBox(height: 40.h),
                     RatingBar.builder(
                       initialRating: rating,
                       glow: false,

@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../Constants/colors.dart';
+import '../Constants/text_theme.dart';
 
 class DateWidget extends StatelessWidget {
   final text;
@@ -24,7 +23,7 @@ class DateWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 90.h,
+      height: 70.h,
       child: ListView.builder(
         itemCount: list.length,
         scrollDirection: Axis.horizontal,
@@ -39,10 +38,10 @@ class DateWidget extends StatelessWidget {
               border: Border.all(color: MyColors.lightGrey),
               boxShadow: const [
                 BoxShadow(
-                  color: MyColors.lightGrey,
-                  blurRadius: 10.0,
-                  spreadRadius: 2.0,
-                ), //BoxShadow
+                    color: MyColors.lightGrey,
+                    blurRadius: 1.0,
+                    spreadRadius: 2.0,
+                    offset: Offset(2, 2)), //BoxShadow
                 BoxShadow(
                   color: MyColors.white,
                 ),
@@ -51,17 +50,13 @@ class DateWidget extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  "${list[index][text]}",
-                  style: const TextStyle(
-                      fontWeight: FontWeight.w600, color: MyColors.darkBlue),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  "${list[index][text2]}",
-                  style: const TextStyle(
-                      fontWeight: FontWeight.w500, color: MyColors.darkBlue),
-                )
+                Text("${list[index][text]}",
+                    style: AppTextStyle().greyText.copyWith(
+                        color: MyColors.darkBlue, fontWeight: FontWeight.w700)),
+                SizedBox(height: 5.h),
+                Text("${list[index][text2]}",
+                    style: AppTextStyle().greyText.copyWith(
+                        color: MyColors.darkBlue, fontWeight: FontWeight.w700))
               ],
             ),
           ),
@@ -70,6 +65,8 @@ class DateWidget extends StatelessWidget {
     );
   }
 }
+
+//************************************************************************************************
 
 class TimeWidget extends StatelessWidget {
   final text;
@@ -89,7 +86,7 @@ class TimeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 50.h,
+      height: 40.h,
       child: ListView.builder(
         itemCount: list.length,
         scrollDirection: Axis.horizontal,
@@ -98,34 +95,21 @@ class TimeWidget extends StatelessWidget {
           child: Container(
             height: height,
             width: width,
-            margin: EdgeInsets.all(7.sp),
+            margin: EdgeInsets.all(5.sp),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(7.r),
-              boxShadow: const [
-                BoxShadow(
-                  color: MyColors.lightGrey,
-                  blurRadius: 10.0,
-                  spreadRadius: 2.0,
-                ), //BoxShadow
-                BoxShadow(
-                  color: MyColors.lightGrey,
-                ),
-              ],
+              color: MyColors.lightGrey,
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(list[index]['icon'],
-                    color: MyColors.babyBlue, size: 16.sp),
-                SizedBox(width:5.w),
-                Text(
-                  "${list[index]['text']}",
-                  style: TextStyle(
-                      color: MyColors.grey,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w600,
-                      fontSize: 12.sp),
-                )
+                    color: MyColors.darkBlue, size: 16.sp),
+                SizedBox(width: 2.w),
+                Text("${list[index]['text']}",
+                    style: AppTextStyle()
+                        .greyText
+                        .copyWith(fontWeight: FontWeight.w700, fontSize: 13.sp))
               ],
             ),
           ),

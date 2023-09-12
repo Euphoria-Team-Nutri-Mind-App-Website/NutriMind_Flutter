@@ -110,11 +110,8 @@ class SetPassword extends StatelessWidget {
         child: Center(
           child: Text(
             "$text",
-            style: TextStyle(
-                fontFamily: 'Poppins',
-                fontSize: 20.sp,
-                fontWeight: FontWeight.w600,
-                color: MyColors.white),
+            style:
+            AppTextStyle().textBlueButton.copyWith(fontSize: 20.sp)
           ),
         ),
       ),

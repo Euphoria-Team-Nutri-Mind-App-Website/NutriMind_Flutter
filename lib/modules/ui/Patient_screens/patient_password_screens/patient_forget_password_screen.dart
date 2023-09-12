@@ -100,10 +100,24 @@ class _PatientForgetPasswordState extends State<PatientForgetPassword> {
                       //    page: 'PatientVerificationScreen'),
                       InkWell(
                         onTap: () {
-                          if (formKey.currentState!.validate() == true) {
+                          if (formKey.currentState!.validate()) {
                             // BlocProvider.of<LayoutCubit>(context).generateOtpModel!(
                             //     email: emailController.text,
                             // );
+                            /*
+                            var request = http.Request('GET', Uri.parse('https://heda.azq1.com/patient/api/patient/generate-otp?email=${emailController.text}'));
+
+
+http.StreamedResponse response = await request.send();
+
+if (response.statusCode == 200) {
+  print(await response.stream.bytesToString());
+}
+else {
+  print(response.reasonPhrase);
+}
+
+                            */
                           }
                           //Navigator.pushNamed(context, 'PatientVerificationScreen');
                         },

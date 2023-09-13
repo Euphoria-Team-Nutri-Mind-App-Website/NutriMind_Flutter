@@ -14,45 +14,45 @@ class _PuzzleStartScreenState extends State<PuzzleStartScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: MyAppBar(
-          backPage: 'PatientNavBarScreen',
-          pageTitle: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Image(
-                image: const AssetImage('assets/images/PuzzleZone.png'),
-                width: 110.w,
-              )
-            ],
-          ),
+      appBar: MyAppBar(
+        backPage: 'PatientNavBarScreen',
+        pageTitle: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Image(
+              image: const AssetImage('assets/images/PuzzleZone.png'),
+              width: 110.w,
+            )
+          ],
         ),
-        body:Center(
-            child: Column(
-              mainAxisAlignment:MainAxisAlignment.center,
-              children: [
-                Text(
-                  "   Word\nJourney",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w700,
-                      fontSize: 50.sp,
-                      color: MyColors.darkBlue,
-                      fontFamily: "Poppins",
-                    shadows:const [
-                      BoxShadow(
-                          color: MyColors.babyBlue,
-                          offset: Offset(4, 4),
-                      ), //BoxShadow
-                    ],
-                    height: 1.2.sp
-                  ),
-                ),
-                SizedBox(
-                  height: 100.h,
-                ),
-                MyBlueButton(text: 'Play', page: 'PuzzleMainScreen',height: 55.h,width: 180.w,),
-              ],
+      ),
+      body:Center(
+        child: Column(
+          mainAxisAlignment:MainAxisAlignment.center,
+          children: [
+            Text(
+              "   Word\nJourney",
+              style: TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 50.sp,
+                  color: MyColors.darkBlue,
+                  fontFamily: "Poppins",
+                  shadows:const [
+                    BoxShadow(
+                      color: MyColors.babyBlue,
+                      offset: Offset(4, 4),
+                    ), //BoxShadow
+                  ],
+                  height: 1.2.sp
+              ),
             ),
-          ),
-        );
+            SizedBox(
+              height: 100.h,
+            ),
+            MyBlueButton(text: 'Play', page: 'PuzzleMainScreen',height: 55.h,width: 180.w,),
+          ],
+        ),
+      ),
+    );
   }
 }

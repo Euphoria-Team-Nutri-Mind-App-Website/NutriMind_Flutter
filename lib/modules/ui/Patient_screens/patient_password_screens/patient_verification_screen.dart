@@ -114,7 +114,9 @@ class _VerificationScreenState extends State<PatientVerificationScreen> {
                       };
                         var request = http.MultipartRequest('GET',
                             Uri.parse(
-                                'http://heda.azq1.com/patient/api/patient/verify-otp?email=${widget.email}&verfication_code=${code}'));
+                              //https://heda.azq1.com/NutriMind/public/patient/api/patient/verify-otp?email=${widget.email}&verfication_code=${code}
+                               // 'http://heda.azq1.com/patient/api/patient/verify-otp?email=${widget.email}&verfication_code=${code}'));
+                                'https://heda.azq1.com/NutriMind/public/patient/api/patient/verify-otp?email=${widget.email}&verfication_code=${code}'));
 
                         request.headers.addAll(headers);
 

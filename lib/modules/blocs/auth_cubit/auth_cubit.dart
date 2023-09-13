@@ -23,7 +23,7 @@ class AuthCubit extends Cubit<AuthState> {
     try {
       Response response = await http.post(
           Uri.parse(
-              'http://heda.azq1.com/patient/api/patient/register'),
+              'https://heda.azq1.com/NutriMind/public/patient/api/patient/register'),
           headers:
           {
             'Accept': "application/json",
@@ -63,7 +63,7 @@ class AuthCubit extends Cubit<AuthState> {
     emit(LoginLoadingState());
     try {
       Response response = await http
-          .post(Uri.parse("http://heda.azq1.com/patient/api/patient/login"), body: {
+          .post(Uri.parse("https://heda.azq1.com/NutriMind/public/patient/api/patient/login"), body: {
         'email': email,
         'password': password,
       });

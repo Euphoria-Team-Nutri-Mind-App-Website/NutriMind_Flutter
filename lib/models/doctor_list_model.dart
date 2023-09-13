@@ -32,7 +32,7 @@ class DoctorInfo {
   String? nextPageUrl;
   String? path;
   int? perPage;
-  String? prevPageUrl;
+  Null? prevPageUrl;
   int? to;
   int? total;
 
@@ -104,7 +104,7 @@ class Data {
   String? name;
   String? image;
   String? qualification;
-  String? rate;
+  int? rate;
 
   Data({this.name, this.image, this.qualification, this.rate});
 

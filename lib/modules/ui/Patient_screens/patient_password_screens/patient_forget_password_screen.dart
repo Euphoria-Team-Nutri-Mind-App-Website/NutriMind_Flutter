@@ -80,7 +80,7 @@ class _PatientForgetPasswordState extends State<PatientForgetPassword> {
                         'Authorization': 'Bearer ${accessToken!}',
                       };
                       var request = http.MultipartRequest('GET',
-                          Uri.parse('http://heda.azq1.com/patient/api/patient/generate-otp?email=${emailController.text}'));
+                          Uri.parse('https://heda.azq1.com/NutriMind/public/patient/api/patient/generate-otp?email=${emailController.text}'));
 
                       request.headers.addAll(headers);
 

@@ -6,14 +6,14 @@ import 'package:syncfusion_flutter_sliders/sliders.dart';
 import '../Constants/colors.dart';
 
 class TallComponents extends StatefulWidget {
-  const TallComponents({super.key});
+  final int? input;
+  const TallComponents({super.key, this.input});
 
   @override
   State<TallComponents> createState() => _TallComponentsState();
 }
 class _TallComponentsState extends State<TallComponents> {
   double height = 130.0;
-
   @override
   Widget build(BuildContext context) {
     return Column(

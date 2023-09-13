@@ -122,7 +122,9 @@ class _PatientCreatePasswordScreenState extends State<PatientCreatePasswordScree
                                         };
                                         var request = http.MultipartRequest('POST',
                                             Uri.parse(
-                                                'http://heda.azq1.com/patient/api/patient/reset-password?email=${widget.email}'));
+                                              //https://heda.azq1.com/NutriMind/public/patient/api/patient/reset-password?email=${widget.email}
+                                                //'http://heda.azq1.com/patient/api/patient/reset-password?email=${widget.email}'));
+                                                'https://heda.azq1.com/NutriMind/public/patient/api/patient/reset-password?email=${widget.email}'));
                                         request.fields.addAll({
                                           'password': passwordController.text,
                                           'password_confirmation': confirmPasswordController.text

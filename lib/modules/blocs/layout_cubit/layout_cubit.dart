@@ -21,7 +21,7 @@ class LayoutCubit extends Cubit<LayoutState> {
     print("your token is $accessToken");
 
     http.get(
-        Uri.parse("https://heda.azq1.com/patient/api/patient/profile"),
+        Uri.parse("https://heda.azq1.com/NutriMind/public/patient/api/patient/profile"),
         headers:
         {
           'Accept': "application/json",
@@ -42,13 +42,14 @@ class LayoutCubit extends Cubit<LayoutState> {
 
 //***************************************************************************************************************
 
+
   DoctorListModel? doctorListModel;
   void getDoctorsList() async {
     emit(GetDoctorListLoadingState());
     print("your token is $accessToken");
 
     http.get(
-        Uri.parse("https://heda.azq1.com/api/doctors"),
+        Uri.parse("https://heda.azq1.com/NutriMind/public/api/doctors"),
         headers:
         {
           'Accept': "application/json",
@@ -56,7 +57,7 @@ class LayoutCubit extends Cubit<LayoutState> {
         }
     ).then((value) {
       var responseDate = jsonDecode(value.body);
-      print(responseDate);
+      //print(responseDate);
       doctorListModel = DoctorListModel.fromJson(responseDate);
       emit(GetDoctorListSuccessState());
 
@@ -102,7 +103,7 @@ class LayoutCubit extends Cubit<LayoutState> {
     print("your token is $accessToken");
 
     http.get(
-      Uri.parse("http://heda.azq1.com/api/qoutes"),
+      Uri.parse("https://heda.azq1.com/NutriMind/public/api/qoutes"),
       headers:
       {
         'Accept': "application/json",
@@ -110,10 +111,10 @@ class LayoutCubit extends Cubit<LayoutState> {
       },
     ).then((value) {
       var responseDate = jsonDecode(value.body);
-      print(responseDate);
+      //print(responseDate);
       qoutesModel = QoutesModel.fromJson(responseDate);
-      print("lllll${qoutesModel?.quotes?.length}");
-      print("lllll${qoutesModel?.quotes?[0]}");
+      //print("lllll${qoutesModel?.quotes?.length}");
+      //print("lllll${qoutesModel?.quotes?[0]}");
       emit(QuotesSuccessState());
     }).catchError((onError){
       print("onError error ${onError.toString()}");

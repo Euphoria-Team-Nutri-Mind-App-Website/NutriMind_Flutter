@@ -49,7 +49,7 @@ class _PuzzleStartScreenState extends State<PuzzleStartScreen> {
             SizedBox(
               height: 100.h,
             ),
-            MyBlueButton(text: 'Play', page: 'PuzzleMainScreen',height: 55.h,width: 180.w,),
+            MyBlueButton(text: 'Play', page: 'PatientPuzzleFirstScreen',height: 55.h,width: 180.w,),
           ],
         ),
       ),

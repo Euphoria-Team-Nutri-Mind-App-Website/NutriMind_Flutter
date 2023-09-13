@@ -16,14 +16,15 @@ import 'modules/ui/Patient_screens/patient_motivzone_screen/patient_motivzone_sc
 import 'modules/ui/Patient_screens/patient_notes_screen/patient_add_notes.dart';
 import 'modules/ui/Patient_screens/patient_notes_screen/patient_notes_screen.dart';
 import 'modules/ui/Patient_screens/patient_notifications/patient_notifications.dart';
-import 'modules/ui/Patient_screens/patient_password_screens/patient_create_password_screen.dart';
+// import 'modules/ui/Patient_screens/patient_password_screens/patient_create_password_screen.dart';
 import 'modules/ui/Patient_screens/patient_password_screens/patient_forget_password_screen.dart';
-import 'modules/ui/Patient_screens/patient_password_screens/patient_verification_screen.dart';
+// import 'modules/ui/Patient_screens/patient_password_screens/patient_verification_screen.dart';
 import 'modules/ui/Patient_screens/patient_profile&settings&report/patient_help&support_screen.dart';
 import 'modules/ui/Patient_screens/patient_profile&settings&report/patient_profile.dart';
 import 'modules/ui/Patient_screens/patient_profile&settings&report/patient_report.dart';
 import 'modules/ui/Patient_screens/patient_profile&settings&report/patient_setting_screen.dart';
-import 'modules/ui/Patient_screens/patient_puzzle_screens/patient_puzzle_main_screen.dart';
+import 'modules/ui/Patient_screens/patient_puzzle_screens/patient_puzzle_first_screen.dart';
+import 'modules/ui/Patient_screens/patient_puzzle_screens/patient_puzzle_second_screen.dart';
 import 'modules/ui/Patient_screens/patient_puzzle_screens/puzzle_end_screen.dart';
 import 'modules/ui/Patient_screens/patient_puzzle_screens/puzzle_start_screen.dart';
 import 'modules/ui/Patient_screens/patient_question_screen/patient_question_screen.dart';
@@ -78,6 +79,8 @@ Map<String, WidgetBuilder> routes = {
   'PatientListChatsScreen': (context) => const PatientListChatsScreen(),
   'PuzzleStartScreen': (context) => const PuzzleStartScreen(),
   'PuzzleEndScreen': (context) => const PuzzleEndScreen(),
+  'PatientPuzzleFirstScreen': (context) => const PatientPuzzleFirstScreen(),
+  'PatientPuzzleSecondScreen': (context) => const PatientPuzzleSecondScreen(),
   'PatientProfile': (context) => const PatientProfile(),
   'PatientSettingScreen': (context) => const PatientSettingScreen(),
   'PatientMotivzoneScreen': (context) => const PatientMotivzoneScreen(),
@@ -99,7 +102,6 @@ Map<String, WidgetBuilder> routes = {
   'DairyMyFoodScreen': (context) => const DairyMyFoodScreen(),
   'DoctorListForPatientScreen': (context) => const DoctorListForPatientScreen(),
   'PatientVodaUploadPhoto': (context) => const  PatientVodaUploadPhoto(),
-  'PuzzleMainScreen': (context) => const PuzzleMainScreen(),
   //****************************************************************************************
   'DoctorLoginScreen': (context) => const DoctorLoginScreen(),
   'DoctorSignUpScreen': (context) => const DoctorSignUpScreen(),

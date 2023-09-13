@@ -43,6 +43,19 @@ class _PatientChooseYourStateScreen1State
     extends State<PatientChooseYourStateScreen1> {
   final formKey = GlobalKey<FormState>();
 
+
+  // final List<String> items = [
+  //   'Item1',
+  //   'Item2',
+  //   'Item3',
+  //   'Item4',
+  //   'Item5',
+  //   'Item6',
+  //   'Item7',
+  //   'Item8',
+  // ];
+
+
   final List<Widget> items = const [
     TextDropDown(title1: 'idle', title2: '( NO or Low practice )'),
     TextDropDown(title1: 'Slack', title2: '( from 1-3 day weekly practice )'),
@@ -56,7 +69,6 @@ class _PatientChooseYourStateScreen1State
       Text('Choose', style: AppTextStyle().greyText.copyWith(fontSize: 16.sp))
     ],
   );
-  Widget? selectedItem;
 
   @override
   Widget build(BuildContext context) {
@@ -94,10 +106,10 @@ class _PatientChooseYourStateScreen1State
                             ),
                           ))
                       .toList(),
-                  onChanged: (Widget? value) {
-                    // setState(() {
-                    //   // selectedValue = value?.toString();
-                    // });
+                  onChanged: ( value) {
+                    setState(() {
+                       selectedValue = value!;
+                    });
                   },
                   buttonStyleData: ButtonStyleData(
                     height: 60.h,
@@ -148,21 +160,21 @@ class _PatientChooseYourStateScreen1State
                      var request = http.MultipartRequest('POST',
                          Uri.parse('$BASEURl/patient/api/patient/active-status'));
                      request.fields.addAll({
-                       'active_status': 'slack'
+                       'active_status': '${selectedValue}'
                      });
 
                      request.headers.addAll(headers);
-
+                     print("$selectedValue");
                      http.StreamedResponse response = await request.send();
-
                      if (response.statusCode == 200) {
                        print(await response.stream.bytesToString());
                        Navigator.pushNamed(context, 'PatientChooseYourStateScreen2');
+
                      }
                      else {
                        print(response.reasonPhrase);
                      }
-
+                     Navigator.pushNamed(context, 'PatientChooseYourStateScreen2');
                    }
                 },
                 child: Container(
@@ -193,3 +205,6 @@ class _PatientChooseYourStateScreen1State
     );
   }
 }
+
+
+

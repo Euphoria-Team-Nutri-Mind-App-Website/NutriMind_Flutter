@@ -47,7 +47,19 @@ class HeighWithFailureState extends LayoutState{
 
 class QuotesLoadingState extends LayoutState{}
 class QuotesSuccessState extends LayoutState{}
-class QuotesWithFailureState extends LayoutState{
+class QuotesWithFailureState extends LayoutState {
   String error;
+
   QuotesWithFailureState({required this.error});
 }
+
+//***************************************************************************************************************
+
+class RecommendedCaloriesLoadingState extends LayoutState{}
+class RecommendedCaloriesSuccessState extends LayoutState{}
+class RecommendedCaloriesWithFailureState extends LayoutState{
+String error;
+RecommendedCaloriesWithFailureState({required this.error});
+}
+
+

@@ -17,9 +17,10 @@ class PatientSetWeightScreen extends StatefulWidget {
 }
 
 class _PatientSetWeightScreenState extends State<PatientSetWeightScreen> {
+  int weight = 30;
+
   @override
   Widget build(BuildContext context) {
-    int weight = 30;
     final formKey = GlobalKey<FormState>();
     return Scaffold(
       appBar: MyAppBar(

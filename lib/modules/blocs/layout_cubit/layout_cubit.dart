@@ -6,6 +6,7 @@ import '../../../models/doctor_list_model.dart';
 import '../../../models/forget_password/generate_otp_model.dart';
 import '../../../models/patient_model.dart';
 import '../../../models/quotes_model.dart';
+import '../../../models/recommended_calories_model.dart';
 import '../../../shared/Constants/api_constants.dart';
 import '../../../shared/Constants/constants.dart';
 part 'layout_state.dart';
@@ -71,33 +72,6 @@ class LayoutCubit extends Cubit<LayoutState> {
 
 //***************************************************************************************************************
 
-  GenerateOtpModel?generateOtpModel;
-  void generatOtp({
-    required String email, })async {
-    emit(GenerateOtpLoadingState());
-    print("your token is $accessToken");
-
-    http.get(
-        Uri.parse("$BASEURl/patient/api/patient/generate-otp?email=$email"),
-        headers:
-        {
-          'Accept': "application/json",
-          'Authorization': 'Bearer ${accessToken!}',
-        },
-    ).then((value) {
-      var responseDate = jsonDecode(value.body);
-      print(responseDate);
-      generateOtpModel = GenerateOtpModel.fromJson(responseDate);
-      emit(GenerateOtpSuccessState());
-    }).catchError((onError){
-      print("onError error ${onError.toString()}");
-      emit(GenerateOtpWithFailureState(error: onError.toString()));
-
-    });
-  }
-
-//***************************************************************************************************************
-
   QoutesModel?qoutesModel;
   void Qoutes()async {
     emit(QuotesLoadingState());
@@ -128,6 +102,60 @@ class LayoutCubit extends Cubit<LayoutState> {
 
 
 //***************************************************************************************************************
+
+  GenerateOtpModel?generateOtpModel;
+  void generatOtp({
+    required String email, })async {
+    emit(GenerateOtpLoadingState());
+    print("your token is $accessToken");
+
+    http.get(
+      Uri.parse("$BASEURl/patient/api/patient/generate-otp?email=$email"),
+      headers:
+      {
+        'Accept': "application/json",
+        'Authorization': 'Bearer ${accessToken!}',
+      },
+    ).then((value) {
+      var responseDate = jsonDecode(value.body);
+      print(responseDate);
+      generateOtpModel = GenerateOtpModel.fromJson(responseDate);
+      emit(GenerateOtpSuccessState());
+    }).catchError((onError){
+      print("onError error ${onError.toString()}");
+      emit(GenerateOtpWithFailureState(error: onError.toString()));
+
+    });
+  }
+
+//***************************************************************************************************************
+
+
+  RecommendedCaloriesModel?recommendedCaloriesModel;
+  void GetRecommendedCalories()async {
+    emit(RecommendedCaloriesLoadingState());
+    print("your token is $accessToken");
+
+    http.get(
+      Uri.parse("$BASEURl$Patient_RecommendedCalories"),
+      headers:
+      {
+        'Accept': "application/json",
+        'Authorization': 'Bearer ${accessToken!}',
+      },
+    ).then((value) {
+      var responseDate = jsonDecode(value.body);
+      //print(responseDate);
+      recommendedCaloriesModel = RecommendedCaloriesModel.fromJson(responseDate);
+      //print("lllll${qoutesModel?.quotes?.length}");
+      //print("lllll${qoutesModel?.quotes?[0]}");
+      emit(RecommendedCaloriesSuccessState());
+    }).catchError((onError){
+      print("onError error ${onError.toString()}");
+      emit(RecommendedCaloriesWithFailureState(error: onError.toString()));
+
+    });
+  }
 
 
 }

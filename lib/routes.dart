@@ -3,6 +3,7 @@ import 'modules/ui/Patient_screens/patient_appointment/patient_appointment_in_do
 import 'modules/ui/Patient_screens/patient_appointment/patient_book_appointment.dart';
 import 'modules/ui/Patient_screens/patient_appointment/patient_choose_payment_screen.dart';
 import 'modules/ui/Patient_screens/patient_appointment/patient_review_screen.dart';
+import 'modules/ui/Patient_screens/patient_appointment/patient_voda_cash_upload_screen.dart';
 import 'modules/ui/Patient_screens/patient_auth_screens/patient_login_screen.dart';
 import 'modules/ui/Patient_screens/patient_auth_screens/patient_sign_up_screen.dart';
 import 'modules/ui/Patient_screens/patient_chat_screens/Patient_call_screen.dart';
@@ -22,6 +23,7 @@ import 'modules/ui/Patient_screens/patient_profile&settings&report/patient_help&
 import 'modules/ui/Patient_screens/patient_profile&settings&report/patient_profile.dart';
 import 'modules/ui/Patient_screens/patient_profile&settings&report/patient_report.dart';
 import 'modules/ui/Patient_screens/patient_profile&settings&report/patient_setting_screen.dart';
+import 'modules/ui/Patient_screens/patient_puzzle_screens/patient_puzzle_main_screen.dart';
 import 'modules/ui/Patient_screens/patient_puzzle_screens/puzzle_end_screen.dart';
 import 'modules/ui/Patient_screens/patient_puzzle_screens/puzzle_start_screen.dart';
 import 'modules/ui/Patient_screens/patient_question_screen/patient_question_screen.dart';
@@ -72,7 +74,7 @@ Map<String, WidgetBuilder> routes = {
   'PatientAppointmentInDoctor': (context) => const PatientAppointmentInDoctor(),
   'PatientBookAppointment': (context) => const PatientBookAppointment(),
   'PatientReviewScreen': (context) => const PatientReviewScreen(),
-  'PatientChoosePaymentScreen': (context) => const PatientChoosePaymentScreen(),
+  'PatientChoosePaymentScreen': (context) =>  const PatientChoosePaymentScreen(),
   'PatientListChatsScreen': (context) => const PatientListChatsScreen(),
   'PuzzleStartScreen': (context) => const PuzzleStartScreen(),
   'PuzzleEndScreen': (context) => const PuzzleEndScreen(),
@@ -96,6 +98,8 @@ Map<String, WidgetBuilder> routes = {
   'BreakfastScreen': (context) => const BreakfastScreen(),
   'DairyMyFoodScreen': (context) => const DairyMyFoodScreen(),
   'DoctorListForPatientScreen': (context) => const DoctorListForPatientScreen(),
+  'PatientVodaUploadPhoto': (context) => const  PatientVodaUploadPhoto(),
+  'PuzzleMainScreen': (context) => const PuzzleMainScreen(),
   //****************************************************************************************
   'DoctorLoginScreen': (context) => const DoctorLoginScreen(),
   'DoctorSignUpScreen': (context) => const DoctorSignUpScreen(),

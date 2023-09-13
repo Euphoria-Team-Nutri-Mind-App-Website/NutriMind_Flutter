@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../models/recommended_calories_model.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/default_items.dart';
+import '../../../blocs/layout_cubit/layout_cubit.dart';
 
 
 class PatientChooseYourStateScreen2 extends StatefulWidget {
@@ -17,6 +20,13 @@ class _PatientChooseYourStateScreen2State extends State<PatientChooseYourStateSc
 
   @override
   Widget build(BuildContext context) {
+    return BlocProvider(
+  create: (context) => LayoutCubit()..GetRecommendedCalories(),
+  child: BlocConsumer<LayoutCubit, LayoutState>(
+  listener: (context, state) {
+  },
+  builder: (context, state) {
+    RecommendedCaloriesModel? cubit = LayoutCubit.get(context).recommendedCaloriesModel;
     return Scaffold(
       appBar: MyAppBar(
         backPage: 'PatientChooseYourStateScreen1',
@@ -33,7 +43,9 @@ class _PatientChooseYourStateScreen2State extends State<PatientChooseYourStateSc
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 25.sp, vertical: 40.sp),
-          child: Column(
+          child:
+              cubit != null?
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
@@ -48,7 +60,7 @@ class _PatientChooseYourStateScreen2State extends State<PatientChooseYourStateSc
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text('Active Sometimes', style: AppTextStyle().greyText.copyWith(fontSize: 16.sp)),
+                    Text('Idle', style: AppTextStyle().greyText.copyWith(fontSize: 16.sp)),
                   ],
                 ),
                 ),
@@ -61,7 +73,7 @@ class _PatientChooseYourStateScreen2State extends State<PatientChooseYourStateSc
                 height: 5.h,
               ),
               Text(
-                "Your daily caloric needs are 2,306 calories",
+                "Your daily caloric needs are ${cubit?.yourCalories} calories",
                 style: AppTextStyle().greyText.copyWith(fontSize: 15.sp)
               ),
               SizedBox(
@@ -88,8 +100,29 @@ class _PatientChooseYourStateScreen2State extends State<PatientChooseYourStateSc
                 height: 5.h,
               ),
               Text(
-                "You need 1806 calories/day to lose 0.5 kg each week.\nYou need 1306 calories/day to lose 1 kg each week.\nYou need 2806 calories/day to gain 0.5 kg each week.\nYou need 3306 calories/day to gain 1 kg each week .",
-                style: AppTextStyle().greyText.copyWith(height: 1.5.sp,wordSpacing: 1.5.sp,fontSize: 15.sp)
+                  "${cubit?.lose05Kg}",
+                  style: AppTextStyle().greyText.copyWith(height: 1.5.sp,wordSpacing: 1.5.sp,fontSize: 11.sp)
+              ),
+              SizedBox(
+                height: 5.h,
+              ),
+              Text(
+                "${cubit?.lose1Kg}",
+                style: AppTextStyle().greyText.copyWith(height: 1.5.sp,wordSpacing: 1.5.sp,fontSize: 11.sp)
+              ),
+              SizedBox(
+                height: 5.h,
+              ),
+              Text(
+                "${cubit?.gain05Kg}",
+                style: AppTextStyle().greyText.copyWith(height: 1.5.sp,wordSpacing: 1.5.sp,fontSize: 11.sp)
+              ),
+              SizedBox(
+                height: 5.h,
+              ),
+              Text(
+                "${cubit?.gain1Kg}",
+                style: AppTextStyle().greyText.copyWith(height: 1.5.sp,wordSpacing: 1.5.sp,fontSize: 11.sp)
               ),
               SizedBox(height: 50.h,),
               MyBlueButton(
@@ -99,9 +132,14 @@ class _PatientChooseYourStateScreen2State extends State<PatientChooseYourStateSc
                 page: 'PatientNavBarScreen',
               )
             ],
-          ),
+          ):
+                  Center(
+                      child: CircularProgressIndicator(color:MyColors.darkBlue))
         ),
       ),
     );
+  },
+),
+);
   }
 }

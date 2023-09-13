@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:http/http.dart'as http;
 import 'package:nutri_mind_application/modules/ui/Patient_screens/patient_password_screens/patient_verification_screen.dart';
 //import '../../../../models/forget_password/generate_otp_model.dart';
+import '../../../../shared/Constants/api_constants.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/Constants/constants.dart';
 import '../../../../shared/Constants/text_theme.dart';
@@ -80,7 +81,7 @@ class _PatientForgetPasswordState extends State<PatientForgetPassword> {
                         'Authorization': 'Bearer ${accessToken!}',
                       };
                       var request = http.MultipartRequest('GET',
-                          Uri.parse('https://heda.azq1.com/NutriMind/public/patient/api/patient/generate-otp?email=${emailController.text}'));
+                          Uri.parse('$BASEURl/patient/api/patient/generate-otp?email=${emailController.text}'));
 
                       request.headers.addAll(headers);
 

@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart';
 import 'package:http/http.dart' as http;
 import 'package:nutri_mind_application/core/network/local_network.dart';
+import '../../../shared/Constants/api_constants.dart';
 import '../../../shared/Constants/constants.dart';
 part 'auth_state.dart';
 
@@ -23,7 +24,7 @@ class AuthCubit extends Cubit<AuthState> {
     try {
       Response response = await http.post(
           Uri.parse(
-              'https://heda.azq1.com/NutriMind/public/patient/api/patient/register'),
+              '$BASEURl$Patient_Register'),
           headers:
           {
             'Accept': "application/json",
@@ -63,7 +64,7 @@ class AuthCubit extends Cubit<AuthState> {
     emit(LoginLoadingState());
     try {
       Response response = await http
-          .post(Uri.parse("https://heda.azq1.com/NutriMind/public/patient/api/patient/login"), body: {
+          .post(Uri.parse("$BASEURl$Patient_LogIn"), body: {
         'email': email,
         'password': password,
       });

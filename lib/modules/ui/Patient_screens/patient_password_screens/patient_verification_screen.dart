@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_verification_code/flutter_verification_code.dart';
 import 'package:http/http.dart'as http;
 import 'package:nutri_mind_application/modules/ui/Patient_screens/patient_password_screens/patient_create_password_screen.dart';
+import '../../../../shared/Constants/api_constants.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/Constants/constants.dart';
 import '../../../../shared/Constants/text_theme.dart';
@@ -116,7 +117,7 @@ class _VerificationScreenState extends State<PatientVerificationScreen> {
                             Uri.parse(
                               //https://heda.azq1.com/NutriMind/public/patient/api/patient/verify-otp?email=${widget.email}&verfication_code=${code}
                                // 'http://heda.azq1.com/patient/api/patient/verify-otp?email=${widget.email}&verfication_code=${code}'));
-                                'https://heda.azq1.com/NutriMind/public/patient/api/patient/verify-otp?email=${widget.email}&verfication_code=${code}'));
+                                '$BASEURl/patient/api/patient/verify-otp?email=${widget.email}&verfication_code=${code}'));
 
                         request.headers.addAll(headers);
 

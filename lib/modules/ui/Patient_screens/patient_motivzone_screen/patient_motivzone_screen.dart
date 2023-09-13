@@ -45,6 +45,7 @@ class _PatientMotivzoneScreenState extends State<PatientMotivzoneScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    cubit != null ?
                     Swiper(
                       itemBuilder: (BuildContext context, int index) {
                         return Container(
@@ -119,7 +120,8 @@ class _PatientMotivzoneScreenState extends State<PatientMotivzoneScreen> {
                       itemWidth: double.infinity,
                       itemHeight: 400.0,
                       layout: SwiperLayout.TINDER,
-                    ),
+                    ):
+                    CircularProgressIndicator(color: MyColors.darkBlue),
                     SizedBox(height: 45.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

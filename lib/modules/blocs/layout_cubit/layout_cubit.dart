@@ -6,6 +6,7 @@ import '../../../models/doctor_list_model.dart';
 import '../../../models/forget_password/generate_otp_model.dart';
 import '../../../models/patient_model.dart';
 import '../../../models/quotes_model.dart';
+import '../../../shared/Constants/api_constants.dart';
 import '../../../shared/Constants/constants.dart';
 part 'layout_state.dart';
 
@@ -21,7 +22,7 @@ class LayoutCubit extends Cubit<LayoutState> {
     print("your token is $accessToken");
 
     http.get(
-        Uri.parse("https://heda.azq1.com/NutriMind/public/patient/api/patient/profile"),
+        Uri.parse("$BASEURl$Patient_Profile"),
         headers:
         {
           'Accept': "application/json",
@@ -49,7 +50,7 @@ class LayoutCubit extends Cubit<LayoutState> {
     print("your token is $accessToken");
 
     http.get(
-        Uri.parse("https://heda.azq1.com/NutriMind/public/api/doctors"),
+        Uri.parse("$BASEURl$Patient_ListOfDoctors"),
         headers:
         {
           'Accept': "application/json",
@@ -77,7 +78,7 @@ class LayoutCubit extends Cubit<LayoutState> {
     print("your token is $accessToken");
 
     http.get(
-        Uri.parse("http://heda.azq1.com/patient/api/patient/generate-otp?email=$email"),
+        Uri.parse("$BASEURl/patient/api/patient/generate-otp?email=$email"),
         headers:
         {
           'Accept': "application/json",
@@ -103,7 +104,7 @@ class LayoutCubit extends Cubit<LayoutState> {
     print("your token is $accessToken");
 
     http.get(
-      Uri.parse("https://heda.azq1.com/NutriMind/public/api/qoutes"),
+      Uri.parse("$BASEURl$Patient_Quotes"),
       headers:
       {
         'Accept': "application/json",

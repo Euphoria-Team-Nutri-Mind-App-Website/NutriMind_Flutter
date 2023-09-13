@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:http/http.dart'as http;
 //import 'package:nutri_mind_application/modules/ui/Patient_screens/patient_password_screens/set_password_widget.dart';
 import 'package:nutri_mind_application/shared/Constants/text_theme.dart';
+import '../../../../shared/Constants/api_constants.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
 import '../../../../shared/widgets/default_items.dart';
@@ -124,7 +125,7 @@ class _PatientCreatePasswordScreenState extends State<PatientCreatePasswordScree
                                             Uri.parse(
                                               //https://heda.azq1.com/NutriMind/public/patient/api/patient/reset-password?email=${widget.email}
                                                 //'http://heda.azq1.com/patient/api/patient/reset-password?email=${widget.email}'));
-                                                'https://heda.azq1.com/NutriMind/public/patient/api/patient/reset-password?email=${widget.email}'));
+                                                '$BASEURl/patient/api/patient/reset-password?email=${widget.email}'));
                                         request.fields.addAll({
                                           'password': passwordController.text,
                                           'password_confirmation': confirmPasswordController.text

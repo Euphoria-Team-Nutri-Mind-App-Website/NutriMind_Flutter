@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:http/http.dart' as http;
+import 'package:nutri_mind_application/shared/Constants/api_constants.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/Constants/constants.dart';
 import '../../../../shared/Constants/text_theme.dart';
@@ -139,32 +140,30 @@ class _PatientChooseYourStateScreen1State
               // ),
               InkWell(
                 onTap: () async {
-                  // if (formKey.currentState!.validate()) {
-                  //   var headers = {
-                  //     'Accept': 'application/json',
-                  //     '': '',
-                  //     'Authorization': 'Bearer ${accessToken!}',
-                  //   };
-                  //   var request = http.MultipartRequest(
-                  //       'POST',
-                  //       Uri.parse(
-                  //           'https://heda.azq1.com/NutriMind/public/patient/api/patient/height'));
-                  //   request.fields
-                  //       .addAll({'active_status': 'idle', 'height': '160'});
-                  //
-                  //   request.headers.addAll(headers);
-                  //
-                  //   http.StreamedResponse response = await request.send();
-                  //
-                  //   if (response.statusCode == 200) {
-                  //     print(await response.stream.bytesToString());
-                  //   } else {
-                  //     print(response.reasonPhrase);
-                  //   }
-                  //
-                  //   Navigator.pushNamed(
-                  //       context, "PatientChooseYourStateScreen2");
-                  // }
+                   if (formKey.currentState!.validate()) {
+                     var headers = {
+                       'Accept': 'application/json',
+                       'Authorization': 'Bearer ${accessToken!}',
+                     };
+                     var request = http.MultipartRequest('POST',
+                         Uri.parse('$BASEURl/patient/api/patient/active-status'));
+                     request.fields.addAll({
+                       'active_status': 'slack'
+                     });
+
+                     request.headers.addAll(headers);
+
+                     http.StreamedResponse response = await request.send();
+
+                     if (response.statusCode == 200) {
+                       print(await response.stream.bytesToString());
+                       Navigator.pushNamed(context, 'PatientChooseYourStateScreen2');
+                     }
+                     else {
+                       print(response.reasonPhrase);
+                     }
+
+                   }
                 },
                 child: Container(
                   width: double.infinity,

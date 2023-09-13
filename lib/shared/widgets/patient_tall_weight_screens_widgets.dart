@@ -6,8 +6,8 @@ import 'package:syncfusion_flutter_sliders/sliders.dart';
 import '../Constants/colors.dart';
 
 class TallComponents extends StatefulWidget {
-  final int? input;
-  const TallComponents({super.key, this.input});
+  const TallComponents({super.key, required this.height});
+  final int height;
 
   @override
   State<TallComponents> createState() => _TallComponentsState();

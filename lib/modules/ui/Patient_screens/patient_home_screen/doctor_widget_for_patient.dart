@@ -22,7 +22,7 @@ class DoctorWidgetForPatientScreen extends StatelessWidget {
     return Expanded(
       child: state is GetDoctorListLoadingState?
           const Center(
-        child: CircularProgressIndicator(),
+        child: CircularProgressIndicator(color: MyColors.darkBlue,),
     ):
       ListView.builder(
         itemCount: cubit?.doctorInfo?.data?.length,

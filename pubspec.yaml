@@ -34,9 +34,9 @@ dependencies:
   font_awesome_flutter: ^10.5.0
   syncfusion_flutter_sliders: ^22.2.12
   dropdown_button2: ^2.3.9
-  #flutter_offline: ^3.0.0
   connectivity_plus: ^4.0.2
-#  firebase_core: ^2.15.1
+  circular_chart_flutter: ^0.0.2
+
 
 
 dev_dependencies:

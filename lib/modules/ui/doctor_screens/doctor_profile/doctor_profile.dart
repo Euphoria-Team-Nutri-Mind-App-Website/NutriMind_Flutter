@@ -1,15 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../models/doctor_profile_model.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/default_items.dart';
 import '../../../../shared/widgets/doctor_profile_widgets.dart';
+import '../../../blocs/layout_cubit/layout_cubit.dart';
 
 class DoctorProfile extends StatelessWidget {
   const DoctorProfile({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    return BlocProvider(
+  create: (context) => LayoutCubit()..getDoctorProfile(),
+  child: BlocConsumer<LayoutCubit, LayoutState>(
+  listener: (context, state) {
+  },
+  builder: (context, state) {
+    DoctorProfileModel? cubit =LayoutCubit.get(context).doctorProfileModel;
     return Scaffold(
       appBar: MyAppBar(
         backPage: 'DoctorLoginScreen',
@@ -31,7 +41,9 @@ class DoctorProfile extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.only(left: 25.sp, right: 25.sp, top: 20.sp),
-          child: Column(
+          child:
+          cubit != null?
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
@@ -69,7 +81,7 @@ class DoctorProfile extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "Dr.John Smith",
+                          "${cubit?.doctorInformation?[0].name}",
                       style: AppTextStyle()
                           .textInAppBar
                           .copyWith(fontSize: 16.sp),
@@ -86,7 +98,7 @@ class DoctorProfile extends StatelessWidget {
                             SizedBox(
                               width: 130.w,
                               child: Text(
-                                  "john@gmail.com",
+                                  "${cubit?.doctorInformation?[0].email}",
                                   style: AppTextStyle()
                                       .greyText
                                       .copyWith(fontSize: 12.sp)),
@@ -149,9 +161,13 @@ class DoctorProfile extends StatelessWidget {
                   ),
               ),
             ],
-          ),
+          ):
+              Center(child: CircularProgressIndicator(color: MyColors.darkBlue)),
         ),
       ),
     );
+  },
+),
+);
   }
 }

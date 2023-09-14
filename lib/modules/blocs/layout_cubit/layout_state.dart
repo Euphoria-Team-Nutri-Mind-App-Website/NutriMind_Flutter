@@ -80,3 +80,12 @@ class getNodesWithFailureState extends LayoutState{
 getNodesWithFailureState({required this.message});
 }
 
+//***************************************************************************************************************
+
+class getDoctorProfileLoadingState extends LayoutState{}
+class getDoctorProfileSuccessState extends LayoutState{}
+class getDoctorProfileWithFailureState extends LayoutState{
+  String message;
+getDoctorProfileWithFailureState({required this.message});
+}
+

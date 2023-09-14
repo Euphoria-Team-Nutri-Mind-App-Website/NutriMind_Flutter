@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 import '../../../models/doctor_list_model.dart';
+import '../../../models/doctor_profile_model.dart';
 import '../../../models/forget_password/generate_otp_model.dart';
 import '../../../models/notes_model.dart';
 import '../../../models/patient_model.dart';
@@ -222,6 +223,33 @@ class LayoutCubit extends Cubit<LayoutState> {
 
     });
   }
+
+  //***************************************************************************************************************
+
+  DoctorProfileModel?doctorProfileModel;
+  void getDoctorProfile()async {
+    emit(getDoctorProfileLoadingState());
+    //print("your token is $accessToken");
+
+    http.get(
+      Uri.parse("$BASEURl$Doctor_Priofile"),
+      headers:
+      {
+        'Accept': "application/json",
+        'Authorization': 'Bearer ${accessToken!}',
+      },
+    ).then((value) {
+      var responseDate = jsonDecode(value.body);
+      doctorProfileModel = DoctorProfileModel.fromJson(responseDate);
+      print("nnnnn${doctorProfileModel?.doctorInformation?[0]}");
+      emit(getDoctorProfileSuccessState());
+    }).catchError((onError){
+      print("onError error ${onError.toString()}");
+      emit(getDoctorProfileWithFailureState(message: onError.toString()));
+
+    });
+  }
+
 
 
 }

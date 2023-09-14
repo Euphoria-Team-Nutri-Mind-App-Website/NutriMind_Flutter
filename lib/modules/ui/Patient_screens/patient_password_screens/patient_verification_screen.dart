@@ -149,7 +149,7 @@ class _VerificationScreenState extends State<PatientVerificationScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Text("Send Code",
+                            Text("Verify",
                                 style: AppTextStyle().textBlueButton),
                           ],
                         ),

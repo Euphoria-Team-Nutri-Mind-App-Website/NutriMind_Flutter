@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../models/notes_model.dart';
 import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/default_items.dart';
-
 import '../../../../shared/Constants/colors.dart';
-import '../../../../shared/widgets/patient_notes_widghts.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
+import '../../../blocs/layout_cubit/layout_cubit.dart';
 
 class PatientNotesScreen extends StatefulWidget {
   const PatientNotesScreen({Key? key}) : super(key: key);
@@ -18,6 +19,12 @@ class PatientNotesScreen extends StatefulWidget {
 class _PatientNotesScreenState extends State<PatientNotesScreen> {
   @override
   Widget build(BuildContext context) {
+    return BlocProvider(
+  create: (context) => LayoutCubit()..getNotes(),
+  child: BlocConsumer<LayoutCubit, LayoutState>(
+  listener: (context, state) {},
+  builder: (context, state) {
+    GetNotesModel? cubit = LayoutCubit.get(context).getNotesModel;
     return Scaffold(
       appBar: MyAppBar(
         backPage: 'PatientNavBarScreen',
@@ -31,29 +38,65 @@ class _PatientNotesScreenState extends State<PatientNotesScreen> {
           ],
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.only(left: 18.sp,right: 18.sp,top: 18.sp),
-              child: const SmallTextField(
-                hintText: 'Search for service',
-                suffixIcon: Icon(Icons.search_outlined),
-                obscureText: true,
-                textType: TextInputType.text,
-              ),
+      body: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.only(left: 18.sp,right: 18.sp,top: 18.sp),
+            child: const SmallTextField(
+              hintText: 'Search for service',
+              suffixIcon: Icon(Icons.search_outlined),
+              obscureText: true,
+              textType: TextInputType.text,
             ),
-            SizedBox(height: 15.h),
-            const Column(
-              children: [
-                NoteColumn(),
-                NoteColumn(),
-                NoteColumn(),
-              ],
-            )
+          ),
+          SizedBox(height: 15.h),
+          cubit != null?
+          Expanded(
+            child: GridView.builder(
+              itemCount: cubit?.notes?.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                ),
+                itemBuilder: (context,i){
+                        return Container(
+                          margin: EdgeInsets.all(10),
+                          height: 136.h,
+                          width: 130.w,
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),
+                            border: Border.all(color: MyColors.darkBlue, width: 0.5.w, style: BorderStyle.solid),
+                            color: MyColors.lightGrey,
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.all(10.sp),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                //Container( width: 70.0, ), Flexible( child: Text("Hi"), )
+                                Flexible(
+                                  child: Text("${cubit?.notes?[i].body}",
+                                    style: TextStyle(
+                                        color: MyColors.grey,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 14.sp,
+                                        fontFamily: 'Poppins'),
+                                  ),
+                                ),
+                                Spacer(),
+                                IconButton(onPressed: (){
 
-          ],
-        ),
+                                }, icon:
+                                const Icon(Icons.more_vert,color: MyColors.black),)
+                              ],
+                            ),
+                          ),
+                          // Icon(Icons.more_vert)
+
+                        );
+                }
+            ),
+          ):
+              Center(child: CircularProgressIndicator(color: MyColors.darkBlue))
+        ],
       ),
         floatingActionButton: FloatingActionButton(
             elevation: 0.0,
@@ -65,6 +108,9 @@ class _PatientNotesScreenState extends State<PatientNotesScreen> {
         )
 
     );
+  },
+),
+);
   }
 }
 

@@ -121,6 +121,7 @@ class _PatientSetTallScreenState extends State<PatientSetTallScreen> {
                       http.StreamedResponse response = await request.send();
 
                       if (response.statusCode == 200) {
+                        print("tall ${height.toInt()}");
                         print(await response.stream.bytesToString());
                         Navigator.pushNamed(context, 'PatientSetWeightScreen');
                       }

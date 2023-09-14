@@ -61,11 +61,13 @@ class DoctorWidgetForPatientScreen extends StatelessWidget {
                         children: [
                           Row(
                             children: [
-                              Text(
-                                "${cubit?.doctorInfo?.data?[index].name}",
-                                style: AppTextStyle().textInAppBar.copyWith(
-                                  fontSize: 17.sp,
-                                  fontWeight: FontWeight.w500,
+                              Flexible(
+                                child: Text(
+                                  "${cubit?.doctorInfo?.data?[index].name}",
+                                  style: AppTextStyle().textInAppBar.copyWith(
+                                    fontSize: 17.sp,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                                 ),
                               ),
                               const Spacer(),

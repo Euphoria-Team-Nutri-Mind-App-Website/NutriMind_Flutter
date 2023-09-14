@@ -69,7 +69,7 @@ class _DoctorListForPatientScreenState
               SizedBox(
                 height: 5.sp,
               ),
-              DoctorWidgetForPatientScreen(),
+              const DoctorWidgetForPatientScreen(),
             ],
           ),
         ));

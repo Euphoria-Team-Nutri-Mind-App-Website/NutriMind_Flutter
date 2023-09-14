@@ -34,7 +34,7 @@ class _PatientHomeServicesScreenState extends State<PatientHomeServicesScreen> {
     {
       "icon": Icons.question_mark,
       "name": "Question",
-      "rout": "PatientQuestionScreen",
+      "rout": "PatientQuestionFirstScreen",
     },
     {
       "icon": Icons.monitor_weight_outlined,

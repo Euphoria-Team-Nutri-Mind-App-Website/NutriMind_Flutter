@@ -6,6 +6,7 @@ import 'package:nutri_mind_application/routes.dart';
 import 'package:nutri_mind_application/shared/Constants/constants.dart';
 import 'core/block_observer/bloc_observer.dart';
 import 'modules/blocs/auth_cubit/auth_cubit.dart';
+import 'modules/blocs/doctor_cubit/auth_cubit/doctor_auth_cubit.dart';
 import 'modules/ui/splash_screen.dart';
 
 Future<void> main() async {
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
           providers:
           [
             BlocProvider(create: (create)=>AuthCubit()),
+            BlocProvider(create: (create)=>DoctorAuthCubit()),
           ],
           child: MaterialApp(
             debugShowCheckedModeBanner: false,

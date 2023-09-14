@@ -27,38 +27,29 @@ class PatientListChatsScreen extends StatelessWidget {
       ),
        body: Container(
          color: MyColors.white,
-         child: ListView(
-           children: [
-             Padding(
-               padding: EdgeInsets.only(left: 25.sp,right: 25.sp,top: 25.sp),
-               child: const SmallTextField(
-                 hintText: 'Search for doctor',
-                 suffixIcon: Icon(Icons.search_outlined),
-                 obscureText: true,
-                 textType: TextInputType.text,
-               ),
-             ),
-             Padding(
-               padding: EdgeInsets.only(left: 25.sp,top: 25.sp),
-               child: Column(
-                 crossAxisAlignment: CrossAxisAlignment.start,
-                 children: [
-                   Text("Messages",
-                     style: TextStyle(
-                       color: MyColors.black,
-                       fontFamily: 'Inter',
-                       fontWeight: FontWeight.w600,
-                       fontSize: 18.sp
-                     ),
+         child:
+             Column(
+               children: [
+                 Padding(
+                   padding: EdgeInsets.only(left: 25.sp,right: 25.sp,top: 25.sp),
+                   child:
+                   const SmallTextField(
+                     hintText: 'Search for doctor',
+                     suffixIcon: Icon(Icons.search_outlined),
+                     obscureText: true,
+                     textType: TextInputType.text,
                    ),
-                   SizedBox(height: 5.h,),
-                   const RecentChats(),
-                 ],
-               ),
+                   //RecentChats(),
+                 ),
+                 Expanded(
+                   child: Padding(
+                     padding: EdgeInsets.only(left: 25.sp,right: 25.sp,top: 25.sp),
+                     child:
+                     RecentChats(),
+                   ),
+                 ),
+               ],
              ),
-
-           ]
-         ),
        ),
     );
   }

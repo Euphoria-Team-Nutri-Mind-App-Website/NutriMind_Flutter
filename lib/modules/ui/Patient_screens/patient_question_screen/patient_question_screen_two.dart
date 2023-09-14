@@ -4,14 +4,14 @@ import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/widgets/patient_question_widgets.dart';
 import '../../../../shared/widgets/default_items.dart';
 
-class PatientQuestionScreenTwo extends StatefulWidget {
-  const PatientQuestionScreenTwo({Key? key}) : super(key: key);
+class PatientQuestionTwoScreen extends StatefulWidget {
+  const PatientQuestionTwoScreen({Key? key}) : super(key: key);
 
   @override
-  State<PatientQuestionScreenTwo> createState() => _PatientQuestionScreenTwoState();
+  State<PatientQuestionTwoScreen> createState() => PatientQuestionTwoScreenState();
 }
 
-class _PatientQuestionScreenTwoState extends State<PatientQuestionScreenTwo> {
+class PatientQuestionTwoScreenState extends State<PatientQuestionTwoScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -39,7 +39,7 @@ Widget build(BuildContext context) {
                         ),
                         Row(
                           children: [
-                            Icon(Icons.local_fire_department,color: MyColors.darkBlue,),
+                            const Icon(Icons.local_fire_department,color: MyColors.darkBlue,),
                             Text(
                               "393\350KCAL",
                               style: TextStyle(

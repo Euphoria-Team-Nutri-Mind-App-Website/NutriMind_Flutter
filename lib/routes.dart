@@ -27,7 +27,7 @@ import 'modules/ui/Patient_screens/patient_puzzle_screens/patient_puzzle_first_s
 import 'modules/ui/Patient_screens/patient_puzzle_screens/patient_puzzle_second_screen.dart';
 import 'modules/ui/Patient_screens/patient_puzzle_screens/puzzle_end_screen.dart';
 import 'modules/ui/Patient_screens/patient_puzzle_screens/puzzle_start_screen.dart';
-import 'modules/ui/Patient_screens/patient_question_screen/patient_question_screen.dart';
+import 'modules/ui/Patient_screens/patient_question_screen/patient_question_first_screen.dart';
 import 'modules/ui/Patient_screens/patient_question_screen/patient_question_screen_five.dart';
 import 'modules/ui/Patient_screens/patient_question_screen/patient_question_screen_four.dart';
 import 'modules/ui/Patient_screens/patient_question_screen/patient_question_screen_three.dart';
@@ -86,7 +86,6 @@ Map<String, WidgetBuilder> routes = {
   'PatientSettingScreen': (context) => const PatientSettingScreen(),
   'PatientMotivzoneScreen': (context) => const PatientMotivzoneScreen(),
   'PatientNotesScreen': (context) => const PatientNotesScreen(),
-  'PatientQuestionScreen': (context) => const PatientQuestionScreen(),
   'PatientLibraryScreen': (context) => const PatientLibraryScreen(),
   'PatientMyDairyScreen': (context) => const PatientMyDairyScreen(),
   'PatientMyFoodScreen' : (context) => const  PatientMyFoodScreen(),
@@ -95,7 +94,8 @@ Map<String, WidgetBuilder> routes = {
   'PatientChatScreen': (context) => const PatientChatScreen(),
   'PatientCallScreen': (context) => const PatientCallScreen(),
   'PatientAddNotes': (context) => const PatientAddNotes(),
-  'PatientQuestionScreenTwo': (context) => const PatientQuestionScreenTwo(),
+  'PatientQuestionFirstScreen': (context) => const PatientQuestionFirstScreen(),
+  '_PatientQuestionTwoScreen': (context) => const PatientQuestionTwoScreen(),
   'PatientQuestionScreenThree': (context) => const PatientQuestionScreenThree(),
   'PatientQuestionScreenFour': (context) => const PatientQuestionScreenFour(),
   'PatientQuestionScreenFive': (context) => const PatientQuestionScreenFive(),

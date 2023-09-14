@@ -78,118 +78,120 @@ class PatientPuzzleSecondScreenState extends State<PatientPuzzleSecondScreen> {
           ],
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 25.sp, vertical: 40.sp),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-          Center(
-            child: Container(
-              height: 60.h,
-              width: 270.w,
-              decoration: BoxDecoration(
-                color: MyColors.darkBlue,
-                borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(20.r),
-                  bottomLeft: Radius.circular(20.r),
-                  bottomRight: Radius.circular(20.r),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 25.sp, vertical: 40.sp),
+          child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+            Center(
+              child: Container(
+                height: 60.h,
+                width: 270.w,
+                decoration: BoxDecoration(
+                  color: MyColors.darkBlue,
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(20.r),
+                    bottomLeft: Radius.circular(20.r),
+                    bottomRight: Radius.circular(20.r),
+                  ),
                 ),
-              ),
-              child: Center(
-                child: Text(
-                  "Keep going !",
-                  style: AppTextStyle().textBlueButton,
+                child: Center(
+                  child: Text(
+                    "Keep going !",
+                    style: AppTextStyle().textBlueButton,
+                  ),
                 ),
               ),
             ),
-          ),
-          SizedBox(height: 40.h),
-          Text(
-            'Total Score : $totalScore',
-            style: AppTextStyle().greyText.copyWith(
+            SizedBox(height: 40.h),
+            Text(
+              'Total Score : $totalScore',
+              style: AppTextStyle().greyText.copyWith(
+                  fontSize: 16.sp,
+                  height: 1.sp,
+                  wordSpacing: 2.sp,
+                  fontWeight: FontWeight.w600),
+            ),
+            SizedBox(height: 15.h),
+            Text('Current Word: $currentWord',
+              style: AppTextStyle().greyText.copyWith(
                 fontSize: 16.sp,
                 height: 1.sp,
                 wordSpacing: 2.sp,
-                fontWeight: FontWeight.w600),
-          ),
-          SizedBox(height: 15.h),
-          Text('Current Word: $currentWord',
-            style: AppTextStyle().greyText.copyWith(
-              fontSize: 16.sp,
-              height: 1.sp,
-              wordSpacing: 2.sp,
-              fontWeight: FontWeight.w600),),
-          SizedBox(height: 15.h),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              ElevatedButton(
-                style: const ButtonStyle(
-                  backgroundColor: MaterialStatePropertyAll(MyColors.darkBlue)
-                ),
-                onPressed: () {
-                  deleteLastLetter();
-                },
-                child: Text('Delete', style: AppTextStyle().textBlueButton.copyWith(fontSize: 14.sp),),
-              ),
-              const SizedBox(width: 20),
-              ElevatedButton(
-                style: const ButtonStyle(
+                fontWeight: FontWeight.w600),),
+            SizedBox(height: 15.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                ElevatedButton(
+                  style: const ButtonStyle(
                     backgroundColor: MaterialStatePropertyAll(MyColors.darkBlue)
-                ),
-                onPressed: () {
-                  if (words.contains(currentWord)) {
-                    final wordScore = scores[currentWord];
-                    setState(() {
-                      totalScore += wordScore!;
-                      if(totalScore == 300){  Navigator.pushNamed(context, 'PuzzleEndScreen');}
-                      currentWord = '';
-                    });
-                  }
-                },
-                child: Text('Submit Word', style: AppTextStyle().textBlueButton.copyWith(fontSize: 14.sp),),
-              ),
-            ],
-          ),
-          SizedBox(height:40.h,),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 10.sp),
-                decoration: BoxDecoration(
-                    boxShadow: const [
-                      BoxShadow(
-                        color: MyColors.darkBlue,
-                        blurRadius: 10.0,
-                        spreadRadius: 2.0,
-                      ), //BoxShadow
-                      BoxShadow(
-                        color: MyColors.white,
-                        blurRadius: 0.0,
-                        spreadRadius: 0.0,
-                      ),
-                    ],
-                    borderRadius:
-                        BorderRadius.only(topRight: Radius.circular(40.r),bottomLeft:Radius.circular(40.r))),
-                child: GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 5,
                   ),
-                  itemCount: grid.length,
-                  shrinkWrap: true,
-                  itemBuilder: (BuildContext context, int index) {
-                    return GestureDetector(
-                      onTap: () => addToCurrentWord(grid[index]),
-                      child: Container(
-                        alignment: Alignment.center,
-                        child: Text(grid[index],style: AppTextStyle().greyText.copyWith(fontWeight: FontWeight.w700,fontSize:17.sp),),
-                      ),
-                    );
+                  onPressed: () {
+                    deleteLastLetter();
                   },
+                  child: Text('Delete', style: AppTextStyle().textBlueButton.copyWith(fontSize: 14.sp),),
                 ),
-              ),
-            ],
-          ),
-        ]),
+                const SizedBox(width: 20),
+                ElevatedButton(
+                  style: const ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll(MyColors.darkBlue)
+                  ),
+                  onPressed: () {
+                    if (words.contains(currentWord)) {
+                      final wordScore = scores[currentWord];
+                      setState(() {
+                        totalScore += wordScore!;
+                        if(totalScore == 300){  Navigator.pushNamed(context, 'PuzzleEndScreen');}
+                        currentWord = '';
+                      });
+                    }
+                  },
+                  child: Text('Submit Word', style: AppTextStyle().textBlueButton.copyWith(fontSize: 14.sp),),
+                ),
+              ],
+            ),
+            SizedBox(height:40.h,),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 10.sp),
+                  decoration: BoxDecoration(
+                      boxShadow: const [
+                        BoxShadow(
+                          color: MyColors.darkBlue,
+                          blurRadius: 10.0,
+                          spreadRadius: 2.0,
+                        ), //BoxShadow
+                        BoxShadow(
+                          color: MyColors.white,
+                          blurRadius: 0.0,
+                          spreadRadius: 0.0,
+                        ),
+                      ],
+                      borderRadius:
+                          BorderRadius.only(topRight: Radius.circular(40.r),bottomLeft:Radius.circular(40.r))),
+                  child: GridView.builder(
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 5,
+                    ),
+                    itemCount: grid.length,
+                    shrinkWrap: true,
+                    itemBuilder: (BuildContext context, int index) {
+                      return GestureDetector(
+                        onTap: () => addToCurrentWord(grid[index]),
+                        child: Container(
+                          alignment: Alignment.center,
+                          child: Text(grid[index],style: AppTextStyle().greyText.copyWith(fontWeight: FontWeight.w700,fontSize:17.sp),),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ]),
+        ),
       ),
     );
   }

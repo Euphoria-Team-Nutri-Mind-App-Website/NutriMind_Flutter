@@ -62,4 +62,21 @@ String error;
 RecommendedCaloriesWithFailureState({required this.error});
 }
 
+//***************************************************************************************************************
+
+class addNodesLoadingState extends LayoutState{}
+class addNodesSuccessState extends LayoutState{}
+class addNodesWithFailureState extends LayoutState {
+  String message;
+
+  addNodesWithFailureState({required this.message});
+}
+//***************************************************************************************************************
+
+class getNodesLoadingState extends LayoutState{}
+class getNodesSuccessState extends LayoutState{}
+class getNodesWithFailureState extends LayoutState{
+  String message;
+getNodesWithFailureState({required this.message});
+}
 

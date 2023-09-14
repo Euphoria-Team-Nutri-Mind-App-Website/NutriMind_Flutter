@@ -1,9 +1,12 @@
 import 'dart:convert';
 import 'package:bloc/bloc.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:http/http.dart' as http;
+import 'package:http/http.dart';
 import '../../../models/doctor_list_model.dart';
 import '../../../models/forget_password/generate_otp_model.dart';
+import '../../../models/notes_model.dart';
 import '../../../models/patient_model.dart';
 import '../../../models/quotes_model.dart';
 import '../../../models/recommended_calories_model.dart';
@@ -147,8 +150,6 @@ class LayoutCubit extends Cubit<LayoutState> {
       var responseDate = jsonDecode(value.body);
       //print(responseDate);
       recommendedCaloriesModel = RecommendedCaloriesModel.fromJson(responseDate);
-      //print("lllll${qoutesModel?.quotes?.length}");
-      //print("lllll${qoutesModel?.quotes?[0]}");
       emit(RecommendedCaloriesSuccessState());
     }).catchError((onError){
       print("onError error ${onError.toString()}");
@@ -158,4 +159,70 @@ class LayoutCubit extends Cubit<LayoutState> {
   }
 
 
+//***************************************************************************************************************
+
+
+
+  void addNodes({
+    required String body,
+  }) async {
+    emit(addNodesLoadingState());
+    try {
+      Response response = await http
+          .post(Uri.parse("$BASEURl$Patient_AddNodes"),
+        headers:
+        {
+          'Accept': "application/json",
+          'Authorization': 'Bearer ${accessToken!}',
+        },
+        body: {
+          'body': body,
+        },
+      );
+      if (response.statusCode == 200) {
+        var responseData = jsonDecode(response.body);
+        if (responseData['success'] == true) {
+          emit(addNodesSuccessState());
+        }
+        else {
+          debugPrint("failed to  login success and his data is : ${responseData['message']}");
+          emit(addNodesWithFailureState(message: responseData['message']));
+        }
+      }
+    } catch (e) {
+      print(e);
+      emit(addNodesWithFailureState(message: e.toString()));
+    }
+  }
+
+//***************************************************************************************************************
+
+
+  GetNotesModel?getNotesModel;
+  void getNotes()async {
+    emit(getNodesLoadingState());
+    //print("your token is $accessToken");
+
+    http.get(
+      Uri.parse("$BASEURl$Patient_GetNodes"),
+      headers:
+      {
+        'Accept': "application/json",
+        'Authorization': 'Bearer ${accessToken!}',
+      },
+    ).then((value) {
+      var responseDate = jsonDecode(value.body);
+      getNotesModel = GetNotesModel.fromJson(responseDate);
+      print("jjjj${responseDate}");
+      print("oooooooo${getNotesModel?.notes?[0].body}");
+      emit(getNodesSuccessState());
+    }).catchError((onError){
+      print("onError error ${onError.toString()}");
+      emit(getNodesWithFailureState(message: onError.toString()));
+
+    });
+  }
+
+
 }
+

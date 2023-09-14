@@ -126,7 +126,7 @@ class _PatientSetWeightScreenState extends State<PatientSetWeightScreen> {
                   });
 
                   request.headers.addAll(headers);
-
+                  print("weight ${weight}");
                   http.StreamedResponse response = await request.send();
 
                   if (response.statusCode == 200) {

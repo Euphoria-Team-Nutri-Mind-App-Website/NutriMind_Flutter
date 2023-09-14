@@ -1,23 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nutri_mind_application/shared/Constants/colors.dart';
 
 class AppTextStyle {
-  TextStyle textBlueButton = const TextStyle(
+  TextStyle textBlueButton = TextStyle(
     color: MyColors.white,
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w600,
-    fontSize: 22,
+    fontSize: 22.sp,
   );
-  TextStyle greyText = const TextStyle(
+  TextStyle greyText = TextStyle(
     color: MyColors.grey,
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w500,
-    fontSize: 15,
+    fontSize: 15.sp,
   );
-  TextStyle textInAppBar = const TextStyle(
+  TextStyle textInAppBar = TextStyle(
     color: MyColors.black,
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w600,
-    fontSize: 24,
+    fontSize: 24.sp,
   );
 }

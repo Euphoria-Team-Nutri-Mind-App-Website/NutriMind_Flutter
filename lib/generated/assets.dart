@@ -34,6 +34,7 @@ class Assets {
   static const String imagesNationalId = 'assets/images/nationalId.png';
   static const String imagesNice = 'assets/images/nice.png';
   static const String imagesNotFound = 'assets/images/not_found.png';
+  static const String imagesOmlet = 'assets/images/omlet.png';
   static const String imagesPatienticon = 'assets/images/patienticon.png';
   static const String imagesPaypal = 'assets/images/paypal.png';
   static const String imagesPaypal2 = 'assets/images/paypal2.png';
@@ -48,6 +49,7 @@ class Assets {
   static const String imagesVecteezy = 'assets/images/vecteezy.png';
   static const String imagesVerygood = 'assets/images/verygood.png';
   static const String imagesVoda = 'assets/images/voda.png';
+  static const String imagesWeight1 = 'assets/images/weight1.png';
   static const String imagesWhitebell = 'assets/images/whitebell.png';
   static const String imagesWin = 'assets/images/win.png';
   static const String imagesWordJourney = 'assets/images/WordJourney.png';

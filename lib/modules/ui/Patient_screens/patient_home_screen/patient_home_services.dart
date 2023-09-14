@@ -39,12 +39,12 @@ class _PatientHomeServicesScreenState extends State<PatientHomeServicesScreen> {
     {
       "icon": Icons.monitor_weight_outlined,
       "name": "Track Weight",
-      "rout": "PatientTrackWeightScreen",
+      "rout": "PatientTrackWeightFirstScreen",
     },
     {
       "icon": Icons.local_fire_department,
       "name": "Track Eating",
-      "rout": "PatientTrackEatingScreen",
+      "rout": "PatientMyDairyScreen",
     },
   ];
   //bool click = true;

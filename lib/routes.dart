@@ -36,10 +36,11 @@ import 'modules/ui/Patient_screens/patient_set_tall_weight_state_screens/patient
 import 'modules/ui/Patient_screens/patient_set_tall_weight_state_screens/patient_choose_your_state_screen_2.dart';
 import 'modules/ui/Patient_screens/patient_set_tall_weight_state_screens/patient_set_tall.dart';
 import 'modules/ui/Patient_screens/patient_set_tall_weight_state_screens/patient_set_weight.dart';
-import 'modules/ui/Patient_screens/patient_track_eat_screen/breakfast_screen.dart';
-import 'modules/ui/Patient_screens/patient_track_eat_screen/dairy_My_food_screen.dart';
-import 'modules/ui/Patient_screens/patient_track_eat_screen/patient_track_eat_screen.dart';
-import 'modules/ui/Patient_screens/patient_track_weight_screen/patient_track_weight_screen.dart';
+import 'modules/ui/Patient_screens/patient_track_eat_screen/patient_breakfast_screen.dart';
+import 'modules/ui/Patient_screens/patient_track_eat_screen/patient_my_dairy_screen.dart';
+import 'modules/ui/Patient_screens/patient_track_eat_screen/patient_my_food_screen.dart';
+import 'modules/ui/Patient_screens/patient_track_weight_screen/patient_track_weight_first_screen.dart';
+import 'modules/ui/Patient_screens/patient_track_weight_screen/patient_track_weight_second_screen.dart';
 import 'modules/ui/continue_screen.dart';
 import 'modules/ui/doctor_screens/doctor_auth_screen/doctor_choose_time_screen.dart';
 import 'modules/ui/doctor_screens/doctor_auth_screen/doctor_login_screen.dart';
@@ -87,7 +88,8 @@ Map<String, WidgetBuilder> routes = {
   'PatientNotesScreen': (context) => const PatientNotesScreen(),
   'PatientQuestionScreen': (context) => const PatientQuestionScreen(),
   'PatientLibraryScreen': (context) => const PatientLibraryScreen(),
-  'PatientTrackEatingScreen': (context) => const PatientTrackEatingScreen(),
+  'PatientMyDairyScreen': (context) => const PatientMyDairyScreen(),
+  'PatientMyFoodScreen' : (context) => const  PatientMyFoodScreen(),
   'PatientReport': (context) => const PatientReport(),
   'PatientHelpAndSupport': (context) => const PatientHelpAndSupport(),
   'PatientChatScreen': (context) => const PatientChatScreen(),
@@ -97,9 +99,9 @@ Map<String, WidgetBuilder> routes = {
   'PatientQuestionScreenThree': (context) => const PatientQuestionScreenThree(),
   'PatientQuestionScreenFour': (context) => const PatientQuestionScreenFour(),
   'PatientQuestionScreenFive': (context) => const PatientQuestionScreenFive(),
-  'PatientTrackWeightScreen': (context) => const PatientTrackWeightScreen(),
-  'BreakfastScreen': (context) => const BreakfastScreen(),
-  'DairyMyFoodScreen': (context) => const DairyMyFoodScreen(),
+  'PatientTrackWeightFirstScreen': (context) => const PatientTrackWeightFirstScreen(),
+  'PatientTrackWeightSecondScreen': (context) => const PatientTrackWeightSecondScreen(),
+  'PatientBreakFastScreen': (context) => const PatientBreakFastScreen(),
   'DoctorListForPatientScreen': (context) => const DoctorListForPatientScreen(),
   'PatientVodaUploadPhoto': (context) => const  PatientVodaUploadPhoto(),
   //****************************************************************************************

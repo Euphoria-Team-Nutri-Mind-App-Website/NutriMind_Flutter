@@ -7,7 +7,6 @@ import 'package:syncfusion_flutter_sliders/sliders.dart';
 import '../../../../shared/Constants/api_constants.dart';
 import '../../../../shared/Constants/constants.dart';
 import '../../../../shared/widgets/default_items.dart';
-import '../../../../shared/widgets/patient_tall_weight_screens_widgets.dart';
 
 class PatientSetTallScreen extends StatefulWidget {
   const PatientSetTallScreen({Key? key}) : super(key: key);

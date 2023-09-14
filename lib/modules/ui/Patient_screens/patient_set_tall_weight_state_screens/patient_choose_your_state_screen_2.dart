@@ -74,7 +74,7 @@ class _PatientChooseYourStateScreen2State extends State<PatientChooseYourStateSc
               ),
               Text(
                 "Your daily caloric needs are ${cubit?.yourCalories} calories",
-                style: AppTextStyle().greyText.copyWith(fontSize: 15.sp)
+                style: AppTextStyle().greyText.copyWith(fontSize: 13.sp)
               ),
               SizedBox(
                 height: 25.h,
@@ -88,7 +88,7 @@ class _PatientChooseYourStateScreen2State extends State<PatientChooseYourStateSc
               ),
               Text(
                 "Do moderate intensity exercise 1 to 3 days a week",
-                style: AppTextStyle().greyText.copyWith(fontSize: 15.sp)
+                style: AppTextStyle().greyText.copyWith(fontSize: 13.sp)
               ),
               SizedBox(
                 height: 25.h,
@@ -101,28 +101,28 @@ class _PatientChooseYourStateScreen2State extends State<PatientChooseYourStateSc
               ),
               Text(
                   "${cubit?.lose05Kg}",
-                  style: AppTextStyle().greyText.copyWith(height: 1.5.sp,wordSpacing: 1.5.sp,fontSize: 11.sp)
+                  style: AppTextStyle().greyText.copyWith(height: 1.5.sp,wordSpacing: 1.5.sp,fontSize: 13.sp)
               ),
               SizedBox(
                 height: 5.h,
               ),
               Text(
                 "${cubit?.lose1Kg}",
-                style: AppTextStyle().greyText.copyWith(height: 1.5.sp,wordSpacing: 1.5.sp,fontSize: 11.sp)
+                style: AppTextStyle().greyText.copyWith(height: 1.5.sp,wordSpacing: 1.5.sp,fontSize: 13.sp)
               ),
               SizedBox(
                 height: 5.h,
               ),
               Text(
                 "${cubit?.gain05Kg}",
-                style: AppTextStyle().greyText.copyWith(height: 1.5.sp,wordSpacing: 1.5.sp,fontSize: 11.sp)
+                style: AppTextStyle().greyText.copyWith(height: 1.5.sp,wordSpacing: 1.5.sp,fontSize: 13.sp)
               ),
               SizedBox(
                 height: 5.h,
               ),
               Text(
                 "${cubit?.gain1Kg}",
-                style: AppTextStyle().greyText.copyWith(height: 1.5.sp,wordSpacing: 1.5.sp,fontSize: 11.sp)
+                style: AppTextStyle().greyText.copyWith(height: 1.5.sp,wordSpacing: 1.5.sp,fontSize: 13.sp)
               ),
               SizedBox(height: 50.h,),
               MyBlueButton(

@@ -16,89 +16,90 @@ class RecentChats extends StatelessWidget {
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(25.r), topRight: Radius.circular(25.r)),
           ),
-      child: Column(
-        children: [
-          for(int i=0; i<10;i++)
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 15),
-            child: InkWell(
-              onTap: () {
-                Navigator.pushNamed(context, 'PatientChatScreen');
-              },
-              child: SizedBox(
-                height: 65,
-                child: Row(
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(35),
-                      child: Image.asset(
-                        "assets/images/doctor.png",
-                        height: 65,
-                        width: 65,
-                      ),
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      child: Expanded(
+        child: ListView.builder(
+            itemCount: 5,
+            itemBuilder: (BuildContext context, int index) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 15),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, 'PatientChatScreen');
+                  },
+                  child: SizedBox(
+                    height: 65,
+                    child: Row(
                       children: [
-                        Row(
-                          children: [
-                            Text(
-                              "Dr.Amilia john",
-                              style: TextStyle(
-                                color: MyColors.black,
-                                fontFamily: 'Inter',
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            SizedBox(width: 90.w),
-                            Text(
-                              "2:35 Pm",
-                              style: TextStyle(
-                                color: MyColors.black,
-                                fontFamily: 'Inter',
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            )
-                          ],
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(35),
+                          child: Image.asset(
+                            "assets/images/doctor.png",
+                            height: 65,
+                            width: 65,
+                          ),
                         ),
-                        Row(
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Text(
-                              "Thank you for you support",
-                              style: TextStyle(
-                                color: MyColors.grey,
-                                fontFamily: 'Inter',
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            SizedBox(width: 70.w),
-                            Container(
-                              height: 15.h,
-                              width: 18.w,
-                              decoration: BoxDecoration(
-                                  color: MyColors.darkBlue,
-                                  borderRadius: BorderRadius.circular(70)),
-                              child: const Center(
-                                child: Text(
-                                  "1",
-                                  style: TextStyle(color: MyColors.white),
+                            Row(
+                              children: [
+                                Text(
+                                  "Dr.Amilia john",
+                                  style: TextStyle(
+                                    color: MyColors.black,
+                                    fontFamily: 'Inter',
+                                    fontSize: 16.sp,
+                                    fontWeight: FontWeight.w600,
+                                  ),
                                 ),
-                              ),
-                            )
+                                SizedBox(width: 90.w),
+                                Text(
+                                  "2:35 Pm",
+                                  style: TextStyle(
+                                    color: MyColors.black,
+                                    fontFamily: 'Inter',
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                )
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  "Thank you for you support",
+                                  style: TextStyle(
+                                    color: MyColors.grey,
+                                    fontFamily: 'Inter',
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                SizedBox(width: 70.w),
+                                Container(
+                                  height: 15.h,
+                                  width: 18.w,
+                                  decoration: BoxDecoration(
+                                      color: MyColors.darkBlue,
+                                      borderRadius: BorderRadius.circular(70)),
+                                  child: const Center(
+                                    child: Text(
+                                      "1",
+                                      style: TextStyle(color: MyColors.white),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
                           ],
-                        ),
+                        )
                       ],
-                    )
-                  ],
+                    ),
+                  ),
                 ),
-              ),
-            ),
-          )
-        ],
+              );
+            }),
       ),
     );
   }

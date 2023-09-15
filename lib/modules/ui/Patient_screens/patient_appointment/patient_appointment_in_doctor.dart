@@ -1,11 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../models/doctor_list_model.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/default_items.dart';
-import '../../../../shared/widgets/screens_widgets.dart';
 
 class PatientAppointmentInDoctor extends StatefulWidget {
   const PatientAppointmentInDoctor({Key? key, this.user, required this.index}) : super(key: key);

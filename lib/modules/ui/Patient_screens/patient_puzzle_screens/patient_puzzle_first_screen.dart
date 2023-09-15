@@ -30,7 +30,7 @@ class PatientPuzzleFirstScreen extends StatelessWidget {
             Column(crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
               Text(
-                "Hello Guys !",
+                "Hello guys !",
 
                 style: AppTextStyle().greyText.copyWith(
                     color: MyColors.darkBlue,
@@ -43,7 +43,7 @@ class PatientPuzzleFirstScreen extends StatelessWidget {
               Text(
                 'There are some details about this game:',
                 style: AppTextStyle().greyText.copyWith(
-                    color: MyColors.darkBlue,
+                    color: MyColors.black,
                     fontSize: 17.sp,
                     fontWeight: FontWeight.w700),
               ),
@@ -51,10 +51,10 @@ class PatientPuzzleFirstScreen extends StatelessWidget {
                 height: 20.h,
               ),
               Text(
-                "1-there are 3 specific words you should make from these letters.\n\n"
-                "2-For each word you will collect , you gain 100 points.\n\n"
-                "3-you can click on the same letters for multi times.\n\n"
-                "4-Click on delete button to remove the last letter entered.\n\n",
+                "There are three specific words you should make from these letters.\n\n"
+                "2-For each word you collect, you gain 100 points.\n\n"
+                "3-You can click on the same letter multiple times.\n\n"
+                "4-Click on the delete button to remove the last letter entered.\n\n",
                 style: AppTextStyle()
                     .greyText
                     .copyWith(fontSize: 14.sp, height: 1.sp, wordSpacing: 2.sp),
@@ -80,16 +80,15 @@ class PatientPuzzleFirstScreen extends StatelessWidget {
               ),
               SizedBox(height: 30.h),
               Image.asset('assets/images/verygood.png',width: 120.w,),
-                  SizedBox(height: 10,),
+                  const SizedBox(height: 10,),
                   MyBlueButton(
                     width: double.infinity,
                     height: 55.h,
                     page:'PatientPuzzleSecondScreen' ,
                     text: 'Continue',
                   )
-
-
-                ]),
+                ],
+            ),
           ),
         ),
       ),

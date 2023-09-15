@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nutri_mind_application/shared/Constants/text_theme.dart';
-import '../../../../models/doctor_list_model.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/widgets/default_items.dart';
 import '../../../../shared/widgets/doctor_widget_for_patient.dart';
@@ -67,20 +66,6 @@ class _PatientHomeServicesScreenState extends State<PatientHomeServicesScreen> {
             )
           ],
         ),
-        actionIcon: [
-          Padding(
-            padding: EdgeInsets.only(right: 12.sp),
-            child: InkWell(
-              onTap: () {
-                Navigator.pushNamed(context, 'PatientNotificationsScreen');
-              },
-              child: Image(
-                image: const AssetImage("assets/images/blackbell.png"),
-                height: 20.h,
-              ),
-            ),
-          ),
-        ],
       ),
       body: Padding(
         padding: EdgeInsets.only(left: 25.sp, right: 25.sp, top: 25.sp),

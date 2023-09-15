@@ -267,7 +267,7 @@ class _DoctorSignUpScreenState extends State<DoctorSignUpScreen> {
                       SizedBox(height: 15.h),
                       SmallTextField(
                         controller: creditNumberController,
-                        prefixIcon: Image(
+                        prefixIcon: const Image(
                           image: AssetImage(
                             'assets/images/vecteezy.png',
                           ),
@@ -281,7 +281,7 @@ class _DoctorSignUpScreenState extends State<DoctorSignUpScreen> {
                       ),
                       SmallTextField(
                         controller: vodafoneCashNumberController,
-                        prefixIcon: Image(
+                        prefixIcon: const Image(
                           image: AssetImage(
                             'assets/images/voda.png',
                           ),

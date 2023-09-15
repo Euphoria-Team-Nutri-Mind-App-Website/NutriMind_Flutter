@@ -7,6 +7,7 @@ class MyTextField extends StatelessWidget {
   final controller;
   final validator;
   final suffixIcon;
+  final prefixIcon;
   final textType;
   final String hintText;
   final bool obscureText;
@@ -17,6 +18,7 @@ class MyTextField extends StatelessWidget {
     required this.obscureText,
     this.controller,
     this.suffixIcon,
+    this.prefixIcon,
     required this.textType,
     this.validator,
 
@@ -41,6 +43,7 @@ class MyTextField extends StatelessWidget {
         hintText: hintText,
         hintStyle: AppTextStyle().greyText,
         suffixIcon: suffixIcon,
+        prefixIcon: prefixIcon,
       )
     );
   }

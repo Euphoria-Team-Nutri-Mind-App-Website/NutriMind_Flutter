@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nutri_mind_application/modules/ui/Patient_screens/patient_chat_screens/patient_chat_screen.dart';
 import '../../../../shared/widgets/default_items.dart';
 
 import '../../../../shared/Constants/colors.dart';
@@ -17,10 +18,28 @@ class _PatientCallScreenState extends State<PatientCallScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(
-        backPage: 'PatientChatScreen',
+      appBar: AppBar(
+          backgroundColor: MyColors.white,
+          elevation: 0.sp,
+          leading: Padding(
+            padding: EdgeInsets.only(left: 25.sp, top: 8.sp),
+            child: IconButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) =>PatientChatScreen(user: null, index: 2,)));
+                },
+                icon: Icon(
+                  Icons.arrow_back_ios,
 
+                  color: MyColors.black,
+                  size: 25.sp,
+                )),
+          ),
       ),
+      // MyAppBar(
+      //   backPage: 'PatientChatScreen',
+      //
+      // ),
       body: Column(
         children: [
           Padding(

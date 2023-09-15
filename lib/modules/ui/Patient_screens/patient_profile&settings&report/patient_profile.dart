@@ -66,6 +66,7 @@ class PatientProfile extends StatelessWidget {
                                   backgroundColor: MyColors.white,
                                   radius: 35.r,
                                   child: Image.asset("assets/images/user1.png"),
+                                  //child: Image.network("${cubit.patientInformation?[0].image}"),
                                 ),
                                 SizedBox(
                                   width: 10.w,

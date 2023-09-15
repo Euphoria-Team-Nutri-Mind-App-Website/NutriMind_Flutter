@@ -51,6 +51,7 @@ class DoctorWidgetForPatientScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Image.asset("assets/images/doctor.png"),
+                          // Image.network("${cubit?.doctorInfo?.data?[index].image}"),
                           SizedBox(
                             width: 10.sp,
                           ),

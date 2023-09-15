@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 import '../../../models/doctor_list_model.dart';
 import '../../../models/doctor_profile_model.dart';
-import '../../../models/forget_password/generate_otp_model.dart';
+import '../../../models/generate_otp_model.dart';
 import '../../../models/notes_model.dart';
 import '../../../models/patient_model.dart';
 import '../../../models/quotes_model.dart';

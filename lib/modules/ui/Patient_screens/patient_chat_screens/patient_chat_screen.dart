@@ -2,13 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nutri_mind_application/modules/ui/Patient_screens/patient_chat_screens/patient_chat_widgets.dart';
+import '../../../../models/doctor_list_model.dart';
 import '../../../../shared/widgets/default_items.dart';
 
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
 
 class PatientChatScreen extends StatelessWidget {
-  const PatientChatScreen({Key? key}) : super(key: key);
+  const PatientChatScreen({Key? key,required this.user, required this.index}) : super(key: key);
+  final DoctorListModel? user;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +30,7 @@ class PatientChatScreen extends StatelessWidget {
               ),
             ),
             Text(
-              "Dr.Amilia john",
+              "${user?.doctorInfo?.data?[index].name}",
               style: TextStyle(
                   color: MyColors.black,
                   fontFamily: 'Inter',

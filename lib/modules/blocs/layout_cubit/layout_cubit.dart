@@ -21,6 +21,7 @@ class LayoutCubit extends Cubit<LayoutState> {
   static LayoutCubit get(context) => BlocProvider.of(context);
 
   PatientModel? patientModel;
+
   void getUserData() async {
     emit(GetUserDataLoadingState());
     print("your token is $accessToken");
@@ -37,10 +38,9 @@ class LayoutCubit extends Cubit<LayoutState> {
       print(responseDate);
       patientModel = PatientModel.fromJson(responseDate);
       emit(GetUserDataSuccessState());
-    }).catchError((onError){
+    }).catchError((onError) {
       print("onError error ${onError.toString()}");
       emit(FailedToGetUserDataState(error: onError.toString()));
-
     });
   }
 
@@ -49,6 +49,7 @@ class LayoutCubit extends Cubit<LayoutState> {
 
 
   DoctorListModel? doctorListModel;
+
   void getDoctorsList() async {
     emit(GetDoctorListLoadingState());
     print("your token is $accessToken");
@@ -65,18 +66,17 @@ class LayoutCubit extends Cubit<LayoutState> {
       //print(responseDate);
       doctorListModel = DoctorListModel.fromJson(responseDate);
       emit(GetDoctorListSuccessState());
-
-    }).catchError((onError){
+    }).catchError((onError) {
       print("onError error ${onError.toString()}");
       emit(FailedToDoctorListDataState(error: onError.toString()));
-
     });
   }
 
 //***************************************************************************************************************
 
   QoutesModel?qoutesModel;
-  void Qoutes()async {
+
+  void Qoutes() async {
     emit(QuotesLoadingState());
     print("your token is $accessToken");
 
@@ -94,10 +94,9 @@ class LayoutCubit extends Cubit<LayoutState> {
       //print("lllll${qoutesModel?.quotes?.length}");
       //print("lllll${qoutesModel?.quotes?[0]}");
       emit(QuotesSuccessState());
-    }).catchError((onError){
+    }).catchError((onError) {
       print("onError error ${onError.toString()}");
       emit(QuotesWithFailureState(error: onError.toString()));
-
     });
   }
 
@@ -105,8 +104,9 @@ class LayoutCubit extends Cubit<LayoutState> {
 //***************************************************************************************************************
 
   GenerateOtpModel?generateOtpModel;
+
   void generatOtp({
-    required String email, })async {
+    required String email,}) async {
     emit(GenerateOtpLoadingState());
     print("your token is $accessToken");
 
@@ -122,10 +122,9 @@ class LayoutCubit extends Cubit<LayoutState> {
       print(responseDate);
       generateOtpModel = GenerateOtpModel.fromJson(responseDate);
       emit(GenerateOtpSuccessState());
-    }).catchError((onError){
+    }).catchError((onError) {
       print("onError error ${onError.toString()}");
       emit(GenerateOtpWithFailureState(error: onError.toString()));
-
     });
   }
 
@@ -133,7 +132,8 @@ class LayoutCubit extends Cubit<LayoutState> {
 
 
   RecommendedCaloriesModel?recommendedCaloriesModel;
-  void GetRecommendedCalories()async {
+
+  void GetRecommendedCalories() async {
     emit(RecommendedCaloriesLoadingState());
     print("your token is $accessToken");
 
@@ -147,12 +147,12 @@ class LayoutCubit extends Cubit<LayoutState> {
     ).then((value) {
       var responseDate = jsonDecode(value.body);
       //print(responseDate);
-      recommendedCaloriesModel = RecommendedCaloriesModel.fromJson(responseDate);
+      recommendedCaloriesModel =
+          RecommendedCaloriesModel.fromJson(responseDate);
       emit(RecommendedCaloriesSuccessState());
-    }).catchError((onError){
+    }).catchError((onError) {
       print("onError error ${onError.toString()}");
       emit(RecommendedCaloriesWithFailureState(error: onError.toString()));
-
     });
   }
 
@@ -180,7 +180,8 @@ class LayoutCubit extends Cubit<LayoutState> {
           emit(addNodesSuccessState());
         }
         else {
-          debugPrint("failed to  login success and his data is : ${responseData['message']}");
+          debugPrint(
+              "failed to  login success and his data is : ${responseData['message']}");
           emit(addNodesWithFailureState(message: responseData['message']));
         }
       }
@@ -193,7 +194,8 @@ class LayoutCubit extends Cubit<LayoutState> {
 //***************************************************************************************************************
 
   GetNotesModel?getNotesModel;
-  void getNotes()async {
+
+  void getNotes() async {
     emit(getNodesLoadingState());
     //print("your token is $accessToken");
 
@@ -210,17 +212,17 @@ class LayoutCubit extends Cubit<LayoutState> {
       print("jjjj${responseDate}");
       print("oooooooo${getNotesModel?.notes?[0].body}");
       emit(getNodesSuccessState());
-    }).catchError((onError){
+    }).catchError((onError) {
       print("onError error ${onError.toString()}");
       emit(getNodesWithFailureState(message: onError.toString()));
-
     });
   }
 
   //***************************************************************************************************************
 
   DoctorProfileModel?doctorProfileModel;
-  void getDoctorProfile()async {
+
+  void getDoctorProfile() async {
     emit(getDoctorProfileLoadingState());
     //print("your token is $accessToken");
 
@@ -237,10 +239,9 @@ class LayoutCubit extends Cubit<LayoutState> {
       //print("nnnnn${doctorProfileModel?.doctorInformation?[0]}");
       NetworkImage("doctorProfileModel?.doctorInformation![0].image");
       emit(getDoctorProfileSuccessState());
-    }).catchError((onError){
+    }).catchError((onError) {
       print("onError error ${onError.toString()}");
       emit(getDoctorProfileWithFailureState(message: onError.toString()));
-
     });
   }
 
@@ -268,8 +269,10 @@ class LayoutCubit extends Cubit<LayoutState> {
           emit(EnterCurrentWeightSuccessState());
         }
         else {
-          debugPrint("failed to  login success and his data is : ${responseData['message']}");
-          emit(EnterCurrentWeightWithFailureState(message: responseData['message']));
+          debugPrint(
+              "failed to  login success and his data is : ${responseData['message']}");
+          emit(EnterCurrentWeightWithFailureState(
+              message: responseData['message']));
         }
       }
     } catch (e) {
@@ -277,6 +280,31 @@ class LayoutCubit extends Cubit<LayoutState> {
       emit(EnterCurrentWeightWithFailureState(message: e.toString()));
     }
   }
-}
+
 
 //***************************************************************************************************************
+
+  TrackWeightModel? trackWeightModel;
+
+  void trackWeight() async {
+    emit(TrackWeightLoadingState());
+    print("your token is $accessToken");
+
+    http.get(
+        Uri.parse("$BASEURl$Patient_TrackWeight"),
+        headers:
+        {
+          'Accept': "application/json",
+          'Authorization': 'Bearer ${accessToken!}',
+        }
+    ).then((value) {
+      var responseDate = jsonDecode(value.body);
+      print(responseDate);
+      trackWeightModel = TrackWeightModel.fromJson(responseDate);
+      emit(TrackWeightSuccessState());
+    }).catchError((onError) {
+      print("onError error ${onError.toString()}");
+      emit(TrackWeightWithFailureState(message: onError.toString()));
+    });
+  }
+}

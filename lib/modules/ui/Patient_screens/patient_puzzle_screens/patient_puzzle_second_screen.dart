@@ -112,7 +112,7 @@ class PatientPuzzleSecondScreenState extends State<PatientPuzzleSecondScreen> {
                   fontWeight: FontWeight.w600),
             ),
             SizedBox(height: 15.h),
-            Text('Current Word: $currentWord',
+            Text('Current Word : $currentWord',
               style: AppTextStyle().greyText.copyWith(
                 fontSize: 16.sp,
                 height: 1.sp,
@@ -123,19 +123,23 @@ class PatientPuzzleSecondScreenState extends State<PatientPuzzleSecondScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 ElevatedButton(
-                  style: const ButtonStyle(
-                    backgroundColor: MaterialStatePropertyAll(MyColors.darkBlue)
-                  ),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: MyColors.white,
+                      side: const BorderSide(
+                        color: MyColors.darkBlue,
+                      )),
                   onPressed: () {
                     deleteLastLetter();
                   },
-                  child: Text('Delete', style: AppTextStyle().textBlueButton.copyWith(fontSize: 14.sp),),
+                  child: Text('Delete', style: AppTextStyle().textBlueButton.copyWith(fontSize: 14.sp,color:MyColors.darkBlue),),
                 ),
                 const SizedBox(width: 20),
                 ElevatedButton(
-                  style: const ButtonStyle(
-                      backgroundColor: MaterialStatePropertyAll(MyColors.darkBlue)
-                  ),
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: MyColors.white,
+                      side: const BorderSide(
+                        color: MyColors.darkBlue,
+                      )),
                   onPressed: () {
                     if (words.contains(currentWord)) {
                       final wordScore = scores[currentWord];
@@ -146,7 +150,7 @@ class PatientPuzzleSecondScreenState extends State<PatientPuzzleSecondScreen> {
                       });
                     }
                   },
-                  child: Text('Submit Word', style: AppTextStyle().textBlueButton.copyWith(fontSize: 14.sp),),
+                  child: Text('Submit Word', style: AppTextStyle().textBlueButton.copyWith(fontSize: 14.sp,color:MyColors.darkBlue),),
                 ),
               ],
             ),

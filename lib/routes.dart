@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 // import 'modules/ui/Patient_screens/patient_appointment/patient_appointment_in_doctor.dart';
+import 'modules/ui/Patient_screens/patient_appointment/patient_appointment_in_doctor.dart';
 import 'modules/ui/Patient_screens/patient_appointment/patient_book_appointment.dart';
 import 'modules/ui/Patient_screens/patient_appointment/patient_choose_payment_screen.dart';
 import 'modules/ui/Patient_screens/patient_appointment/patient_review_screen.dart';
@@ -15,7 +16,6 @@ import 'modules/ui/Patient_screens/patient_library_screen/patient_library_screen
 import 'modules/ui/Patient_screens/patient_motivzone_screen/patient_motivzone_screen.dart';
 import 'modules/ui/Patient_screens/patient_notes_screen/patient_add_notes.dart';
 import 'modules/ui/Patient_screens/patient_notes_screen/patient_notes_screen.dart';
-import 'modules/ui/Patient_screens/patient_notifications/patient_notifications.dart';
 // import 'modules/ui/Patient_screens/patient_password_screens/patient_create_password_screen.dart';
 import 'modules/ui/Patient_screens/patient_password_screens/patient_forget_password_screen.dart';
 // import 'modules/ui/Patient_screens/patient_password_screens/patient_verification_screen.dart';
@@ -71,8 +71,7 @@ Map<String, WidgetBuilder> routes = {
   'PatientChooseYourStateScreen1': (context) => const PatientChooseYourStateScreen1(),
   'PatientChooseYourStateScreen2': (context) => const PatientChooseYourStateScreen2(),
   'PatientNavBarScreen': (context) => const PatientNavBarScreen(),
-  'PatientNotificationsScreen': (context) => const PatientNotificationsScreen(),
-  //'PatientAppointmentInDoctor': (context) => const PatientAppointmentInDoctor(),
+  // 'PatientAppointmentInDoctor': (context) => const PatientAppointmentInDoctor(index:,),
   'PatientBookAppointment': (context) => const PatientBookAppointment(),
   'PatientReviewScreen': (context) => const PatientReviewScreen(),
   'PatientChoosePaymentScreen': (context) =>  const PatientChoosePaymentScreen(),

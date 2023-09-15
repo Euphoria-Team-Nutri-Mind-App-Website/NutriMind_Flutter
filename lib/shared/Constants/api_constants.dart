@@ -10,3 +10,5 @@ const Patient_GetNodes='/api/notes';
 const Doctor_LogIn='/doctor/api/doctor/login';
 const Doctor_Register='/doctor/api/doctor/register';
 const Doctor_Priofile='/doctor/api/doctor/profile';
+const Patient_EnterWeight ='/api/update-weight';
+const Patient_TrackWeight ='/api/track-weight';

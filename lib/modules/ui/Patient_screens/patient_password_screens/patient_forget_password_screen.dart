@@ -22,6 +22,7 @@ class PatientForgetPassword extends StatefulWidget {
 class _PatientForgetPasswordState extends State<PatientForgetPassword> {
   final emailController = TextEditingController();
   final formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:http/http.dart' as http;
@@ -11,6 +10,7 @@ import '../../../models/notes_model.dart';
 import '../../../models/patient_model.dart';
 import '../../../models/quotes_model.dart';
 import '../../../models/recommended_calories_model.dart';
+import '../../../models/track_weight_model.dart';
 import '../../../shared/Constants/api_constants.dart';
 import '../../../shared/Constants/constants.dart';
 part 'layout_state.dart';
@@ -21,7 +21,6 @@ class LayoutCubit extends Cubit<LayoutState> {
   static LayoutCubit get(context) => BlocProvider.of(context);
 
   PatientModel? patientModel;
-
   void getUserData() async {
     emit(GetUserDataLoadingState());
     print("your token is $accessToken");
@@ -103,8 +102,6 @@ class LayoutCubit extends Cubit<LayoutState> {
   }
 
 
-
-
 //***************************************************************************************************************
 
   GenerateOtpModel?generateOtpModel;
@@ -159,10 +156,7 @@ class LayoutCubit extends Cubit<LayoutState> {
     });
   }
 
-
 //***************************************************************************************************************
-
-
 
   void addNodes({
     required String body,
@@ -197,7 +191,6 @@ class LayoutCubit extends Cubit<LayoutState> {
   }
 
 //***************************************************************************************************************
-
 
   GetNotesModel?getNotesModel;
   void getNotes()async {
@@ -251,7 +244,39 @@ class LayoutCubit extends Cubit<LayoutState> {
     });
   }
 
+//***************************************************************************************************************
 
-
+  void enterCurrentWeight({
+    required String current_weight,
+  }) async {
+    emit(EnterCurrentWeightLoadingState());
+    try {
+      Response response = await http
+          .post(Uri.parse("$BASEURl$Patient_EnterWeight"),
+        headers:
+        {
+          'Accept': "application/json",
+          'Authorization': 'Bearer ${accessToken!}',
+        },
+        body: {
+          'current_weight': current_weight,
+        },
+      );
+      if (response.statusCode == 200) {
+        var responseData = jsonDecode(response.body);
+        if (responseData['success'] == true) {
+          emit(EnterCurrentWeightSuccessState());
+        }
+        else {
+          debugPrint("failed to  login success and his data is : ${responseData['message']}");
+          emit(EnterCurrentWeightWithFailureState(message: responseData['message']));
+        }
+      }
+    } catch (e) {
+      print(e);
+      emit(EnterCurrentWeightWithFailureState(message: e.toString()));
+    }
+  }
 }
 
+//***************************************************************************************************************

@@ -241,7 +241,8 @@ class LayoutCubit extends Cubit<LayoutState> {
     ).then((value) {
       var responseDate = jsonDecode(value.body);
       doctorProfileModel = DoctorProfileModel.fromJson(responseDate);
-      print("nnnnn${doctorProfileModel?.doctorInformation?[0]}");
+      //print("nnnnn${doctorProfileModel?.doctorInformation?[0]}");
+      NetworkImage("doctorProfileModel?.doctorInformation![0].image");
       emit(getDoctorProfileSuccessState());
     }).catchError((onError){
       print("onError error ${onError.toString()}");

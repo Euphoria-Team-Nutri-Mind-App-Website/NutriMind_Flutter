@@ -1,13 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../models/doctor_list_model.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/default_items.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
 
 class PatientAppointmentInDoctor extends StatefulWidget {
-  const PatientAppointmentInDoctor({Key? key}) : super(key: key);
+  const PatientAppointmentInDoctor({Key? key, this.user, required this.index}) : super(key: key);
+  final DoctorListModel? user;
+  final int index;
 
   @override
   State<PatientAppointmentInDoctor> createState() =>
@@ -59,21 +62,23 @@ class _PatientAppointmentInDoctorState
               Row(
                 children: [
                   Text(
-                    "Dr.john smith",
+                    "${widget.user?.doctorInfo?.data?[widget.index].name}",
                     style: AppTextStyle().textInAppBar.copyWith(
                       fontSize: 18.sp,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
                   const Spacer(),
-                   Row(
+                  Row(
                     children: [
-                       Text("4.6", style: AppTextStyle().textInAppBar.copyWith(
-                         fontSize: 14.sp,
-                         fontWeight: FontWeight.w500,),
-                       ),
+                      Text(
+                        "${widget.user?.doctorInfo?.data?[widget.index].rate}",
+                        style: AppTextStyle().textInAppBar.copyWith(
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w500,),
+                      ),
                       SizedBox(width: 5.w,),
-                       Icon(
+                      Icon(
                         Icons.star,
                         size: 23.sp,
                         color:MyColors.yellow,
@@ -93,9 +98,9 @@ class _PatientAppointmentInDoctorState
                           "Price: ",
                           style:AppTextStyle().greyText.copyWith(color: MyColors.black,fontSize: 16.sp),
                         ),
-                         Text(
+                        Text(
                           "5.00\$",
-                           style:AppTextStyle().greyText.copyWith(fontSize: 15.sp,fontWeight:FontWeight.w700),
+                          style:AppTextStyle().greyText.copyWith(fontSize: 15.sp,fontWeight:FontWeight.w700),
 
                         ),
                       ],
@@ -105,21 +110,18 @@ class _PatientAppointmentInDoctorState
                       "Experience",
                       style:AppTextStyle().greyText.copyWith(color: MyColors.black,fontSize: 16.sp),
                     ),
-                     Text(
+                    Text(
                       "5 years",
-                       style:AppTextStyle().greyText.copyWith(fontSize: 15.sp),
+                      style:AppTextStyle().greyText.copyWith(fontSize: 15.sp),
                     ),
                     SizedBox(height: 10.h),
                     Text(
                       "Qualifications",
                       style:AppTextStyle().greyText.copyWith(color: MyColors.black,fontSize: 16.sp),
                     ),
-                     Text(
-                      "Education at the University of Northern Iowa. "
-                      "He received his PhD in Educational Policy"
-                      "Studies from the University of"
-                      "Wisconsin-Madison in 1971.",
-                       style:AppTextStyle().greyText.copyWith(fontSize: 15.sp,height: 1.sp),
+                    Text(
+                      "${widget.user?.doctorInfo?.data?[widget.index].qualification}",
+                      style:AppTextStyle().greyText.copyWith(fontSize: 15.sp,height: 1.sp),
                     ),
                   ],
                 ),
@@ -139,15 +141,15 @@ class _PatientAppointmentInDoctorState
                   ),
                   child: Center(
                     child: Text(
-                      "Patient review",
-                      style:AppTextStyle().textBlueButton.copyWith(color: MyColors.darkBlue)
-                      ),
+                        "Patient review",
+                        style:AppTextStyle().textBlueButton.copyWith(color: MyColors.darkBlue)
                     ),
                   ),
                 ),
+              ),
               const SizedBox(height: 12),
               MyBlueButton(
-                 height: 55.h,
+                  height: 55.h,
                   width: double.infinity,
                   text: "Book an appointment",
                   page: 'PatientBookAppointment'),

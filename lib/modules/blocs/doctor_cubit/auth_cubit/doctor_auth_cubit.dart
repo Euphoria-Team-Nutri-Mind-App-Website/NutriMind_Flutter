@@ -57,7 +57,6 @@ class DoctorAuthCubit extends Cubit<DoctorAuthState> {
   void doctorRegister({
     required String name,
     required String email,
-    required String phone,
     required String national_id,
     required String qualification,
     required String password,
@@ -80,7 +79,6 @@ class DoctorAuthCubit extends Cubit<DoctorAuthState> {
           body: {
             'name': name,
             'email': email,
-            'phone': phone,
             'national_id': national_id,
             'qualification': qualification,
             'password': password,

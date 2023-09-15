@@ -155,21 +155,6 @@ class _DoctorSignUpScreenState extends State<DoctorSignUpScreen> {
                         height: 15.h,
                       ),
                       SmallTextField(
-                        controller: numberController,
-                          hintText: 'Number',
-                          obscureText: false,
-                          textType: TextInputType.phone,
-                          validator: (val) {
-                            if (val.isEmpty) {
-                              return "Number must not be empty";
-                            } else {
-                              return null;
-                            }
-                          }),
-                      SizedBox(
-                        height: 15.h,
-                      ),
-                      SmallTextField(
                         controller: genderController,
                           hintText: 'Gender',
                           obscureText: false,
@@ -334,7 +319,6 @@ class _DoctorSignUpScreenState extends State<DoctorSignUpScreen> {
                               qualification: qualificationController.text,
                               password: passwordController.text,
                               password_confirmation:confirmPasswordController.text,
-                              phone: numberController.text,
                               experience_years: experienceYearController.text,
                               credit_card_number: creditNumberController.text,
                               vodafone_cash: vodafoneCashNumberController.text,

@@ -4,8 +4,8 @@ import 'package:nutri_mind_application/shared/Constants/text_theme.dart';
 import '../../../../models/doctor_list_model.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/widgets/default_items.dart';
+import '../../../../shared/widgets/doctor_widget_for_patient.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
-import 'doctor_widget_for_patient.dart';
 
 class PatientHomeServicesScreen extends StatefulWidget {
   const PatientHomeServicesScreen({Key? key}) : super(key: key);
@@ -189,7 +189,7 @@ class _PatientHomeServicesScreenState extends State<PatientHomeServicesScreen> {
             SizedBox(
               height: 17.sp,
             ),
-            const DoctorWidgetForPatientScreen()
+            const DoctorWidgetForPatientScreen2()
           ],
         ),
       ),

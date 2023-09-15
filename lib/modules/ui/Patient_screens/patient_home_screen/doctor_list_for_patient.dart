@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/default_items.dart';
 import '../../../../shared/Constants/colors.dart';
+import '../../../../shared/widgets/doctor_widget_for_patient.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
-import 'doctor_widget_for_patient.dart';
 
 class DoctorListForPatientScreen extends StatefulWidget {
   const DoctorListForPatientScreen({Key? key}) : super(key: key);

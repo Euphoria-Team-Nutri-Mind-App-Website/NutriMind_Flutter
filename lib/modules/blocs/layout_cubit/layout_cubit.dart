@@ -247,39 +247,39 @@ class LayoutCubit extends Cubit<LayoutState> {
 
 //***************************************************************************************************************
 
-  void enterCurrentWeight({
-    required String current_weight,
-  }) async {
-    emit(EnterCurrentWeightLoadingState());
-    try {
-      Response response = await http
-          .post(Uri.parse("$BASEURl$Patient_EnterWeight"),
-        headers:
-        {
-          'Accept': "application/json",
-          'Authorization': 'Bearer ${accessToken!}',
-        },
-        body: {
-          'current_weight': current_weight,
-        },
-      );
-      if (response.statusCode == 200) {
-        var responseData = jsonDecode(response.body);
-        if (responseData['success'] == true) {
-          emit(EnterCurrentWeightSuccessState());
-        }
-        else {
-          debugPrint(
-              "failed to  login success and his data is : ${responseData['message']}");
-          emit(EnterCurrentWeightWithFailureState(
-              message: responseData['message']));
-        }
-      }
-    } catch (e) {
-      print(e);
-      emit(EnterCurrentWeightWithFailureState(message: e.toString()));
-    }
-  }
+  // void enterCurrentWeight({
+  //   required String current_weight,
+  // }) async {
+  //   emit(EnterCurrentWeightLoadingState());
+  //   try {
+  //     Response response = await http
+  //         .post(Uri.parse("$BASEURl$Patient_EnterWeight"),
+  //       headers:
+  //       {
+  //         'Accept': "application/json",
+  //         'Authorization': 'Bearer ${accessToken!}',
+  //       },
+  //       body: {
+  //         'current_weight': current_weight,
+  //       },
+  //     );
+  //     if (response.statusCode == 200) {
+  //       var responseData = jsonDecode(response.body);
+  //       if (responseData['success'] == true) {
+  //         emit(EnterCurrentWeightSuccessState());
+  //       }
+  //       else {
+  //         debugPrint(
+  //             "failed to  login success and his data is : ${responseData['message']}");
+  //         emit(EnterCurrentWeightWithFailureState(
+  //             message: responseData['message']));
+  //       }
+  //     }
+  //   } catch (e) {
+  //     print(e);
+  //     emit(EnterCurrentWeightWithFailureState(message: e.toString()));
+  //   }
+  // }
 
 
 //***************************************************************************************************************

@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'modules/ui/Patient_screens/patient_appointment/patient_appointment_in_doctor.dart';
+// import 'modules/ui/Patient_screens/patient_appointment/patient_appointment_in_doctor.dart';
 import 'modules/ui/Patient_screens/patient_appointment/patient_book_appointment.dart';
 import 'modules/ui/Patient_screens/patient_appointment/patient_choose_payment_screen.dart';
 import 'modules/ui/Patient_screens/patient_appointment/patient_review_screen.dart';
@@ -7,7 +7,7 @@ import 'modules/ui/Patient_screens/patient_appointment/patient_voda_cash_upload_
 import 'modules/ui/Patient_screens/patient_auth_screens/patient_login_screen.dart';
 import 'modules/ui/Patient_screens/patient_auth_screens/patient_sign_up_screen.dart';
 import 'modules/ui/Patient_screens/patient_chat_screens/Patient_call_screen.dart';
-import 'modules/ui/Patient_screens/patient_chat_screens/patient_chat_screen.dart';
+// import 'modules/ui/Patient_screens/patient_chat_screens/patient_chat_screen.dart';
 import 'modules/ui/Patient_screens/patient_chat_screens/patient_list_chats_screen.dart';
 import 'modules/ui/Patient_screens/patient_home_screen/doctor_list_for_patient.dart';
 import 'modules/ui/Patient_screens/patient_home_screen/patient_nav_bar.dart';
@@ -28,10 +28,9 @@ import 'modules/ui/Patient_screens/patient_puzzle_screens/patient_puzzle_second_
 import 'modules/ui/Patient_screens/patient_puzzle_screens/puzzle_end_screen.dart';
 import 'modules/ui/Patient_screens/patient_puzzle_screens/puzzle_start_screen.dart';
 import 'modules/ui/Patient_screens/patient_question_screen/patient_question_first_screen.dart';
-import 'modules/ui/Patient_screens/patient_question_screen/patient_question_screen_five.dart';
-import 'modules/ui/Patient_screens/patient_question_screen/patient_question_screen_four.dart';
-import 'modules/ui/Patient_screens/patient_question_screen/patient_question_screen_three.dart';
-import 'modules/ui/Patient_screens/patient_question_screen/patient_question_screen_two.dart';
+import 'modules/ui/Patient_screens/patient_question_screen/patient_question_fourth_screen.dart';
+import 'modules/ui/Patient_screens/patient_question_screen/patient_question_second_screen.dart';
+import 'modules/ui/Patient_screens/patient_question_screen/patient_question_third_screen.dart';
 import 'modules/ui/Patient_screens/patient_set_tall_weight_state_screens/patient_choose_your_state_screen_1.dart';
 import 'modules/ui/Patient_screens/patient_set_tall_weight_state_screens/patient_choose_your_state_screen_2.dart';
 import 'modules/ui/Patient_screens/patient_set_tall_weight_state_screens/patient_set_tall.dart';
@@ -46,9 +45,9 @@ import 'modules/ui/doctor_screens/doctor_auth_screen/doctor_choose_time_screen.d
 import 'modules/ui/doctor_screens/doctor_auth_screen/doctor_login_screen.dart';
 import 'modules/ui/doctor_screens/doctor_auth_screen/doctor_sign_up_screen.dart';
 import 'modules/ui/doctor_screens/doctor_chat_screens/doctor_chat_screen.dart';
-import 'modules/ui/doctor_screens/doctor_passwords_screens/doctor_create_password_screen.dart';
+// import 'modules/ui/doctor_screens/doctor_passwords_screens/doctor_create_password_screen.dart';
 import 'modules/ui/doctor_screens/doctor_passwords_screens/doctor_forget_password_screen.dart';
-import 'modules/ui/doctor_screens/doctor_passwords_screens/doctor_verification_screen.dart';
+// import 'modules/ui/doctor_screens/doctor_passwords_screens/doctor_verification_screen.dart';
 import 'modules/ui/doctor_screens/doctor_profile/doctor_help&support_screen.dart';
 import 'modules/ui/doctor_screens/doctor_profile/doctor_profile.dart';
 import 'modules/ui/doctor_screens/doctor_profile/doctor_settings_screen.dart';
@@ -95,10 +94,9 @@ Map<String, WidgetBuilder> routes = {
   'PatientCallScreen': (context) => const PatientCallScreen(),
   'PatientAddNotes': (context) => const PatientAddNotes(),
   'PatientQuestionFirstScreen': (context) => const PatientQuestionFirstScreen(),
-  '_PatientQuestionTwoScreen': (context) => const PatientQuestionTwoScreen(),
-  'PatientQuestionScreenThree': (context) => const PatientQuestionScreenThree(),
-  'PatientQuestionScreenFour': (context) => const PatientQuestionScreenFour(),
-  'PatientQuestionScreenFive': (context) => const PatientQuestionScreenFive(),
+  'PatientQuestionSecondScreen': (context) => const PatientQuestionSecondScreen(),
+  'PatientQuestionThirdScreen': (context) => const PatientQuestionThirdScreen(),
+  'PatientQuestionFourthScreen': (context) => const PatientQuestionFourthScreen(),
   'PatientTrackWeightFirstScreen': (context) => const PatientTrackWeightFirstScreen(),
   'PatientTrackWeightSecondScreen': (context) => const PatientTrackWeightSecondScreen(),
   'PatientBreakFastScreen': (context) => const PatientBreakFastScreen(),

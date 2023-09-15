@@ -5,24 +5,22 @@ import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/default_items.dart';
 import '../../../../shared/widgets/patient_track_eating_widgets.dart';
 
-class PatientQuestionFirstScreen extends StatefulWidget {
-  const PatientQuestionFirstScreen({Key? key}) : super(key: key);
+class PatientQuestionThirdScreen extends StatefulWidget {
+  const PatientQuestionThirdScreen({Key? key}) : super(key: key);
 
   @override
-  State<PatientQuestionFirstScreen> createState() =>
-      _PatientQuestionFirstScreenState();
+  State<PatientQuestionThirdScreen> createState() => _PatientQuestionThirdScreenState();
 }
 
-class _PatientQuestionFirstScreenState
-    extends State<PatientQuestionFirstScreen> {
+class _PatientQuestionThirdScreenState extends State<PatientQuestionThirdScreen> {
   String selectedContent = '';
-  List<String> items = ['Not Bad', 'Good', 'Nice', 'Very good'];
+  List<String> items = ['Yes', 'No', 'Yes,but not regularly'];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppBar(
-        backPage: 'PatientNavBarScreen',
+        backPage: 'PatientQuestionSecondScreen',
         pageTitle: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -38,15 +36,15 @@ class _PatientQuestionFirstScreenState
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Let’s Start ...",
+            Text("Continue",
                 style: AppTextStyle().textInAppBar.copyWith(fontSize: 17.sp)),
             SizedBox(height: 30.h),
             const MyProgressIndicator(
-              input: 1,
+              input: 3,
               target: 4,
             ),
             SizedBox(height: 30.h),
-            Text("How are you today , Warrior? ",
+            Text("Is your fitness in a good state, and do you go to the gym continuously ? ",
                 style: AppTextStyle().textInAppBar.copyWith(fontSize: 17.sp,wordSpacing: 1.2.sp,height: 1.2.sp)),
             SizedBox(height: 35.h),
             Expanded(
@@ -60,24 +58,24 @@ class _PatientQuestionFirstScreenState
                         setState(() {
                           selectedContent = items[index];
                           Navigator.pushNamed(
-                              context, "PatientQuestionSecondScreen");
+                              context, "PatientQuestionFourthScreen");
                         });
                       },
                       child: Container(
                         height: 55,
                         width: 170,
                         decoration: BoxDecoration(
-                          color: MyColors.white,
                             border: Border.all(color: MyColors.darkBlue),
                             borderRadius: BorderRadius.circular(10.r)),
                         child: Center(
                           child: Text(
                             items[index],
-                            style: AppTextStyle().textInAppBar.copyWith(color: MyColors.darkBlue,fontSize: 16.sp,)
+                              style: AppTextStyle().textInAppBar.copyWith(color: MyColors.darkBlue,fontSize: 16.sp,)
                           ),
                         ),
                       ),
-                    )),
+                    ),
+                ),
               ),
             ),
           ],

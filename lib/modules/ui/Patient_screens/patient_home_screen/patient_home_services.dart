@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nutri_mind_application/shared/Constants/text_theme.dart';
+import '../../../../models/doctor_list_model.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/widgets/default_items.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
@@ -47,6 +48,7 @@ class _PatientHomeServicesScreenState extends State<PatientHomeServicesScreen> {
       "rout": "PatientMyDairyScreen",
     },
   ];
+
   //bool click = true;
   @override
   Widget build(BuildContext context) {
@@ -90,6 +92,7 @@ class _PatientHomeServicesScreenState extends State<PatientHomeServicesScreen> {
               suffixIcon: Icon(Icons.search_outlined),
               obscureText: true,
               textType: TextInputType.text,
+
             ),
             SizedBox(
               height: 25.sp,

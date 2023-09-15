@@ -1,112 +1,133 @@
 import 'package:custom_clippers/custom_clippers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nutri_mind_application/modules/ui/Patient_screens/patient_chat_screens/patient_chat_screen.dart';
 
+import '../../../../models/doctor_list_model.dart';
 import '../../../../shared/Constants/colors.dart';
+import '../../../blocs/layout_cubit/layout_cubit.dart';
 
 class RecentChats extends StatelessWidget {
   const RecentChats({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          color: MyColors.white,
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(25.r), topRight: Radius.circular(25.r)),
-          ),
-      child: Expanded(
-        child: ListView.builder(
-            itemCount: 5,
-            itemBuilder: (BuildContext context, int index) {
-              return Padding(
-                padding: const EdgeInsets.symmetric(vertical: 15),
-                child: InkWell(
-                  onTap: () {
-                    Navigator.pushNamed(context, 'PatientChatScreen');
-                  },
-                  child: SizedBox(
-                    height: 65,
-                    child: Row(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(35),
-                          child: Image.asset(
-                            "assets/images/doctor.png",
-                            height: 65,
-                            width: 65,
+    return BlocProvider(
+      create: (context) => LayoutCubit()..getDoctorsList(),
+      child: BlocConsumer<LayoutCubit, LayoutState>(
+        listener: (context, state) {
+        },
+        builder: (context, state) {
+          DoctorListModel? cubit =LayoutCubit.get(context).doctorListModel;
+          return Container(
+            decoration: BoxDecoration(
+              color: MyColors.white,
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(25.r),
+                  topRight: Radius.circular(25.r)),
+            ),
+            child:
+            cubit != null?
+            Expanded(
+              child: ListView.builder(
+                  itemCount: cubit?.doctorInfo?.data?.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 15),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(
+                              MaterialPageRoute(builder: (context) =>
+                                  PatientChatScreen(user: cubit, index:index)));
+                          //Navigator.pushNamed(context, 'PatientChatScreen');
+                        },
+                        child: Container(
+                          height: 85,
+                          child: Row(
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(35),
+                                child: Image.asset(
+                                  "assets/images/doctor.png",
+                                  height: 65,
+                                  width: 65,
+                                ),
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment
+                                    .spaceEvenly,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text(
+                                        "${cubit?.doctorInfo?.data?[index].name}",
+                                        style: TextStyle(
+                                          color: MyColors.black,
+                                          fontFamily: 'Inter',
+                                          fontSize: 16.sp,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                      SizedBox(width: 90.w),
+                                      Text(
+                                        "2:35 Pm",
+                                        style: TextStyle(
+                                          color: MyColors.black,
+                                          fontFamily: 'Inter',
+                                          fontSize: 12.sp,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        "Thank you for you support",
+                                        style: TextStyle(
+                                          color: MyColors.grey,
+                                          fontFamily: 'Inter',
+                                          fontSize: 12.sp,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
+                                      SizedBox(width: 70.w),
+                                      Container(
+                                        height: 15.h,
+                                        width: 18.w,
+                                        decoration: BoxDecoration(
+                                            color: MyColors.darkBlue,
+                                            borderRadius: BorderRadius.circular(
+                                                70)),
+                                        child: const Center(
+                                          child: Text(
+                                            "1",
+                                            style: TextStyle(
+                                                color: MyColors.white),
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ],
+                              )
+                            ],
                           ),
                         ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Row(
-                              children: [
-                                Text(
-                                  "Dr.Amilia john",
-                                  style: TextStyle(
-                                    color: MyColors.black,
-                                    fontFamily: 'Inter',
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                                SizedBox(width: 90.w),
-                                Text(
-                                  "2:35 Pm",
-                                  style: TextStyle(
-                                    color: MyColors.black,
-                                    fontFamily: 'Inter',
-                                    fontSize: 12.sp,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                )
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Text(
-                                  "Thank you for you support",
-                                  style: TextStyle(
-                                    color: MyColors.grey,
-                                    fontFamily: 'Inter',
-                                    fontSize: 12.sp,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                SizedBox(width: 70.w),
-                                Container(
-                                  height: 15.h,
-                                  width: 18.w,
-                                  decoration: BoxDecoration(
-                                      color: MyColors.darkBlue,
-                                      borderRadius: BorderRadius.circular(70)),
-                                  child: const Center(
-                                    child: Text(
-                                      "1",
-                                      style: TextStyle(color: MyColors.white),
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              );
-            }),
+                      ),
+                    );
+                  }),
+            ):
+            const Center(child: CircularProgressIndicator(color: MyColors.darkBlue))
+          );
+        },
       ),
     );
   }
 }
-
-
-
 
 
 class ChatSample extends StatelessWidget {
@@ -206,7 +227,7 @@ class ChatTextSend extends StatelessWidget {
               BoxShadow(
                 spreadRadius: 2,
                 blurRadius: 10,
-                offset: Offset(3,3),
+                offset: Offset(3, 3),
               )
             ],
           ),
@@ -243,7 +264,7 @@ class ChatTextReceive extends StatelessWidget {
                 color: Colors.red,
                 spreadRadius: 2,
                 blurRadius: 10,
-                offset: Offset(3,3),
+                offset: Offset(3, 3),
               )
             ],
           ),
@@ -270,23 +291,23 @@ class ChatBottom extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 65.h,
-      decoration:  const BoxDecoration(
-        color: MyColors.white,
-        boxShadow: [
-          BoxShadow(
+      decoration: const BoxDecoration(
+          color: MyColors.white,
+          boxShadow: [
+            BoxShadow(
               color: MyColors.lightGrey,
-            spreadRadius: 2,
-            blurRadius: 10,
-            offset: Offset(0,3),
+              spreadRadius: 2,
+              blurRadius: 10,
+              offset: Offset(0, 3),
 
-          )
-        ]
+            )
+          ]
       ),
       child: Row(
         children: [
           const Padding(
             padding: EdgeInsets.all(8.0),
-            child: Icon(Icons.back_hand_rounded,color: MyColors.darkBlue),
+            child: Icon(Icons.back_hand_rounded, color: MyColors.darkBlue),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),

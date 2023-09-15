@@ -89,3 +89,23 @@ class getDoctorProfileWithFailureState extends LayoutState{
 getDoctorProfileWithFailureState({required this.message});
 }
 
+//***************************************************************************************************************
+
+class EnterCurrentWeightLoadingState extends LayoutState{}
+class EnterCurrentWeightSuccessState extends LayoutState{}
+class EnterCurrentWeightWithFailureState extends LayoutState{
+  String message;
+  EnterCurrentWeightWithFailureState({required this.message});
+}
+
+//***************************************************************************************************************
+
+
+class TrackWeightLoadingState extends LayoutState{}
+class TrackWeightSuccessState extends LayoutState{}
+class TrackWeightWithFailureState extends LayoutState{
+  String message;
+  TrackWeightWithFailureState({required this.message});
+}
+
+//***************************************************************************************************************

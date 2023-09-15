@@ -36,6 +36,9 @@ dependencies:
   dropdown_button2: ^2.3.9
   connectivity_plus: ^4.0.2
   circular_chart_flutter: ^0.0.2
+  firebase_core: ^2.15.1
+  firebase_messaging: ^14.6.7
+
 
 
 

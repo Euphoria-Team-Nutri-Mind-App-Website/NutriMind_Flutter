@@ -19,6 +19,8 @@ class AuthCubit extends Cubit<AuthState> {
     required String gender,
     required String password,
     required String password_confirmation,
+    required String vodafone_cash,
+    required String credit_card_number,
   }) async {
     emit(RegisterLoadingState());
     try {
@@ -36,6 +38,8 @@ class AuthCubit extends Cubit<AuthState> {
             'gender': gender,
             'password': password,
             'password_confirmation': password_confirmation,
+            'vodafone_cash' : vodafone_cash ,
+            'credit_card_number' : credit_card_number ,
           });
       var responseBody = jsonDecode(response.body);
       print(responseBody);

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "830199726311",
+    "project_id": "nutri-mind-app",
+    "storage_bucket": "nutri-mind-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:830199726311:android:03aeb5a0e8f3366ec1a242",
+        "android_client_info": {
+          "package_name": "com.example.nutri_mind_application"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlKQvyWxzH2e_QiLOtiNxk7OAtdM_WQsI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -25,9 +24,12 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
   final genderController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
+  final vodafoneCashController = TextEditingController();
+  final creditCardNumberController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-  bool obscureText = false;
+  bool obscureText1 = false;
+  bool obscureText2 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +62,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
       else if ( state is RegisterSuccessState )
       {
         Navigator.pop(context);
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> PatientSetTallScreen()));
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const PatientSetTallScreen()));
       }
     },
     builder: (context, state) {
@@ -152,18 +154,54 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                     height: 18.h,
                   ),
                   MyTextField(
+                    controller: creditCardNumberController,
+                    prefixIcon: const Image(
+                      image: AssetImage(
+                        'assets/images/vecteezy.png',
+                      ),
+                    ),
+                    hintText: 'Credit number',
+                    obscureText: false,
+                    textType: TextInputType.phone,
+                  ),
+                  SizedBox(
+                    height: 18.h,
+                  ),
+                  MyTextField(
+                    controller: vodafoneCashController,
+                    prefixIcon: const Image(
+                      image: AssetImage(
+                        'assets/images/voda.png',
+                      ),
+                    ),
+                    hintText: 'vodafone cash number',
+                    obscureText: false,
+                    textType: TextInputType.phone,
+                      validator: (val) {
+                        if (val.isEmpty) {
+                          return "vodafone cash number must not be empty";
+                        }else if(val.length != 11){
+                          return "vodafone cash number must be 11 numbers";
+                        }else{
+                          return null;
+                        }
+                      }),
+                  SizedBox(
+                    height: 18.h,
+                  ),
+                  MyTextField(
                       controller: passwordController,
-                      textType: TextInputType.text,
+                      textType: TextInputType.phone,
                       hintText: 'Password',
-                      obscureText: false,
+                      obscureText: obscureText1,
                       suffixIcon: IconButton(
-                        icon: Icon(obscureText
+                        icon: Icon(obscureText1
                             ? Icons.visibility_off
                             : Icons.visibility),
                         color: MyColors.grey,
                         onPressed: () {
                           setState(() {
-                            obscureText = !obscureText;
+                            obscureText1 = !obscureText1;
                           });
                         },
                       ),
@@ -181,17 +219,17 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                   ),
                   MyTextField(
                       controller: confirmPasswordController,
-                      textType: TextInputType.text,
+                      textType: TextInputType.phone,
                       hintText: 'Confirm Password',
-                      obscureText: false,
+                      obscureText: obscureText2,
                       suffixIcon: IconButton(
-                        icon: Icon(obscureText
+                        icon: Icon(obscureText2
                             ? Icons.visibility_off
                             : Icons.visibility),
                         color: MyColors.grey,
                         onPressed: () {
                           setState(() {
-                            obscureText = !obscureText;
+                            obscureText2 = !obscureText2;
                           });
                         },
                       ),
@@ -217,6 +255,8 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                           password_confirmation:confirmPasswordController.text,
                           age:ageController.text,
                           gender: genderController.text,
+                          vodafone_cash: vodafoneCashController.text,
+                          credit_card_number:creditCardNumberController.text ,
                         );
                         //Navigator.pushNamed(context, 'PatientSetTallScreen');
                       }

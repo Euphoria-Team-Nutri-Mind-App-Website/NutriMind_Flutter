@@ -14,7 +14,7 @@ class Doctor_PatientInfo extends StatelessWidget {
         backPage: 'DoctorScheduleScreen',
         pageTitle: Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [Text("Patient Info", style: AppTextStyle().textInAppBar)],
+          children: [Text("Patient Info", style: AppTextStyle().textInAppBar.copyWith(fontSize: 21.sp))],
         ),
         actionIcon: [
           Padding(

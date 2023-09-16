@@ -5,8 +5,7 @@ import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/default_items.dart';
 import '../../../../shared/widgets/patient_appointment_widgets/stripe_widget.dart';
 import '../../../../shared/widgets/patient_appointment_widgets/vodafone_cash_widget.dart';
-import '../../../../shared/widgets/screens_widgets.dart';
-import '../patient_password_screens/set_password_widget.dart';
+
 
 // class PatientChoosePaymentScreen extends StatefulWidget {
 //   const PatientChoosePaymentScreen({Key? key}) : super(key: key);

@@ -80,7 +80,7 @@ class PatientPuzzleFirstScreen extends StatelessWidget {
               ),
               SizedBox(height: 30.h),
               Image.asset('assets/images/verygood.png',width: 120.w,),
-                  const SizedBox(height: 10,),
+                  const SizedBox(height: 30,),
                   MyBlueButton(
                     width: double.infinity,
                     height: 55.h,

@@ -62,13 +62,11 @@ class DoctorWidgetForPatientScreen extends StatelessWidget {
                               children: [
                                 Row(
                                   children: [
-                                    Flexible(
-                                      child: Text(
+                                   Text(
                                         "${cubit?.doctorInfo?.data?[index].name}",
                                         style: AppTextStyle().textInAppBar.copyWith(
-                                          fontSize: 17.sp,
-                                          fontWeight: FontWeight.w500,
-                                        ),
+                                          fontSize: 15.sp,
+                                          fontWeight: FontWeight.w600,
                                       ),
                                     ),
                                     const Spacer(),
@@ -192,15 +190,13 @@ class DoctorWidgetForPatientScreen2 extends StatelessWidget {
                               children: [
                                 Row(
                                   children: [
-                                    Flexible(
-                                      child: Text(
+                                    Text(
                                         "${cubit?.doctorInfo?.data?[index].name}",
                                         style: AppTextStyle().textInAppBar.copyWith(
-                                          fontSize: 17.sp,
-                                          fontWeight: FontWeight.w500,
+                                          fontSize: 16.sp,
+                                          fontWeight: FontWeight.w600,
                                         ),
                                       ),
-                                    ),
                                     const Spacer(),
                                     Row(
                                       children: [
@@ -239,7 +235,7 @@ class DoctorWidgetForPatientScreen2 extends StatelessWidget {
                                       bottom: 7.sp,
                                     ),
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(14.r),
+                                      borderRadius: BorderRadius.circular(12.r),
                                       border: Border.all(color: MyColors.darkBlue),
                                     ),
                                     child: const Text(

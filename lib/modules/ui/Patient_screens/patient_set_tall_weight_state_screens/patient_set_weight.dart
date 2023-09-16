@@ -10,7 +10,7 @@ import '../../../../shared/widgets/default_items.dart';
 import '../../../../shared/widgets/patient_tall_weight_screens_widgets.dart';
 
 class PatientSetWeightScreen extends StatefulWidget {
-  const PatientSetWeightScreen({Key? key}) : super(key: key);
+   const PatientSetWeightScreen({Key? key}) : super(key: key);
 
   @override
   State<PatientSetWeightScreen> createState() => _PatientSetWeightScreenState();
@@ -29,29 +29,29 @@ class _PatientSetWeightScreenState extends State<PatientSetWeightScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Text(
-                'What\'s your weight ?',
+              'What\'s your weight ?',
                 style:AppTextStyle().textInAppBar
             ),
           ],
         ),
       ),
       body: SafeArea(
-        child: Container(
-          padding: EdgeInsets.only(left: 25.sp, right: 25.sp, top: 60.sp),
-          color: MyColors.white,
-          child: Form(
-            key: formKey,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Please enter your weight !',
-                  style: AppTextStyle().greyText.copyWith(fontSize: 15.sp),
-                ),
-                SizedBox(
-                  height: 50.sp,
-                ),
-                //const WeightComponents(),
+          child: Container(
+            padding: EdgeInsets.only(left: 25.sp, right: 25.sp, top: 60.sp),
+            color: MyColors.white,
+            child: Form(
+              key: formKey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Please enter your weight !',
+                   style: AppTextStyle().greyText.copyWith(fontSize: 15.sp),
+                  ),
+                  SizedBox(
+                    height: 50.sp,
+                  ),
+                  //const WeightComponents(),
                 Column(
                   children: <Widget>[
                     NumberPicker(
@@ -105,63 +105,63 @@ class _PatientSetWeightScreenState extends State<PatientSetWeightScreen> {
                     ),
                   ],
                 ),
-                const Expanded(child: SizedBox()),
-                // MyBlueButton(
-                //   width: double.infinity,
-                //   height: 55.h,
-                //   text: 'Continue',
-                //   page: 'PatientChooseYourStateScreen1',
-                // ),
-                InkWell(
-                  onTap: () async {
-                    if (formKey.currentState!.validate()) {
-                      var headers = {
-                        'Accept': 'application/json',
-                        'Authorization': 'Bearer ${accessToken!}',
-                      };
-                      var request = http.MultipartRequest('POST',
-                          Uri.parse('$BASEURl/patient/api/patient/weight'));
-                      request.fields.addAll({
-                        'first_weight': "$weight"
-                      });
+                  const Expanded(child: SizedBox()),
+                  // MyBlueButton(
+                  //   width: double.infinity,
+                  //   height: 55.h,
+                  //   text: 'Continue',
+                  //   page: 'PatientChooseYourStateScreen1',
+                  // ),
+              InkWell(
+                onTap: () async {
+                  if (formKey.currentState!.validate()) {
+                  var headers = {
+                    'Accept': 'application/json',
+                    'Authorization': 'Bearer ${accessToken!}',
+                  };
+                  var request = http.MultipartRequest('POST',
+                      Uri.parse('$BASEURl/patient/api/patient/weight'));
+                  request.fields.addAll({
+                    'first_weight': "$weight"
+                  });
 
-                      request.headers.addAll(headers);
-                      print("weight ${weight}");
-                      http.StreamedResponse response = await request.send();
+                  request.headers.addAll(headers);
+                  print("weight ${weight}");
+                  http.StreamedResponse response = await request.send();
 
-                      if (response.statusCode == 200) {
-                        print(await response.stream.bytesToString());
-                        Navigator.pushNamed(context, 'PatientChooseYourStateScreen1');
-                      }
-                      else {
-                        print(response.reasonPhrase);
-                      }
-                    }
-                  },
-                  child: Container(
-                    width: double.infinity,
-                    height: 55.h,
-                    decoration: BoxDecoration(
-                      color: MyColors.darkBlue,
-                      borderRadius: BorderRadius.circular(10.r),
-                    ),
-                    child: Center(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text("Continue", style: AppTextStyle().textBlueButton),
-                        ],
-                      ),
+                  if (response.statusCode == 200) {
+                    print(await response.stream.bytesToString());
+                    Navigator.pushNamed(context, 'PatientChooseYourStateScreen1');
+                  }
+                  else {
+                    print(response.reasonPhrase);
+                  }
+                }
+                },
+                child: Container(
+                  width: double.infinity,
+                  height: 55.h,
+                  decoration: BoxDecoration(
+                    color: MyColors.darkBlue,
+                    borderRadius: BorderRadius.circular(10.r),
+                  ),
+                  child: Center(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text("Continue", style: AppTextStyle().textBlueButton),
+                      ],
                     ),
                   ),
                 ),
-                SizedBox(height: 70.h,)
-              ],
+              ),
+                  SizedBox(height: 70.h,)
+                ],
+              ),
             ),
           ),
         ),
-      ),
     );
   }
 }

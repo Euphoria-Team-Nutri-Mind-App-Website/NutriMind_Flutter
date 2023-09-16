@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nutri_mind_application/shared/widgets/screens_widgets.dart';
 
 import '../../../../shared/Constants/colors.dart';
+import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/default_items.dart';
 
 class DoctorChooseTimeScreen extends StatefulWidget {
@@ -60,11 +61,12 @@ class _DoctorChooseTimeScreenState extends State<DoctorChooseTimeScreen> {
     return Scaffold(
       appBar: MyAppBar(
         backPage: 'DoctorSignUpScreen',
-        pageTitle: Row(
+        pageTitle:  Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               'Times of work',
+              style: AppTextStyle().textInAppBar.copyWith(fontSize: 19.sp),
             )
           ],
         ),
@@ -136,7 +138,18 @@ class _DoctorChooseTimeScreenState extends State<DoctorChooseTimeScreen> {
                   ),
                 ),
               ),
-              const SizedBox(height: 64.0),
+              SizedBox(height: 55.h),
+              Text(
+                "Choose time work :",
+                style: TextStyle(
+                    color: MyColors.black,
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w600,
+                    fontFamily: "Poppins"),
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
               DropdownButton<String>(
                 value: dropdownValue,
                 icon: const Icon(Icons.keyboard_arrow_down_sharp),
@@ -147,7 +160,6 @@ class _DoctorChooseTimeScreenState extends State<DoctorChooseTimeScreen> {
                   color: MyColors.grey,
                 ),
                 onChanged: (String? value) {
-                  // This is called when the user selects an item.
                   setState(() {
                     dropdownValue = value!;
                   });
@@ -159,8 +171,13 @@ class _DoctorChooseTimeScreenState extends State<DoctorChooseTimeScreen> {
                   );
                 }).toList(),
               ),
-              SizedBox(height: 40.h,),
-              const MyBlueButton(text: 'Back',page: 'DoctorSignUpScreen',)
+              SizedBox(height: 60.h,),
+               MyBlueButton(
+                text: 'Back',
+                page: 'DoctorSignUpScreen',
+              width: double.infinity,
+                height: 55.h,
+              )
             ],
           ),
         ),

@@ -135,3 +135,10 @@ class startNewChatWithFailureState extends LayoutState{
 }
 
 //***************************************************************************************************************
+
+class getStateLoadingState extends LayoutState{}
+class getStateSuccessState extends LayoutState{}
+class getStateWithFailureState extends LayoutState{
+  String message;
+  getStateWithFailureState({required this.message});
+}

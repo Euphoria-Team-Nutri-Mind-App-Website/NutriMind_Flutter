@@ -35,7 +35,7 @@ class _PatientChooseYourStateScreen2State extends State<PatientChooseYourStateSc
           children: [
             Text(
               'Choose your state',
-                style:AppTextStyle().textInAppBar.copyWith(fontSize: 21.sp)
+                style:AppTextStyle().textInAppBar
             ),
           ],
         ),

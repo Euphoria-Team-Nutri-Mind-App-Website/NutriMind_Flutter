@@ -97,18 +97,18 @@ class _PatientChooseYourStateScreen1State
                   hint: selectedValue,
                   items: items
                       .map((Widget item) => DropdownMenuItem<Widget>(
-                            value: item,
-                            child: Column(
-                              children: [
-                                item,
-                                if (item != items.last) const Divider(),
-                              ],
-                            ),
-                          ))
+                    value: item,
+                    child: Column(
+                      children: [
+                        item,
+                        if (item != items.last) const Divider(),
+                      ],
+                    ),
+                  ))
                       .toList(),
                   onChanged: ( value) {
                     setState(() {
-                       selectedValue = value!;
+                      selectedValue = value!;
                     });
                   },
                   buttonStyleData: ButtonStyleData(
@@ -152,30 +152,30 @@ class _PatientChooseYourStateScreen1State
               // ),
               InkWell(
                 onTap: () async {
-                   if (formKey.currentState!.validate()) {
-                     var headers = {
-                       'Accept': 'application/json',
-                       'Authorization': 'Bearer ${accessToken!}',
-                     };
-                     var request = http.MultipartRequest('POST',
-                         Uri.parse('$BASEURl/patient/api/patient/active-status'));
-                     request.fields.addAll({
-                       'active_status': '${selectedValue}'
-                     });
+                  if (formKey.currentState!.validate()) {
+                    var headers = {
+                      'Accept': 'application/json',
+                      'Authorization': 'Bearer ${accessToken!}',
+                    };
+                    var request = http.MultipartRequest('POST',
+                        Uri.parse('$BASEURl/patient/api/patient/active-status'));
+                    request.fields.addAll({
+                      'active_status': '${selectedValue}'
+                    });
 
-                     request.headers.addAll(headers);
-                     print("$selectedValue");
-                     http.StreamedResponse response = await request.send();
-                     if (response.statusCode == 200) {
-                       print(await response.stream.bytesToString());
-                       Navigator.pushNamed(context, 'PatientChooseYourStateScreen2');
+                    request.headers.addAll(headers);
+                    print("$selectedValue");
+                    http.StreamedResponse response = await request.send();
+                    if (response.statusCode == 200) {
+                      print(await response.stream.bytesToString());
+                      Navigator.pushNamed(context, 'PatientChooseYourStateScreen2');
 
-                     }
-                     else {
-                       print(response.reasonPhrase);
-                     }
-                     Navigator.pushNamed(context, 'PatientChooseYourStateScreen2');
-                   }
+                    }
+                    else {
+                      print(response.reasonPhrase);
+                    }
+                    Navigator.pushNamed(context, 'PatientChooseYourStateScreen2');
+                  }
                 },
                 child: Container(
                   width: double.infinity,
@@ -205,6 +205,3 @@ class _PatientChooseYourStateScreen1State
     );
   }
 }
-
-
-

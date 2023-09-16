@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nutri_mind_application/modules/ui/Patient_screens/patient_appointment/patient_appointment_in_doctor.dart';
+import '../../../../models/doctor_list_model.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/default_items.dart';
@@ -9,6 +11,7 @@ import '../patient_password_screens/set_password_widget.dart';
 
 class PatientBookAppointment extends StatefulWidget {
   const PatientBookAppointment({Key? key}) : super(key: key);
+
 
   @override
   State<PatientBookAppointment> createState() => _PatientBookAppointmentState();
@@ -87,12 +90,28 @@ class _PatientBookAppointmentState extends State<PatientBookAppointment> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(
-        backPage: 'PatientAppointmentInDoctor',
-        pageTitle: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [Text("Dr.John Smith", style: AppTextStyle().textInAppBar)],
-        ),
+      appBar: AppBar(
+          backgroundColor: MyColors.white,
+          elevation: 0.sp,
+          leading: Padding(
+            padding: EdgeInsets.only(left: 25.sp, top: 8.sp),
+            child: IconButton(
+                onPressed: () {
+                  Navigator.push (
+                    context,
+                    MaterialPageRoute(builder: (context) => PatientAppointmentInDoctor(index: 2,)),
+                  );
+                },
+                icon: Icon(
+                  Icons.arrow_back_ios,
+                  color: MyColors.black,
+                  size: 25.sp,
+                )),
+          ),
+          title: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [Text("Dr.John Smith", style: AppTextStyle().textInAppBar)],
+      ),
       ),
       body: Padding(
         padding: EdgeInsets.only(left: 25.sp, right: 25.sp, top: 10.sp),

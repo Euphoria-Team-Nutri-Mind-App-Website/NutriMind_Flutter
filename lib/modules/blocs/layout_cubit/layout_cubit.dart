@@ -340,7 +340,6 @@ class LayoutCubit extends Cubit<LayoutState> {
   //***************************************************************************************************************
 
 
-
   ViewAllChatMessageModel? viewAllChatMessageModel;
 
   void getAllChatMessage({required String receiver_name}) async {
@@ -353,7 +352,7 @@ class LayoutCubit extends Cubit<LayoutState> {
         {
           'Accept': "application/json",
           'Authorization': 'Bearer ${accessToken!}',
-        },
+        }
     ).then((value) {
       var responseDate = jsonDecode(value.body);
       print(responseDate);
@@ -363,6 +362,37 @@ class LayoutCubit extends Cubit<LayoutState> {
       print("onError error ${onError.toString()}");
       emit(getAllChatMessageWithFailureState(message: onError.toString()));
     });
+  }
+
+  //***************************************************************************************************************
+
+
+  void startNewChat({required int num}) async {
+    emit(addNodesLoadingState());
+    try {
+      Response response = await http
+          .post(Uri.parse("$BASEURl/api/create-chat/${num}"),
+        headers:
+        {
+          'Accept': "application/json",
+          'Authorization': 'Bearer ${accessToken!}',
+        },
+      );
+      if (response.statusCode == 200) {
+        var responseData = jsonDecode(response.body);
+        if (responseData['success'] == true) {
+          emit(startNewChatSuccessState());
+        }
+        else {
+          debugPrint(
+              "failed to  login success and his data is : ${responseData['message']}");
+          emit(startNewChatWithFailureState(message: responseData['message']));
+        }
+      }
+    } catch (e) {
+      print(e);
+      emit(startNewChatWithFailureState(message: e.toString()));
+    }
   }
 
 

@@ -126,4 +126,12 @@ class getAllChatMessageWithFailureState extends LayoutState{
   getAllChatMessageWithFailureState({required this.message});
 }
 
+//***************************************************************************************************************\
+class startNewChatLoadingState extends LayoutState{}
+class startNewChatSuccessState extends LayoutState{}
+class startNewChatWithFailureState extends LayoutState{
+  String message;
+  startNewChatWithFailureState({required this.message});
+}
+
 //***************************************************************************************************************

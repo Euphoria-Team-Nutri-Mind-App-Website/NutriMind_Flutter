@@ -14,8 +14,8 @@ import '../../../blocs/layout_cubit/layout_cubit.dart';
 
 class PatientChatScreen extends StatelessWidget {
   const PatientChatScreen({Key? key, required this.user, required this.index}) : super(key: key);
-   final ViewAllChatModel? user;
-   final int index;
+  final ViewAllChatModel? user;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
@@ -56,123 +56,123 @@ class PatientChatScreen extends StatelessWidget {
           ]
       ),
       body: BlocProvider(
-  create: (context) => LayoutCubit()..getAllChatMessage(receiver_name: "${user?.chat?[index]?.receiverName}"),//LayoutCubit LayoutState
-  child: BlocConsumer<LayoutCubit, LayoutState>(
-  listener: (context, state) {
-    // TODO: implement listener
-  },
-  builder: (context, state) {
-    ViewAllChatMessageModel? cubit =LayoutCubit.get(context).viewAllChatMessageModel;
+        create: (context) => LayoutCubit()..getAllChatMessage(receiver_name: "${user?.chat?[index]?.receiverName}"),//LayoutCubit LayoutState
+        child: BlocConsumer<LayoutCubit, LayoutState>(
+          listener: (context, state) {
+            // TODO: implement listener
+          },
+          builder: (context, state) {
+            ViewAllChatMessageModel? cubit =LayoutCubit.get(context).viewAllChatMessageModel;
 
-    //ViewAllChatMessageModel cubit =ViewAllChatMessageModel
-    return ListView(
-        children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: EdgeInsets.all(25.sp),
-              child: Row(
-                children: [
-                  const Expanded(
-                      child: Divider(
-                        thickness: 1,
-                        color: MyColors.grey,
-                      )),
-                  SizedBox(
-                    width: 15.w,
-                  ),
-                  Text(
-                    "yesterday",
-                    style: TextStyle(
-                        color: MyColors.grey,
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: 'Inter'),
-                  ),
-                  SizedBox(
-                    width: 15.w,
-                  ),
-                  const Expanded(
-                      child: Divider(
-                        thickness: 1,
-                        color: MyColors.grey,
-                      )),
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.all(25.sp),
-              child: ClipPath(
-                clipper: UpperNipMessageClipper(MessageType.receive),
-                child: Container(
-                  padding: EdgeInsets.all(25.sp),
-                  decoration: BoxDecoration(
-                    color: MyColors.darkBlue,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.red,
-                        spreadRadius: 2,
-                        blurRadius: 10,
-                        offset: Offset(3, 3),
-                      )
-                    ],
-                  ),
-                  child: Text(
-                    "${cubit?.message?[index].content}",
-                    style: TextStyle(
-                      color: MyColors.white,
-                      fontFamily: 'Inter',
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w500,
+            //ViewAllChatMessageModel cubit =ViewAllChatMessageModel
+            return ListView(
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(25.sp),
+                      child: Row(
+                        children: [
+                          const Expanded(
+                              child: Divider(
+                                thickness: 1,
+                                color: MyColors.grey,
+                              )),
+                          SizedBox(
+                            width: 15.w,
+                          ),
+                          Text(
+                            "yesterday",
+                            style: TextStyle(
+                                color: MyColors.grey,
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w600,
+                                fontFamily: 'Inter'),
+                          ),
+                          SizedBox(
+                            width: 15.w,
+                          ),
+                          const Expanded(
+                              child: Divider(
+                                thickness: 1,
+                                color: MyColors.grey,
+                              )),
+                        ],
+                      ),
                     ),
-                  ),
-                ),
-              ),
-            ),
-            //ChatTextReceive(),
-            ChatTextSend(),
-            Padding(
-              padding: EdgeInsets.all(25.sp),
-              child: Row(
-                children: [
-                  const Expanded(
-                      child: Divider(
-                        thickness: 1,
-                        color: MyColors.grey,
-                      )),
-                  SizedBox(
-                    width: 15.w,
-                  ),
-                  Text(
-                    "Today",
-                    style: TextStyle(
-                        color: MyColors.grey,
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: 'Inter'),
-                  ),
-                  SizedBox(
-                    width: 15.w,
-                  ),
-                  const Expanded(
-                      child: Divider(
-                        thickness: 1,
-                        color: MyColors.grey,
-                      )),
-                ],
-              ),
-            ),
-            ChatTextSend(),
-            ChatTextReceive(),
-          ],
-        )
-          //ChatSample(),
-        ],
-      );
-  },
-),
-),
+                    Padding(
+                      padding: EdgeInsets.all(25.sp),
+                      child: ClipPath(
+                        clipper: UpperNipMessageClipper(MessageType.receive),
+                        child: Container(
+                          padding: EdgeInsets.all(25.sp),
+                          decoration: BoxDecoration(
+                            color: MyColors.darkBlue,
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.red,
+                                spreadRadius: 2,
+                                blurRadius: 10,
+                                offset: Offset(3, 3),
+                              )
+                            ],
+                          ),
+                          child: Text(
+                            "${cubit?.message?[index].content}",
+                            style: TextStyle(
+                              color: MyColors.white,
+                              fontFamily: 'Inter',
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    //ChatTextReceive(),
+                    ChatTextSend(),
+                    Padding(
+                      padding: EdgeInsets.all(25.sp),
+                      child: Row(
+                        children: [
+                          const Expanded(
+                              child: Divider(
+                                thickness: 1,
+                                color: MyColors.grey,
+                              )),
+                          SizedBox(
+                            width: 15.w,
+                          ),
+                          Text(
+                            "Today",
+                            style: TextStyle(
+                                color: MyColors.grey,
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w600,
+                                fontFamily: 'Inter'),
+                          ),
+                          SizedBox(
+                            width: 15.w,
+                          ),
+                          const Expanded(
+                              child: Divider(
+                                thickness: 1,
+                                color: MyColors.grey,
+                              )),
+                        ],
+                      ),
+                    ),
+                    ChatTextSend(),
+                    ChatTextReceive(),
+                  ],
+                )
+                //ChatSample(),
+              ],
+            );
+          },
+        ),
+      ),
       //bottomSheet:const ChatBottom(),
 
       bottomNavigationBar: BottomNavigationBar(

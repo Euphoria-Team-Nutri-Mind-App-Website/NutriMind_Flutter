@@ -23,106 +23,106 @@ class RecentChats extends StatelessWidget {
         builder: (context, state) {
           ViewAllChatModel? cubit =LayoutCubit.get(context).viewAllChatModel;
           return Container(
-            decoration: BoxDecoration(
-              color: MyColors.white,
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(25.r),
-                  topRight: Radius.circular(25.r)),
-            ),
-            child:
-            cubit != null?
-            Expanded(
-              child: ListView.builder(
-                  itemCount: cubit?.chat?.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 15),
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.of(context).push(
-                              MaterialPageRoute(builder: (context) =>
-                                  PatientChatScreen(user: cubit, index: index,)));
-                          //Navigator.pushNamed(context, 'PatientChatScreen');
-                        },
-                        child: Container(
-                          height: 85,
-                          child: Row(
-                            children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(35),
-                                child: Image.asset(
-                                  "assets/images/doctor.png",
-                                  height: 65,
-                                  width: 65,
-                                ),
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment
-                                    .spaceEvenly,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Text(
-                                        "${cubit?.chat?[index].receiverName}",
-                                        style: TextStyle(
-                                          color: MyColors.black,
-                                          fontFamily: 'Inter',
-                                          fontSize: 16.sp,
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                      ),
-                                      SizedBox(width: 90.w),
-                                      Text(
-                                        "2:35 Pm",
-                                        style: TextStyle(
-                                          color: MyColors.black,
-                                          fontFamily: 'Inter',
-                                          fontSize: 12.sp,
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                      )
-                                    ],
+              decoration: BoxDecoration(
+                color: MyColors.white,
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(25.r),
+                    topRight: Radius.circular(25.r)),
+              ),
+              child:
+              cubit != null?
+              Expanded(
+                child: ListView.builder(
+                    itemCount: cubit?.chat?.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 15),
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.of(context).push(
+                                MaterialPageRoute(builder: (context) =>
+                                    PatientChatScreen(user: cubit, index: index,)));
+                            //Navigator.pushNamed(context, 'PatientChatScreen');
+                          },
+                          child: Container(
+                            height: 85,
+                            child: Row(
+                              children: [
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(35),
+                                  child: Image.asset(
+                                    "assets/images/doctor.png",
+                                    height: 65,
+                                    width: 65,
                                   ),
-                                  Row(
-                                    children: [
-                                      Text(
-                                        "Thank you for you support",
-                                        style: TextStyle(
-                                          color: MyColors.grey,
-                                          fontFamily: 'Inter',
-                                          fontSize: 12.sp,
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                      ),
-                                      SizedBox(width: 70.w),
-                                      Container(
-                                        height: 15.h,
-                                        width: 18.w,
-                                        decoration: BoxDecoration(
-                                            color: MyColors.darkBlue,
-                                            borderRadius: BorderRadius.circular(
-                                                70)),
-                                        child: const Center(
-                                          child: Text(
-                                            "1",
-                                            style: TextStyle(
-                                                color: MyColors.white),
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment
+                                      .spaceEvenly,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Text(
+                                          "${cubit?.chat?[index].receiverName}",
+                                          style: TextStyle(
+                                            color: MyColors.black,
+                                            fontFamily: 'Inter',
+                                            fontSize: 16.sp,
+                                            fontWeight: FontWeight.w600,
                                           ),
                                         ),
-                                      )
-                                    ],
-                                  ),
-                                ],
-                              )
-                            ],
+                                        SizedBox(width: 90.w),
+                                        Text(
+                                          "2:35 Pm",
+                                          style: TextStyle(
+                                            color: MyColors.black,
+                                            fontFamily: 'Inter',
+                                            fontSize: 12.sp,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                    Row(
+                                      children: [
+                                        Text(
+                                          "Thank you for you support",
+                                          style: TextStyle(
+                                            color: MyColors.grey,
+                                            fontFamily: 'Inter',
+                                            fontSize: 12.sp,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                        ),
+                                        SizedBox(width: 70.w),
+                                        Container(
+                                          height: 15.h,
+                                          width: 18.w,
+                                          decoration: BoxDecoration(
+                                              color: MyColors.darkBlue,
+                                              borderRadius: BorderRadius.circular(
+                                                  70)),
+                                          child: const Center(
+                                            child: Text(
+                                              "1",
+                                              style: TextStyle(
+                                                  color: MyColors.white),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    );
-                  }),
-            ):
-            const Center(child: CircularProgressIndicator(color: MyColors.darkBlue))
+                      );
+                    }),
+              ):
+              const Center(child: CircularProgressIndicator(color: MyColors.darkBlue))
           );
         },
       ),
@@ -170,35 +170,35 @@ class ChatSample extends StatelessWidget {
             ],
           ),
         ),
-    Padding(
-    padding: EdgeInsets.all(25.sp),
-    child: ClipPath(
-    clipper: UpperNipMessageClipper(MessageType.receive),
-    child: Container(
-    padding: EdgeInsets.all(25.sp),
-    decoration: BoxDecoration(
-    color: MyColors.darkBlue,
-    boxShadow: [
-    BoxShadow(
-    color: Colors.red,
-    spreadRadius: 2,
-    blurRadius: 10,
-    offset: Offset(3, 3),
-    )
-    ],
-    ),
-    child: Text(
-    "May ask you dr for advice",
-    style: TextStyle(
-    color: MyColors.white,
-    fontFamily: 'Inter',
-    fontSize: 14.sp,
-    fontWeight: FontWeight.w500,
-    ),
-    ),
-    ),
-    ),
-    ),
+        Padding(
+          padding: EdgeInsets.all(25.sp),
+          child: ClipPath(
+            clipper: UpperNipMessageClipper(MessageType.receive),
+            child: Container(
+              padding: EdgeInsets.all(25.sp),
+              decoration: BoxDecoration(
+                color: MyColors.darkBlue,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.red,
+                    spreadRadius: 2,
+                    blurRadius: 10,
+                    offset: Offset(3, 3),
+                  )
+                ],
+              ),
+              child: Text(
+                "May ask you dr for advice",
+                style: TextStyle(
+                  color: MyColors.white,
+                  fontFamily: 'Inter',
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+          ),
+        ),
         //ChatTextReceive(),
         ChatTextSend(),
         Padding(
@@ -282,44 +282,44 @@ class ChatTextReceive extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-  create: (context) => LayoutCubit(),///kkkkkkkkkkkkkkkkkkkkk
-  child: BlocConsumer<LayoutCubit, LayoutState>(
-  listener: (context, state) {
-    // TODO: implement listener
-  },
-  builder: (context, state) {
-    return Padding(
-      padding: EdgeInsets.all(25.sp),
-      child: ClipPath(
-        clipper: UpperNipMessageClipper(MessageType.receive),
-        child: Container(
-          padding: EdgeInsets.all(25.sp),
-          decoration: BoxDecoration(
-            color: MyColors.darkBlue,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.red,
-                spreadRadius: 2,
-                blurRadius: 10,
-                offset: Offset(3, 3),
-              )
-            ],
-          ),
-          child: Text(
-            "May ask you dr for advice",
-            style: TextStyle(
-              color: MyColors.white,
-              fontFamily: 'Inter',
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w500,
+      create: (context) => LayoutCubit(),///kkkkkkkkkkkkkkkkkkkkk
+      child: BlocConsumer<LayoutCubit, LayoutState>(
+        listener: (context, state) {
+          // TODO: implement listener
+        },
+        builder: (context, state) {
+          return Padding(
+            padding: EdgeInsets.all(25.sp),
+            child: ClipPath(
+              clipper: UpperNipMessageClipper(MessageType.receive),
+              child: Container(
+                padding: EdgeInsets.all(25.sp),
+                decoration: BoxDecoration(
+                  color: MyColors.darkBlue,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.red,
+                      spreadRadius: 2,
+                      blurRadius: 10,
+                      offset: Offset(3, 3),
+                    )
+                  ],
+                ),
+                child: Text(
+                  "May ask you dr for advice",
+                  style: TextStyle(
+                    color: MyColors.white,
+                    fontFamily: 'Inter',
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
             ),
-          ),
-        ),
+          );
+        },
       ),
     );
-  },
-),
-);
   }
 }
 

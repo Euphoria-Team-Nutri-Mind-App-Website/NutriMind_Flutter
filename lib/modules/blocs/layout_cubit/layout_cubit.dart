@@ -396,4 +396,40 @@ class LayoutCubit extends Cubit<LayoutState> {
   }
 
 
+  //***************************************************************************************************************
+
+
+
+  void getState({required String active_status}) async {
+    emit(getStateLoadingState());
+    try {
+      Response response = await http
+          .post(Uri.parse("$BASEURl/patient/api/patient/active-status"),
+        headers:
+        {
+          'Accept': "application/json",
+          'Authorization': 'Bearer ${accessToken!}',
+        },
+        body: {
+            "active_status":active_status
+        }
+      );
+      if (response.statusCode == 200) {
+        var responseData = jsonDecode(response.body);
+        if (responseData['success'] == true) {
+          emit(getStateSuccessState());
+        }
+        else {
+          debugPrint(
+              "failed to  login success and his data is : ${responseData['message']}");
+          emit(getStateWithFailureState(message: responseData['message']));
+        }
+      }
+    } catch (e) {
+      print(e);
+      emit(getStateWithFailureState(message: e.toString()));
+    }
+  }
+
+
 }

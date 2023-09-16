@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nutri_mind_application/modules/ui/Patient_screens/patient_chat_screens/patient_chat_widgets.dart';
+import '../../../../models/doctor_list_model.dart';
 import '../../../../models/get_view_chat_message.dart';
 import '../../../../models/view_all_chat_model.dart';
 import '../../../../shared/widgets/default_items.dart';
@@ -14,7 +15,7 @@ import '../../../blocs/layout_cubit/layout_cubit.dart';
 
 class PatientChatScreen extends StatelessWidget {
   const PatientChatScreen({Key? key, required this.user, required this.index}) : super(key: key);
-  final ViewAllChatModel? user;
+  final DoctorListModel? user;
   final int index;
 
   @override
@@ -34,7 +35,7 @@ class PatientChatScreen extends StatelessWidget {
                 ),
               ),
               Text(
-                "${user?.chat?[index].receiverName}",
+                "${user?.doctorInfo?.data?[index].name}",
                 style: TextStyle(
                     color: MyColors.black,
                     fontFamily: 'Inter',
@@ -56,7 +57,7 @@ class PatientChatScreen extends StatelessWidget {
           ]
       ),
       body: BlocProvider(
-        create: (context) => LayoutCubit()..getAllChatMessage(receiver_name: "${user?.chat?[index]?.receiverName}"),//LayoutCubit LayoutState
+        create: (context) => LayoutCubit()..getAllChatMessage(receiver_name: "${user?.doctorInfo?.data?[index].name}"),//LayoutCubit LayoutState
         child: BlocConsumer<LayoutCubit, LayoutState>(
           listener: (context, state) {
             // TODO: implement listener

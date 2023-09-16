@@ -12,16 +12,18 @@ import '../../../blocs/layout_cubit/layout_cubit.dart';
 
 class RecentChats extends StatelessWidget {
   const RecentChats({Key? key}) : super(key: key);
+/*  DoctorListModel? doctorListModel;
 
+  void getDoctorsList() async {*/
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => LayoutCubit()..getAllChatView(),
+      create: (context) => LayoutCubit()..getDoctorsList(),
       child: BlocConsumer<LayoutCubit, LayoutState>(
         listener: (context, state) {
         },
         builder: (context, state) {
-          ViewAllChatModel? cubit =LayoutCubit.get(context).viewAllChatModel;
+          DoctorListModel? cubit =LayoutCubit.get(context).doctorListModel;
           return Container(
               decoration: BoxDecoration(
                 color: MyColors.white,
@@ -32,8 +34,8 @@ class RecentChats extends StatelessWidget {
               child:
               cubit != null?
               Expanded(
-                child: ListView.builder(
-                    itemCount: cubit?.chat?.length,
+                child: ListView.builder(//cubit?.doctorInfo?.data?[index].name
+                    itemCount: cubit?.doctorInfo?.data?.length,
                     itemBuilder: (BuildContext context, int index) {
                       return Padding(
                         padding: const EdgeInsets.symmetric(vertical: 15),
@@ -64,7 +66,7 @@ class RecentChats extends StatelessWidget {
                                     Row(
                                       children: [
                                         Text(
-                                          "${cubit?.chat?[index].receiverName}",
+                                          "${cubit?.doctorInfo?.data?[index].name}",
                                           style: TextStyle(
                                             color: MyColors.black,
                                             fontFamily: 'Inter',

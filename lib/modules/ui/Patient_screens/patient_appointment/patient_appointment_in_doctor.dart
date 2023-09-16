@@ -103,7 +103,7 @@ class _PatientAppointmentInDoctorState
                         ),
                       ],
                     ),
-                    SizedBox(height: 10.h),
+                    SizedBox(height: 15.h),
                     Text(
                       "Experience",
                       style:AppTextStyle().greyText.copyWith(color: MyColors.black,fontSize: 16.sp),
@@ -112,7 +112,7 @@ class _PatientAppointmentInDoctorState
                       "5 years",
                       style:AppTextStyle().greyText.copyWith(fontSize: 15.sp),
                     ),
-                    SizedBox(height: 10.h),
+                    SizedBox(height: 15.h),
                     Text(
                       "Qualifications",
                       style:AppTextStyle().greyText.copyWith(color: MyColors.black,fontSize: 16.sp),
@@ -124,7 +124,7 @@ class _PatientAppointmentInDoctorState
                   ],
                 ),
               ),
-              SizedBox(height: 30.h),
+              SizedBox(height: 40.h),
               InkWell(
                 onTap: () {
                   Navigator.pushNamed(context, 'PatientReviewScreen');
@@ -145,7 +145,7 @@ class _PatientAppointmentInDoctorState
                   ),
                 ),
               ),
-              const SizedBox(height: 12),
+               SizedBox(height: 12.h),
               MyBlueButton(
                   height: 55.h,
                   width: double.infinity,

@@ -30,33 +30,12 @@ class _DoctorListForPatientScreenState
               )
             ],
           ),
-          actionIcon: [
-            Padding(
-                padding: EdgeInsets.only(right: 25.sp),
-                child: InkWell(
-                  onTap: (){Navigator.pushNamed(context,"PatientSettingScreen");},
-                  child: Icon(
-                    Icons.list,
-                    color: MyColors.black,
-                    size: 25.sp,
-                  ),
-                ))
-          ],
         ),
         body: Padding(
           padding: EdgeInsets.only(right: 25.sp, left: 25.sp, top: 20.sp),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              const SmallTextField(
-                hintText: 'Search for doctor',
-                suffixIcon: Icon(Icons.search_outlined),
-                obscureText: true,
-                textType: TextInputType.text,
-              ),
-              SizedBox(
-                height: 20.sp,
-              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [

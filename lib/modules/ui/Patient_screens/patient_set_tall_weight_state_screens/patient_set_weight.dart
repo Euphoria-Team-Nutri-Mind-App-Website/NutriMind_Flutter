@@ -7,7 +7,6 @@ import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/Constants/constants.dart';
 import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/default_items.dart';
-import '../../../../shared/widgets/patient_tall_weight_screens_widgets.dart';
 
 class PatientSetWeightScreen extends StatefulWidget {
    const PatientSetWeightScreen({Key? key}) : super(key: key);
@@ -30,7 +29,7 @@ class _PatientSetWeightScreenState extends State<PatientSetWeightScreen> {
           children: [
             Text(
               'What\'s your weight ?',
-                style:AppTextStyle().textInAppBar
+                style:AppTextStyle().textInAppBar.copyWith(fontSize: 21.sp)
             ),
           ],
         ),

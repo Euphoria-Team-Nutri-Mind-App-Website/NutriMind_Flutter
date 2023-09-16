@@ -8,8 +8,6 @@ import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/Constants/constants.dart';
 import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/default_items.dart';
-import '../../../../shared/widgets/screens_widgets.dart';
-
 
 class PatientVerificationScreen extends StatefulWidget {
   const PatientVerificationScreen({Key? key, required this.email}) : super(key: key);
@@ -133,7 +131,6 @@ class _VerificationScreenState extends State<PatientVerificationScreen> {
                         else {
                           print(response.reasonPhrase);
                         }
-
                       }
                       //Navigator.pushNamed(context, 'PatientVerificationScreen');
                     },
@@ -157,22 +154,11 @@ class _VerificationScreenState extends State<PatientVerificationScreen> {
                     ),
                   ),
                   const Expanded(child: SizedBox()),
-                ]
-                ,
+                ],
               ),
             ),
           ),
       ),
-        bottomNavigationBar: BottomAppBar(
-          height: 40.h,
-          color: MyColors.white,
-          elevation: 0.sp,
-          child: const MyTextGroup(
-              staticText: "Didn’t received code?",
-              dynamicText: "  Resend it",
-              page: ''),
-        )
-
     );
   }
 }

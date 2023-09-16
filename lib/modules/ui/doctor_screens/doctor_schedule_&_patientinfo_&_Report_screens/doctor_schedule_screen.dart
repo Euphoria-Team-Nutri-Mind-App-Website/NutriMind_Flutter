@@ -17,7 +17,7 @@ class DoctorScheduleScreen extends StatelessWidget {
             children: [
               Text(
                 "My Schedule",
-                  style:AppTextStyle().textInAppBar
+                  style:AppTextStyle().textInAppBar.copyWith(fontSize:21.sp)
               )
             ],
           ),
@@ -38,7 +38,7 @@ class DoctorScheduleScreen extends StatelessWidget {
                 children: [
                   Text(
                     "All Patients",
-                    style: AppTextStyle().greyText.copyWith(fontSize: 17.sp)
+                    style: AppTextStyle().greyText.copyWith(fontSize: 17.sp,fontWeight: FontWeight.w700)
                   ),
                 ],
               ),

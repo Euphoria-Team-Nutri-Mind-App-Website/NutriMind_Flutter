@@ -43,9 +43,11 @@ class _PatientAddNotesState extends State<PatientAddNotes> {
           return Scaffold(
             appBar: MyAppBar(
               backPage: 'PatientNotesScreen',
-              actionIcon: const [
-                Icon(Icons.bookmark, color: MyColors.black,),
-                Icon(Icons.delete, color: MyColors.black),
+              actionIcon:  [
+                Padding(
+                  padding: EdgeInsets.only(right: 20.sp),
+                  child:const Icon(Icons.delete, color: MyColors.black),
+                )
               ],
             ),
             body: Padding(
@@ -55,19 +57,19 @@ class _PatientAddNotesState extends State<PatientAddNotes> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      "Address",
-                      style: TextStyle(
-                          color: MyColors.grey,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 16,
-                          fontFamily: 'Poppins'
-                      ),
-                    ),
                     const SizedBox(height: 9),
                     TextFormField(
                       controller: addQuotesController,
-
+                      cursorColor: MyColors.darkBlue,
+                      decoration: InputDecoration(
+                        enabledBorder:InputBorder.none,
+                        focusedBorder: InputBorder.none,
+                        contentPadding: EdgeInsets.symmetric(
+                            horizontal: 20.sp, vertical: 20.sp),
+                        hintText: "Write a note ...",
+                        hintStyle:
+                        AppTextStyle().greyText.copyWith(fontSize: 15.sp),
+                      ),
                     )
                   ],
                 ),

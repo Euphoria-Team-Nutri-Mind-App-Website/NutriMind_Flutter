@@ -27,7 +27,7 @@ class _PatientSetTallScreenState extends State<PatientSetTallScreen> {
         pageTitle: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Text('How tall are you ?', style: AppTextStyle().textInAppBar),
+            Text('How tall are you ?', style: AppTextStyle().textInAppBar.copyWith(fontSize: 21.sp)),
           ],
         ),
       ),

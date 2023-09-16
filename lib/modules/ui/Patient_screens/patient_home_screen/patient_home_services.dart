@@ -72,16 +72,6 @@ class _PatientHomeServicesScreenState extends State<PatientHomeServicesScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SmallTextField(
-              hintText: 'Search for service',
-              suffixIcon: Icon(Icons.search_outlined),
-              obscureText: true,
-              textType: TextInputType.text,
-
-            ),
-            SizedBox(
-              height: 25.sp,
-            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [

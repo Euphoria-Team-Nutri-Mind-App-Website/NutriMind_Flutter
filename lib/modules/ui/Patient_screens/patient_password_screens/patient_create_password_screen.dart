@@ -156,7 +156,7 @@ class _PatientCreatePasswordScreenState extends State<PatientCreatePasswordScree
                                                   BoxShadow(
                                                     color: MyColors.darkBlue,
                                                     blurRadius: 10.0,
-                                                    spreadRadius: 2.0,
+                                                    spreadRadius: 1.0,
                                                   ), //BoxShadow
                                                   BoxShadow(
                                                     color: Colors.white,

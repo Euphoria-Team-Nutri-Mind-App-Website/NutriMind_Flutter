@@ -93,18 +93,20 @@ class _PatientMotivzoneScreenState extends State<PatientMotivzoneScreen> {
                                     ],
                                   ),
                                   SizedBox(
-                                    height: 30.h,
+                                    height: 40.h,
                                   ),
                                   Text(
-                                    "${cubit?.quotes?[index].qoute}",
+                                    "${cubit.quotes?[index].qoute}",
                                     style: AppTextStyle().textInAppBar.copyWith(
                                         fontSize: 14.sp,
                                         color: MyColors.darkBlue,
-                                        wordSpacing: 2.sp),
+                                        wordSpacing: 2.sp,
+                                      height: 1.5.sp
+                                    ),
                                   ),
-                                  SizedBox(height: 30.h),
+                                  SizedBox(height: 40.h),
                                   Text(
-                                    "- ${cubit?.quotes?[index].author} -",
+                                    "- ${cubit.quotes?[index].author} -",
                                     style: AppTextStyle().textInAppBar.copyWith(
                                       fontSize: 14.sp,
                                       color: MyColors.darkBlue,
@@ -121,7 +123,7 @@ class _PatientMotivzoneScreenState extends State<PatientMotivzoneScreen> {
                       itemHeight: 400.0,
                       layout: SwiperLayout.TINDER,
                     ):
-                    CircularProgressIndicator(color: MyColors.darkBlue),
+                    const CircularProgressIndicator(color: MyColors.darkBlue),
                     SizedBox(height: 45.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

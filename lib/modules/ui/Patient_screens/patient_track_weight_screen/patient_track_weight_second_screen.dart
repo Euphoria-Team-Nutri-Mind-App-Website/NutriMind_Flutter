@@ -91,7 +91,7 @@ class PatientTrackWeightSecondScreen extends StatelessWidget {
                             padding: EdgeInsets.all(20.sp),
                             child: Row(
                               children: [
-                                Text("lost weight",
+                                Text("Change in weight",
                                     style: AppTextStyle().greyText.copyWith(
                                         color: MyColors.black)),
                                 const Spacer(),

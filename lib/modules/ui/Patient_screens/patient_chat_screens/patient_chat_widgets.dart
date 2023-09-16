@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nutri_mind_application/modules/ui/Patient_screens/patient_chat_screens/patient_chat_screen.dart';
 
 import '../../../../models/doctor_list_model.dart';
+import '../../../../models/view_all_chat_model.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../../blocs/layout_cubit/layout_cubit.dart';
 
@@ -15,12 +16,12 @@ class RecentChats extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => LayoutCubit()..getDoctorsList(),
+      create: (context) => LayoutCubit()..getAllChatView(),
       child: BlocConsumer<LayoutCubit, LayoutState>(
         listener: (context, state) {
         },
         builder: (context, state) {
-          DoctorListModel? cubit =LayoutCubit.get(context).doctorListModel;
+          ViewAllChatModel? cubit =LayoutCubit.get(context).viewAllChatModel;
           return Container(
             decoration: BoxDecoration(
               color: MyColors.white,
@@ -32,7 +33,7 @@ class RecentChats extends StatelessWidget {
             cubit != null?
             Expanded(
               child: ListView.builder(
-                  itemCount: cubit?.doctorInfo?.data?.length,
+                  itemCount: cubit?.chat?.length,
                   itemBuilder: (BuildContext context, int index) {
                     return Padding(
                       padding: const EdgeInsets.symmetric(vertical: 15),
@@ -40,7 +41,7 @@ class RecentChats extends StatelessWidget {
                         onTap: () {
                           Navigator.of(context).push(
                               MaterialPageRoute(builder: (context) =>
-                                  PatientChatScreen(user: cubit, index:index)));
+                                  PatientChatScreen(user: cubit, index: index,)));
                           //Navigator.pushNamed(context, 'PatientChatScreen');
                         },
                         child: Container(
@@ -63,7 +64,7 @@ class RecentChats extends StatelessWidget {
                                   Row(
                                     children: [
                                       Text(
-                                        "${cubit?.doctorInfo?.data?[index].name}",
+                                        "${cubit?.chat?[index].receiverName}",
                                         style: TextStyle(
                                           color: MyColors.black,
                                           fontFamily: 'Inter',
@@ -169,7 +170,36 @@ class ChatSample extends StatelessWidget {
             ],
           ),
         ),
-        ChatTextReceive(),
+    Padding(
+    padding: EdgeInsets.all(25.sp),
+    child: ClipPath(
+    clipper: UpperNipMessageClipper(MessageType.receive),
+    child: Container(
+    padding: EdgeInsets.all(25.sp),
+    decoration: BoxDecoration(
+    color: MyColors.darkBlue,
+    boxShadow: [
+    BoxShadow(
+    color: Colors.red,
+    spreadRadius: 2,
+    blurRadius: 10,
+    offset: Offset(3, 3),
+    )
+    ],
+    ),
+    child: Text(
+    "May ask you dr for advice",
+    style: TextStyle(
+    color: MyColors.white,
+    fontFamily: 'Inter',
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w500,
+    ),
+    ),
+    ),
+    ),
+    ),
+        //ChatTextReceive(),
         ChatTextSend(),
         Padding(
           padding: EdgeInsets.all(25.sp),
@@ -251,6 +281,13 @@ class ChatTextReceive extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return BlocProvider(
+  create: (context) => LayoutCubit(),///kkkkkkkkkkkkkkkkkkkkk
+  child: BlocConsumer<LayoutCubit, LayoutState>(
+  listener: (context, state) {
+    // TODO: implement listener
+  },
+  builder: (context, state) {
     return Padding(
       padding: EdgeInsets.all(25.sp),
       child: ClipPath(
@@ -280,6 +317,9 @@ class ChatTextReceive extends StatelessWidget {
         ),
       ),
     );
+  },
+),
+);
   }
 }
 

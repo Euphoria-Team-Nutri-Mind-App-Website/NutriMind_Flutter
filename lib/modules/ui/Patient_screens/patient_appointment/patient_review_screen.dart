@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nutri_mind_application/modules/ui/Patient_screens/patient_appointment/patient_appointment_in_doctor.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/doctor_review_screen_widgets.dart';
@@ -32,7 +33,11 @@ class _PatientReviewScreenState extends State<PatientReviewScreen> {
               padding: EdgeInsets.only(right: 25.sp),
               child: InkWell(
                 onTap: () {
-                  Navigator.pushNamed(context, 'PatientAppointmentInDoctor');
+                  Navigator.push (
+                    context,
+                    MaterialPageRoute(builder: (context) => PatientAppointmentInDoctor(index: 2,)),
+                  );
+                  //Navigator.pushNamed(context, 'PatientAppointmentInDoctor');
                 },
                 child: Icon(
                   Icons.check,

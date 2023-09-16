@@ -6,11 +6,13 @@ import 'package:http/http.dart';
 import '../../../models/doctor_list_model.dart';
 import '../../../models/doctor_profile_model.dart';
 import '../../../models/generate_otp_model.dart';
+import '../../../models/get_view_chat_message.dart';
 import '../../../models/notes_model.dart';
 import '../../../models/patient_model.dart';
 import '../../../models/quotes_model.dart';
 import '../../../models/recommended_calories_model.dart';
 import '../../../models/track_weight_model.dart';
+import '../../../models/view_all_chat_model.dart';
 import '../../../shared/Constants/api_constants.dart';
 import '../../../shared/Constants/constants.dart';
 part 'layout_state.dart';
@@ -307,4 +309,61 @@ class LayoutCubit extends Cubit<LayoutState> {
       emit(TrackWeightWithFailureState(message: onError.toString()));
     });
   }
+
+  //***************************************************************************************************************
+
+
+  ViewAllChatModel? viewAllChatModel;
+
+  void getAllChatView() async {
+    emit(getAllChatViewLoadingState());
+    print("your token is $accessToken");
+
+    http.get(
+        Uri.parse("$BASEURl$Patient_AllChatView"),
+        headers:
+        {
+          'Accept': "application/json",
+          'Authorization': 'Bearer ${accessToken!}',
+        }
+    ).then((value) {
+      var responseDate = jsonDecode(value.body);
+      print(responseDate);
+      viewAllChatModel = ViewAllChatModel.fromJson(responseDate);
+      emit(getAllChatViewSuccessState());
+    }).catchError((onError) {
+      print("onError error ${onError.toString()}");
+      emit(getAllChatViewWithFailureState(message: onError.toString()));
+    });
+  }
+
+  //***************************************************************************************************************
+
+
+
+  ViewAllChatMessageModel? viewAllChatMessageModel;
+
+  void getAllChatMessage({required String receiver_name}) async {
+    emit(getAllChatMessageLoadingState());
+    print("your token is $accessToken");
+
+    http.get(
+        Uri.parse("$BASEURl/api/show-chat-messages?receiver_name=${receiver_name}"),
+        headers:
+        {
+          'Accept': "application/json",
+          'Authorization': 'Bearer ${accessToken!}',
+        },
+    ).then((value) {
+      var responseDate = jsonDecode(value.body);
+      print(responseDate);
+      viewAllChatModel = ViewAllChatModel.fromJson(responseDate);
+      emit(getAllChatMessageSuccessState());
+    }).catchError((onError) {
+      print("onError error ${onError.toString()}");
+      emit(getAllChatMessageWithFailureState(message: onError.toString()));
+    });
+  }
+
+
 }

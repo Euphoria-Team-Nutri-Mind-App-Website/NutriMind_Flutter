@@ -26,7 +26,7 @@ class _PatientCallScreenState extends State<PatientCallScreen> {
             child: IconButton(
                 onPressed: () {
                   Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) =>PatientChatScreen(user: null, index: 2,)));
+                      MaterialPageRoute(builder: (context) =>PatientChatScreen(user: null, index: 1,)));
                 },
                 icon: Icon(
                   Icons.arrow_back_ios,

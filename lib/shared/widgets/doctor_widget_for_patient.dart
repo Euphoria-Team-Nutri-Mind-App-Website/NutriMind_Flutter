@@ -156,7 +156,7 @@ class DoctorWidgetForPatientScreen2 extends StatelessWidget {
               child: CircularProgressIndicator(color: MyColors.darkBlue,),
             ):
             ListView.builder(
-              itemCount: 4,
+              itemCount: 2,
               scrollDirection: Axis.vertical,
               itemBuilder: (context, index) => Padding(
                 padding: EdgeInsets.only(top: 18.sp),

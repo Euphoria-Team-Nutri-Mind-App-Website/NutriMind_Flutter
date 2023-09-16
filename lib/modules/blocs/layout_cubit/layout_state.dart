@@ -109,3 +109,21 @@ class TrackWeightWithFailureState extends LayoutState{
 }
 
 //***************************************************************************************************************
+
+
+class getAllChatViewLoadingState extends LayoutState{}
+class getAllChatViewSuccessState extends LayoutState{}
+class getAllChatViewWithFailureState extends LayoutState{
+  String message;
+  getAllChatViewWithFailureState({required this.message});
+}
+
+//***************************************************************************************************************
+class getAllChatMessageLoadingState extends LayoutState{}
+class getAllChatMessageSuccessState extends LayoutState{}
+class getAllChatMessageWithFailureState extends LayoutState{
+  String message;
+  getAllChatMessageWithFailureState({required this.message});
+}
+
+//***************************************************************************************************************

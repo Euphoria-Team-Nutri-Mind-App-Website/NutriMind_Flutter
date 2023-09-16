@@ -8,7 +8,7 @@ import '../../../../shared/widgets/default_items.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
 
 class PatientAppointmentInDoctor extends StatefulWidget {
-  const PatientAppointmentInDoctor({Key? key, this.user, required this.index}) : super(key: key);
+  const PatientAppointmentInDoctor({Key? key, this.user,  required this.index}) : super(key: key);
   final DoctorListModel? user;
   final int index;
 

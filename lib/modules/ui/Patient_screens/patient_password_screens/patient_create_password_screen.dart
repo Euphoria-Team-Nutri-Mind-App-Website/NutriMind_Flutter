@@ -2,7 +2,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:http/http.dart'as http;
-//import 'package:nutri_mind_application/modules/ui/Patient_screens/patient_password_screens/set_password_widget.dart';
 import 'package:nutri_mind_application/shared/Constants/text_theme.dart';
 import '../../../../shared/Constants/api_constants.dart';
 import '../../../../shared/Constants/colors.dart';
@@ -100,13 +99,6 @@ class _PatientCreatePasswordScreenState extends State<PatientCreatePasswordScree
                       height: 28.h,
                     ),
                     Center(
-                      /*child: SetPassword(
-                        text: "Set password",
-                        backText: "Login",
-                        yourText: "Your reset",
-                        nextScreen: "PatientLoginScreen",
-                        DONE: "DONE",
-                      ),*/
                       child: InkWell(
                         onTap: () {
                           showGeneralDialog(

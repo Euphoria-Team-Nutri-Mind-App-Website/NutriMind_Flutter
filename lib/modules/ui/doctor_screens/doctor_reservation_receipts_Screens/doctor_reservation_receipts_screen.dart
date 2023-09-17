@@ -110,9 +110,7 @@ class DoctorReservationReceiptsScreen extends StatelessWidget {
 
             ],
                   ))
-
                 ],
-
           ),
           ),
              ),

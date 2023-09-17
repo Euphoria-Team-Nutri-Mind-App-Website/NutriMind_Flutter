@@ -43,19 +43,6 @@ class _PatientChooseYourStateScreen1State
     extends State<PatientChooseYourStateScreen1> {
   final formKey = GlobalKey<FormState>();
 
-
-  // final List<String> items = [
-  //   'Item1',
-  //   'Item2',
-  //   'Item3',
-  //   'Item4',
-  //   'Item5',
-  //   'Item6',
-  //   'Item7',
-  //   'Item8',
-  // ];
-
-
   final List<Widget> items = const [
     TextDropDown(title1: 'idle', title2: '( NO or Low practice )'),
     TextDropDown(title1: 'Slack', title2: '( from 1-3 day weekly practice )'),
@@ -144,12 +131,6 @@ class _PatientChooseYourStateScreen1State
                 ),
               ),
               const Expanded(child: SizedBox()),
-              // MyBlueButton(
-              //   width:double.infinity,
-              //   height: 55.h,
-              //   text: 'Calculate',
-              //   page: 'PatientChooseYourStateScreen2',
-              // ),
               InkWell(
                 onTap: () async {
                   if (formKey.currentState!.validate()) {

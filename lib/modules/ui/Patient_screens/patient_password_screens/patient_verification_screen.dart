@@ -103,7 +103,6 @@ class _VerificationScreenState extends State<PatientVerificationScreen> {
                   SizedBox(
                     height: 28.h,
                   ),
-                   //MyBlueButton(text: 'Verify', page: 'PatientCreatePasswordScreen',width: double.infinity,height: 55.h,),
                   InkWell(
                     onTap: () async {
                       if (formKey.currentState!.validate() ) {
@@ -113,8 +112,6 @@ class _VerificationScreenState extends State<PatientVerificationScreen> {
                       };
                         var request = http.MultipartRequest('GET',
                             Uri.parse(
-                              //https://heda.azq1.com/NutriMind/public/patient/api/patient/verify-otp?email=${widget.email}&verfication_code=${code}
-                               // 'http://heda.azq1.com/patient/api/patient/verify-otp?email=${widget.email}&verfication_code=${code}'));
                                 '$BASEURl/patient/api/patient/verify-otp?email=${widget.email}&verfication_code=${code}'));
 
                         request.headers.addAll(headers);
@@ -132,7 +129,6 @@ class _VerificationScreenState extends State<PatientVerificationScreen> {
                           print(response.reasonPhrase);
                         }
                       }
-                      //Navigator.pushNamed(context, 'PatientVerificationScreen');
                     },
                     child: Container(
                       width: double.infinity,

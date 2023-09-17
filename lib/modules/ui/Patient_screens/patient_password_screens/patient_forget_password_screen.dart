@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
-//import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:http/http.dart'as http;
 import 'package:nutri_mind_application/modules/ui/Patient_screens/patient_password_screens/patient_verification_screen.dart';
-//import '../../../../models/forget_password/generate_otp_model.dart';
 import '../../../../shared/Constants/api_constants.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/Constants/constants.dart';
 import '../../../../shared/Constants/text_theme.dart';
 import '../../../../shared/widgets/default_items.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
-//import '../../../blocs/layout_cubit/layout_cubit.dart';
 
 class PatientForgetPassword extends StatefulWidget {
   const PatientForgetPassword({Key? key}) : super(key: key);
@@ -69,11 +66,6 @@ class _PatientForgetPasswordState extends State<PatientForgetPassword> {
                 SizedBox(
                   height: 28.h,
                 ),
-                // MyBlueButton(
-                //  width: double.infinity,
-                //    height: 55.h,
-                //    text: 'Send Code',
-                //    page: 'PatientVerificationScreen'),
                 InkWell(
                   onTap: () async {
                     if (formKey.currentState!.validate() == true) {
@@ -99,7 +91,6 @@ class _PatientForgetPasswordState extends State<PatientForgetPassword> {
                         print(response.reasonPhrase);
                       }
                     }
-                    //Navigator.pushNamed(context, 'PatientVerificationScreen');
                   },
                   child: Container(
                     width: double.infinity,

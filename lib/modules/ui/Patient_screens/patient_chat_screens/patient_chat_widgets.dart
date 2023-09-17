@@ -60,8 +60,7 @@ class RecentChats extends StatelessWidget {
                                 ),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment
-                                      .spaceEvenly,
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                   children: [
                                     Row(
                                       children: [
@@ -74,15 +73,19 @@ class RecentChats extends StatelessWidget {
                                             fontWeight: FontWeight.w600,
                                           ),
                                         ),
-                                        SizedBox(width: 90.w),
-                                        Text(
-                                          "2:35 Pm",
-                                          style: TextStyle(
-                                            color: MyColors.black,
-                                            fontFamily: 'Inter',
-                                            fontSize: 12.sp,
-                                            fontWeight: FontWeight.w600,
-                                          ),
+                                        SizedBox(width: 30.w),
+                                        Row(
+                                          children: [
+                                            Text(
+                                              "2:35 Pm",
+                                              style: TextStyle(
+                                                color: MyColors.black,
+                                                fontFamily: 'Inter',
+                                                fontSize: 12.sp,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                            ),
+                                          ],
                                         )
                                       ],
                                     ),

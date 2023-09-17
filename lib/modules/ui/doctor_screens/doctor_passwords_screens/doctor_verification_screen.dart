@@ -103,7 +103,6 @@ class _DoctorVerificationScreen extends State<DoctorVerificationScreen> {
                   SizedBox(
                     height: 28.h,
                   ),
-                  //MyBlueButton(text: 'Verify', page: 'PatientCreatePasswordScreen',width: double.infinity,height: 55.h,),
                   InkWell(
                     onTap: () async {
                       if (formKey.currentState!.validate() ) {
@@ -128,7 +127,6 @@ class _DoctorVerificationScreen extends State<DoctorVerificationScreen> {
                         }
 
                       }
-                      //Navigator.pushNamed(context, 'PatientVerificationScreen');
                     },
                     child: Container(
                       width: double.infinity,

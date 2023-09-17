@@ -7,7 +7,6 @@ import '../../../../shared/widgets/default_items.dart';
 import '../../../../shared/widgets/screens_widgets.dart';
 import '../../../blocs/doctor_cubit/auth_cubit/doctor_auth_cubit.dart';
 import '../doctor_profile/doctor_profile.dart';
-import 'doctor_choose_time_screen.dart';
 
 class DoctorSignUpScreen extends StatefulWidget {
   const DoctorSignUpScreen({Key? key}) : super(key: key);
@@ -324,7 +323,6 @@ class _DoctorSignUpScreenState extends State<DoctorSignUpScreen> {
                               vodafone_cash: vodafoneCashNumberController.text,
                               price: priceOfSessionController.text,
                             );
-                            //Navigator.pushNamed(context, 'PatientSetTallScreen');
                           }
                         },
                         child: Container(
@@ -341,11 +339,6 @@ class _DoctorSignUpScreenState extends State<DoctorSignUpScreen> {
                           ),
                         ),
                       ),
-                      // MyBlueButton(
-                      //     text: "Register",
-                      //     page: 'DoctorProfile',
-                      //     width: double.infinity,
-                      //     height: 55.h),
                       SizedBox(
                         height: 15.h,
                       ),

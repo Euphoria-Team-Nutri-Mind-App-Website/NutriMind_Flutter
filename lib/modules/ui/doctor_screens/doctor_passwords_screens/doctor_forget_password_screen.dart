@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:http/http.dart'as http;
-
 import '../../../../shared/Constants/api_constants.dart';
 import '../../../../shared/Constants/colors.dart';
 import '../../../../shared/Constants/constants.dart';
@@ -91,7 +90,6 @@ class _DoctorForgetPassword extends State<DoctorForgetPassword> {
                         print(response.reasonPhrase);
                       }
                     }
-                    //Navigator.pushNamed(context, 'PatientVerificationScreen');
                   },
                   child: Container(
                     width: double.infinity,

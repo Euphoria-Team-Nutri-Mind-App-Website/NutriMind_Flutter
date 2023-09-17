@@ -28,20 +28,6 @@ class _PatientTrackWeightFirstScreenState
       create: (context) => LayoutCubit(),
       child: BlocConsumer<LayoutCubit, LayoutState>(
           listener: (context, state) {
-        // if (state is EnterCurrentWeightSuccessState) {
-        //   Navigator.pushNamed(context, 'PatientTrackWeightSecondScreen');
-        // } else if (state is EnterCurrentWeightWithFailureState) {
-        //   showDialog(
-        //     context: context,
-        //     builder: (context) => AlertDialog(
-        //       content: Text(
-        //         state.message,
-        //         style: AppTextStyle().greyText.copyWith(color: MyColors.white),
-        //       ),
-        //       backgroundColor: MyColors.darkBlue,
-        //     ),
-        //   );
-        // }
       }, builder: (context, state) {
         return Scaffold(
           appBar: MyAppBar(

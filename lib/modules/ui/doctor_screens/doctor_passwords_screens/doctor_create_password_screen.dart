@@ -100,13 +100,6 @@ class _DoctorCreatePasswordScreen extends State<DoctorCreatePasswordScreen> {
                     height: 28.h,
                   ),
                   Center(
-                    /*child: SetPassword(
-                        text: "Set password",
-                        backText: "Login",
-                        yourText: "Your reset",
-                        nextScreen: "PatientLoginScreen",
-                        DONE: "DONE",
-                      ),*/
                     child: InkWell(
                       onTap: () {
                         showGeneralDialog(

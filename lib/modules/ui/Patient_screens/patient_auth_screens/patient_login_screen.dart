@@ -8,7 +8,6 @@ import '../../../../shared/widgets/screens_widgets.dart';
 import '../../../blocs/auth_cubit/auth_cubit.dart';
 
 
-//email:rana26@gmail.com  pass: 123456789
 class PatientLoginScreen extends StatefulWidget {
   const PatientLoginScreen({Key? key}) : super(key: key);
 

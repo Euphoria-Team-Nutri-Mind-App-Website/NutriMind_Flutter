@@ -101,7 +101,7 @@ class _PatientMotivzoneScreenState extends State<PatientMotivzoneScreen> {
                                         fontSize: 14.sp,
                                         color: MyColors.darkBlue,
                                         wordSpacing: 2.sp,
-                                      height: 1.5.sp
+                                      //height: 1.5.sp
                                     ),
                                   ),
                                   SizedBox(height: 40.h),

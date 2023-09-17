@@ -37,7 +37,6 @@ class _PatientReviewScreenState extends State<PatientReviewScreen> {
                     context,
                     MaterialPageRoute(builder: (context) => PatientAppointmentInDoctor(index: 2,)),
                   );
-                  //Navigator.pushNamed(context, 'PatientAppointmentInDoctor');
                 },
                 child: Icon(
                   Icons.check,

@@ -89,35 +89,44 @@ class RecentChats extends StatelessWidget {
                                         )
                                       ],
                                     ),
-                                    Row(
-                                      children: [
-                                        Text(
-                                          "Thank you for you support",
-                                          style: TextStyle(
-                                            color: MyColors.grey,
-                                            fontFamily: 'Inter',
-                                            fontSize: 12.sp,
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                        ),
-                                        SizedBox(width: 70.w),
-                                        Container(
-                                          height: 15.h,
-                                          width: 18.w,
-                                          decoration: BoxDecoration(
-                                              color: MyColors.darkBlue,
-                                              borderRadius: BorderRadius.circular(
-                                                  70)),
-                                          child: const Center(
-                                            child: Text(
-                                              "1",
-                                              style: TextStyle(
-                                                  color: MyColors.white),
-                                            ),
-                                          ),
-                                        )
-                                      ],
+                                    Text(
+                                      "Thank you for you support",
+                                      style: TextStyle(
+                                        color: MyColors.grey,
+                                        fontFamily: 'Inter',
+                                        fontSize: 12.sp,
+                                        fontWeight: FontWeight.w500,
+                                      ),
                                     ),
+                                    // Row(
+                                    //   children: [
+                                    //     Text(
+                                    //       "Thank you for you support",
+                                    //       style: TextStyle(
+                                    //         color: MyColors.grey,
+                                    //         fontFamily: 'Inter',
+                                    //         fontSize: 12.sp,
+                                    //         fontWeight: FontWeight.w500,
+                                    //       ),
+                                    //     ),
+                                    //     SizedBox(width: 70.w),
+                                    //     Container(
+                                    //       height: 15.h,
+                                    //       width: 18.w,
+                                    //       decoration: BoxDecoration(
+                                    //           color: MyColors.darkBlue,
+                                    //           borderRadius: BorderRadius.circular(
+                                    //               70)),
+                                    //       child: const Center(
+                                    //         child: Text(
+                                    //           "1",
+                                    //           style: TextStyle(
+                                    //               color: MyColors.white),
+                                    //         ),
+                                    //       ),
+                                    //     )
+                                    //   ],
+                                    // ),
                                   ],
                                 )
                               ],

@@ -120,7 +120,8 @@ class PatientChatScreen extends StatelessWidget {
                             ],
                           ),
                           child: Text(
-                            "${cubit?.message?[index].content}",
+                            //"${cubit?.message?[index].content}",
+                            "hiiii",
                             style: TextStyle(
                               color: MyColors.white,
                               fontFamily: 'Inter',
